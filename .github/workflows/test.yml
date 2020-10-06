@@ -16,9 +16,17 @@ jobs:
     - name: Install modules
       run: npm install
     - name: Run tests
-      run: npm test:unit -- --coverage
+      run: npm run test:unit -- --coverage
     - name: Upload coverage 📤
       uses: codecov/codecov-action@v1
       with:
         file: coverage/lcov.info
         fail_ci_if_error: true
+  Build-Test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: npm install
+    - name: Run build tests
+      run: npm run build
