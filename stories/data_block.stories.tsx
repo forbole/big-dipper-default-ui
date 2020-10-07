@@ -16,6 +16,28 @@ export const Default = Template.bind({
 });
 Default.args = {
   label: 'Latest Block Height',
-  duration: 'Last 7 hours',
+  durations: [
+    {
+      value: '7_hours',
+      display: 'Last 7 hours',
+    },
+  ],
+  value: '15,000',
+};
+
+export const MultiDurations = Template.bind({
+});
+MultiDurations.args = {
+  label: 'Latest Block Height',
+  durations: [
+    {
+      value: '7_hours',
+      display: 'Last 7 hours',
+    }, {
+      value: 24,
+      display: '24 hours',
+    },
+  ],
+  selectedValue: 24,
   value: '15,000',
 };

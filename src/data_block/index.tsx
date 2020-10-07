@@ -1,7 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
+import {
+  Select,
+  MenuItem,
+} from '@material-ui/core';
 import { useGetStyles } from './styles';
 import { DataBlockProps } from './types';
+import { useDataBlockHook } from './hooks';
 
 /**
  * Component used for displaying general grid data
@@ -10,26 +15,42 @@ const DataBlock = (props: DataBlockProps) => {
   const { classes } = useGetStyles();
   const {
     label,
-    duration,
+    durations,
     value,
+    selectedValue = null,
   } = props;
+
+  const {
+    selected,
+    handleChange,
+  } = useDataBlockHook({
+    selectedValue,
+  });
+
   return (
-    <div
-      className={classnames(classes.root, 'big-dipper', 'data-block')}
-    >
-      <div
-        className={classnames('header')}
-      >
-        <p
-          className={classnames('label')}
-        >
+    <div className={classnames(classes.root, 'big-dipper', 'data-block')}>
+      <div className={classnames('header')}>
+        <p className={classnames('label')}>
           {label}
         </p>
-        <p
-          className={classnames('duration')}
-        >
-          {duration}
-        </p>
+        {durations.length <= 1
+          ? (
+            <p className={classnames('duration')}>
+              {durations}
+            </p>
+          )
+          : (
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={selected}
+              onChange={handleChange}
+            >
+              {durations.map((x) => (
+                <MenuItem key={x.value} value={x.value}>{x.display}</MenuItem>
+              ))}
+            </Select>
+          )}
       </div>
       <h1
         className={classnames('value')}
