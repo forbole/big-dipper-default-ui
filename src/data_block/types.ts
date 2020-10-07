@@ -6,9 +6,9 @@ export interface DataBlockProps {
   label: string;
   durations: Duration[];
   value: string;
-  selectedValue?: string;
+  selectedValue?: string | number;
 }
 
 export interface useDataBlockHookProps {
-  selectedValue: string | null;
+  selectedValue?: string | number;
 }

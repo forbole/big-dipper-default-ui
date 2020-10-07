@@ -17,7 +17,7 @@ const DataBlock = (props: DataBlockProps) => {
     label,
     durations,
     value,
-    selectedValue = null,
+    selectedValue,
   } = props;
 
   const {
@@ -33,10 +33,10 @@ const DataBlock = (props: DataBlockProps) => {
         <p className={classnames('label')}>
           {label}
         </p>
-        {durations.length <= 1
+        {durations.length === 1
           ? (
             <p className={classnames('duration')}>
-              {durations}
+              {durations[0]?.display}
             </p>
           )
           : (
