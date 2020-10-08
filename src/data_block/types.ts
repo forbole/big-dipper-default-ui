@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 
 export type DurationCallback = (key: string | number) => void;
 
@@ -9,10 +9,10 @@ export interface Duration {
 }
 export interface DataBlockProps {
   label: string;
-  durations: Duration[];
+  durations?: Duration[];
   value: string;
   selectedValue?: string | number;
-  customComponent?: FC;
+  customComponent?: ReactElement;
 }
 
 export interface UseDataBlockHookProps {

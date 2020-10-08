@@ -15,7 +15,7 @@ const DataBlock = (props: DataBlockProps) => {
   const { classes } = useGetStyles();
   const {
     label,
-    durations,
+    durations = [],
     value,
     selectedValue,
     customComponent,
@@ -38,12 +38,13 @@ const DataBlock = (props: DataBlockProps) => {
         {durations.length > 1
           ? (
             <Select
-              className={classnames(classes.select)}
+              className={classnames(classes.select, 'select')}
               value={selected}
               onChange={handleChange}
             >
               {durations.map((x) => (
                 <MenuItem
+                  className={classnames('menu-item')}
                   key={x.value}
                   value={x.value}
                   onClick={() => handleCallback(x.value, x?.callback)}

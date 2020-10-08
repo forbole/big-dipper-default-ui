@@ -45,7 +45,7 @@ export const useGetStyles = () => {
         fontWeight: '300',
       },
       '& svg': {
-        color: 'white',
+        color: 'inherit',
       },
       '&:before': {
         content: 'none',
