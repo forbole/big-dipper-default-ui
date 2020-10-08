@@ -5,26 +5,35 @@ export const useGetStyles = () => {
   const theme: any = useTheme();
   const useStyles = makeStyles({
     root: {
+      boxSizing: 'border-box',
+      overflow: 'hidden',
       padding: '1rem',
       display: 'flex',
+      justifyContent: 'space-between',
       flexDirection: 'column',
       background: theme?.palette?.primary?.main,
       color: 'white',
       borderRadius: '6px',
+      height: '110px',
       '& .header': {
         display: 'flex',
         justifyContent: 'space-between',
-        marginBottom: '1rem',
+        marginBottom: '0.5rem',
         '& .label, & .duration': {
           margin: '0',
           fontWeight: '300',
           fontSize: '0.875rem',
         },
       },
-      '& h1': {
-        margin: '0',
-        fontWeight: '400',
-        fontSize: '2.2rem',
+      '& .content': {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end',
+        '& h1': {
+          margin: '0',
+          fontWeight: '400',
+          fontSize: '2.2rem',
+        },
       },
     },
     select: {

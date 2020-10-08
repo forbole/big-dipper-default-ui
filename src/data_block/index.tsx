@@ -18,6 +18,7 @@ const DataBlock = (props: DataBlockProps) => {
     durations,
     value,
     selectedValue,
+    customComponent,
   } = props;
 
   const {
@@ -58,11 +59,18 @@ const DataBlock = (props: DataBlockProps) => {
             </p>
           )}
       </div>
-      <h1
-        className={classnames('value')}
-      >
-        {value}
-      </h1>
+      <div className={classnames('content')}>
+        <h1
+          className={classnames('value')}
+        >
+          {value}
+        </h1>
+        {!!customComponent && (
+          <span className={classnames('custom-component')}>
+            {customComponent}
+          </span>
+        )}
+      </div>
     </div>
   );
 };

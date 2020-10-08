@@ -1,5 +1,7 @@
 import React from 'react';
 import { DataBlock } from '../src';
+import { DataBlockCustom } from './utils';
+import { DataBlockProps } from '../src/data_block/types';
 
 export default {
   title: 'DataBlock',
@@ -12,15 +14,26 @@ const Template = (args) => (
   />
 );
 
-export const Default = Template.bind({
+export const WithCustom = Template.bind({
 });
-Default.args = {
+WithCustom.args = {
   label: 'Latest Block Height',
+  value: '15,000',
+  selectedValue: '24',
+  customComponent: <DataBlockCustom />,
   durations: [{
     value: '7_hours',
     display: 'Last 7 hours',
+    callback: (key) => {
+      console.log(`called with key: ${key}`);
+    },
+  }, {
+    value: '24',
+    display: '24 hours',
+    callback: (key) => {
+      console.log(`called with key: ${key}`);
+    },
   }],
-  value: '15,000',
 };
 
 export const NoDurations = Template.bind({
@@ -28,6 +41,17 @@ export const NoDurations = Template.bind({
 NoDurations.args = {
   label: 'Latest Block Height',
   durations: [],
+  value: '15,000',
+};
+
+export const SingleDuration = Template.bind({
+});
+SingleDuration.args = {
+  label: 'Latest Block Height',
+  durations: [{
+    value: '7_hours',
+    display: 'Last 7 hours',
+  }],
   value: '15,000',
 };
 

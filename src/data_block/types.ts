@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 export type DurationCallback = (key: string | number) => void;
 
 export interface Duration {
@@ -10,6 +12,7 @@ export interface DataBlockProps {
   durations: Duration[];
   value: string;
   selectedValue?: string | number;
+  customComponent?: FC;
 }
 
 export interface UseDataBlockHookProps {
