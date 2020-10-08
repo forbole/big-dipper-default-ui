@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
-import { useTheme } from '@material-ui/core/styles';
 
 export const useGetStyles = () => {
-  const theme: any = useTheme();
   const useStyles = makeStyles({
     root: {
       boxSizing: 'border-box',
@@ -11,7 +9,6 @@ export const useGetStyles = () => {
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'column',
-      background: theme?.palette?.primary?.main,
       color: 'white',
       borderRadius: '6px',
       height: '110px',
