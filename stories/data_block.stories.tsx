@@ -23,16 +23,31 @@ Default.args = {
   value: '15,000',
 };
 
+export const NoDurations = Template.bind({
+});
+NoDurations.args = {
+  label: 'Latest Block Height',
+  durations: [],
+  value: '15,000',
+};
+
 export const MultiDurations = Template.bind({
 });
 MultiDurations.args = {
   label: 'Latest Block Height',
+  value: '15,000',
+  selectedValue: '24',
   durations: [{
     value: '7_hours',
     display: 'Last 7 hours',
+    callback: (key) => {
+      console.log(`called with key: ${key}`);
+    },
   }, {
-    value: 24,
+    value: '24',
     display: '24 hours',
+    callback: (key) => {
+      console.log(`called with key: ${key}`);
+    },
   }],
-  value: '15,000',
 };

@@ -23,6 +23,7 @@ const DataBlock = (props: DataBlockProps) => {
   const {
     selected,
     handleChange,
+    handleCallback,
   } = useDataBlockHook({
     selectedValue,
   });
@@ -33,23 +34,28 @@ const DataBlock = (props: DataBlockProps) => {
         <p className={classnames('label')}>
           {label}
         </p>
-        {durations.length === 1
+        {durations.length > 1
           ? (
-            <p className={classnames('duration')}>
-              {durations[0]?.display}
-            </p>
-          )
-          : (
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
+              className={classnames(classes.select)}
               value={selected}
               onChange={handleChange}
             >
               {durations.map((x) => (
-                <MenuItem key={x.value} value={x.value}>{x.display}</MenuItem>
+                <MenuItem
+                  key={x.value}
+                  value={x.value}
+                  onClick={() => handleCallback(x.value, x?.callback)}
+                >
+                  {x.display}
+                </MenuItem>
               ))}
             </Select>
+          )
+          : (
+            <p className={classnames('duration')}>
+              {durations[0]?.display}
+            </p>
           )}
       </div>
       <h1

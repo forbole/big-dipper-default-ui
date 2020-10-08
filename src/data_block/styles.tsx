@@ -18,13 +18,28 @@ export const useGetStyles = () => {
         '& .label, & .duration': {
           margin: '0',
           fontWeight: '300',
-          fontSize: '0.8rem',
+          fontSize: '0.875rem',
         },
       },
       '& h1': {
         margin: '0',
         fontWeight: '400',
         fontSize: '2.2rem',
+      },
+    },
+    select: {
+      color: 'inherit',
+      padding: '0',
+      '& div': {
+        padding: '0',
+        fontSize: '0.875rem',
+        fontWeight: '300',
+      },
+      '& svg': {
+        color: 'white',
+      },
+      '&:before': {
+        content: 'none',
       },
     },
   });
