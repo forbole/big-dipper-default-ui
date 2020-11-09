@@ -40,6 +40,7 @@
     "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-console": "^1.2.2",
     "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-knobs": "^6.0.28",
     "@storybook/addon-links": "^6.0.26",
     "@storybook/react": "^6.0.26",
     "@testing-library/react": "^9.5.0",
@@ -82,5 +83,7 @@
   "files": [
     "dist"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "@types/recharts": "^1.8.16"
+  }
 }
