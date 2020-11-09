@@ -1,13 +1,4 @@
 import React from 'react';
-import {
-  Title,
-  Subtitle,
-  Description,
-  Primary,
-  ArgsTable,
-  Stories,
-  PRIMARY_STORY,
-} from '@storybook/addon-docs/blocks';
 import { DataBlock } from '../src';
 import { DataBlockCustom } from './utils';
 
@@ -16,35 +7,74 @@ export default {
   component: DataBlock,
   argTypes: {
     label: {
-      description: 'overwritten description',
       type: {
         required: true,
       },
       table: {
         type: {
           summary: 'string',
-          detail: '{"key":null,"ref":null,"props":{},"_owner":null,"_store":{}}',
         },
         defaultValue: {
-          summary: 'Hello World',
+          summary: 'null',
         },
       },
       control: {
         type: null,
       },
     },
-  },
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Subtitle />
-          <Description />
-          <Primary />
-          <ArgsTable story={PRIMARY_STORY} />
-        </>
-      ),
+    value: {
+      type: {
+        required: true,
+      },
+      table: {
+        type: {
+          summary: 'string | number',
+        },
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+    },
+    selectedValue: {
+      table: {
+        type: {
+          summary: 'string | number',
+        },
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+    },
+    customComponent: {
+      table: {
+        type: {
+          summary: 'ReactElement',
+        },
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+      control: {
+        type: null,
+      },
+    },
+    durations: {
+      table: {
+        type: {
+          summary: 'Object[]',
+          detail: JSON.stringify({
+            value: 'string | number',
+            display: 'string',
+            callback: '(key:string | number) => void',
+          }, null, 2),
+        },
+        defaultValue: {
+          summary: '[]',
+        },
+      },
+      control: {
+        type: null,
+      },
     },
   },
 };
