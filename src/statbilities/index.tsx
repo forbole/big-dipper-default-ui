@@ -10,9 +10,7 @@ const COLORS = ['#FF7846', '#FFD800'];
 const Example = (prop: Props) => {
   const { classes } = useGetStyles();
   const {
-    data = [], info = {
-
-    },
+    data = [], info = prop.info,
   } = prop;
 
   function toCurrency(num: number) {
@@ -38,8 +36,8 @@ const Example = (prop: Props) => {
         <h1 className={classes.titleMain}>
           Statbilities
         </h1>
-        <p className={classes.box}>
-          <p className={classes.chartBox}>
+        <div className={classes.box}>
+          <div className={classes.chartBox}>
             <PieChart width={140} height={140}>
               <Pie
                 data={data}
@@ -50,7 +48,7 @@ const Example = (prop: Props) => {
                 dataKey="value"
               >
                 {
-                  data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                  data.map((_x: any, index: any) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
                 }
               </Pie>
             </PieChart>
@@ -60,49 +58,52 @@ const Example = (prop: Props) => {
                 {' '}
                 m
               </h4>
-              <p
+              <div
                 className={classes.atom}
-                style={{ height: '1rem', marginLeft: '0rem', marginTop: '0rem' }}>
+                style={{
+                  height: '1rem', marginLeft: '0rem', marginTop: '0rem',
+                }}
+              >
                 ATOMs
-              </p>
+              </div>
             </div>
-          </p>
-          <p className={classes.box2}>
-            <p className={classes.boxSmall}>
-              <div className={classes.rectangle1} />
-              <p className={classes.boxSuperSmall}>
+          </div>
+          <div className={classes.boxMedium}>
+            <div className={classes.boxSmall}>
+              <div className={classes.bonded} />
+              <div className={classes.boxSuperSmall}>
                 <h4 className={classes.itemTitle}>
                   Bunded (
                   {BondedPercentage}
                   %)
                 </h4>
-                <p className={classes.amount}>
+                <div className={classes.amount}>
                   {toCurrency(Math.round((data[0].value) * 100) / 100)}
                   <a className={classes.atom}>
                     ATOM
                   </a>
-                </p>
-              </p>
-            </p>
-            <p className={classes.boxSmall}>
-              <div className={classes.rectangle2} />
+                </div>
+              </div>
+            </div>
+            <div className={classes.boxSmall}>
+              <div className={classes.unbonded} />
 
-              <p className={classes.boxSuperSmall}>
+              <div className={classes.boxSuperSmall}>
                 <h4 className={classes.itemTitle}>
                   Unbunded (
                   {UnbondedPercentage}
                   %)
                 </h4>
-                <p className={classes.amount}>
+                <div className={classes.amount}>
                   {toCurrency(Math.round((data[1].value) * 100) / 100)}
-                  <a className={classes.atom}>
+                  <span className={classes.atom}>
                     ATOM
-                  </a>
-                </p>
-              </p>
-            </p>
-          </p>
-        </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className={classes.line} />
         <div className={classes.boxBottom}>
           <div className={classes.boxBottomSmall1}>
@@ -114,7 +115,7 @@ const Example = (prop: Props) => {
             >
               Price
             </h4>
-            <p
+            <div
               className={classes.amount}
               style={{
                 marginBottom: '2rem',
@@ -123,14 +124,24 @@ const Example = (prop: Props) => {
             >
               $
               {toCurrency(Math.round((info.price) * 100) / 100)}
-            </p>
-            <h4 className={classes.itemTitle} style={{ marginLeft: '0rem' }} >
+            </div>
+            <h4
+              className={classes.itemTitle}
+              style={{
+                marginLeft: '0rem',
+              }}
+            >
               Market Cap
             </h4>
-            <p className={classes.amount} style={{ marginLeft: '0rem' }} >
+            <div
+              className={classes.amount}
+              style={{
+                marginLeft: '0rem',
+              }}
+            >
               $
               {toCurrency(Math.round((info.marketCap) * 100) / 100)}
-            </p>
+            </div>
           </div>
           <div className={classes.boxBottomSmall2}>
             <h4
@@ -141,7 +152,7 @@ const Example = (prop: Props) => {
             >
               Inflation
             </h4>
-            <p
+            <div
               className={classes.amount}
               style={{
                 marginBottom: '2rem',
@@ -151,7 +162,7 @@ const Example = (prop: Props) => {
               {toCurrency(Math.round((info.inflation) * 100) / 100)}
               {' '}
               %
-            </p>
+            </div>
             <h4
               className={classes.itemTitle}
               style={{
@@ -160,7 +171,7 @@ const Example = (prop: Props) => {
             >
               Community Pool
             </h4>
-            <p
+            <div
               className={classes.amount}
               style={{
                 marginLeft: '0rem',
@@ -170,7 +181,7 @@ const Example = (prop: Props) => {
               <a className={classes.atom}>
                 ATOM
               </a>
-            </p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,9 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
-import { useTheme } from '@material-ui/core/styles';
 
 export const useGetStyles = () => {
-  const theme: any = useTheme();
-
   const useStyles = makeStyles({
     root: {
       height: '29.5rem',
@@ -26,13 +23,12 @@ export const useGetStyles = () => {
       fontSize: '0.875rem',
       fontWeight: 300,
       margin: '0.9375rem 0 0 0.5rem',
-      color: theme.palette.custom.fonts.fontThree,
+      color: '#777777',
     },
     amount: {
       fontSize: '1.25rem',
       fontWeight: 400,
       margin: '0rem 0 0 0.5rem',
-      color: '#000000',
     },
     chartCenter: {
       width: '8.75rem',
@@ -46,15 +42,13 @@ export const useGetStyles = () => {
       fontWeight: 400,
       margin: '0',
       height: '1.65rem',
-      color: '#000000',
     },
     atom: {
       fontSize: '0.875rem',
       fontWeight: 400,
       margin: '0rem 0 0 0.5rem',
-      color: '#000000',
     },
-    rectangle1: {
+    bonded: {
       display: 'block',
       width: '0.25rem',
       height: '2.375rem',
@@ -64,7 +58,7 @@ export const useGetStyles = () => {
       borderRadius: '1px',
 
     },
-    rectangle2: {
+    unbonded: {
       display: 'flex',
       width: '0.25rem',
       height: '2.375rem',
@@ -88,11 +82,9 @@ export const useGetStyles = () => {
       display: 'flex',
       width: '8.75rem',
       height: '8.75rem',
-      // background: 'red',
-      position: 'relative',
       margin: '0',
     },
-    box2: {
+    boxMedium: {
       width: '12.375rem',
       height: '8.75rem',
       margin: '0rem',
