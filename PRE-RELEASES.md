@@ -2,3 +2,4 @@
 ## Changes
 - Initial project setup
 - Add DataBlock component
+- Add Statbilities component
