@@ -1,13 +1,13 @@
 import React from 'react';
-import { Example } from '../src';
+import { Consensus } from '../src';
 
 export default {
-  title: 'Statbilities',
-  component: Example,
+  title: 'ConsensusState',
+  component: Consensus,
 };
 
 const Template = (args) => (
-  <Example
+  <Consensus
     {...args}
   />
 );
