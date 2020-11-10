@@ -7,7 +7,7 @@ import { useGetStyles } from './styles';
 
 const COLORS = ['#FF7846', '#FFD800'];
 
-const Example = (prop: Props) => {
+const Statbilities = (prop: Props) => {
   const { classes } = useGetStyles();
   const {
     data = [], info = prop.info,
@@ -189,4 +189,4 @@ const Example = (prop: Props) => {
   );
 };
 
-export default Example;
+export default Statbilities;

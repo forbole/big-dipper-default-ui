@@ -1,13 +1,13 @@
 import React from 'react';
-import { Example } from '../src';
+import { Statbilities } from '../src';
 
 export default {
   title: 'Statbilities',
-  component: Example,
+  component: Statbilities,
 };
 
 const Template = (args) => (
-  <Example
+  <Statbilities
     {...args}
   />
 );
