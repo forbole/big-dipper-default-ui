@@ -9,8 +9,6 @@ import {
 } from '@storybook/addon-docs/blocks';
 import { addDecorator } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
-// wingman maybe come back later
-// import CssBaseline from '@material-ui/core/CssBaseline';
 import {
   createMuiTheme,
   ThemeProvider,
@@ -26,6 +24,8 @@ export const parameters = {
       <Subtitle />
       <Description />
       <ArgsTable story={PRIMARY_STORY} />
+      <Primary />
+      <Stories />
     </>
   ),
 },
@@ -37,7 +37,6 @@ export const decorators = [(Story) => {
   const theme = createMuiTheme(themeBase);
   return (
     <ThemeProvider theme={theme}>
-      {/* <CssBaseline /> */}
       <Story />
     </ThemeProvider>
   )
