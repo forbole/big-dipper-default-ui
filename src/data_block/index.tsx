@@ -41,6 +41,7 @@ const DataBlock = (props: DataBlockProps) => {
         {durations.length > 1
           ? (
             <Select
+              disableUnderline
               className={classnames(classes.select, 'select')}
               value={selected}
               onChange={handleChange}

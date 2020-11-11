@@ -18,6 +18,7 @@ export const useGetStyles = () => {
       '& .header': {
         display: 'flex',
         justifyContent: 'space-between',
+        alignItems: 'flex-start',
         marginBottom: '0.5rem',
         '& .label, & .duration': {
           margin: '0',
