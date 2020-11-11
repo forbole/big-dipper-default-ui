@@ -93,18 +93,15 @@ WithCustom.args = {
   value: '15,000',
   selectedValue: '24',
   customComponent: <DataBlockCustom />,
+  durationsCallback: (key) => {
+    console.log(`called with key: ${key}`);
+  },
   durations: [{
     value: '7_hours',
     display: 'Last 7 hours',
-    callback: (key) => {
-      console.log(`called with key: ${key}`);
-    },
   }, {
     value: '24',
     display: '24 hours',
-    callback: (key) => {
-      console.log(`called with key: ${key}`);
-    },
   }],
 };
 
@@ -132,17 +129,14 @@ MultiDurations.args = {
   label: 'Latest Block Height',
   value: '15,000',
   selectedValue: '24',
+  durationsCallback: (key) => {
+    console.log(`called with key: ${key}`);
+  },
   durations: [{
     value: '7_hours',
     display: 'Last 7 hours',
-    callback: (key) => {
-      console.log(`called with key: ${key}`);
-    },
   }, {
     value: '24',
     display: '24 hours',
-    callback: (key) => {
-      console.log(`called with key: ${key}`);
-    },
   }],
 };
