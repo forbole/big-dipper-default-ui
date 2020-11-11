@@ -22,13 +22,16 @@ export const useGetStyles = () => {
     itemTitle: {
       fontSize: '0.875rem',
       fontWeight: 300,
-      margin: '0.9375rem 0 0 0.5rem',
+      margin: '0.9375rem 0 0 0rem',
       color: '#777777',
     },
     amount: {
       fontSize: '1.25rem',
       fontWeight: 400,
-      margin: '0rem 0 0 0.5rem',
+      margin: '0rem 0 0 0rem',
+      '& .marginBottom': {
+        marginBottom: '2rem',
+      },
     },
     chartCenter: {
       width: '8.75rem',
@@ -42,6 +45,12 @@ export const useGetStyles = () => {
       fontWeight: 400,
       margin: '0',
       height: '1.65rem',
+      '& .inChart': {
+        height: '1rem',
+        marginLeft: '0rem',
+        marginTop: '0rem',
+        fontSize: '0.875rem',
+      },
     },
     atom: {
       fontSize: '0.875rem',
@@ -98,7 +107,7 @@ export const useGetStyles = () => {
     boxSuperSmall: {
       width: '15rem',
       height: '2.6875rem',
-      margin: '0rem',
+      margin: '0rem 0 0 0.5rem',
     },
     boxBottom: {
       display: 'flex',

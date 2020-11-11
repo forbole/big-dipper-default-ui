@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import {
   PieChart, Pie, Cell,
 } from 'recharts';
@@ -7,40 +8,35 @@ import { useGetStyles } from './styles';
 
 const COLORS = ['#FF7846', '#FFD800'];
 
-const Statbilities = (prop: Props) => {
+const Stabilities = (prop: Props) => {
   const { classes } = useGetStyles();
   const {
-    data = [], info = prop.info,
+    title,
+    unit,
+    price,
+    inflation,
+    marketCap,
+    communityPool,
+    data,
   } = prop;
 
-  function toCurrency(num: number) {
-    const parts = num.toString().split('.');
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return parts.join('.');
-  }
-
-  const toMiUnit: number = Math.round((data[0].value + data[1].value)) / 1000000;
-
-  const total: string = toCurrency(Math.round(toMiUnit * 100) / 100);
-
   // eslint-disable-next-line max-len
-  const BondedPercentage: number = Math.round((data[0].value / (data[0].value + data[1].value)) * 1000) / 10;
+  const BondedPercentage: number = Math.round((data.detail[0].value / (data.detail[0].value + data.detail[1].value)) * 1000) / 10;
 
   const UnbondedPercentage: number = Math.round((100 - BondedPercentage) * 10) / 10;
 
   return (
-
-    <div className={classes.root}>
+    <div className={classnames(classes.root, 'big-dipper', 'data-block')}>
       <div className={classes.container}>
 
         <h1 className={classes.titleMain}>
-          Statbilities
+          {title}
         </h1>
         <div className={classes.box}>
           <div className={classes.chartBox}>
             <PieChart width={140} height={140}>
               <Pie
-                data={data}
+                data={data.detail}
                 startAngle={70}
                 endAngle={-290}
                 innerRadius={60}
@@ -48,24 +44,19 @@ const Statbilities = (prop: Props) => {
                 dataKey="value"
               >
                 {
-                  data.map((_x: any, index: any) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                  data.detail.map((_x: any, index: any) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
                 }
               </Pie>
             </PieChart>
             <div className={classes.chartCenter}>
-              <h4 className={classes.amountInChart}>
-                {total}
-                {' '}
-                m
+              <h4 className={classnames(classes.amountInChart)}>
+                {data.total.display}
+                <div
+                  className={classnames('inChart')}
+                >
+                  {unit}
+                </div>
               </h4>
-              <div
-                className={classes.atom}
-                style={{
-                  height: '1rem', marginLeft: '0rem', marginTop: '0rem',
-                }}
-              >
-                ATOMs
-              </div>
             </div>
           </div>
           <div className={classes.boxMedium}>
@@ -73,14 +64,16 @@ const Statbilities = (prop: Props) => {
               <div className={classes.bonded} />
               <div className={classes.boxSuperSmall}>
                 <h4 className={classes.itemTitle}>
-                  Bunded (
+                  {data.detail[0].title}
+                  {' '}
+                  (
                   {BondedPercentage}
                   %)
                 </h4>
                 <div className={classes.amount}>
-                  {toCurrency(Math.round((data[0].value) * 100) / 100)}
+                  {data.detail[0].display}
                   <a className={classes.atom}>
-                    ATOM
+                    {unit}
                   </a>
                 </div>
               </div>
@@ -90,14 +83,16 @@ const Statbilities = (prop: Props) => {
 
               <div className={classes.boxSuperSmall}>
                 <h4 className={classes.itemTitle}>
-                  Unbunded (
+                  {data.detail[1].title}
+                  {' '}
+                  (
                   {UnbondedPercentage}
                   %)
                 </h4>
                 <div className={classes.amount}>
-                  {toCurrency(Math.round((data[1].value) * 100) / 100)}
+                  {data.detail[1].display}
                   <span className={classes.atom}>
-                    ATOM
+                    {unit}
                   </span>
                 </div>
               </div>
@@ -109,77 +104,57 @@ const Statbilities = (prop: Props) => {
           <div className={classes.boxBottomSmall1}>
             <h4
               className={classes.itemTitle}
-              style={{
-                marginLeft: '0rem',
-              }}
             >
-              Price
+              {price.title}
             </h4>
             <div
-              className={classes.amount}
-              style={{
-                marginBottom: '2rem',
-                marginLeft: '0rem',
-              }}
+              className={classnames(classes.amount)}
             >
-              $
-              {toCurrency(Math.round((info.price) * 100) / 100)}
+              <div
+                className={classnames('marginBottom')}
+              >
+                {price.display}
+              </div>
             </div>
             <h4
               className={classes.itemTitle}
-              style={{
-                marginLeft: '0rem',
-              }}
             >
-              Market Cap
+              {marketCap.title}
             </h4>
             <div
               className={classes.amount}
-              style={{
-                marginLeft: '0rem',
-              }}
             >
-              $
-              {toCurrency(Math.round((info.marketCap) * 100) / 100)}
+              {marketCap.display}
             </div>
           </div>
           <div className={classes.boxBottomSmall2}>
             <h4
               className={classes.itemTitle}
-              style={{
-                marginLeft: '0rem',
-              }}
             >
-              Inflation
+              {inflation.title}
             </h4>
             <div
               className={classes.amount}
-              style={{
-                marginBottom: '2rem',
-                marginLeft: '0rem',
-              }}
+
             >
-              {toCurrency(Math.round((info.inflation) * 100) / 100)}
-              {' '}
-              %
+              <div
+                className={classnames('marginBottom')}
+              >
+                {inflation.display}
+              </div>
+
             </div>
             <h4
               className={classes.itemTitle}
-              style={{
-                marginLeft: '0rem',
-              }}
             >
-              Community Pool
+              {communityPool.title}
             </h4>
             <div
               className={classes.amount}
-              style={{
-                marginLeft: '0rem',
-              }}
             >
-              {toCurrency(Math.round((info.communityPool) * 100) / 100)}
+              {communityPool.display}
               <a className={classes.atom}>
-                ATOM
+                {unit}
               </a>
             </div>
           </div>
@@ -189,4 +164,4 @@ const Statbilities = (prop: Props) => {
   );
 };
 
-export default Statbilities;
+export default Stabilities;

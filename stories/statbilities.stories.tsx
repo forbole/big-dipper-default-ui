@@ -1,13 +1,13 @@
 import React from 'react';
-import { Statbilities } from '../src';
+import { Stabilities } from '../src';
 
 export default {
-  title: 'Statbilities',
-  component: Statbilities,
+  title: 'Stabilities',
+  component: Stabilities,
 };
 
 const Template = (args) => (
-  <Statbilities
+  <Stabilities
     {...args}
   />
 );
@@ -16,13 +16,36 @@ export const Default = Template.bind({
 });
 
 Default.args = {
-  data: [{
-    name: 'bonded', value: 184136.334,
+  title: 'Stabilities',
+  unit: 'ATOM',
+  price: {
+    title: 'Price',
+    display: '$2.756',
   },
-  {
-    name: 'unbonded', value: 7099.13997,
-  }],
-  info: {
-    price: 2.75, inflation: 7.01, marketCap: 515551195.53, communityPool: 370536.4747,
+  inflation: {
+    title: 'Inflation',
+    display: '7.01%',
+  },
+  marketCap: {
+    title: 'Market Cap',
+    display: '$515,551,345.99',
+  },
+  communityPool: {
+    title: 'Community Pool',
+    display: '370,000.74',
+  },
+  data: {
+    total: {
+      value: 191235.473,
+      display: '0.19 m',
+    },
+    detail:
+    [{
+      title: 'Bonded', value: 100000, display: '100,000',
+    },
+    {
+      title: 'UnBonded', value: 91235.473, display: '91,235.473',
+    },
+    ],
   },
 };

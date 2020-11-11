@@ -1,9 +1,9 @@
 import ButtonExample from './button_example';
 import DataBlock from './data_block';
-import Statbilities from './statbilities';
+import Stabilities from './stabilities';
 
 export {
   ButtonExample,
   DataBlock,
-  Statbilities,
+  Stabilities,
 };
