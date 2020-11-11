@@ -5,10 +5,7 @@ import {
   Description,
   Primary,
   ArgsTable,
-<<<<<<< HEAD
-=======
   Stories,
->>>>>>> d1bdcf9bea64ad61917829531cda361d3adbdfb8
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
 import { addDecorator } from '@storybook/react';
