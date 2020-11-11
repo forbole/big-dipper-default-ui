@@ -28,7 +28,7 @@ const DataBlock = (props: DataBlockProps) => {
     handleChange,
     handleCallback,
   } = useDataBlockHook({
-    selectedValue,
+    selectedValue: selectedValue ?? durations[0]?.value,
     durationsCallback,
   });
 
