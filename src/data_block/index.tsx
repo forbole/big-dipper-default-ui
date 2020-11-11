@@ -16,6 +16,7 @@ const DataBlock = (props: DataBlockProps) => {
   const {
     label,
     durations = [],
+    durationsCallback,
     value,
     selectedValue,
     customComponent,
@@ -28,6 +29,7 @@ const DataBlock = (props: DataBlockProps) => {
     handleCallback,
   } = useDataBlockHook({
     selectedValue,
+    durationsCallback,
   });
 
   return (
@@ -48,7 +50,7 @@ const DataBlock = (props: DataBlockProps) => {
                   className={classnames('menu-item')}
                   key={x.value}
                   value={x.value}
-                  onClick={() => handleCallback(x.value, x?.callback)}
+                  onClick={() => handleCallback(x.value)}
                 >
                   {x.display}
                 </MenuItem>

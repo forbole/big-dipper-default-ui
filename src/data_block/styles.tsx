@@ -13,7 +13,7 @@ export const useGetStyles = () => {
       flexDirection: 'column',
       color: 'white',
       borderRadius: '6px',
-      height: '110px',
+      minHeight: '110px',
       background: theme.palette.primary.main,
       '& .header': {
         display: 'flex',
