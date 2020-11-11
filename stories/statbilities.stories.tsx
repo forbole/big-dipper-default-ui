@@ -7,6 +7,7 @@ export default {
 };
 
 const Template = (args) => (
+
   <Stabilities
     {...args}
   />

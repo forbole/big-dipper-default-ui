@@ -1,17 +1,28 @@
 import { makeStyles } from '@material-ui/styles';
+import { getMinMediaQuery } from './utils';
 
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      height: '29.5rem',
-      width: '26.75rem',
+      // height: '21.563rem',
+      // width: '22.438rem',
+      // boxSizing: 'border-box',
+      width: '100%',
+      height: '100%',
       display: 'flex',
       borderRadius: '2px',
+      background: 'red',
     },
     container: {
       height: '25.5rem',
-      width: '23.75rem',
-      margin: 'auto',
+      // width: '23.75rem',
+      width: '100%',
+      margin: '1.5rem 1rem 1.5rem 1rem',
+      // marginTop: '2rem',
+      background: 'blue',
+      [getMinMediaQuery(1080)]: {
+        margin: '2rem 1.5rem 2rem 1.5rem',
+      },
     },
     titleMain: {
       fontSize: '1.375rem',
@@ -78,19 +89,26 @@ export const useGetStyles = () => {
     },
     line: {
       height: '0.0625rem',
-      width: '23.75rem',
+      width: 'auto',
       background: '#E8E8E8',
-      margin: '1.5rem 2.53125rem 1.5rem 0',
+      // margin: '1.5rem 2.53125rem 1.5rem 0',
+      margin: '1.5rem 0 1.5rem 0',
     },
     box: {
       display: 'flex',
-      width: '22.375rem',
-      height: '8.75rem',
+      // width: '22.375rem',
+      width: 'auto',
+      // height: '8.75rem',
+      height: 'auto',
     },
     chartBox: {
       display: 'flex',
-      width: '8.75rem',
-      height: '8.75rem',
+      width: '6.75rem',
+      height: '6.75rem',
+      [getMinMediaQuery(1080)]: {
+        width: '8.75rem',
+        height: '8.75rem',
+      },
       margin: '0',
     },
     boxMedium: {
@@ -100,21 +118,25 @@ export const useGetStyles = () => {
     },
     boxSmall: {
       display: 'flex',
-      width: '15rem',
+      // width: '15rem',
+      width: 'auto',
       height: '4.375rem',
       margin: '0rem',
     },
     boxSuperSmall: {
-      width: '15rem',
+      // width: '15rem',
+      width: 'auto',
       height: '2.6875rem',
       margin: '0rem 0 0 0.5rem',
     },
     boxBottom: {
       display: 'flex',
-      width: '22.438rem',
+      // width: '22.438rem',
+      width: 'auto',
       height: '8.75rem',
       marginLeft: '0.625rem',
-      marginRight: '0.625rem',
+      // marginRight: '0.625rem',
+      marginRight: '0',
     },
     boxBottomSmall1: {
       width: '11rem',

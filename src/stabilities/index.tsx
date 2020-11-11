@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import {
-  PieChart, Pie, Cell,
+  PieChart, Pie, Cell, ResponsiveContainer,
 } from 'recharts';
 import { Props } from './types';
 import { useGetStyles } from './styles';
@@ -34,30 +34,32 @@ const Stabilities = (prop: Props) => {
         </h1>
         <div className={classes.box}>
           <div className={classes.chartBox}>
-            <PieChart width={140} height={140}>
-              <Pie
-                data={data.detail}
-                startAngle={70}
-                endAngle={-290}
-                innerRadius={60}
-                outerRadius={70}
-                dataKey="value"
-              >
-                {
-                  data.detail.map((_x: any, index: any) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                }
-              </Pie>
-            </PieChart>
-            <div className={classes.chartCenter}>
-              <h4 className={classnames(classes.amountInChart)}>
-                {data.total.display}
-                <div
-                  className={classnames('inChart')}
+          {/* <ResponsiveContainer width="100%" height="100%"> */}
+              <PieChart width={140} height={140}>
+                <Pie
+                  data={data.detail}
+                  startAngle={70}
+                  endAngle={-290}
+                  innerRadius={60}
+                  outerRadius={70}
+                  dataKey="value"
                 >
-                  {unit}
-                </div>
-              </h4>
-            </div>
+                  {
+                    data.detail.map((_x: any, index: any) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                  }
+                </Pie>
+              </PieChart>
+              <div className={classes.chartCenter}>
+                <h4 className={classnames(classes.amountInChart)}>
+                  {data.total.display}
+                  <div
+                    className={classnames('inChart')}
+                  >
+                    {unit}
+                  </div>
+                </h4>
+              </div>
+            {/* </ResponsiveContainer> */}
           </div>
           <div className={classes.boxMedium}>
             <div className={classes.boxSmall}>
