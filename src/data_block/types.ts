@@ -13,6 +13,7 @@ export interface DataBlockProps {
   value: string;
   selectedValue?: string | number;
   customComponent?: ReactElement;
+  className?: string;
 }
 
 export interface UseDataBlockHookProps {

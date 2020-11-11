@@ -19,6 +19,7 @@ const DataBlock = (props: DataBlockProps) => {
     value,
     selectedValue,
     customComponent,
+    className,
   } = props;
 
   const {
@@ -30,7 +31,7 @@ const DataBlock = (props: DataBlockProps) => {
   });
 
   return (
-    <div className={classnames(classes.root, 'big-dipper', 'data-block')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'data-block')}>
       <div className={classnames('header')}>
         <p className={classnames('label')}>
           {label}
