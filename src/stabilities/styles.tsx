@@ -11,7 +11,6 @@ export const useGetStyles = () => {
       height: '100%',
       display: 'flex',
       borderRadius: '2px',
-      background: 'red',
     },
     container: {
       height: '25.5rem',
@@ -19,7 +18,6 @@ export const useGetStyles = () => {
       width: '100%',
       margin: '1.5rem 1rem 1.5rem 1rem',
       // marginTop: '2rem',
-      background: 'blue',
       [getMinMediaQuery(1080)]: {
         margin: '2rem 1.5rem 2rem 1.5rem',
       },

@@ -7,7 +7,7 @@ describe('Stabilities', () => {
     expect(Stabilities).toBeTruthy();
     const args = {
       title: 'Stabilities',
-      unit: 'ATOM',
+      coin: 'ATOM',
       price: {
         title: 'Price',
         display: '$2.756',

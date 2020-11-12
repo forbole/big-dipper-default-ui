@@ -18,7 +18,7 @@ export const Default = Template.bind({
 
 Default.args = {
   title: 'Stabilities',
-  unit: 'ATOM',
+  coin: 'ATOM',
   price: {
     title: 'Price',
     display: '$2.756',

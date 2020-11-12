@@ -12,7 +12,7 @@ const Stabilities = (prop: Props) => {
   const { classes } = useGetStyles();
   const {
     title,
-    unit,
+    coin,
     price,
     inflation,
     marketCap,
@@ -34,8 +34,10 @@ const Stabilities = (prop: Props) => {
         </h1>
         <div className={classes.box}>
           <div className={classes.chartBox}>
-          {/* <ResponsiveContainer width="100%" height="100%"> */}
-              <PieChart width={140} height={140}>
+            <ResponsiveContainer width={140} height="100%">
+              <PieChart
+              // width={140} height={140}
+              >
                 <Pie
                   data={data.detail}
                   startAngle={70}
@@ -55,11 +57,11 @@ const Stabilities = (prop: Props) => {
                   <div
                     className={classnames('inChart')}
                   >
-                    {unit}
+                    {coin}
                   </div>
                 </h4>
               </div>
-            {/* </ResponsiveContainer> */}
+            </ResponsiveContainer>
           </div>
           <div className={classes.boxMedium}>
             <div className={classes.boxSmall}>
@@ -75,7 +77,7 @@ const Stabilities = (prop: Props) => {
                 <div className={classes.amount}>
                   {data.detail[0].display}
                   <a className={classes.atom}>
-                    {unit}
+                    {coin}
                   </a>
                 </div>
               </div>
@@ -94,7 +96,7 @@ const Stabilities = (prop: Props) => {
                 <div className={classes.amount}>
                   {data.detail[1].display}
                   <span className={classes.atom}>
-                    {unit}
+                    {coin}
                   </span>
                 </div>
               </div>
@@ -156,7 +158,7 @@ const Stabilities = (prop: Props) => {
             >
               {communityPool.display}
               <a className={classes.atom}>
-                {unit}
+                {coin}
               </a>
             </div>
           </div>

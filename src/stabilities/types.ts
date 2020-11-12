@@ -36,7 +36,7 @@ type Detail = {
 
 export interface Props {
   title: string;
-  unit: string;
+  coin: string;
   price: Price;
   inflation: Inflation;
   marketCap: MarketCap;
