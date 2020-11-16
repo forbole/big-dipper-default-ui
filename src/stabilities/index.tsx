@@ -22,7 +22,7 @@ const Stabilities = (prop: Props) => {
 
   const renderCustomizedLabel = ({
     cx, cy,
-  }:{cx: string | number | undefined; cy: string | number | undefined;}) => {
+  }:{cx: number; cy: number;}) => {
     return (
       <text className={classnames(classes.amountInChart)} fill="black" textAnchor="middle">
         <tspan y={cy} x={cx}>{data.total.display}</tspan>
