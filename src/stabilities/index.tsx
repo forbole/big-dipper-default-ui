@@ -20,8 +20,21 @@ const Stabilities = (prop: Props) => {
     data,
   } = prop;
 
+  const renderCustomizedLabel = ({
+    cx, cy,
+  }:{cx: string | number | undefined; cy: string | number | undefined;}) => {
+    return (
+      <text className={classnames(classes.amountInChart)} fill="black" textAnchor="middle">
+        <tspan y={cy} x={cx}>{data.total.display}</tspan>
+        <tspan className={classnames('inChart')} x={cx} y={cy + 20}>{coin}</tspan>
+      </text>
+    );
+  };
+
   // eslint-disable-next-line max-len
-  const BondedPercentage: number = Math.round((data.detail[0].value / (data.detail[0].value + data.detail[1].value)) * 1000) / 10;
+  // eslint-disable-next-line no-nested-ternary
+  // eslint-disable-next-line max-len
+  const BondedPercentage: number = Math.round(((data.detail[0].value ? data.detail[0].value : 0) / ((data.detail[0].value ? data.detail[0].value : 0) + (data.detail[1].value ? data.detail[1].value : 0))) * 1000) / 10;
 
   const UnbondedPercentage: number = Math.round((100 - BondedPercentage) * 10) / 10;
 
@@ -34,46 +47,38 @@ const Stabilities = (prop: Props) => {
         </h1>
         <div className={classes.box}>
           <div className={classes.chartBox}>
-            <ResponsiveContainer width={140} height="100%">
-              <PieChart
-              // width={140} height={140}
-              >
+            <ResponsiveContainer height="100%">
+              <PieChart>
                 <Pie
                   data={data.detail}
                   startAngle={70}
                   endAngle={-290}
-                  innerRadius={60}
-                  outerRadius={70}
+                  innerRadius="90%"
+                  outerRadius="100%"
                   dataKey="value"
+                  labelLine={false}
+                  label={renderCustomizedLabel}
                 >
                   {
-                    data.detail.map((_x: any, index: any) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                    data.detail.map((_x: any, index: any) => (
+                      <Cell key={_x.value} fill={COLORS[index % COLORS.length]} />
+                    ))
                   }
                 </Pie>
               </PieChart>
-              <div className={classes.chartCenter}>
-                <h4 className={classnames(classes.amountInChart)}>
-                  {data.total.display}
-                  <div
-                    className={classnames('inChart')}
-                  >
-                    {coin}
-                  </div>
-                </h4>
-              </div>
             </ResponsiveContainer>
           </div>
           <div className={classes.boxMedium}>
             <div className={classes.boxSmall}>
               <div className={classes.bonded} />
               <div className={classes.boxSuperSmall}>
-                <h4 className={classes.itemTitle}>
+                <div className={classes.itemTitle}>
                   {data.detail[0].title}
                   {' '}
                   (
                   {BondedPercentage}
                   %)
-                </h4>
+                </div>
                 <div className={classes.amount}>
                   {data.detail[0].display}
                   <a className={classes.atom}>
@@ -86,13 +91,15 @@ const Stabilities = (prop: Props) => {
               <div className={classes.unbonded} />
 
               <div className={classes.boxSuperSmall}>
-                <h4 className={classes.itemTitle}>
-                  {data.detail[1].title}
-                  {' '}
-                  (
-                  {UnbondedPercentage}
-                  %)
-                </h4>
+                <div className={classes.itemTitle}>
+                  <div className={classnames('marginTopPercentage')}>
+                    {data.detail[1].title}
+                    {' '}
+                    (
+                    {UnbondedPercentage}
+                    %)
+                  </div>
+                </div>
                 <div className={classes.amount}>
                   {data.detail[1].display}
                   <span className={classes.atom}>
@@ -106,11 +113,11 @@ const Stabilities = (prop: Props) => {
         <div className={classes.line} />
         <div className={classes.boxBottom}>
           <div className={classes.boxBottomSmall1}>
-            <h4
+            <div
               className={classes.itemTitle}
             >
               {price.title}
-            </h4>
+            </div>
             <div
               className={classnames(classes.amount)}
             >
@@ -120,11 +127,11 @@ const Stabilities = (prop: Props) => {
                 {price.display}
               </div>
             </div>
-            <h4
+            <div
               className={classes.itemTitle}
             >
               {marketCap.title}
-            </h4>
+            </div>
             <div
               className={classes.amount}
             >
@@ -132,11 +139,11 @@ const Stabilities = (prop: Props) => {
             </div>
           </div>
           <div className={classes.boxBottomSmall2}>
-            <h4
+            <div
               className={classes.itemTitle}
             >
               {inflation.title}
-            </h4>
+            </div>
             <div
               className={classes.amount}
 
@@ -148,11 +155,11 @@ const Stabilities = (prop: Props) => {
               </div>
 
             </div>
-            <h4
+            <div
               className={classes.itemTitle}
             >
               {communityPool.title}
-            </h4>
+            </div>
             <div
               className={classes.amount}
             >
