@@ -13,7 +13,7 @@ export const useGetStyles = () => {
       height: '25.5rem',
       width: '100%',
       margin: '1.5rem 1rem 1.5rem 1rem',
-      [getMinMediaQuery(1080)]: {
+      [getMinMediaQuery(1600)]: {
         margin: '2rem 1.5rem 2rem 1.5rem',
       },
     },
@@ -22,7 +22,7 @@ export const useGetStyles = () => {
       fontWeight: 500,
       margin: '0',
       marginBottom: '1rem',
-      [getMinMediaQuery(1080)]: {
+      [getMinMediaQuery(1600)]: {
         marginBottom: '1.5rem',
       },
     },
@@ -34,7 +34,7 @@ export const useGetStyles = () => {
       '& .marginTopPercentage': {
         marginTop: '6%',
       },
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         fontSize: '0.875rem',
       },
     },
@@ -45,7 +45,7 @@ export const useGetStyles = () => {
       '& .marginBottom': {
         marginBottom: '2rem',
       },
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         fontSize: '1.25rem',
       },
     },
@@ -66,11 +66,11 @@ export const useGetStyles = () => {
         marginLeft: '0rem',
         marginTop: '0rem',
         fontSize: '0.75rem',
-        [getMinMediaQuery(400)]: {
+        [getMinMediaQuery(1600)]: {
           fontSize: '0.875rem',
         },
       },
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         fontSize: '1.25rem',
       },
     },
@@ -82,7 +82,7 @@ export const useGetStyles = () => {
       marginTop: '0rem',
       fontSize: '0.75rem',
       // lineHeight: '2rem',
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         fontSize: '0.875rem',
       },
     },
@@ -99,7 +99,7 @@ export const useGetStyles = () => {
       marginTop: '0',
       marginLeft: '7%',
       borderRadius: '8px',
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         marginLeft: '15%',
       },
 
@@ -112,7 +112,7 @@ export const useGetStyles = () => {
       marginTop: '7%',
       marginLeft: '7%',
       borderRadius: '8px',
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         marginLeft: '15%',
       },
     },
@@ -133,7 +133,7 @@ export const useGetStyles = () => {
       height: '100px',
       margin: '0',
       background: 'white',
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         height: '160px',
       },
     },
@@ -142,7 +142,7 @@ export const useGetStyles = () => {
       height: '70%',
       margin: 'auto',
       marginLeft: '0',
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         marginLeft: '0',
       },
     },
@@ -164,7 +164,7 @@ export const useGetStyles = () => {
       height: '8.75rem',
       marginLeft: '0rem',
       marginRight: '0',
-      [getMinMediaQuery(400)]: {
+      [getMinMediaQuery(1600)]: {
         marginLeft: '0.625rem',
       },
     },
