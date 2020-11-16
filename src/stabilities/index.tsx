@@ -22,7 +22,7 @@ const Stabilities = (prop: Props) => {
 
   const renderCustomizedLabel = ({
     cx, cy,
-  }:{cx: number; cy: number;}) => {
+  }:any) => {
     return (
       <text className={classnames(classes.amountInChart)} fill="black" textAnchor="middle">
         <tspan y={cy} x={cx}>{data.total.display}</tspan>
@@ -81,9 +81,9 @@ const Stabilities = (prop: Props) => {
                 </div>
                 <div className={classes.amount}>
                   {data.detail[0].display}
-                  <a className={classes.atom}>
+                  <tspan className={classes.atom}>
                     {coin}
-                  </a>
+                  </tspan>
                 </div>
               </div>
             </div>
@@ -132,11 +132,11 @@ const Stabilities = (prop: Props) => {
             >
               {marketCap.title}
             </div>
-            <div
+            <p
               className={classes.amount}
             >
               {marketCap.display}
-            </div>
+            </p>
           </div>
           <div className={classes.boxBottomSmall2}>
             <div
@@ -144,30 +144,28 @@ const Stabilities = (prop: Props) => {
             >
               {inflation.title}
             </div>
-            <div
+            <p
               className={classes.amount}
-
             >
               <div
                 className={classnames('marginBottom')}
               >
                 {inflation.display}
               </div>
-
-            </div>
+            </p>
             <div
               className={classes.itemTitle}
             >
               {communityPool.title}
             </div>
-            <div
+            <p
               className={classes.amount}
             >
               {communityPool.display}
-              <a className={classes.atom}>
+              <tspan className={classes.atom}>
                 {coin}
-              </a>
-            </div>
+              </tspan>
+            </p>
           </div>
         </div>
       </div>

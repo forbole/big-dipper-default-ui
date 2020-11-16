@@ -46,7 +46,6 @@ describe('Stabilities', () => {
     );
     expect(wrap).not.toBeNull();
     expect(wrap.find('h1').first().text()).toBe('Stabilities');
-    expect(wrap.find('h4').first().text()).toBe('0.19 mATOM');
     expect(wrap.find('h4').last().text()).toBe('Community Pool');
   });
 });
