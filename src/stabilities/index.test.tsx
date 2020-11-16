@@ -45,6 +45,8 @@ describe('Stabilities', () => {
       />,
     );
     expect(wrap).not.toBeNull();
+    expect(wrap.find(Stabilities)).toHaveLength(1);
+    expect(wrap.find('.marginBottom')).toHaveLength(2);
     expect(wrap.find('h1').first().text()).toBe('Stabilities');
     expect(wrap.find('div').last().text()).toBe('Community Pool');
   });
