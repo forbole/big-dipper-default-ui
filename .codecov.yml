@@ -6,7 +6,7 @@ coverage:
     - "dist/**/*"
     - "node_modules/**/*"
     - "stories/**/*"
-    - "stories/**/*"
+    - "src/stabilities/**/*"
 
   status:
     project:
