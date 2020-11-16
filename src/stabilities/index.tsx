@@ -81,9 +81,9 @@ const Stabilities = (prop: Props) => {
                 </div>
                 <div className={classes.amount}>
                   {data.detail[0].display}
-                  <tspan className={classes.atom}>
+                  <span className={classes.atom}>
                     {coin}
-                  </tspan>
+                  </span>
                 </div>
               </div>
             </div>
@@ -162,9 +162,9 @@ const Stabilities = (prop: Props) => {
               className={classes.amount}
             >
               {communityPool.display}
-              <tspan className={classes.atom}>
+              <span className={classes.atom}>
                 {coin}
-              </tspan>
+              </span>
             </p>
           </div>
         </div>
