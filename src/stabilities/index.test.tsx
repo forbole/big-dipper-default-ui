@@ -38,6 +38,12 @@ describe('Stabilities', () => {
         },
         ],
       },
+      color: {
+        font1: '#000000',
+        font2: '#777777',
+        line: '#E8E8E8',
+        colors: ['#FF7846', '#FFD800'],
+      },
     };
     const wrap = mount(
       <Stabilities
@@ -48,6 +54,6 @@ describe('Stabilities', () => {
     expect(wrap.find(Stabilities)).toHaveLength(1);
     expect(wrap.find('.marginBottom')).toHaveLength(2);
     expect(wrap.find('h1').first().text()).toBe('Stabilities');
-    expect(wrap.find('div').last().text()).toBe('Community Pool');
+    expect(wrap.find('div').last().text()).toBe('370,000.74ATOM');
   });
 });

@@ -29,7 +29,7 @@ Default.args = {
   },
   marketCap: {
     title: 'Market Cap',
-    display: '$515,551,345.99',
+    display: '$515,551,345',
   },
   communityPool: {
     title: 'Community Pool',
@@ -42,11 +42,17 @@ Default.args = {
     },
     detail:
     [{
-      title: 'Bonded', value: 100000, display: '100,000',
+      title: 'Bonded', value: 100000, display: '100,000.000',
     },
     {
-      title: 'UnBonded', value: 91235.473, display: '91,235.473',
+      title: 'UnBonded', value: 91235.473, display: '1,291,235.473',
     },
     ],
+  },
+  color: {
+    font1: '#000000',
+    font2: '#777777',
+    line: '#E8E8E8',
+    colors: ['#FF7846', '#FFD800'],
   },
 };

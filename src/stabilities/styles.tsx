@@ -4,13 +4,14 @@ import { getMinMediaQuery } from './utils';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      width: '100%',
-      height: '100%',
+      maxWidth: '99%',
+      height: 'auto',
       display: 'flex',
       borderRadius: '2px',
+      overflow: 'scroll',
     },
     container: {
-      height: '25.5rem',
+      height: 'auto',
       width: '100%',
       margin: '1.5rem 1rem 1.5rem 1rem',
       [getMinMediaQuery(1600)]: {
@@ -32,7 +33,7 @@ export const useGetStyles = () => {
       margin: '0',
       color: '#777777',
       '& .marginTopPercentage': {
-        marginTop: '6%',
+        marginTop: '8%',
       },
       [getMinMediaQuery(1600)]: {
         fontSize: '0.875rem',
@@ -44,6 +45,7 @@ export const useGetStyles = () => {
       margin: '0rem 0 0 0rem',
       '& .marginBottom': {
         marginBottom: '2rem',
+        maxMarginBottom: '1.5rem',
       },
       [getMinMediaQuery(1600)]: {
         fontSize: '1.25rem',
@@ -65,7 +67,7 @@ export const useGetStyles = () => {
         height: '1rem',
         marginLeft: '0rem',
         marginTop: '0rem',
-        fontSize: '0.75rem',
+        fontSize: '0.5rem',
         [getMinMediaQuery(1600)]: {
           fontSize: '0.875rem',
         },
@@ -81,40 +83,30 @@ export const useGetStyles = () => {
       marginLeft: '0rem',
       marginTop: '0rem',
       fontSize: '0.75rem',
-      // lineHeight: '2rem',
       [getMinMediaQuery(1600)]: {
         fontSize: '0.875rem',
       },
     },
     atom: {
-      fontSize: '0.875rem',
+      fontSize: '0.5rem',
       fontWeight: 400,
-      margin: '0rem 0 0 0.5rem',
+      margin: '0rem 0 0 0.25rem',
     },
     bonded: {
       display: 'block',
       width: '0.25rem',
       height: '2.375rem',
-      background: '#FF7846',
       marginTop: '0',
-      marginLeft: '7%',
+      marginLeft: '5%',
       borderRadius: '8px',
-      [getMinMediaQuery(1600)]: {
-        marginLeft: '15%',
-      },
-
     },
     unbonded: {
       display: 'flex',
       width: '0.25rem',
       height: '2.375rem',
-      background: '#FFD800',
       marginTop: '7%',
-      marginLeft: '7%',
+      marginLeft: '5%',
       borderRadius: '8px',
-      [getMinMediaQuery(1600)]: {
-        marginLeft: '15%',
-      },
     },
     line: {
       height: '0.0625rem',
@@ -129,39 +121,50 @@ export const useGetStyles = () => {
     },
     chartBox: {
       display: 'flex',
-      width: '40%',
-      height: '100px',
+      width: '45%',
+      height: 'auto',
       margin: '0',
-      background: 'white',
+      [getMinMediaQuery(1080)]: {
+        width: '40%',
+      },
       [getMinMediaQuery(1600)]: {
-        height: '160px',
+        width: '50%',
+        height: '150px',
       },
     },
     boxMedium: {
-      width: '60%',
+      width: '55%',
       height: '70%',
       margin: 'auto',
       marginLeft: '0',
+      [getMinMediaQuery(1080)]: {
+        width: '60%',
+      },
       [getMinMediaQuery(1600)]: {
         marginLeft: '0',
+        width: '50%',
       },
     },
     boxSmall: {
       display: 'flex',
       width: '100%',
+      maxWidth: '100%',
+      overflow: 'hidden',
       height: '50%',
       margin: '0rem',
     },
     boxSuperSmall: {
       width: '100%',
+      maxWidth: '100%',
+      overflow: 'hidden',
       height: '50%',
-      margin: '0rem 0 0 0.5rem',
-      background: 'white',
+      margin: '0rem 0 0 0rem',
+      marginLeft: '5%',
     },
     boxBottom: {
       display: 'flex',
       width: '100%',
-      height: '8.75rem',
+      height: '30%',
       marginLeft: '0rem',
       marginRight: '0',
       [getMinMediaQuery(1600)]: {
@@ -170,10 +173,6 @@ export const useGetStyles = () => {
     },
     boxBottomSmall1: {
       width: '50%',
-      height: '8.75rem',
-    },
-    boxBottomSmall2: {
-      height: '8.75rem',
     },
   });
 

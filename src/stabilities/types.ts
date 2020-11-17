@@ -34,6 +34,13 @@ type Detail = {
   display: string;
 }
 
+type Color = {
+  font1: string;
+  font2: string;
+  line: string;
+  colors: string[];
+}
+
 export interface Props {
   title: string;
   coin: string;
@@ -42,4 +49,5 @@ export interface Props {
   marketCap: MarketCap;
   communityPool: CommunityPool;
   data: Data;
+  color: Color;
 }

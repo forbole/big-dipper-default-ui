@@ -6,7 +6,7 @@ import {
 import { Props } from './types';
 import { useGetStyles } from './styles';
 
-const COLORS = ['#FF7846', '#FFD800'];
+// const COLORS = ['#FF7846', '#FFD800'];
 
 const Stabilities = (prop: Props) => {
   const { classes } = useGetStyles();
@@ -18,15 +18,16 @@ const Stabilities = (prop: Props) => {
     marketCap,
     communityPool,
     data,
+    color,
   } = prop;
 
   const renderCustomizedLabel = ({
     cx, cy,
-  }:any) => {
+  }: any) => {
     return (
       <text className={classnames(classes.amountInChart)} fill="black" textAnchor="middle">
         <tspan y={cy} x={cx}>{data.total.display}</tspan>
-        <tspan className={classnames('inChart')} x={cx} y={cy + 20}>{coin}</tspan>
+        <tspan className={classnames('inChart')} x={cx} y={cy + 15}>{coin}</tspan>
       </text>
     );
   };
@@ -42,7 +43,12 @@ const Stabilities = (prop: Props) => {
     <div className={classnames(classes.root, 'big-dipper', 'data-block')}>
       <div className={classes.container}>
 
-        <h1 className={classes.titleMain}>
+        <h1
+          className={classes.titleMain}
+          style={{
+            color: color.font1,
+          }}
+        >
           {title}
         </h1>
         <div className={classes.box}>
@@ -53,7 +59,7 @@ const Stabilities = (prop: Props) => {
                   data={data.detail}
                   startAngle={70}
                   endAngle={-290}
-                  innerRadius="90%"
+                  innerRadius="85%"
                   outerRadius="100%"
                   dataKey="value"
                   labelLine={false}
@@ -61,7 +67,7 @@ const Stabilities = (prop: Props) => {
                 >
                   {
                     data.detail.map((_x: any, index: any) => (
-                      <Cell key={_x.value} fill={COLORS[index % COLORS.length]} />
+                      <Cell key={_x.value} fill={color.colors[index % color.colors.length]} />
                     ))
                   }
                 </Pie>
@@ -70,7 +76,12 @@ const Stabilities = (prop: Props) => {
           </div>
           <div className={classes.boxMedium}>
             <div className={classes.boxSmall}>
-              <div className={classes.bonded} />
+              <div
+                className={classes.bonded}
+                style={{
+                  background: color.colors[0],
+                }}
+              />
               <div className={classes.boxSuperSmall}>
                 <div className={classes.itemTitle}>
                   {data.detail[0].title}
@@ -88,8 +99,12 @@ const Stabilities = (prop: Props) => {
               </div>
             </div>
             <div className={classes.boxSmall}>
-              <div className={classes.unbonded} />
-
+              <div
+                className={classes.unbonded}
+                style={{
+                  background: color.colors[1],
+                }}
+              />
               <div className={classes.boxSuperSmall}>
                 <div className={classes.itemTitle}>
                   <div className={classnames('marginTopPercentage')}>
@@ -118,6 +133,7 @@ const Stabilities = (prop: Props) => {
             >
               {price.title}
             </div>
+
             <div
               className={classnames(classes.amount)}
             >
@@ -127,24 +143,26 @@ const Stabilities = (prop: Props) => {
                 {price.display}
               </div>
             </div>
+
             <div
               className={classes.itemTitle}
             >
               {marketCap.title}
             </div>
-            <p
+            <div
               className={classes.amount}
             >
               {marketCap.display}
-            </p>
+            </div>
           </div>
-          <div className={classes.boxBottomSmall2}>
+          <div>
             <div
               className={classes.itemTitle}
             >
               {inflation.title}
             </div>
-            <p
+
+            <div
               className={classes.amount}
             >
               <div
@@ -152,20 +170,20 @@ const Stabilities = (prop: Props) => {
               >
                 {inflation.display}
               </div>
-            </p>
+            </div>
             <div
               className={classes.itemTitle}
             >
               {communityPool.title}
             </div>
-            <p
+            <div
               className={classes.amount}
             >
               {communityPool.display}
               <span className={classes.atom}>
                 {coin}
               </span>
-            </p>
+            </div>
           </div>
         </div>
       </div>
