@@ -50,4 +50,5 @@ export interface Props {
   communityPool: CommunityPool;
   data: Data;
   color: Color;
+  classname: string;
 }

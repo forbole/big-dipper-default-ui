@@ -9,6 +9,27 @@ export const useGetStyles = () => {
       display: 'flex',
       borderRadius: '2px',
       overflow: 'scroll',
+      '& h1': {
+        fontSize: '1.375rem',
+        fontWeight: 500,
+        margin: '0',
+        marginBottom: '1rem',
+        [getMinMediaQuery(1600)]: {
+          marginBottom: '1.5rem',
+        },
+      },
+      '& .itemTitle': {
+        fontSize: '0.75rem',
+        fontWeight: 300,
+        margin: '0',
+        color: '#777777',
+        '& .marginTopPercentage': {
+          marginTop: '8%',
+        },
+        [getMinMediaQuery(1600)]: {
+          fontSize: '0.875rem',
+        },
+      },
     },
     container: {
       height: 'auto',
@@ -18,27 +39,7 @@ export const useGetStyles = () => {
         margin: '2rem 1.5rem 2rem 1.5rem',
       },
     },
-    titleMain: {
-      fontSize: '1.375rem',
-      fontWeight: 500,
-      margin: '0',
-      marginBottom: '1rem',
-      [getMinMediaQuery(1600)]: {
-        marginBottom: '1.5rem',
-      },
-    },
-    itemTitle: {
-      fontSize: '0.75rem',
-      fontWeight: 300,
-      margin: '0',
-      color: '#777777',
-      '& .marginTopPercentage': {
-        marginTop: '8%',
-      },
-      [getMinMediaQuery(1600)]: {
-        fontSize: '0.875rem',
-      },
-    },
+
     amount: {
       fontSize: '1rem',
       fontWeight: 400,
