@@ -15,7 +15,7 @@ const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-mobile')}>
       {data.map((x) => {
         return (
-          <div className={classnames('single-block')}>
+          <div className={classnames('single-block')} key={x.time.value}>
             <div className={classnames('flex')}>
               <span className={classnames('proposer')}>
                 <x.proposer.value />
