@@ -5,7 +5,17 @@ import {
 export const useGetStyles = () => {
   const useStyles = makeStyles((theme: any) => createStyles({
     root: {
-      background: 'skyblue',
+      padding: '1rem',
+      '& .top-bar': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        '& h3': {
+          fontSize: '1.1125rem',
+          margin: 0,
+          fontWeight: 600,
+        },
+      },
     },
   }));
 

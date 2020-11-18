@@ -5,11 +5,30 @@ import { TablePreviewWrapperProps } from './types';
 
 const TablePreviewWrapper = (props:TablePreviewWrapperProps) => {
   const { classes } = useGetStyles();
-  const { className } = props;
+  const {
+    className,
+    children,
+    title,
+    action: Action,
+    footerAction: FooterAction,
+  } = props;
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'table-preview-wrapper')}>
-      im a preview wrapper
+      <div className={classnames('top-bar')}>
+        <h3>
+          {title}
+        </h3>
+        <Action />
+      </div>
+      <div className={classnames('content')}>
+        {children}
+      </div>
+      {!!FooterAction && (
+      <div className={classnames('footer-action')}>
+        <FooterAction />
+      </div>
+      )}
     </div>
   );
 };
