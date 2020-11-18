@@ -5,6 +5,7 @@ import {
 import {
   ActionButton, FooterAction,
 } from './utils/table_preview_wrapper';
+import { dummyData } from './utils/latest_blocks';
 
 export default {
   title: 'LatestBlocksMobile',
@@ -31,7 +32,7 @@ export default {
 
 export const Default = () => {
   return (
-    <LatestBlocksMobile />
+    <LatestBlocksMobile data={dummyData} />
   );
 };
 
@@ -42,7 +43,7 @@ export const WithWrapper = () => {
       action={ActionButton}
       footerAction={FooterAction}
     >
-      <LatestBlocksMobile />
+      <LatestBlocksMobile data={dummyData} />
     </TablePreviewWrapper>
   );
 };
