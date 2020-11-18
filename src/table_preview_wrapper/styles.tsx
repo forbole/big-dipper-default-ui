@@ -1,9 +1,7 @@
-import {
-  makeStyles, createStyles,
-} from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 
 export const useGetStyles = () => {
-  const useStyles = makeStyles((theme: any) => createStyles({
+  const useStyles = makeStyles({
     root: {
       padding: '1rem',
       '& .top-bar': {
@@ -17,7 +15,7 @@ export const useGetStyles = () => {
         },
       },
     },
-  }));
+  });
 
   return {
     classes: useStyles(),
