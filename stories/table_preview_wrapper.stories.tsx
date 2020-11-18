@@ -67,7 +67,7 @@ export const Default = () => {
       footerAction={FooterAction}
     >
       <div>
-        us tincidunt. Morbi tristique eget elit vitae condimentum. Donec eleifend imperdiet nisl eget laoreet. Sed ultrices risus sit amet urna lacinia, quis congue est feugiat. Sed facilisis vel nisi ut blandit. Maecenas cursus, ante a maximus suscipit, elit nulla interdum nunc, vel bibendum lacus velit et tellus. Etiam quis ipsum sed orci lacinia ornare viverra et massa. Sed nec tempus dolor.
+        us tincidunt. Morbi tristique ege
       </div>
     </TablePreviewWrapper>
   );
