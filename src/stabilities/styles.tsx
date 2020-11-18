@@ -4,7 +4,7 @@ import { getMinMediaQuery } from './utils';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      maxWidth: '99%',
+      maxWidth: '100%',
       height: 'auto',
       display: 'flex',
       borderRadius: '2px',
@@ -30,40 +30,29 @@ export const useGetStyles = () => {
           fontSize: '0.875rem',
         },
       },
-    },
-    container: {
-      height: 'auto',
-      width: '100%',
-      margin: '1.5rem 1rem 1.5rem 1rem',
-      [getMinMediaQuery(1600)]: {
-        margin: '2rem 1.5rem 2rem 1.5rem',
+      '& .amount': {
+        fontSize: '1rem',
+        fontWeight: 400,
+        margin: '0rem 0 0 0rem',
+        color: '#000000',
+        '& .marginBottom': {
+          marginBottom: '2rem',
+          maxMarginBottom: '1.5rem',
+        },
+        [getMinMediaQuery(1600)]: {
+          fontSize: '1.25rem',
+        },
       },
-    },
-
-    amount: {
-      fontSize: '1rem',
-      fontWeight: 400,
-      margin: '0rem 0 0 0rem',
-      '& .marginBottom': {
-        marginBottom: '2rem',
-        maxMarginBottom: '1.5rem',
+      '& .amountInChart': {
+        fontSize: '1rem',
+        fontWeight: 400,
+        margin: '0',
+        height: '1.65rem',
+        color: '#000000',
+        [getMinMediaQuery(1600)]: {
+          fontSize: '1.25rem',
+        },
       },
-      [getMinMediaQuery(1600)]: {
-        fontSize: '1.25rem',
-      },
-    },
-    chartCenter: {
-      width: 'height',
-      height: '99%',
-      margin: '3.3rem 0 0 0',
-      position: 'absolute',
-      textAlign: 'center',
-    },
-    amountInChart: {
-      fontSize: '1rem',
-      fontWeight: 400,
-      margin: '0',
-      height: '1.65rem',
       '& .inChart': {
         height: '1rem',
         marginLeft: '0rem',
@@ -73,9 +62,27 @@ export const useGetStyles = () => {
           fontSize: '0.875rem',
         },
       },
-      [getMinMediaQuery(1600)]: {
-        fontSize: '1.25rem',
+      '& .line': {
+        height: '0.0625rem',
+        width: 'auto',
+        background: '#E8E8E8',
+        margin: '1.5rem 0 1.5rem 0',
       },
+    },
+    container: {
+      height: 'auto',
+      width: '100%',
+      margin: '1.5rem 1rem 1.5rem 1rem',
+      [getMinMediaQuery(1600)]: {
+        margin: '2rem 1.5rem 2rem 1.5rem',
+      },
+    },
+    chartCenter: {
+      width: 'height',
+      height: '99%',
+      margin: '3.3rem 0 0 0',
+      position: 'absolute',
+      textAlign: 'center',
     },
     coinInChart: {
       fontWeight: 400,
@@ -100,6 +107,7 @@ export const useGetStyles = () => {
       marginTop: '0',
       marginLeft: '5%',
       borderRadius: '8px',
+      background: '#FF7846',
     },
     unbonded: {
       display: 'flex',
@@ -108,12 +116,7 @@ export const useGetStyles = () => {
       marginTop: '7%',
       marginLeft: '5%',
       borderRadius: '8px',
-    },
-    line: {
-      height: '0.0625rem',
-      width: 'auto',
-      background: '#E8E8E8',
-      margin: '1.5rem 0 1.5rem 0',
+      background: '#FFD800',
     },
     box: {
       display: 'flex',

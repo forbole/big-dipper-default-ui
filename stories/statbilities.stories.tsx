@@ -49,10 +49,4 @@ Default.args = {
     },
     ],
   },
-  color: {
-    font1: '#000000',
-    font2: '#777777',
-    line: '#E8E8E8',
-    colors: ['#FF7846', '#FFD800'],
-  },
 };
