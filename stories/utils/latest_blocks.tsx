@@ -4,10 +4,10 @@ import { Data } from '../../src/latest_blocks_mobile/types';
 export const dummyData:Data[] = [
   {
     proposer: {
-      value: () => <div>Forbole</div>,
+      value: () => <p>Forbole</p>,
     },
     height: {
-      value: () => <div>100,002</div>,
+      value: () => <p>100,002</p>,
     },
     time: {
       value: '10 Jan 2020,13:00:22 UTC',
@@ -22,10 +22,10 @@ export const dummyData:Data[] = [
   },
   {
     proposer: {
-      value: () => <div>Forbole</div>,
+      value: () => <p>Forbole</p>,
     },
     height: {
-      value: () => <div>100,002</div>,
+      value: () => <p>100,002</p>,
     },
     time: {
       value: '10 Jan 2020,13:00:22 UTC',
@@ -39,10 +39,10 @@ export const dummyData:Data[] = [
     },
   }, {
     proposer: {
-      value: () => <div>Forbole</div>,
+      value: () => <p>Forbole</p>,
     },
     height: {
-      value: () => <div>100,002</div>,
+      value: () => <p>100,002</p>,
     },
     time: {
       value: '10 Jan 2020,13:00:22 UTC',
@@ -56,10 +56,10 @@ export const dummyData:Data[] = [
     },
   }, {
     proposer: {
-      value: () => <div>Forbole</div>,
+      value: () => <p>Forbole</p>,
     },
     height: {
-      value: () => <div>100,002</div>,
+      value: () => <p>100,002</p>,
     },
     time: {
       value: '10 Jan 2020,13:00:22 UTC',
@@ -73,10 +73,10 @@ export const dummyData:Data[] = [
     },
   }, {
     proposer: {
-      value: () => <div>Forbole</div>,
+      value: () => <p>Forbole</p>,
     },
     height: {
-      value: () => <div>100,002</div>,
+      value: () => <p>100,002</p>,
     },
     time: {
       value: '10 Jan 2020,13:00:22 UTC',
@@ -90,10 +90,10 @@ export const dummyData:Data[] = [
     },
   }, {
     proposer: {
-      value: () => <div>Forbole</div>,
+      value: () => <p>Forbole</p>,
     },
     height: {
-      value: () => <div>100,002</div>,
+      value: () => <p>100,002</p>,
     },
     time: {
       value: '10 Jan 2020,13:00:22 UTC',

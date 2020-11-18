@@ -4,7 +4,6 @@ export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
       padding: '1rem',
-      background: 'green',
       borderRadius: '6px',
       '& .top-bar': {
         display: 'flex',

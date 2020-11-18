@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { useGetStyles } from './styles';
 import { LatestBlocksMobileProps } from './types';
+import { formatHash } from './utils';
 
 const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
   const { classes } = useGetStyles();
@@ -24,7 +25,7 @@ const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
               </span>
             </div>
             <div className={classnames('flex')}>
-              <p className={classnames('hash')}>{x.hash.value}</p>
+              <p className={classnames('hash')}>{formatHash(x.hash.value)}</p>
               <p className={classnames('tx')}>
                 {x.tx.label}
                 <span className={classnames('decorator')}>:&nbsp;</span>
