@@ -3,7 +3,7 @@ import {
   LatestBlocksDesktop, TablePreviewWrapper,
 } from '../src';
 import { ActionButton } from './utils/table_preview_wrapper';
-import { dummyData } from './utils/latest_blocks';
+import { desktopDummyData } from './utils/latest_blocks';
 
 export default {
   title: 'LatestBlocks/desktop',
@@ -30,7 +30,7 @@ export default {
 
 export const Default = () => {
   return (
-    <LatestBlocksDesktop data={dummyData} />
+    <LatestBlocksDesktop data={desktopDummyData} />
   );
 };
 
@@ -40,7 +40,7 @@ export const WithWrapper = () => {
       title="Latest Blocks"
       action={ActionButton}
     >
-      <LatestBlocksDesktop data={dummyData} />
+      <LatestBlocksDesktop data={desktopDummyData} />
     </TablePreviewWrapper>
   );
 };

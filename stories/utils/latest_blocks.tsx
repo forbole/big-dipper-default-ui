@@ -104,3 +104,28 @@ export const dummyData:Data[] = [
     },
   },
 ];
+
+export const desktopDummyData = [
+  {
+    proposer: {
+      value: Proposer,
+      label: 'Proposer',
+    },
+    height: {
+      value: Height,
+      label: 'Height',
+    },
+    time: {
+      value: '10 Jan 2020,13:00:22 UTC',
+      label: 'Time',
+    },
+    hash: {
+      value: '89832B67F594asddw32',
+      label: 'Hash',
+    },
+    tx: {
+      value: 2,
+      label: 'Txs',
+    },
+  },
+];

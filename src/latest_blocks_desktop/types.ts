@@ -6,12 +6,16 @@ export type Data = {
   time: string
   hash: string
   tx: string | number;
-}
+};
 
-export interface LatestBlocksMobileProps {
+export interface LatestBlocksDesktopProps {
   className?: string;
   labels: {
-    tx: string;
-  };
+    proposer: string;
+    height: string;
+    time: string;
+    hash: string;
+    tx: string
+  }
   data: Data[]
 }
