@@ -39,11 +39,11 @@ const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
                   {row.hash}
                 </TableCell>
                 <TableCell className={classnames('cell', 'proposer')}>
-                  <row.proposer />
+                  {row.proposer}
                 </TableCell>
                 <TableCell align="right" className={classnames('cell', 'tx')}>{row.tx}</TableCell>
                 <TableCell align="right" className={classnames('cell', 'height')}>
-                  <row.height />
+                  {row.height}
                 </TableCell>
               </TableRow>
             );
