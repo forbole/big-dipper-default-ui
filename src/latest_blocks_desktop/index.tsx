@@ -1,36 +1,49 @@
 import React from 'react';
+import classnames from 'classnames';
 import {
   Table, TableBody, TableCell, TableHead, TableRow,
 } from '@material-ui/core';
 import { LatestBlocksDesktopProps } from './types';
+import { useGetStyles } from './styles';
 
 const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
-  const { data } = props;
-  console.log(data, 'my data');
+  const {
+    data, labels, className,
+  } = props;
+  const { classes } = useGetStyles();
+
   return (
-    <div>
-      <Table aria-label="simple table">
+    <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-desktop')}>
+      <Table className={classnames('table')}>
         <TableHead>
           <TableRow>
-            <TableCell>{data.time.label}</TableCell>
-            <TableCell align="right">{data.hash.label}</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell className={classnames('label', 'time')}>{labels.time}</TableCell>
+            <TableCell className={classnames('label', 'hash')}>{labels.hash}</TableCell>
+            <TableCell className={classnames('label', 'proposer')}>{labels.proposer}</TableCell>
+            <TableCell align="right" className={classnames('label', 'tx')}>{labels.tx}</TableCell>
+            <TableCell align="right" className={classnames('label', 'height')}>{labels.height}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          ))}
+          {data.map((row) => {
+            return (
+              <TableRow key={row.time}>
+                <TableCell className={classnames('cell', 'time')}>
+                  {row.time}
+                </TableCell>
+                <TableCell className={classnames('cell', 'hash')}>
+                  {row.hash}
+                </TableCell>
+                <TableCell className={classnames('cell', 'proposer')}>
+                  <row.proposer />
+                </TableCell>
+                <TableCell align="right" className={classnames('cell', 'tx')}>{row.tx}</TableCell>
+                <TableCell align="right" className={classnames('cell', 'height')}>
+                  <row.height />
+                </TableCell>
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </div>

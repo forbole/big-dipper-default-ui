@@ -9,30 +9,31 @@ const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
   const {
     className,
     data,
+    labels,
   } = props;
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-mobile')}>
       {data.map((x) => {
         return (
-          <div className={classnames('single-block')} key={x.time.value}>
+          <div className={classnames('single-block')} key={x.time}>
             <div className={classnames('flex')}>
               <span className={classnames('proposer')}>
-                <x.proposer.value />
+                <x.proposer />
               </span>
               <span className={classnames('height')}>
-                <x.height.value />
+                <x.height />
               </span>
             </div>
             <div className={classnames('flex')}>
-              <p className={classnames('hash')}>{formatHash(x.hash.value)}</p>
+              <p className={classnames('hash')}>{formatHash(x.hash)}</p>
               <p className={classnames('tx')}>
-                {x.tx.label}
+                {labels.tx}
                 <span className={classnames('decorator')}>:&nbsp;</span>
-                {x.tx.value}
+                {x.tx}
               </p>
             </div>
-            <p className={classnames('time')}>{x.time.value}</p>
+            <p className={classnames('time')}>{x.time}</p>
           </div>
         );
       })}

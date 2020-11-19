@@ -30,102 +30,52 @@ const Height = () => {
   );
 };
 
+export const dummyLabelMobile = {
+  tx: 'tx',
+};
+
+export const dummyLabelDesktop = {
+  proposer: 'Proposer',
+  height: 'Height',
+  time: 'Time',
+  hash: 'Hash',
+  tx: 'TXs',
+};
+
 export const dummyData:Data[] = [
   {
-    proposer: {
-      value: Proposer,
-    },
-    height: {
-      value: Height,
-    },
-    time: {
-      value: '10 Jan 2020,13:00:22 UTC',
-    },
-    hash: {
-      value: '89832B67F594asddw32',
-    },
-    tx: {
-      value: 2,
-      label: 'tx',
-    },
+    proposer: Proposer,
+    height: Height,
+    time: '10 Jan 2020,13:00:22 UTC',
+    hash: '89832B67F594asddw32',
+    tx: 2,
   },
   {
-    proposer: {
-      value: Proposer,
-    },
-    height: {
-      value: Height,
-    },
-    time: {
-      value: '10 Jan 2020,13:00:22 UTC',
-    },
-    hash: {
-      value: '89832B67F594asddw32',
-    },
-    tx: {
-      value: 2,
-      label: 'tx',
-    },
+    proposer: Proposer,
+    height: Height,
+    time: '10 Jan 2020,13:00:22 UTC',
+    hash: '89832B67F594asddw32',
+    tx: 2,
   },
   {
-    proposer: {
-      value: Proposer,
-    },
-    height: {
-      value: Height,
-    },
-    time: {
-      value: '10 Jan 2020,13:00:22 UTC',
-    },
-    hash: {
-      value: '89832B67F594asddw32',
-    },
-    tx: {
-      value: 2,
-      label: 'tx',
-    },
+    proposer: Proposer,
+    height: Height,
+    time: '10 Jan 2020,13:00:22 UTC',
+    hash: '89832B67F594asddw32',
+    tx: 2,
   },
   {
-    proposer: {
-      value: Proposer,
-    },
-    height: {
-      value: Height,
-    },
-    time: {
-      value: '10 Jan 2020,13:00:22 UTC',
-    },
-    hash: {
-      value: '89832B67F594asddw32',
-    },
-    tx: {
-      value: 2,
-      label: 'tx',
-    },
+    proposer: Proposer,
+    height: Height,
+    time: '10 Jan 2020,13:00:22 UTC',
+    hash: '89832B67F594asddw32',
+    tx: 2,
   },
-];
-
-export const desktopDummyData = [
   {
-    proposer: {
-      value: Proposer,
-      label: 'Proposer',
-    },
-    height: {
-      value: Height,
-      label: 'Height',
-    },
-    time: {
-      value: '10 Jan 2020,13:00:22 UTC',
-      label: 'Time',
-    },
-    hash: {
-      value: '89832B67F594asddw32',
-      label: 'Hash',
-    },
-    tx: {
-      value: 2,
-      label: 'Txs',
-    },
+    proposer: Proposer,
+    height: Height,
+    time: '10 Jan 2020,13:00:22 UTC',
+    hash: '89832B67F594asddw32',
+    tx: 2,
   },
 ];
