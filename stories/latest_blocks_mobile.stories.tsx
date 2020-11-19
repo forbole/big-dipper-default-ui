@@ -13,7 +13,26 @@ export default {
   title: 'LatestBlocks/mobile',
   component: LatestBlocksMobile,
   argTypes: {
-    proposer: {
+    className: {
+      type: {
+        required: false,
+      },
+      table: {
+        type: {
+          summary: 'string',
+          // detail: JSON.stringify({
+          //   value: 'React.FC',
+          // }, null, 2),
+        },
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+      control: {
+        type: null,
+      },
+    },
+    labels: {
       type: {
         required: true,
       },
@@ -21,7 +40,7 @@ export default {
         type: {
           summary: 'object',
           detail: JSON.stringify({
-            value: 'React.FC',
+            tx: 'string',
           }, null, 2),
         },
         defaultValue: {
@@ -32,7 +51,7 @@ export default {
         type: null,
       },
     },
-    height: {
+    data: {
       type: {
         required: true,
       },
@@ -40,65 +59,11 @@ export default {
         type: {
           summary: 'object',
           detail: JSON.stringify({
-            value: 'React.FC',
-          }, null, 2),
-        },
-        defaultValue: {
-          summary: 'null',
-        },
-      },
-      control: {
-        type: null,
-      },
-    },
-    time: {
-      type: {
-        required: true,
-      },
-      table: {
-        type: {
-          summary: 'object',
-          detail: JSON.stringify({
-            value: 'string',
-          }, null, 2),
-        },
-        defaultValue: {
-          summary: 'null',
-        },
-      },
-      control: {
-        type: null,
-      },
-    },
-    hash: {
-      type: {
-        required: true,
-      },
-      table: {
-        type: {
-          summary: 'object',
-          detail: JSON.stringify({
-            value: 'string',
-          }, null, 2),
-        },
-        defaultValue: {
-          summary: 'null',
-        },
-      },
-      control: {
-        type: null,
-      },
-    },
-    tx: {
-      type: {
-        required: true,
-      },
-      table: {
-        type: {
-          summary: 'object',
-          detail: JSON.stringify({
-            value: 'string | number',
-            string: 'string',
+            proposer: 'React.FC',
+            height: 'React.FC',
+            time: 'string',
+            hash: 'string',
+            tx: 'string | number',
           }, null, 2),
         },
         defaultValue: {

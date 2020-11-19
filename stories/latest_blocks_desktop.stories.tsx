@@ -11,22 +11,68 @@ export default {
   title: 'LatestBlocks/desktop',
   component: LatestBlocksDesktop,
   argTypes: {
-    // title: {
-    //   type: {
-    //     required: true,
-    //   },
-    //   table: {
-    //     type: {
-    //       summary: 'string',
-    //     },
-    //     defaultValue: {
-    //       summary: 'null',
-    //     },
-    //   },
-    //   control: {
-    //     type: null,
-    //   },
-    // },
+    className: {
+      type: {
+        required: false,
+      },
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+      control: {
+        type: null,
+      },
+    },
+    labels: {
+      type: {
+        required: true,
+      },
+      table: {
+        type: {
+          summary: 'object',
+          detail: JSON.stringify({
+            proposer: 'string',
+            height: 'string',
+            time: 'string',
+            hash: 'string',
+            tx: 'string',
+          }, null, 2),
+        },
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+      control: {
+        type: null,
+      },
+    },
+    data: {
+      type: {
+        required: true,
+      },
+      table: {
+        type: {
+          summary: 'object',
+          detail: JSON.stringify({
+            proposer: 'React.FC',
+            height: 'React.FC',
+            time: 'string',
+            hash: 'string',
+            tx: 'string | number',
+          }, null, 2),
+        },
+        defaultValue: {
+          summary: 'null',
+        },
+      },
+      control: {
+        type: null,
+      },
+    },
   },
 };
 
