@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
+      background: 'white',
       overflow: 'auto',
       '& .label': {
         borderBottom: 'none',
