@@ -5,6 +5,7 @@ export const useGetStyles = () => {
     root: {
       padding: '1rem',
       borderRadius: '6px',
+      background: 'white',
       '& .top-bar': {
         display: 'flex',
         alignItems: 'center',
