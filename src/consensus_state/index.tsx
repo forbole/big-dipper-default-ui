@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  PieChart, Pie, Cell,
+  PieChart, Pie, Cell, ResponsiveContainer,
 } from 'recharts';
+import classnames from 'classnames';
 import { Props } from './types';
 import { useGetStyles } from './styles';
 
@@ -16,34 +17,59 @@ const ConsensusState = (prop: Props) => {
     votingPowerPerentage,
     round,
     step,
+    classname,
   } = prop;
 
   return (
 
-    <div className={classes.root}>
+    <div className={classnames(classes.root, classname)}>
       <div className={classes.container}>
 
-        <h1 className={classes.titleMain}>
+        <h1>
           {title}
         </h1>
-        <div className={classes.box}>
+        <div className={classnames('box')}>
           <div className={classes.boxSmall}>
-            <h4 className={classes.itemTitle}>
+            <h4>
               Height
             </h4>
-            <p className={classes.amount}>
+            <p className={classnames('amount')}>
               {height}
             </p>
           </div>
           <div className={classes.boxSmall}>
-            <h4 className={classes.itemTitle}>
+            <h4>
               Proposer
             </h4>
-            <p className={classes.amount}>
+            <p className={classnames('amount')}>
               {proposer}
             </p>
           </div>
         </div>
+        <h4>
+          Voting Power
+        </h4>
+        <ResponsiveContainer height="100%">
+          <PieChart>
+            <Pie
+              data={votingPowerPerentage}
+              startAngle={70}
+              endAngle={-290}
+              innerRadius="85%"
+              outerRadius="100%"
+              dataKey="value"
+              labelLine={false}
+              stroke="none"
+              label={renderCustomizedLabel}
+            >
+              {
+                data.detail.map((_x: any, index: any) => (
+                  <Cell className={classnames('pie')} key={_x.value} fill={colors[index % colors.length]} />
+                ))
+              }
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );

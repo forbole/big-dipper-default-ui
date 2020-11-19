@@ -5,4 +5,5 @@ export interface Props {
   votingPowerPerentage: number;
   round: number;
   step: number;
+  classname: string;
 }

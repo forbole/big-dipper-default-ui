@@ -1,15 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Example } from '../src';
-
-export default {
-  title: 'Statbilities',
-  component: Example,
-};
-
-const Template = (args) => (
-  <Example
-=======
 import { Stabilities } from '../src';
 
 export default {
@@ -20,7 +9,6 @@ export default {
 const Template = (args) => (
 
   <Stabilities
->>>>>>> 87feeb77fffbf7f05d0a18576748c04d4d23ab35
     {...args}
   />
 );
