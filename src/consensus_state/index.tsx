@@ -10,23 +10,13 @@ const COLORS = ['#FF7846', '#FFD800'];
 const ConsensusState = (prop: Props) => {
   const { classes } = useGetStyles();
   const {
-    data = [], info = prop.info,
+    title,
+    height,
+    proposer,
+    votingPowerPerentage,
+    round,
+    step,
   } = prop;
-
-  function toCurrency(num: number) {
-    const parts = num.toString().split('.');
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return parts.join('.');
-  }
-
-  const toMiUnit: number = Math.round((data[0].value + data[1].value)) / 1000000;
-
-  const total: string = toCurrency(Math.round(toMiUnit * 100) / 100);
-
-  // eslint-disable-next-line max-len
-  const BondedPercentage: number = Math.round((data[0].value / (data[0].value + data[1].value)) * 1000) / 10;
-
-  const UnbondedPercentage: number = Math.round((100 - BondedPercentage) * 10) / 10;
 
   return (
 
@@ -34,7 +24,7 @@ const ConsensusState = (prop: Props) => {
       <div className={classes.container}>
 
         <h1 className={classes.titleMain}>
-          CONSENSUS STATE
+          {title}
         </h1>
         <div className={classes.box}>
           <div className={classes.boxSmall}>
@@ -42,7 +32,7 @@ const ConsensusState = (prop: Props) => {
               Height
             </h4>
             <p className={classes.amount}>
-              2,769,405
+              {height}
             </p>
           </div>
           <div className={classes.boxSmall}>
@@ -50,7 +40,7 @@ const ConsensusState = (prop: Props) => {
               Proposer
             </h4>
             <p className={classes.amount}>
-              2,769,405
+              {proposer}
             </p>
           </div>
         </div>
