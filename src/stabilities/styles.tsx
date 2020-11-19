@@ -8,7 +8,7 @@ export const useGetStyles = () => {
       height: 'auto',
       display: 'flex',
       borderRadius: '2px',
-      overflow: 'scroll',
+      overflow: 'auto',
       '& h1': {
         fontSize: '1.375rem',
         fontWeight: 500,
@@ -35,9 +35,9 @@ export const useGetStyles = () => {
         fontWeight: 400,
         margin: '0rem 0 0 0rem',
         color: '#000000',
+        overflow: 'auto',
         '& .marginBottom': {
           marginBottom: '2rem',
-          maxMarginBottom: '1.5rem',
         },
         [getMinMediaQuery(1600)]: {
           fontSize: '1.25rem',
@@ -68,6 +68,24 @@ export const useGetStyles = () => {
         background: '#E8E8E8',
         margin: '1.5rem 0 1.5rem 0',
       },
+      '& .bonded': {
+        display: 'block',
+        width: '0.25rem',
+        height: '2.375rem',
+        marginTop: '0',
+        marginLeft: '5%',
+        borderRadius: '8px',
+        background: '#FF7846',
+      },
+      '& .unbonded': {
+        display: 'flex',
+        width: '0.25rem',
+        height: '2.375rem',
+        marginTop: '7%',
+        marginLeft: '5%',
+        borderRadius: '8px',
+        background: '#FFD800',
+      },
     },
     container: {
       height: 'auto',
@@ -95,28 +113,10 @@ export const useGetStyles = () => {
         fontSize: '0.875rem',
       },
     },
-    atom: {
+    coin: {
       fontSize: '0.5rem',
       fontWeight: 400,
       margin: '0rem 0 0 0.25rem',
-    },
-    bonded: {
-      display: 'block',
-      width: '0.25rem',
-      height: '2.375rem',
-      marginTop: '0',
-      marginLeft: '5%',
-      borderRadius: '8px',
-      background: '#FF7846',
-    },
-    unbonded: {
-      display: 'flex',
-      width: '0.25rem',
-      height: '2.375rem',
-      marginTop: '7%',
-      marginLeft: '5%',
-      borderRadius: '8px',
-      background: '#FFD800',
     },
     box: {
       display: 'flex',
@@ -153,14 +153,14 @@ export const useGetStyles = () => {
       display: 'flex',
       width: '100%',
       maxWidth: '100%',
-      overflow: 'hidden',
+      overflow: 'auto',
       height: '50%',
       margin: '0rem',
     },
     boxSuperSmall: {
       width: '100%',
       maxWidth: '100%',
-      overflow: 'hidden',
+      overflow: 'auto',
       height: '50%',
       margin: '0rem 0 0 0rem',
       marginLeft: '5%',
@@ -176,7 +176,8 @@ export const useGetStyles = () => {
       },
     },
     boxBottomSmall1: {
-      width: '50%',
+      width: '45%',
+      marginRight: '0.5rem',
     },
   });
 

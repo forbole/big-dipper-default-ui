@@ -38,6 +38,7 @@ describe('Stabilities', () => {
         },
         ],
       },
+      colors: ['#FF7846', '#FFD800'],
     };
     const wrap = mount(
       <Stabilities

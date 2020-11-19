@@ -6,8 +6,6 @@ import {
 import { Props } from './types';
 import { useGetStyles } from './styles';
 
-const COLORS = ['#FF7846', '#FFD800'];
-
 const Stabilities = (prop: Props) => {
   const { classes } = useGetStyles();
   const {
@@ -19,6 +17,7 @@ const Stabilities = (prop: Props) => {
     communityPool,
     data,
     classname,
+    colors,
   } = prop;
 
   const renderCustomizedLabel = ({
@@ -32,10 +31,9 @@ const Stabilities = (prop: Props) => {
     );
   };
 
-  // eslint-disable-next-line max-len
-  // eslint-disable-next-line no-nested-ternary
-  // eslint-disable-next-line max-len
-  const BondedPercentage: number = Math.round(((data.detail[0].value ? data.detail[0].value : 0) / ((data.detail[0].value ? data.detail[0].value : 0) + (data.detail[1].value ? data.detail[1].value : 0))) * 1000) / 10;
+  const BondedPercentage: number = Math.round(((data.detail[0].value ? data.detail[0].value : 0)
+  / ((data.detail[0].value ? data.detail[0].value : 0)
+  + (data.detail[1].value ? data.detail[1].value : 0))) * 1000) / 10;
 
   const UnbondedPercentage: number = Math.round((100 - BondedPercentage) * 10) / 10;
 
@@ -63,7 +61,7 @@ const Stabilities = (prop: Props) => {
                 >
                   {
                     data.detail.map((_x: any, index: any) => (
-                      <Cell key={_x.value} fill={COLORS[index % COLORS.length]} />
+                      <Cell className={classnames('pie')} key={_x.value} fill={colors[index % colors.length]} />
                     ))
                   }
                 </Pie>
@@ -73,7 +71,7 @@ const Stabilities = (prop: Props) => {
           <div className={classes.boxMedium}>
             <div className={classes.boxSmall}>
               <div
-                className={classes.bonded}
+                className={classnames('bonded')}
               />
               <div className={classes.boxSuperSmall}>
                 <div className={classnames('itemTitle')}>
@@ -85,7 +83,7 @@ const Stabilities = (prop: Props) => {
                 </div>
                 <div className={classnames('amount')}>
                   {data.detail[0].display}
-                  <span className={classes.atom}>
+                  <span className={classes.coin}>
                     {coin}
                   </span>
                 </div>
@@ -93,7 +91,7 @@ const Stabilities = (prop: Props) => {
             </div>
             <div className={classes.boxSmall}>
               <div
-                className={classes.unbonded}
+                className={classnames('unbonded')}
               />
               <div className={classes.boxSuperSmall}>
                 <div className={classnames('itemTitle')}>
@@ -107,7 +105,7 @@ const Stabilities = (prop: Props) => {
                 </div>
                 <div className={classnames('amount')}>
                   {data.detail[1].display}
-                  <span className={classes.atom}>
+                  <span className={classes.coin}>
                     {coin}
                   </span>
                 </div>
@@ -169,7 +167,7 @@ const Stabilities = (prop: Props) => {
               className={classnames('amount')}
             >
               {communityPool.display}
-              <span className={classes.atom}>
+              <span className={classes.coin}>
                 {coin}
               </span>
             </div>

@@ -29,7 +29,7 @@ Default.args = {
   },
   marketCap: {
     title: 'Market Cap',
-    display: '$515,551,345',
+    display: '$515,551,345.666',
   },
   communityPool: {
     title: 'Community Pool',
@@ -49,4 +49,5 @@ Default.args = {
     },
     ],
   },
+  colors: ['#FF7846', '#FFD800'],
 };
