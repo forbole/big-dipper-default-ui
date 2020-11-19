@@ -47,14 +47,14 @@ export const dummyData:Data[] = [
     proposer: Proposer,
     height: Height,
     time: '10 Jan 2020,13:00:22 UTC',
-    hash: '89832B67F594asddw32',
+    hash: 'D2DCA95541D962A9AA599D43C0E022030986DF23D0BC8AC7A5F0AA0AF401E489',
     tx: 2,
   },
   {
     proposer: Proposer,
     height: Height,
     time: '10 Jan 2020,13:00:22 UTC',
-    hash: '89832B67F594asddw32',
+    hash: 'D2DCA95541D962A9AA599D43C0E022030986DF23D0BC8AC7A5F0AA0AF401E489',
     tx: 2,
   },
   {

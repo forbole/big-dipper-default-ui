@@ -14,7 +14,7 @@ const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-desktop')}>
-      <Table className={classnames('table')}>
+      <Table className={classnames('table')} size="small">
         <TableHead>
           <TableRow>
             <TableCell className={classnames('label', 'time')}>{labels.time}</TableCell>
@@ -27,7 +27,7 @@ const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
         <TableBody>
           {data.map((row) => {
             return (
-              <TableRow key={row.time}>
+              <TableRow key={row.time} className={classnames('single-row')}>
                 <TableCell className={classnames('cell', 'time')}>
                   {row.time}
                 </TableCell>
