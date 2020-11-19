@@ -19,10 +19,10 @@ const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
           <div className={classnames('single-block')} key={x.time}>
             <div className={classnames('flex')}>
               <span className={classnames('proposer')}>
-                <x.proposer />
+                {x.proposer}
               </span>
               <span className={classnames('height')}>
-                <x.height />
+                {x.height}
               </span>
             </div>
             <div className={classnames('flex')}>

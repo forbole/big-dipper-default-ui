@@ -1,8 +1,8 @@
 import React from 'react';
 
 export type Data = {
-  proposer: React.FC;
-  height: React.FC;
+  proposer: React.ReactNode;
+  height: React.ReactNode;
   time: string
   hash: string
   tx: string | number;

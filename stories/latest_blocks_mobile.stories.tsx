@@ -20,9 +20,6 @@ export default {
       table: {
         type: {
           summary: 'string',
-          // detail: JSON.stringify({
-          //   value: 'React.FC',
-          // }, null, 2),
         },
         defaultValue: {
           summary: 'null',
@@ -59,8 +56,8 @@ export default {
         type: {
           summary: 'object',
           detail: JSON.stringify({
-            proposer: 'React.FC',
-            height: 'React.FC',
+            proposer: 'React.Reactnode',
+            height: 'React.Reactnode',
             time: 'string',
             hash: 'string',
             tx: 'string | number',
