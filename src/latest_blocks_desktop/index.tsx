@@ -1,7 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 import {
-  Table, TableBody, TableCell, TableHead, TableRow,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
 } from '@material-ui/core';
 import { LatestBlocksDesktopProps } from './types';
 import { useGetStyles } from './styles';

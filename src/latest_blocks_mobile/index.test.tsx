@@ -7,41 +7,17 @@ describe('LatestBlocksMobile', () => {
     expect(LatestBlocksMobile).toBeTruthy();
     const wrap = mount(
       <LatestBlocksMobile
+        labels={
+          {
+            tx: 'tx',
+          }
+        }
         data={[{
-          proposer: {
-            value: () => <div>proposer</div>,
-          },
-          height: {
-            value: () => <div>1,234</div>,
-          },
-          time: {
-            value: '10 Jan 2020,13:00:22 UTC',
-          },
-          hash: {
-            value: '89832B67F594asddw32',
-          },
-          tx: {
-            value: 2,
-            label: 'tx',
-          },
-        },
-        {
-          proposer: {
-            value: () => <div>proposer</div>,
-          },
-          height: {
-            value: () => <div>1,234</div>,
-          },
-          time: {
-            value: '10 Jan 2020,14:00:22 UTC',
-          },
-          hash: {
-            value: '89832B67F594asddw32',
-          },
-          tx: {
-            value: 2,
-            label: 'tx',
-          },
+          proposer: () => <div>proposer</div>,
+          height: () => <div>1,234</div>,
+          time: '10 Jan 2020,13:00:22 UTC',
+          hash: '89832B67F594asddw32',
+          tx: 2,
         },
         ]}
       />,
@@ -49,8 +25,8 @@ describe('LatestBlocksMobile', () => {
     expect(wrap).not.toBeNull();
 
     expect(wrap.find('.latest-blocks-mobile')).toHaveLength(1);
-    expect(wrap.find('.single-block')).toHaveLength(2);
-    expect(wrap.find('.time')).toHaveLength(2);
+    expect(wrap.find('.single-block')).toHaveLength(1);
+    expect(wrap.find('.time')).toHaveLength(1);
     expect(wrap.find('.time').first().text()).toEqual('10 Jan 2020,13:00:22 UTC');
   });
 });
