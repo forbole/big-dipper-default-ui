@@ -13,11 +13,12 @@ export const useGetStyles = () => {
       flexDirection: 'column',
       color: 'white',
       borderRadius: '6px',
-      height: '110px',
+      minHeight: '110px',
       background: theme.palette.primary.main,
       '& .header': {
         display: 'flex',
         justifyContent: 'space-between',
+        alignItems: 'flex-start',
         marginBottom: '0.5rem',
         '& .label, & .duration': {
           margin: '0',

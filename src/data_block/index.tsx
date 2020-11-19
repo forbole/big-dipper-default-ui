@@ -16,9 +16,11 @@ const DataBlock = (props: DataBlockProps) => {
   const {
     label,
     durations = [],
+    durationsCallback,
     value,
     selectedValue,
     customComponent,
+    className,
   } = props;
 
   const {
@@ -26,11 +28,12 @@ const DataBlock = (props: DataBlockProps) => {
     handleChange,
     handleCallback,
   } = useDataBlockHook({
-    selectedValue,
+    selectedValue: selectedValue ?? durations[0]?.value,
+    durationsCallback,
   });
 
   return (
-    <div className={classnames(classes.root, 'big-dipper', 'data-block')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'data-block')}>
       <div className={classnames('header')}>
         <p className={classnames('label')}>
           {label}
@@ -38,6 +41,7 @@ const DataBlock = (props: DataBlockProps) => {
         {durations.length > 1
           ? (
             <Select
+              disableUnderline
               className={classnames(classes.select, 'select')}
               value={selected}
               onChange={handleChange}
@@ -47,7 +51,7 @@ const DataBlock = (props: DataBlockProps) => {
                   className={classnames('menu-item')}
                   key={x.value}
                   value={x.value}
-                  onClick={() => handleCallback(x.value, x?.callback)}
+                  onClick={() => handleCallback(x.value)}
                 >
                   {x.display}
                 </MenuItem>
