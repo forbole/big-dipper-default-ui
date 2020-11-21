@@ -1,0 +1,170 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { TablePreviewWrapper } from '../src';
+import {
+  ActionButton, FooterAction,
+} from './utils/table_preview_wrapper';
+
+<Meta title="TablePreviewWrapper" component={TablePreviewWrapper} />
+
+# TablePreviewWrapper
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <TablePreviewWrapper
+      title="Blocks"
+      action={ActionButton}
+      footerAction={FooterAction}
+    >
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla, metus sit amet bibendum dapibus, sem ligula molestie lectus, vitae mollis ex nibh id leo. Sed lacus nisl, finibus vitae sodales posuere, malesuada ac lorem. Morbi vulputate lectus sed pellentesque volutpat. Maecenas in convallis augue,
+      </div>
+    </TablePreviewWrapper>
+  </Story>
+</Canvas>
+
+```
+<TablePreviewWrapper
+  title="Blocks"
+  action={ActionButton}
+  footerAction={FooterAction}
+>
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla, metus sit amet bibendum dapibus, sem ligula molestie lectus, vitae mollis ex nibh id leo. Sed lacus nisl, finibus vitae sodales posuere, malesuada ac lorem. Morbi vulputate lectus sed pellentesque volutpat. Maecenas in convallis augue,
+  </div>
+</TablePreviewWrapper>
+```
+## Props
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+
+  <tr>
+    <td>title</td>
+    <td>true</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>action</td>
+    <td>true</td>
+    <td>
+
+`React.FC`
+
+  </td>
+    <td>Action component</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>footerAction</td>
+    <td>true</td>
+    <td>
+
+`React.FC`
+
+  </td>
+    <td>Footer component</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+<br/>
+
+<!-- //export default {
+//   title: 'TablePreviewWrapper',
+//   component: TablePreviewWrapper,
+//   argTypes: {
+//     title: {
+//       type: {
+//         required: true,
+//       },
+//       table: {
+//         type: {
+//           summary: 'string',
+//         },
+//         defaultValue: {
+//           summary: 'null',
+//         },
+//       },
+//       control: {
+//         type: null,
+//       },
+//     },
+//     action: {
+//       type: {
+//         required: true,
+//       },
+//       table: {
+//         type: {
+//           summary: 'ReactFC',
+//         },
+//         defaultValue: {
+//           summary: 'null',
+//         },
+//       },
+//       control: {
+//         type: null,
+//       },
+//     },
+//     footerAction: {
+//       type: {
+//         required: true,
+//       },
+//       table: {
+//         type: {
+//           summary: 'ReactFC',
+//         },
+//         defaultValue: {
+//           summary: 'null',
+//         },
+//       },
+//       control: {
+//         type: null,
+//       },
+//     },
+//   },
+// };
+
+// export const Default = () => {
+//   return (
+//     <TablePreviewWrapper
+//       title="Blocks"
+//       action={ActionButton}
+//       footerAction={FooterAction}
+//     >
+//       <div>
+//         us tincidunt. Morbi tristique ege
+//       </div>
+//     </TablePreviewWrapper>
+//   );
+// };
+
+// Default.args = {
+// }; -->
