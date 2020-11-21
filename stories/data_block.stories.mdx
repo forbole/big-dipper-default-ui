@@ -1,0 +1,404 @@
+import { DataBlock } from '../src';
+import { DataBlockCustom } from './utils/data_block';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<!-- // export default {
+//   title: 'DataBlock',
+//   component: DataBlock,
+//   argTypes: {
+//     label: {
+//       type: {
+//         required: true,
+//       },
+//       table: {
+//         type: {
+//           summary: 'string',
+//         },
+//         defaultValue: {
+//           summary: 'null',
+//         },
+//       },
+//       control: {
+//         type: null,
+//       },
+//     },
+//     value: {
+//       type: {
+//         required: true,
+//       },
+//       table: {
+//         type: {
+//           summary: 'string | number',
+//         },
+//         defaultValue: {
+//           summary: 'null',
+//         },
+//       },
+//     },
+//     selectedValue: {
+//       table: {
+//         type: {
+//           summary: 'string | number',
+//         },
+//         defaultValue: {
+//           summary: 'null',
+//         },
+//       },
+//     },
+//     customComponent: {
+//       table: {
+//         type: {
+//           summary: 'ReactElement',
+//         },
+//         defaultValue: {
+//           summary: 'null',
+//         },
+//       },
+//       control: {
+//         type: null,
+//       },
+//     },
+//     durations: {
+//       table: {
+//         type: {
+//           summary: 'Object[]',
+//           detail: JSON.stringify({
+//             value: 'string | number',
+//             display: 'string',
+//             callback: '(key:string | number) => void',
+//           }, null, 2),
+//         },
+//         defaultValue: {
+//           summary: '[]',
+//         },
+//       },
+//       control: {
+//         type: null,
+//       },
+//     },
+//   },
+// }; -->
+
+<!-- // const Template = (args) => (
+//   <DataBlock
+//     {...args}
+//   />
+// ); -->
+
+<!-- // export const WithCustom = Template.bind({
+// }); -->
+
+<!-- // WithCustom.args = {
+//   label: 'Latest Block Height',
+//   value: '15,000',
+//   selectedValue: '24',
+//   customComponent: <DataBlockCustom />,
+//   durationsCallback: (key) => {
+//     console.log(`called with key: ${key}`);
+//   },
+//   durations: [{
+//     value: '7_hours',
+//     display: 'Last 7 hours',
+//   }, {
+//     value: '24',
+//     display: '24 hours',
+//   }],
+// }; -->
+
+<!-- // export const NoDurations = Template.bind({
+// });
+// NoDurations.args = {
+//   label: 'Latest Block Height',
+//   value: '15,000',
+// };
+
+// export const SingleDuration = Template.bind({
+// });
+// SingleDuration.args = {
+//   label: 'Latest Block Height',
+//   value: '15,000',
+//   durations: [{
+//     value: '7_hours',
+//     display: 'Last 7 hours',
+//   }],
+// };
+
+// export const MultiDurations = Template.bind({
+// });
+// MultiDurations.args = {
+//   label: 'Latest Block Height',
+//   value: '15,000',
+//   selectedValue: '24',
+//   durationsCallback: (key) => {
+//     console.log(`called with key: ${key}`);
+//   },
+//   durations: [{
+//     value: '7_hours',
+//     display: 'Last 7 hours',
+//   }, {
+//     value: '24',
+//     display: '24 hours',
+//   }],
+// }; -->
+
+<Meta title="DataBlock" component={DataBlock} />
+
+# DataBlock
+---
+## Default
+<Canvas>
+  <Story name="Default">
+    <DataBlock
+      label='Latest Block Height'
+      value='15,000'
+      selectedValue='24'
+      customComponent={<DataBlockCustom />}
+      durationCallback={(key) => {console.log(`called with key: ${key}`)}}
+      durations={[
+        {
+          value: '7_hours',
+          display: 'Last 7 hours',
+        },
+        {
+          value: '24',
+          display: '24 hours',
+        }
+      ]}
+    />
+  </Story>
+</Canvas>
+
+```
+<DataBlock
+  label='Latest Block Height'
+  value='15,000'
+  selectedValue='24'
+  customComponent={<DataBlockCustom />}
+  durationCallback={(key) => {console.log(`called with key: ${key}`)}}
+  durations={[
+    {
+      value: '7_hours',
+      display: 'Last 7 hours',
+    },
+    {
+      value: '24',
+      display: '24 hours',
+    }
+  ]}
+/>
+```
+
+## Props
+<!-- | Property | Required | Type | Description | Default |
+| :----- | ---- | :----------: | :-----------: | -----------: |
+|  label | True | `string` | Label displayed | `null` |
+|  Durations |  | `````` | Label displayed | `null` | -->
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td>label</td>
+    <td>True</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>Label Displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>True</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>Value displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>durations</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  value: string | number;
+  display: string;
+}[]
+```
+
+  </td>
+    <td>List of durations</td>
+    <td>
+
+`[]`
+
+  </td>
+  </tr>
+  <tr>
+    <td>durationsCallback</td>
+    <td>-</td>
+    <td>
+
+```
+(key: string | number) => void;
+```
+
+  </td>
+    <td>Callback</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>selectedValue</td>
+    <td>-</td>
+    <td>
+
+`string | number`
+
+  </td>
+    <td>Selected value if there are durations.</td>
+    <td>First item in durations if there are any | -</td>
+  </tr>
+
+
+  <tr>
+    <td>customComponent</td>
+    <td>-</td>
+    <td>
+
+`ReactElement`
+
+  </td>
+    <td>Custom component to be displayed on the bottom right</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+<br/>
+
+## No Durations
+<Canvas>
+  <Story name="No Durations">
+    <DataBlock
+      label='Latest Block Height'
+      value='15,000'
+    />
+  </Story>
+</Canvas>
+
+```
+<DataBlock
+  label='Latest Block Height'
+  value='15,000'
+/>
+```
+
+## Single Duration
+<Canvas>
+  <Story name="Single Duration">
+    <DataBlock
+      label='Latest Block Height'
+      value='15,000'
+      durations={[
+        {
+          value: '7_hours',
+          display: 'Last 7 hours',
+        }
+      ]}
+    />
+  </Story>
+</Canvas>
+
+```
+<DataBlock
+  label='Latest Block Height'
+  value='15,000'
+  durations={[
+    {
+      value: '7_hours',
+      display: 'Last 7 hours',
+    }
+  ]}
+/>
+```
+
+## Multiple Durations
+<Canvas>
+  <Story name="Multiple Durations">
+    <DataBlock
+      label='Latest Block Height'
+      value='15,000'
+      selectedValue='24'
+      durationCallback={(key) => {console.log(`called with key: ${key}`)}}
+      durations={[
+        {
+          value: '7_hours',
+          display: 'Last 7 hours',
+        },
+        {
+          value: '24',
+          display: '24 hours',
+        }
+      ]}
+    />
+  </Story>
+</Canvas>
+
+```
+<DataBlock
+  label='Latest Block Height'
+  value='15,000'
+  selectedValue='24'
+  durationCallback={(key) => {console.log(`called with key: ${key}`)}}
+  durations={[
+    {
+      value: '7_hours',
+      display: 'Last 7 hours',
+    },
+    {
+      value: '24',
+      display: '24 hours',
+    }
+  ]}
+/>
+```
+
+## With Custom Component
+<Canvas>
+  <Story name="With Custom Component">
+    <DataBlock
+      label='Latest Block Height'
+      value='15,000'
+      customComponent={<DataBlockCustom />}
+    />
+  </Story>
+</Canvas>
+
+```
+<DataBlock
+  label='Latest Block Height'
+  value='15,000'
+  customComponent={<DataBlockCustom />}
+/>
+```
