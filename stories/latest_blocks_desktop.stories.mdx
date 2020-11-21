@@ -1,0 +1,126 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import {
+  LatestBlocksDesktop, TablePreviewWrapper,
+} from '../src';
+import {
+  ActionButton,
+} from './utils/table_preview_wrapper';
+import {
+  dummyData, dummyLabelDesktop,
+} from './utils/latest_blocks';
+
+<Meta title="LatestBlocksDesktop" component={TablePreviewWrapper} />
+
+# LatestBlocksDesktop
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <LatestBlocksDesktop labels={dummyLabelDesktop} data={dummyData} />
+  </Story>
+</Canvas>
+
+```
+<LatestBlocksDesktop labels={dummyLabelDesktop} data={dummyData} />
+```
+
+## Props
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+
+  <tr>
+    <td>title</td>
+    <td>true</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>labels</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  proposer: string;
+  height: string;
+  time: string;
+  hash: string;
+  tx: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  proposer: React.ReactNode;
+  height: React.ReactNode;
+  time: string
+  hash: string
+  tx: string | number;
+}[];
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+<br/>
+
+
+## With Wrapper
+<Canvas>
+  <Story name="With TabletPreviewWrapper">
+    <TablePreviewWrapper
+      title="Latest Blocks"
+      action={ActionButton}
+    >
+      <LatestBlocksDesktop labels={dummyLabelDesktop} data={dummyData} />
+    </TablePreviewWrapper>
+  </Story>
+</Canvas>
+
+```
+<TablePreviewWrapper
+  title="Latest Blocks"
+  action={ActionButton}
+>
+  <LatestBlocksDesktop labels={dummyLabelDesktop} data={dummyData} />
+</TablePreviewWrapper>
+```

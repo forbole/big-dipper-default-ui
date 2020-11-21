@@ -15,7 +15,7 @@ export interface LatestBlocksDesktopProps {
     height: string;
     time: string;
     hash: string;
-    tx: string
+    tx: string;
   }
   data: Data[]
 }
