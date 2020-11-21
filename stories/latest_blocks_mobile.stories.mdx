@@ -2,34 +2,30 @@ import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
 import {
-  LatestBlocksDesktop, TablePreviewWrapper,
+  LatestBlocksMobile, TablePreviewWrapper,
 } from '../src';
 import {
-  ActionButton,
+  ActionButton, FooterAction,
 } from './utils/table_preview_wrapper';
 import {
-  dummyData, dummyLabelDesktop,
+  dummyLabelMobile, dummyData,
 } from './utils/latest_blocks';
 
-<Meta title="LatestBlocksDesktop" component={LatestBlocksDesktop} />
+<Meta title="LatestBlocksMobile" component={LatestBlocksMobile} />
 
-# LatestBlocksDesktop
+# LatestBlocksMobile
 ---
 
 ## Default
 <Canvas>
   <Story name="Default">
-    <LatestBlocksDesktop labels={dummyLabelDesktop} data={dummyData} />
+    <LatestBlocksMobile labels={dummyLabelMobile} data={dummyData} />
   </Story>
 </Canvas>
 
 ```
-<LatestBlocksDesktop
+<LatestBlocksMobile
   labels={{
-    proposer: 'Proposer',
-    height: 'Height',
-    time: 'Time',
-    hash: 'Hash',
     tx: 'TXs',
   }}
   data={[
@@ -42,7 +38,7 @@ import {
     },
     ...
   ]}
- />
+/>
 ```
 
 ## Props
@@ -74,10 +70,6 @@ import {
 
 ```
 {
-  proposer: string;
-  height: string;
-  time: string;
-  hash: string;
   tx: string;
 }
 ```
@@ -121,7 +113,6 @@ import {
 </table>
 <br/>
 
-
 ## With Wrapper
 <Canvas>
   <Story name="With TabletPreviewWrapper">
@@ -129,7 +120,7 @@ import {
       title="Latest Blocks"
       action={ActionButton}
     >
-      <LatestBlocksDesktop labels={dummyLabelDesktop} data={dummyData} />
+      <LatestBlocksMobile labels={dummyLabelMobile} data={dummyData} />
     </TablePreviewWrapper>
   </Story>
 </Canvas>
@@ -139,12 +130,8 @@ import {
   title="Latest Blocks"
   action={ActionButton}
 >
-  <LatestBlocksDesktop
+  <LatestBlocksMobile
     labels={{
-      proposer: 'Proposer',
-      height: 'Height',
-      time: 'Time',
-      hash: 'Hash',
       tx: 'TXs',
     }}
     data={[
@@ -157,6 +144,6 @@ import {
       },
       ...
     ]}
- />
+  />
 </TablePreviewWrapper>
 ```
