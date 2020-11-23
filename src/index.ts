@@ -4,6 +4,7 @@ import LatestBlocksMobile from './latest_blocks_mobile';
 import TablePreviewWrapper from './table_preview_wrapper';
 import LatestBlocksDesktop from './latest_blocks_desktop';
 import Avatar from './avatar';
+import LatestActivitiesMobile from './latest_activities_mobile';
 
 export {
   DataBlock,
@@ -12,4 +13,5 @@ export {
   LatestBlocksDesktop,
   TablePreviewWrapper,
   Avatar,
+  LatestActivitiesMobile,
 };
