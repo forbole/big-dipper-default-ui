@@ -25,9 +25,9 @@ const LatestActivitiesMobile = (props:LatestActivitiesMobileProps) => {
               <div className={classnames('content')}>
                 {x.content}
               </div>
-              <div className={classnames('content-footer', 'flex')}>
+              <div className={classnames('content-footer')}>
                 <div className={classnames(x.type.className, 'type')}>
-                  <div>
+                  <div className={classnames('overflow')}>
                     {x.type.display}
                   </div>
                 </div>

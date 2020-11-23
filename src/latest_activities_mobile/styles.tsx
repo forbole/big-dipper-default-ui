@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
+      boxSizing: 'border-box',
       '& .activity': {
         padding: '1rem 0.5rem',
         '&:first-child': {
@@ -12,25 +13,29 @@ export const useGetStyles = () => {
       },
       '& .content-container': {
         flex: 1,
+        minWidth: '0',
         padding: '0 0.5rem',
       },
       '& .content': {
         fontSize: '1rem',
       },
       '& .content-footer': {
+        display: 'flex',
+        alignItems: 'center',
         justifyContent: 'space-between',
         marginTop: '1rem',
       },
 
       '& .flex': {
         display: 'flex',
-        alignItems: 'center',
       },
 
       '& .type': {
         position: 'relative',
         paddingLeft: '0.7rem',
         fontSize: '0.875rem',
+        minWidth: '0',
+        flex: 1,
         '&:before': {
           content: '""',
           width: '5px',
@@ -55,6 +60,10 @@ export const useGetStyles = () => {
       },
       '& .fail': {
         fill: '#FF3A44',
+      },
+      '& .overflow': {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
       },
     },
   });

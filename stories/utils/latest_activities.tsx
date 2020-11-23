@@ -1,10 +1,33 @@
 import React from 'react';
+import {
+  createStyles, makeStyles,
+} from '@material-ui/core';
 import { Avatar } from '../../src';
 
 export const ContentMobile = () => {
+  const useStyles = makeStyles((theme: any) => createStyles({
+    root: {
+      '& .blue': {
+        color: '#66a2de',
+      },
+      '& .bold': {
+        fontWeight: 500,
+      },
+    },
+  }));
+
+  const classes = useStyles();
   return (
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ornare libero ut felis ultricies, vel feugiat elit pretium. Pellentesque ac nisl id arcu rhoncus laoreet nec sit amet nisl.
+    <div className={classes.root}>
+      <span className="blue">
+        Lori&nbsp;
+      </span>
+      delegate&nbsp;
+      <span className="bold">1,000 ATOM</span>
+      &nbsp;to&nbsp;
+      <span className="blue">
+        Forbole
+      </span>
     </div>
   );
 };
@@ -19,7 +42,7 @@ export const dummyDataMobile = [
     />,
     content: <ContentMobile />,
     type: {
-      display: 'Delegateaaaaaaaaaaaa',
+      display: 'Delegateaaaasvbbbbbbbbbaaaaaaaa',
       className: 'delegate',
     },
     time: '1 hour',
