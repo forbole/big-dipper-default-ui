@@ -16,7 +16,7 @@ const Stabilities = (prop: Props) => {
     marketCap,
     communityPool,
     data,
-    classname,
+    className,
     colors,
   } = prop;
 
@@ -38,14 +38,14 @@ const Stabilities = (prop: Props) => {
   const UnbondedPercentage: number = Math.round((100 - BondedPercentage) * 10) / 10;
 
   return (
-    <div className={classnames(classes.root, classname)}>
-      <div className={classes.container}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'stabilities')}>
+      <div className={classnames(classes.container, 'container')}>
 
         <h1>
           {title}
         </h1>
-        <div className={classes.box}>
-          <div className={classes.chartBox}>
+        <div className={classnames(classes.box, 'box')}>
+          <div className={classnames(classes.chartBox, 'box')}>
             <ResponsiveContainer height="100%">
               <PieChart>
                 <Pie
@@ -61,7 +61,7 @@ const Stabilities = (prop: Props) => {
                 >
                   {
                     data.detail.map((_x: any, index: any) => (
-                      <Cell className={classnames('pie')} key={_x.value} fill={colors[index % colors.length]} />
+                      <Cell className={classnames(`pie-${index}`)} key={_x.value} fill={colors[index % colors.length]} />
                     ))
                   }
                 </Pie>

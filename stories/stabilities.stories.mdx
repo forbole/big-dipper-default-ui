@@ -1,0 +1,247 @@
+import { Stabilities } from '../src';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Stabilities" component={Stabilities} />
+
+# Stabilities
+---
+## Default
+<Canvas>
+  <Story name="Default">
+    <Stabilities
+      title='Stabilities'
+      coin='atom'
+      price={{
+       title:'Price',
+       display:'$515,551,345.666'
+      }}
+      inflation={{
+       title:'inflation',
+       display:'7 %'
+      }}
+      marketCap={{
+       title:'Market Cap',
+       display:'$15,000'
+      }}
+      communityPool={{
+       title: 'Community Pool',
+       display: '370,000'
+      }}
+      data={{
+        total:{
+          value:300000,
+          display:'0.3 m'
+        },
+        detail:[
+        {
+         title: 'Bonded',
+         value: 100000,
+         display: '100,000',
+        },
+        {
+         title: 'UnBonded',
+         value: 200000,
+         display: '200,000',
+        }
+      ]}
+      }
+      colors={['#FF7846', '#FFD800']}
+    />
+  </Story>
+</Canvas>
+
+```
+ <Stabilities
+    title='Stabilities'
+    coin='atom'
+    price={{
+      title:'Price',
+      display:'$515,551,345'
+    }}
+    inflation={{
+      title:'inflation',
+      display:'7 %'
+    }}
+    marketCap={{
+      title:'Market Cap',
+      display:'$15,000'
+    }}
+    communityPool={{
+      title: 'Community Pool',
+      display: '370,000'
+    }}
+    data={{
+      total:{
+        value:300000,
+        display:'0.3 m'
+      },
+      detail:[
+        {
+         title: 'Bonded',
+         value: 100000,
+         display: '100,000',
+        },
+        {
+         title: 'UnBonded',
+         value: 200000,
+         display: '200,000',
+        }
+      ]}
+    }
+    colors={['#FF7846', '#FFD800']}
+  />
+```
+
+## Props
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+
+  <tr>
+    <td>title</td>
+    <td>True</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>Title Displayed</td>
+    <td>-</td>
+  </tr>
+    <tr>
+    <td>coin</td>
+    <td>True</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>Coin Displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>price</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  display: string;
+}
+```
+
+  </td>
+    <td>Price Displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>inflation</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  display: string;
+}
+```
+
+  </td>
+    <td>Inflation Displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>marketCap</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  display: string;
+}
+```
+
+  </td>
+    <td>Market Cap Displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>communityPool</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  display: string;
+}
+```
+
+  </td>
+    <td>Community Pool Displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  total:{
+    value:300000,
+    display:'30,000m'
+  },
+  detail:[
+    {
+      title: 'Bonded',
+      value: 100000,
+      display: '100,000.000',
+    },
+    {
+      title: 'UnBonded',
+      value: 91235.473,
+      display: '1,291,235.473',
+    }
+  ]
+}
+```
+
+  </td>
+    <td>Data and Chart Displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>colors</td>
+    <td>True</td>
+    <td>
+
+`string[]`
+
+  </td>
+    <td>Colors of Chart Displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+<br/>
+
+
