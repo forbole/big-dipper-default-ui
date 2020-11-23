@@ -130,7 +130,7 @@ export const useGetStyles = () => {
         width: '40%',
       },
       [getMinMediaQuery(1600)]: {
-        width: '40%',
+        width: '50%',
         height: '150px',
       },
     },
