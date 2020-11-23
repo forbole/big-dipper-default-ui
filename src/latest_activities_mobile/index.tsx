@@ -17,7 +17,7 @@ const LatestActivitiesMobile = (props:LatestActivitiesMobileProps) => {
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-activities-mobile')}>
       {data.map((x) => {
         return (
-          <div className={classnames('activity', 'flex')}>
+          <div key={x.time} className={classnames('activity', 'flex')}>
             <div className={classnames('avatar-container')}>
               {x.avatar}
             </div>
