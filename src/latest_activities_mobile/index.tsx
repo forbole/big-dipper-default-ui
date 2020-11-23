@@ -27,17 +27,17 @@ const LatestActivitiesMobile = (props:LatestActivitiesMobileProps) => {
               </div>
               <div className={classnames('content-footer', 'flex')}>
                 <div className={classnames(x.type.className, 'type')}>
-                  {x.type.display}
+                  <div>
+                    {x.type.display}
+                  </div>
                 </div>
                 <div className={classnames('flex')}>
-                  <div className={classnames('time')}>{x.time}</div>
-                  <div className={classnames('status')}>
-                    {
-                      x.success
-                        ? <CheckCircle className={classnames('success')} />
-                        : <Cancel className={classnames('fail')} />
-                    }
-                  </div>
+                  <p className={classnames('time')}>{x.time}</p>
+                  {
+                    x.success
+                      ? <CheckCircle className={classnames('icon', 'success')} />
+                      : <Cancel className={classnames('icon', 'fail')} />
+                  }
                 </div>
               </div>
             </div>

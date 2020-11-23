@@ -19,7 +19,7 @@ export const dummyDataMobile = [
     />,
     content: <ContentMobile />,
     type: {
-      display: 'Delegate',
+      display: 'Delegateaaaaaaaaaaaa',
       className: 'delegate',
     },
     time: '1 hour',

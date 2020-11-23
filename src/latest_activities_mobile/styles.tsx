@@ -14,19 +14,23 @@ export const useGetStyles = () => {
         flex: 1,
         padding: '0 0.5rem',
       },
+      '& .content': {
+        fontSize: '1rem',
+      },
       '& .content-footer': {
-        alignItems: 'center',
         justifyContent: 'space-between',
         marginTop: '1rem',
       },
 
       '& .flex': {
         display: 'flex',
+        alignItems: 'center',
       },
 
       '& .type': {
         position: 'relative',
         paddingLeft: '0.7rem',
+        fontSize: '0.875rem',
         '&:before': {
           content: '""',
           width: '5px',
@@ -38,7 +42,14 @@ export const useGetStyles = () => {
           borderRadius: '15px',
         },
       },
-
+      '& .time': {
+        fontSize: '0.875rem',
+        margin: '0',
+      },
+      '& .icon': {
+        marginLeft: '0.5rem',
+        fontSize: '20px',
+      },
       '& .success': {
         fill: '#15CF74',
       },
