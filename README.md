@@ -3,7 +3,12 @@ Big Dipper UI
 
 Currently a WIP please check back later for updates and launch
 
+## Documentation
+---
+https://forbole.github.io/big-dipper-default-ui
+
 ## Quick start
+---
 ### Peer-Dependencies
 The following are peer dependencies to avoid double bundling
 ```
@@ -31,6 +36,7 @@ npm run build-watch
 ```
 
 ##  Available scripts
+---
 In the project directory, you can run:
 #### `npm run build`
 Builds the package exported in to the `dist` folder.

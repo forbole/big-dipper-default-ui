@@ -34,7 +34,6 @@ export const useGetStyles = () => {
         fontSize: '1rem',
         fontWeight: 400,
         margin: '0rem 0 0 0rem',
-        // color: '#000000',
         overflow: 'auto',
         '& .marginBottom': {
           marginBottom: '2rem',
@@ -48,7 +47,6 @@ export const useGetStyles = () => {
         fontWeight: 400,
         margin: '0',
         height: '1.65rem',
-        color: '#000000',
         [getMinMediaQuery(1600)]: {
           fontSize: '1.25rem',
         },

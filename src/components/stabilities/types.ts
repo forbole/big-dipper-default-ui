@@ -42,6 +42,6 @@ export interface Props {
   marketCap: MarketCap;
   communityPool: CommunityPool;
   data: Data;
-  classname?: string;
+  className?: string;
   colors: string[];
 }
