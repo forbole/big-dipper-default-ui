@@ -43,7 +43,7 @@ export const useGetStyles = () => {
     },
     collapsible: {
       background: '#F6F7F9',
-      '&.collapsible': {
+      '&.collapsible-table-row': {
         '& tr': {
           verticalAlign: 'baseline',
         },

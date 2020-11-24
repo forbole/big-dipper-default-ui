@@ -44,7 +44,7 @@ export const dummyLabelsDesktop = {
 export const dummyDataDesktop = [
   {
     type: {
-      display: 'Delegatasdasdfdsfdsfdsfsddgde',
+      display: 'Delegate',
       className: 'delegate',
     },
     time: '1 hour',

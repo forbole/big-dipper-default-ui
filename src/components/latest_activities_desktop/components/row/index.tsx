@@ -78,7 +78,7 @@ const Row = (props:RowProps) => {
       {/* Collapsible Row */}
       {/* ============================================ */}
       {data.collapsibleData && (
-        <TableRow className={classnames(classes.collapsible, classes.table, 'collapsible')}>
+        <TableRow className={classnames(classes.collapsible, classes.table, 'collapsible-table-row')}>
           <TableCell
             className={classnames('collapsible-cell')}
             colSpan={6}

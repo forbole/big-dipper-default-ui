@@ -6,8 +6,9 @@ import {
   TableCell,
   TableRow,
 } from '@material-ui/core';
+import { CollapsibleProps } from './types';
 
-const Collapsible = (props:any) => {
+const Collapsible = (props:CollapsibleProps) => {
   const { data } = props;
   return (
     <div className={classnames('padding')}>
