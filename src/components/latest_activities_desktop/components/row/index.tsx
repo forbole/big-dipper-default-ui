@@ -18,17 +18,23 @@ import { useRowHooks } from './hooks';
 
 const Row = (props:RowProps) => {
   const { data } = props;
-  const { classes } = useGetStyles();
   const {
     open, toggleOpen,
   } = useRowHooks();
+  const { classes } = useGetStyles();
 
   return (
     <>
-      <TableRow className={classnames(classes.root, 'single-activity')}>
+      <TableRow
+        className={classnames(classes.root, 'single-activity', {
+          active: open,
+        })}
+      >
         <TableCell>{data.time}</TableCell>
-        <TableCell className={classnames(data.type.className, 'type')}>
-          {data.type.display}
+        <TableCell>
+          <span className={classnames(data.type.className, 'type')}>
+            {data.type.display}
+          </span>
         </TableCell>
         <TableCell className={classnames('content')}>
           {data.content}
@@ -67,7 +73,7 @@ const Row = (props:RowProps) => {
       {/* ============================================ */}
       {/* Collapsible Row */}
       {/* ============================================ */}
-      <TableRow>
+      <TableRow className={classnames(classes.collapsible, 'collapsible')}>
         <TableCell
           style={{
             paddingBottom: 0, paddingTop: 0,
@@ -75,7 +81,9 @@ const Row = (props:RowProps) => {
           colSpan={6}
         >
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <div>fuck this shit</div>
+            <div className={classnames('content')}>
+              fuck this shitß
+            </div>
           </Collapse>
         </TableCell>
       </TableRow>
