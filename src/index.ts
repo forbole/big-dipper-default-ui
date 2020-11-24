@@ -1,9 +1,9 @@
-import DataBlock from './data_block';
-import Stabilities from './stabilities';
-import LatestBlocksMobile from './latest_blocks_mobile';
-import TablePreviewWrapper from './table_preview_wrapper';
-import LatestBlocksDesktop from './latest_blocks_desktop';
-import Avatar from './avatar';
+import DataBlock from './components/data_block';
+import Stabilities from './components/stabilities';
+import LatestBlocksMobile from './components/latest_blocks_mobile';
+import TablePreviewWrapper from './components/table_preview_wrapper';
+import LatestBlocksDesktop from './components/latest_blocks_desktop';
+import Avatar from './components/avatar';
 
 export {
   DataBlock,
