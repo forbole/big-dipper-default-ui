@@ -55,7 +55,7 @@ export const dummyDataDesktop = [
       height: <div>height</div>,
       fee: '123 uatm',
       gas: '1,234 / 20, 999',
-      memo: 'baby shark doo doodo dooo',
+      memo: 'baby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooo',
     },
   },
   {

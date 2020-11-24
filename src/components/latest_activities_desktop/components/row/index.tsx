@@ -2,8 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 import {
   Collapse,
-  Table,
-  TableBody,
   TableCell,
   TableRow,
 } from '@material-ui/core';
@@ -17,6 +15,7 @@ import { RowProps } from './types';
 import { useGetStyles } from './styles';
 import { useRowHooks } from './hooks';
 import { getCollapsibleTableData } from './utils';
+import { Collapsible } from './components';
 
 const Row = (props:RowProps) => {
   const {
@@ -29,10 +28,11 @@ const Row = (props:RowProps) => {
   const collapsibleTableData = data?.collapsibleData && labels
     ? getCollapsibleTableData(data, labels)
     : [];
+
   return (
     <>
       <TableRow
-        className={classnames(classes.root, 'single-activity', {
+        className={classnames(classes.root, classes.table, 'single-activity', {
           active: open,
         })}
       >
@@ -46,23 +46,21 @@ const Row = (props:RowProps) => {
           {data.content}
         </TableCell>
         <TableCell className={classnames('status')} align="right">
-          {
-            data.success
-              ? (
-                <CheckCircle
-                  className={classnames('icon', 'success', {
-                    hide: open,
-                  })}
-                />
-              )
-              : (
-                <Cancel
-                  className={classnames('icon', 'fail', {
-                    hide: open,
-                  })}
-                />
-              )
-          }
+          {data.success
+            ? (
+              <CheckCircle
+                className={classnames('icon', 'success', {
+                  hide: open,
+                })}
+              />
+            )
+            : (
+              <Cancel
+                className={classnames('icon', 'fail', {
+                  hide: open,
+                })}
+              />
+            )}
         </TableCell>
         {data.collapsibleData && (
           <TableCell align="right" className={classnames('collapsible')}>
@@ -80,26 +78,13 @@ const Row = (props:RowProps) => {
       {/* Collapsible Row */}
       {/* ============================================ */}
       {data.collapsibleData && (
-        <TableRow className={classnames(classes.collapsible, 'collapsible')}>
+        <TableRow className={classnames(classes.collapsible, classes.table, 'collapsible')}>
           <TableCell
-            style={{
-              paddingBottom: 0, paddingTop: 0,
-            }}
+            className={classnames('collapsible-cell')}
             colSpan={6}
           >
             <Collapse in={open} timeout="auto" unmountOnExit>
-              <Table className={classnames('content')}>
-                <TableBody>
-                  {collapsibleTableData.map((x) => {
-                    return (
-                      <TableRow key={x.label} className={classnames('row')}>
-                        <TableCell className={classnames(x.label, 'label')}>{x.label}</TableCell>
-                        <TableCell className={classnames(x.label, 'value')}>{x.value}</TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
+              <Collapsible data={collapsibleTableData} />
             </Collapse>
           </TableCell>
         </TableRow>

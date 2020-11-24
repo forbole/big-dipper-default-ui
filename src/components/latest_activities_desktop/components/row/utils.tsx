@@ -1,3 +1,9 @@
+import React from 'react';
+import {
+  CheckCircle,
+  Cancel,
+} from '@material-ui/icons';
+import classnames from 'classnames';
 import {
   DataProps, CollapsibleLabels,
 } from '../../types';
@@ -23,7 +29,17 @@ export const getCollapsibleTableData = (data: DataProps, labels: CollapsibleLabe
     },
     {
       label: labels.status,
-      value: data.success,
+      value: data.success
+        ? (
+          <CheckCircle
+            className={classnames('icon', 'success')}
+          />
+        )
+        : (
+          <Cancel
+            className={classnames('icon', 'fail')}
+          />
+        ),
     },
     {
       label: labels.memo,

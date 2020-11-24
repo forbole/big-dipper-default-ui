@@ -24,7 +24,7 @@ const LatestActivitiesDesktop = (props:LatestActivitiesDesktopProps) => {
       <Table className={classnames('table')} size="small">
         <TableBody>
           {data.map((x:any, i) => (
-            <Row data={x} key={x.time} labels={collapsibleLabels} />
+            <Row data={x} key={`${x.time}-${i}`} labels={collapsibleLabels} />
           ))}
         </TableBody>
       </Table>
