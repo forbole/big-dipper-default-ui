@@ -43,14 +43,15 @@ export const useGetStyles = () => {
     },
     collapsible: {
       background: '#F6F7F9',
+      '& .MuiTableCell-root': {
+        borderBottom: 'none',
+      },
       '&.collapsible-table-row': {
         '& tr': {
           verticalAlign: 'baseline',
         },
         '& .collapsible-cell': {
           padding: '0',
-        },
-        '& .label': {
         },
         '& .value': {
           width: '100%',
@@ -63,7 +64,6 @@ export const useGetStyles = () => {
     },
     table: {
       '& .MuiTableCell-root': {
-        borderBottom: 'none',
         whiteSpace: 'nowrap',
       },
       '& .success': {

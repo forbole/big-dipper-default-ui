@@ -10,7 +10,7 @@ import {
   ActionButton, FooterAction,
 } from './utils/table_preview_wrapper';
 import {
-  dummyDataDesktop, dummyLabelsDesktop
+  dummyDataDesktop, dummyLabelsDesktop, dummyDataDesktopWithoutCollapsible
 } from './utils/latest_activities';
 
 <Meta title="LatestActivitiesDesktop" component={LatestActivitiesDesktop} />
@@ -29,7 +29,34 @@ import {
 </Canvas>
 
 ```
-hello
+<LatestActivitiesDesktop
+  data={[
+    {
+      type: {
+        display: 'Delegate',
+        className: 'delegate',
+      },
+      time: '1 hour',
+      success: true,
+      content: <ContentMobile />,
+      collapsibleData: {
+        hash: '12344566',
+        height: <div>height</div>,
+        fee: '123 uatm',
+        gas: '1,234 / 20, 999',
+        memo: 'baby shark doo doodo dooo',
+      },
+    },
+  ]}
+  collapsibleLabels={{
+    hash: 'hash',
+    height: 'height',
+    fee: 'fee',
+    gas: 'Gas (used/ wanted)',
+    status: 'Status',
+    memo: 'Memo',
+  }}
+/>
 ```
 
 ## Props
@@ -49,19 +76,46 @@ hello
 
 ```
 {
-  avatar: React.ReactNode;
-  content: React.ReactNode;
-  time: string;
   type: {
-    className?: string;
     display: string;
-  };
+    className: string;
+  },
+  time: string;
   success: boolean;
+  content: React.ReactNode;
+  collapsibleData?: {
+    hash: string;
+    height: React.ReactNode;
+    fee: string;
+    gas: string;
+    memo: string;
+  }
 }[]
 ```
 
   </td>
     <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>collapsibleLabels</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  hash: string;
+  height: string;
+  fee: string;
+  gas: string;
+  status: string;
+  memo: string;
+}
+```
+
+  </td>
+    <td>Required if there is collapsible data</td>
     <td>-</td>
   </tr>
 
@@ -79,7 +133,32 @@ hello
 </table>
 <br/>
 
-<!-- ## With Wrapper
+## Without Collapsible
+<Canvas>
+  <Story name="Without Collapsible">
+    <LatestActivitiesDesktop
+      data={dummyDataDesktopWithoutCollapsible}
+    />
+  </Story>
+</Canvas>
+
+```
+<LatestActivitiesDesktop
+  data={[
+    {
+      type: {
+        display: 'Delegate',
+        className: 'delegate',
+      },
+      time: '1 hour',
+      success: true,
+      content: <ContentMobile />,
+    }
+  ]}
+/>
+```
+
+## With Wrapper
 <Canvas>
   <Story name="With TabletPreviewWrapper">
     <TablePreviewWrapper
@@ -87,8 +166,8 @@ hello
       action={ActionButton}
       footerAction={FooterAction}
     >
-      <LatestActivitiesMobile
-        data={dummyDataMobile}
+      <LatestActivitiesDesktop
+        data={dummyDataDesktopWithoutCollapsible}
       />
     </TablePreviewWrapper>
   </Story>
@@ -100,24 +179,18 @@ hello
   action={ActionButton}
   footerAction={FooterAction}
 >
-  <LatestActivitiesMobile
+  <LatestActivitiesDesktop
     data={[
       {
-        avatar: <Avatar
-          imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-          alt="avatar image"
-          width="40px"
-          height="40px"
-          />,
-        content: <ContentMobile />,
         type: {
-          display: 'Delegateaaaasvbbbbbbbbbaaaaaaaa',
+          display: 'Delegate',
           className: 'delegate',
         },
         time: '1 hour',
         success: true,
+        content: <ContentMobile />,
       }
     ]}
   />
 </TablePreviewWrapper>
-``` -->
+```

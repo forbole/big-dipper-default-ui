@@ -41,6 +41,36 @@ export const dummyLabelsDesktop = {
   memo: 'Memo',
 };
 
+export const dummyDataDesktopWithoutCollapsible = [
+  {
+    type: {
+      display: 'Delegate',
+      className: 'delegate',
+    },
+    time: '1 hour',
+    success: true,
+    content: <ContentMobile />,
+  },
+  {
+    type: {
+      display: 'Delegate',
+      className: 'delegate',
+    },
+    time: '1 hour',
+    success: true,
+    content: <ContentMobile />,
+  },
+  {
+    type: {
+      display: 'Delegate',
+      className: 'delegate',
+    },
+    time: '1 hour',
+    success: true,
+    content: <ContentMobile />,
+  },
+];
+
 export const dummyDataDesktop = [
   {
     type: {
