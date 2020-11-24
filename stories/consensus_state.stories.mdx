@@ -1,0 +1,29 @@
+import { Consensus } from '../src';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="ConsensusState" component={Consensus} />
+
+# Stabilities
+---
+## Default
+<Canvas>
+  <Story name="Default">
+    <Consensus
+      title='Consensus State'
+      height='2,769,405'
+      proposer='Forbole'
+      data={{
+        round:'2,769,405',
+        step:'Forbole',
+        votingPowerPerentage:[
+        {
+         value: 100000
+        }
+      ]}
+      }
+      colors={['#FF7846', '#FFD800']}
+    />
+  </Story>
+</Canvas>
+
+
