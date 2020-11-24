@@ -10,7 +10,7 @@ import {
   ActionButton, FooterAction,
 } from './utils/table_preview_wrapper';
 import {
-  dummyDataMobile
+  dummyDataDesktop
 } from './utils/latest_activities';
 
 <Meta title="LatestActivitiesDesktop" component={LatestActivitiesDesktop} />
@@ -22,31 +22,13 @@ import {
 <Canvas>
   <Story name="Default">
     <LatestActivitiesDesktop
-      data={dummyDataMobile}
+      data={dummyDataDesktop}
     />
   </Story>
 </Canvas>
 
 ```
-<LatestActivitiesMobile
-  data={[
-    {
-      avatar: <Avatar
-        imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-        alt="avatar image"
-        width="40px"
-        height="40px"
-        />,
-      content: <ContentMobile />,
-      type: {
-        display: 'Delegateaaaasvbbbbbbbbbaaaaaaaa',
-        className: 'delegate',
-      },
-      time: '1 hour',
-      success: true,
-    }
-  ]}
-/>
+hello
 ```
 
 ## Props

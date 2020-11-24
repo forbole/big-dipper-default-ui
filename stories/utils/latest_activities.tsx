@@ -32,6 +32,60 @@ export const ContentMobile = () => {
   );
 };
 
+export const dummyDataDesktop = [
+  {
+    type: {
+      display: 'Delegatasdasdfdsfdsfdsfsddgde',
+      className: 'delegate',
+    },
+    time: '1 hour',
+    success: true,
+    content: <ContentMobile />,
+    collapsibleData: {
+      hash: '12344566',
+      height: <div>height</div>,
+      fee: '123 uatm',
+      gasUsed: '1,234',
+      gasWanted: '20,999',
+      memo: 'baby shark doo doodo dooo',
+    },
+  },
+  {
+    type: {
+      display: 'Delegate',
+      className: 'delegate',
+    },
+    time: '1 hour',
+    success: true,
+    content: <ContentMobile />,
+    collapsibleData: {
+      hash: '12344566',
+      height: <div>height</div>,
+      fee: '123 uatm',
+      gasUsed: '1,234',
+      gasWanted: '20,999',
+      memo: 'baby shark doo doodo dooo',
+    },
+  },
+  {
+    type: {
+      display: 'Delegate',
+      className: 'delegate',
+    },
+    time: '1 hour',
+    success: true,
+    content: <ContentMobile />,
+    collapsibleData: {
+      hash: '12344566',
+      height: <div>height</div>,
+      fee: '123 uatm',
+      gasUsed: '1,234',
+      gasWanted: '20,999',
+      memo: 'baby shark doo doodo dooo',
+    },
+  },
+];
+
 export const dummyDataMobile = [
   {
     avatar: <Avatar

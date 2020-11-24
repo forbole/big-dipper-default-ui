@@ -1,70 +1,32 @@
 import React from 'react';
+import classnames from 'classnames';
 import {
-  Collapse,
-  IconButton,
   Table,
   TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   Paper,
 } from '@material-ui/core';
-import {
-  KeyboardArrowDown,
-  KeyboardArrowUp,
-} from '@material-ui/icons';
 import { Row } from './components';
+import { LatestActivitiesDesktopProps } from './types';
+import { useGetStyles } from './styles';
 
-function createData(name, calories, fat, carbs, protein, price) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-    price,
-    history: [
-      {
-        date: '2020-01-05', customerId: '11091700', amount: 3,
-      },
-      {
-        date: '2020-01-02', customerId: 'Anonymous', amount: 1,
-      },
-    ],
-  };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-  createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-  createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-  createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-];
-
-const LatestActivitiesDesktop = (props:any) => {
-  const { data } = props;
+const LatestActivitiesDesktop = (props:LatestActivitiesDesktopProps) => {
+  const {
+    data, className,
+  } = props;
+  const { classes } = useGetStyles();
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="collapsible table">
-        <TableHead>
-          <TableRow>
-            <TableCell />
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
+    <Paper
+      elevation={0}
+      className={classnames(classes.root, className, 'big-dipper', 'latest-activities-desktop')}
+    >
+      <Table className={classnames('table')} size="small">
         <TableBody>
-          {rows.map((x, i) => (
-            <Row row={x} key={i} />
+          {data.map((x:any, i) => (
+            <Row data={x} key={x.time} />
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+    </Paper>
   );
 };
 
