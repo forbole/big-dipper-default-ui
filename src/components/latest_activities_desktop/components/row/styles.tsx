@@ -56,8 +56,11 @@ export const useGetStyles = () => {
       '& .MuiTableCell-root': {
         borderBottom: 'none',
       },
-      '& .content': {
-
+      '& .label': {
+        whiteSpace: 'nowrap',
+      },
+      '& .value': {
+        width: '100%',
       },
     },
   });

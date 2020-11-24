@@ -2,7 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import {
   Collapse,
-  IconButton,
+  Table,
+  TableBody,
   TableCell,
   TableRow,
 } from '@material-ui/core';
@@ -15,14 +16,19 @@ import {
 import { RowProps } from './types';
 import { useGetStyles } from './styles';
 import { useRowHooks } from './hooks';
+import { getCollapsibleTableData } from './utils';
 
 const Row = (props:RowProps) => {
-  const { data } = props;
+  const {
+    data, labels,
+  } = props;
   const {
     open, toggleOpen,
   } = useRowHooks();
   const { classes } = useGetStyles();
-
+  const collapsibleTableData = data?.collapsibleData && labels
+    ? getCollapsibleTableData(data, labels)
+    : [];
   return (
     <>
       <TableRow
@@ -73,20 +79,31 @@ const Row = (props:RowProps) => {
       {/* ============================================ */}
       {/* Collapsible Row */}
       {/* ============================================ */}
-      <TableRow className={classnames(classes.collapsible, 'collapsible')}>
-        <TableCell
-          style={{
-            paddingBottom: 0, paddingTop: 0,
-          }}
-          colSpan={6}
-        >
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <div className={classnames('content')}>
-              fuck this shitß
-            </div>
-          </Collapse>
-        </TableCell>
-      </TableRow>
+      {data.collapsibleData && (
+        <TableRow className={classnames(classes.collapsible, 'collapsible')}>
+          <TableCell
+            style={{
+              paddingBottom: 0, paddingTop: 0,
+            }}
+            colSpan={6}
+          >
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Table className={classnames('content')}>
+                <TableBody>
+                  {collapsibleTableData.map((x) => {
+                    return (
+                      <TableRow key={x.label} className={classnames('row')}>
+                        <TableCell className={classnames(x.label, 'label')}>{x.label}</TableCell>
+                        <TableCell className={classnames(x.label, 'value')}>{x.value}</TableCell>
+                      </TableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </Collapse>
+          </TableCell>
+        </TableRow>
+      )}
     </>
   );
 };

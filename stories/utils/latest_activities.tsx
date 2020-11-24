@@ -32,6 +32,15 @@ export const ContentMobile = () => {
   );
 };
 
+export const dummyLabelsDesktop = {
+  hash: 'hash',
+  height: 'height',
+  fee: 'fee',
+  gas: 'Gas (used/ wanted)',
+  status: 'Status',
+  memo: 'Memo',
+};
+
 export const dummyDataDesktop = [
   {
     type: {
@@ -45,8 +54,7 @@ export const dummyDataDesktop = [
       hash: '12344566',
       height: <div>height</div>,
       fee: '123 uatm',
-      gasUsed: '1,234',
-      gasWanted: '20,999',
+      gas: '1,234 / 20, 999',
       memo: 'baby shark doo doodo dooo',
     },
   },
@@ -62,8 +70,7 @@ export const dummyDataDesktop = [
       hash: '12344566',
       height: <div>height</div>,
       fee: '123 uatm',
-      gasUsed: '1,234',
-      gasWanted: '20,999',
+      gas: '1,234 / 20, 999',
       memo: 'baby shark doo doodo dooo',
     },
   },
@@ -79,8 +86,7 @@ export const dummyDataDesktop = [
       hash: '12344566',
       height: <div>height</div>,
       fee: '123 uatm',
-      gasUsed: '1,234',
-      gasWanted: '20,999',
+      gas: '1,234 / 20, 999',
       memo: 'baby shark doo doodo dooo',
     },
   },

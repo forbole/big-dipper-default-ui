@@ -10,7 +10,7 @@ import {
   ActionButton, FooterAction,
 } from './utils/table_preview_wrapper';
 import {
-  dummyDataDesktop
+  dummyDataDesktop, dummyLabelsDesktop
 } from './utils/latest_activities';
 
 <Meta title="LatestActivitiesDesktop" component={LatestActivitiesDesktop} />
@@ -23,6 +23,7 @@ import {
   <Story name="Default">
     <LatestActivitiesDesktop
       data={dummyDataDesktop}
+      collapsibleLabels={dummyLabelsDesktop}
     />
   </Story>
 </Canvas>
