@@ -2,7 +2,7 @@ import React from 'react';
 import {
   createStyles, makeStyles,
 } from '@material-ui/core';
-import { Data } from '../../src/latest_blocks_mobile/types';
+import { Data } from '../../src/components/latest_blocks_mobile/types';
 
 const Proposer = () => {
   const useStyles = makeStyles((theme: any) => createStyles({

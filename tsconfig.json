@@ -30,7 +30,7 @@
     "baseUrl": ".",
   },
   "include": [
-    "src"
+    "src", "typings.d.ts", "index.d.ts"
   ],
   "exclude": [
     "node_modules",
