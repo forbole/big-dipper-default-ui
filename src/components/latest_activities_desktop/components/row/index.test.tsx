@@ -49,4 +49,28 @@ describe('Row', () => {
     expect(wrap.find('.collapsible')).toHaveLength(3);
     expect(wrap.find('.collapsible-table-row')).toHaveLength(3);
   });
+
+  it('Works with collapsible', () => {
+    expect(Row).toBeTruthy();
+    const wrap = mount(
+      <Table>
+        <TableBody>
+          <Row
+            labels={undefined}
+            data={{
+              type: {
+                display: 'Delegate',
+                className: 'delegate',
+              },
+              time: '1 hour',
+              success: true,
+              content: <div>custom content</div>,
+            }}
+          />
+        </TableBody>
+      </Table>,
+    );
+    expect(wrap).not.toBeNull();
+    expect(wrap.find('.collapsible-table-row')).toHaveLength(0);
+  });
 });
