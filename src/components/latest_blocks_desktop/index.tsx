@@ -9,13 +9,14 @@ import {
 } from '@material-ui/core';
 import { LatestBlocksDesktopProps } from './types';
 import { useGetStyles } from './styles';
+import { latestBlocksDesktopUtils } from './utils';
 
 const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
   const {
-    data, labels, className,
+    data, labels, className, onClick,
   } = props;
   const { classes } = useGetStyles();
-
+  const { handleClick } = latestBlocksDesktopUtils(onClick);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-desktop')}>
       <Table className={classnames('table')} size="small">
@@ -31,7 +32,11 @@ const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
         <TableBody>
           {data.map((row) => {
             return (
-              <TableRow key={row.time} className={classnames('single-row')}>
+              <TableRow
+                key={row.time}
+                className={classnames('single-row')}
+                onClick={() => handleClick(row)}
+              >
                 <TableCell className={classnames('cell', 'time')}>
                   {row.time}
                 </TableCell>

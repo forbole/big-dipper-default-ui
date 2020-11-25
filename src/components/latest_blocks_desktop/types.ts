@@ -8,6 +8,8 @@ export type Data = {
   tx: string | number;
 };
 
+export type OnClick = (data: Data) => void;
+
 export interface LatestBlocksDesktopProps {
   className?: string;
   labels: {
@@ -18,4 +20,5 @@ export interface LatestBlocksDesktopProps {
     tx: string;
   }
   data: Data[]
+  onClick?: OnClick;
 }

@@ -8,10 +8,13 @@ export type Data = {
   tx: string | number;
 }
 
+export type OnClick = (data: Data) => void;
+
 export interface LatestBlocksMobileProps {
   className?: string;
   labels: {
     tx: string;
   };
-  data: Data[]
+  data: Data[];
+  onClick?: OnClick;
 }
