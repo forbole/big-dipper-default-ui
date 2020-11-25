@@ -24,8 +24,8 @@ describe('LatestActivitiesDesktop', () => {
           time: '1 hour',
           success: true,
           content: <div>custom content</div>,
+          hash: '12344566',
           collapsibleData: {
-            hash: '12344566',
             height: <div>height</div>,
             fee: '123 uatm',
             gas: '1,234 / 20, 999',
