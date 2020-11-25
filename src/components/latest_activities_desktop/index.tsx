@@ -14,6 +14,7 @@ const LatestActivitiesDesktop = (props:LatestActivitiesDesktopProps) => {
     data,
     className,
     collapsibleLabels,
+    onClick,
   } = props;
   const { classes } = useGetStyles();
   return (
@@ -24,7 +25,12 @@ const LatestActivitiesDesktop = (props:LatestActivitiesDesktopProps) => {
       <Table className={classnames('table')} size="small">
         <TableBody>
           {data.map((x:any, i) => (
-            <Row data={x} key={`${x.time}-${i}`} labels={collapsibleLabels} />
+            <Row
+              data={x}
+              key={`${x.time}-${i}`}
+              labels={collapsibleLabels}
+              onClick={onClick}
+            />
           ))}
         </TableBody>
       </Table>

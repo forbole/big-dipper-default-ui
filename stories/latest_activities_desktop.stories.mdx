@@ -24,6 +24,7 @@ import {
     <LatestActivitiesDesktop
       data={dummyDataDesktop}
       collapsibleLabels={dummyLabelsDesktop}
+      onClick={(data) => console.log(`Row with hash ${data.hash} clicked`)}
     />
   </Story>
 </Canvas>
@@ -56,11 +57,13 @@ import {
     status: 'Status',
     memo: 'Memo',
   }}
+  onClick={(data) => console.log(`Row with hash ${data.hash} clicked`)}
 />
 ```
 
 ## Props
 <table>
+<thead>
   <tr>
     <th>Property</th>
     <th>Required</th>
@@ -68,7 +71,8 @@ import {
     <th>Description</th>
     <th>Default</th>
   </tr>
-
+  </thead>
+<tbody>
   <tr>
     <td>data</td>
     <td>true</td>
@@ -120,6 +124,18 @@ import {
   </tr>
 
   <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
     <td>className</td>
     <td>-</td>
     <td>
@@ -130,6 +146,7 @@ import {
     <td>-</td>
     <td>-</td>
   </tr>
+  </tbody>
 </table>
 <br/>
 

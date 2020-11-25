@@ -17,9 +17,13 @@ export const ContentMobile = () => {
   }));
 
   const classes = useStyles();
+  const handleClick = (e:any) => {
+    e.stopPropagation();
+    console.log('child click');
+  };
   return (
     <div className={classes.root}>
-      <span className="blue">
+      <span className="blue" onClick={handleClick} role="button">
         Lori&nbsp;
       </span>
       delegate&nbsp;
@@ -47,6 +51,7 @@ export const dummyDataDesktopWithoutCollapsible = [
       display: 'Delegate',
       className: 'delegate',
     },
+    hash: '12344',
     time: '1 hour',
     success: true,
     content: <ContentMobile />,
@@ -56,6 +61,7 @@ export const dummyDataDesktopWithoutCollapsible = [
       display: 'Delegate',
       className: 'delegate',
     },
+    hash: '12344',
     time: '1 hour',
     success: true,
     content: <ContentMobile />,
@@ -65,6 +71,7 @@ export const dummyDataDesktopWithoutCollapsible = [
       display: 'Delegate',
       className: 'delegate',
     },
+    hash: '12344',
     time: '1 hour',
     success: true,
     content: <ContentMobile />,
@@ -77,6 +84,7 @@ export const dummyDataDesktop = [
       display: 'Delegate',
       className: 'delegate',
     },
+    hash: '12344',
     time: '1 hour',
     success: true,
     content: <ContentMobile />,
@@ -93,6 +101,7 @@ export const dummyDataDesktop = [
       display: 'Delegate',
       className: 'delegate',
     },
+    hash: '12344',
     time: '1 hour',
     success: true,
     content: <ContentMobile />,
@@ -109,6 +118,7 @@ export const dummyDataDesktop = [
       display: 'Delegate',
       className: 'delegate',
     },
+    hash: '12344',
     time: '1 hour',
     success: true,
     content: <ContentMobile />,

@@ -14,17 +14,23 @@ import {
 import { RowProps } from './types';
 import { useGetStyles } from './styles';
 import { useRowHooks } from './hooks';
-import { getCollapsibleTableData } from './utils';
+import { rowUtils } from './utils';
 import { Collapsible } from './components';
 
 const Row = (props:RowProps) => {
   const {
-    data, labels,
+    data,
+    labels,
+    onClick,
   } = props;
+
   const {
     open, toggleOpen,
   } = useRowHooks();
   const { classes } = useGetStyles();
+  const {
+    getCollapsibleTableData, handleClick,
+  } = rowUtils(onClick);
   const collapsibleTableData = data?.collapsibleData && labels
     ? getCollapsibleTableData(data, labels)
     : [];
@@ -35,6 +41,7 @@ const Row = (props:RowProps) => {
         className={classnames(classes.root, classes.table, 'single-activity', {
           active: open,
         })}
+        onClick={() => handleClick(data)}
       >
         <TableCell>{data.time}</TableCell>
         <TableCell>

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export type CollapsibleData = {
-  hash: string;
   height: React.ReactNode;
   fee: string;
   gas: string;
@@ -15,6 +14,7 @@ export type DataProps = {
   },
   time: string;
   success: boolean;
+  hash: string;
   content: React.ReactNode;
   collapsibleData?: CollapsibleData;
 }
@@ -27,8 +27,12 @@ export type CollapsibleLabels = {
   status: string;
   memo: string;
 }
+
+export type OnClick = (data:DataProps) => void;
+
 export interface LatestActivitiesDesktopProps {
   className?: string;
   data: DataProps[];
   collapsibleLabels?: CollapsibleLabels;
+  onClick?: OnClick;
 }
