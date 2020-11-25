@@ -4,6 +4,6 @@ export interface TablePreviewWrapperProps {
   className?: string;
   children?: React.ReactNode;
   title: string;
-  action: React.FC;
-  footerAction?: React.FC;
+  action: React.ReactNode;
+  footerAction?: React.ReactNode;
 }

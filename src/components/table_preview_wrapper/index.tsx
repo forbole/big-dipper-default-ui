@@ -9,8 +9,8 @@ const TablePreviewWrapper = (props:TablePreviewWrapperProps) => {
     className,
     children,
     title,
-    action: Action,
-    footerAction: FooterAction,
+    action,
+    footerAction,
   } = props;
 
   return (
@@ -19,14 +19,14 @@ const TablePreviewWrapper = (props:TablePreviewWrapperProps) => {
         <h3>
           {title}
         </h3>
-        <Action />
+        {action}
       </div>
       <div className={classnames('content')}>
         {children}
       </div>
-      {!!FooterAction && (
+      {!!footerAction && (
       <div className={classnames('footer-action')}>
-        <FooterAction />
+        {footerAction}
       </div>
       )}
     </div>

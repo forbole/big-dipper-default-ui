@@ -8,7 +8,7 @@ describe('TablePreviewWrapper', () => {
     const wrap = mount(
       <TablePreviewWrapper
         title="hello world"
-        action={() => <div>hello world</div>}
+        action={<div>hello world</div>}
       />,
     );
     expect(wrap).not.toBeNull();
@@ -25,8 +25,8 @@ describe('TablePreviewWrapper', () => {
     const wrap = mount(
       <TablePreviewWrapper
         title="hello world"
-        action={() => <div>hello world</div>}
-        footerAction={() => <div>hello world</div>}
+        action={<div>hello world</div>}
+        footerAction={<div>hello world</div>}
       />,
     );
     expect(wrap).not.toBeNull();
