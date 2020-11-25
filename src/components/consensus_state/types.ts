@@ -1,18 +1,20 @@
 export interface Props {
   title: string;
-  height: string;
-  proposer: string;
-  data: Data;
+  height: Detail;
+  proposer: Detail;
+  votingPower: Data;
   colors: string[];
   classname?: string;
-}
-
-type Data = {
-  votingPowerPerentage: Detail[];
-  round: number;
-  step: number;
+  round: Detail;
+  step: Detail;
 }
 
 type Detail = {
+  title: string;
+  display: string;
+}
+
+type Data = {
+  title: string;
   value: number;
 }

@@ -10,21 +10,27 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
   <Story name="Default">
     <Consensus
       title='Consensus State'
-      height='2,769,405'
-      proposer='Forbole'
-      data={{
-        round:'2,769,405',
-        step:'Forbole',
-        votingPowerPerentage:[
-        {
-         value: 100000
-        },
-        {
-         value: 100000
-        }
-      ]}
-      }
-      colors={['#FF7846', '#FFD800']}
+      height={{
+        title: 'Height',
+        display: '2,769,405'
+      }}
+      proposer={{
+        title: 'Proposer',
+        display: 'Forbole'
+      }}
+      votingPower={{
+        title: 'Voting Power',
+        value: 0.85
+      }}
+      colors={['#FD3B4C', '#E8E8E8']}
+      round={{
+        title: 'Round',
+        display: '6'
+      }}
+      step={{
+        title: 'Step',
+        display: '4'
+      }}
     />
   </Story>
 </Canvas>
