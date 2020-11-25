@@ -137,6 +137,7 @@ export const dummyDataMobile = [
     },
     time: '1 hour',
     success: true,
+    hash: 'dsfkjgfdkhusfghusdsdgkdhkjgfkj',
   },
   {
     avatar: <Avatar
@@ -152,6 +153,7 @@ export const dummyDataMobile = [
     },
     time: '1 hour',
     success: true,
+    hash: 'dsfkjgfdkhusfghusdsdgkdhkjgfkj',
   },
   {
     avatar: <Avatar
@@ -167,5 +169,6 @@ export const dummyDataMobile = [
     },
     time: '1 hour',
     success: false,
+    hash: 'dsfkjgfdkhusfghusdsdgkdhkjgfkj',
   },
 ];

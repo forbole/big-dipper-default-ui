@@ -5,19 +5,30 @@ import {
 } from '@material-ui/icons';
 import { useGetStyles } from './styles';
 import { LatestActivitiesMobileProps } from './types';
+import { latestActivitiesMobileUtils } from './utils';
 
 const LatestActivitiesMobile = (props:LatestActivitiesMobileProps) => {
   const { classes } = useGetStyles();
   const {
     data,
     className,
+    onClick,
   } = props;
 
+  const { handleClick } = latestActivitiesMobileUtils(onClick);
+
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'latest-activities-mobile')}>
-      {data.map((x) => {
+    <div
+      className={classnames(classes.root, className, 'big-dipper', 'latest-activities-mobile')}
+    >
+      {data.map((x, i) => {
         return (
-          <div key={x.time} className={classnames('activity', 'flex')}>
+          <div
+            key={`${x.time}-${i}`}
+            className={classnames('activity', 'flex')}
+            onClick={() => handleClick(x)}
+            role="button"
+          >
             <div className={classnames('avatar-container')}>
               {x.avatar}
             </div>

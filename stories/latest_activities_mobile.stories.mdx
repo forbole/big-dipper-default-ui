@@ -23,6 +23,7 @@ import {
   <Story name="Default">
     <LatestActivitiesMobile
       data={dummyDataMobile}
+      onClick={(data) => console.log(`Row with hash ${data.hash} clicked`)}
     />
   </Story>
 </Canvas>
@@ -46,19 +47,22 @@ import {
       success: true,
     }
   ]}
+  onClick={(data) => console.log(`Row with hash ${data.hash} clicked`)}
 />
 ```
 
 ## Props
 <table>
-  <tr>
-    <th>Property</th>
-    <th>Required</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Required</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+<tbody>
   <tr>
     <td>data</td>
     <td>true</td>
@@ -83,6 +87,18 @@ import {
   </tr>
 
   <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
     <td>className</td>
     <td>-</td>
     <td>
@@ -93,6 +109,7 @@ import {
     <td>-</td>
     <td>-</td>
   </tr>
+</tbody>
 </table>
 <br/>
 
