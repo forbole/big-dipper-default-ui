@@ -1,29 +1,42 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Statbilities from '.';
+import ConsensusState from '.';
 
-describe('Statbilities', () => {
+describe('ConsensusState', () => {
   it('Works with base props', () => {
-    expect(Statbilities).toBeTruthy();
+    expect(ConsensusState).toBeTruthy();
     const args = {
-      data: [{
-        name: 'bonded', value: 184136.334,
+      title: 'Consensus State',
+      height: {
+        title: 'Height',
+        display: '2,769,405',
       },
-      {
-        name: 'unbonded', value: 7099.13997,
-      }],
-      info: {
-        price: 2.75, inflation: 7.01, marketCap: 515551195.53, communityPool: 370536.4747,
+      proposer: {
+        title: 'Proposer',
+        display: 'Forbole',
+      },
+      votingPower: {
+        title: 'Voting Power',
+        value: 0.85,
+      },
+      colors: ['#FD3B4C', '#E8E8E8'],
+      round: {
+        title: 'Round',
+        display: '6',
+      },
+      step: {
+        title: 'Step',
+        display: '4',
       },
     };
     const wrap = mount(
-      <Statbilities
+      <ConsensusState
         {...args}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find('h1').first().text()).toBe('Statbilities');
-    expect(wrap.find('h4').first().text()).toBe('0.19 m');
-    expect(wrap.find('h4').last().text()).toBe('Community Pool');
+    expect(wrap.find('h1').first().text()).toBe('Consensus State');
+    expect(wrap.find('h4').first().text()).toBe('Height');
+    expect(wrap.find('h4').last().text()).toBe('Voting Power');
   });
 });
