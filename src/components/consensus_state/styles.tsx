@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/styles';
+import { getMinMediaQuery } from './utils';
 
 export const useGetStyles = () => {
   const useStyles = makeStyles({
@@ -8,6 +9,7 @@ export const useGetStyles = () => {
       display: 'flex',
       borderRadius: '2px',
       overflow: 'auto',
+      background: 'yellow',
       '& h1': {
         fontSize: '1.375rem',
         fontWeight: 500,
@@ -32,9 +34,12 @@ export const useGetStyles = () => {
       },
     },
     container: {
-      height: '25.5rem',
-      width: '23.75rem',
-      margin: 'auto',
+      height: 'auto',
+      width: '100%',
+      margin: '1.5rem 1rem 1.5rem 1rem',
+      [getMinMediaQuery(1600)]: {
+        margin: '2rem 1.5rem 2rem 1.5rem',
+      },
     },
 
     chartCenter: {
@@ -67,12 +72,24 @@ export const useGetStyles = () => {
       // marginTop: '2rem',
       background: 'blue',
       marginRight: '2rem',
+      margin: '0',
+
     },
     chartBox: {
       display: 'flex',
-      width: '8.75rem',
-      height: '8.75rem',
-      margin: '0',
+      width: '60%',
+      height: '20rem',
+      background: 'red',
+      marginTop: '2rem',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      // [getMinMediaQuery(1080)]: {
+      //   width: '40%',
+      // },
+      // [getMinMediaQuery(1600)]: {
+      //   width: '50%',
+      //   height: '150px',
+      // },
     },
     boxMedium: {
       width: '12.375rem',

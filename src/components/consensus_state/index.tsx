@@ -48,27 +48,29 @@ const ConsensusState = (prop: Props) => {
         <h4>
           Voting Power
         </h4>
-        <ResponsiveContainer height="100%">
-          <PieChart>
-            <Pie
-              data={data.votingPowerPerentage}
-              startAngle={70}
-              endAngle={-290}
-              innerRadius="85%"
-              outerRadius="100%"
-              dataKey="value"
-              labelLine={false}
-              stroke="none"
+        <div className={classnames(classes.chartBox)}>
+          <ResponsiveContainer width="100%">
+            <PieChart>
+              <Pie
+                data={data.votingPowerPerentage}
+                startAngle={240}
+                endAngle={-60}
+                innerRadius="95%"
+                outerRadius="100%"
+                dataKey="value"
+                labelLine={false}
+                stroke="none"
               // label={renderCustomizedLabel}
-            >
-              {
-                data.votingPowerPerentage.map((_x: any, index: any) => (
-                  <Cell className={classnames('pie')} key={_x.value} fill={colors[index % colors.length]} />
-                ))
-              }
-            </Pie>
-          </PieChart>
-        </ResponsiveContainer>
+              >
+                {
+                  data.votingPowerPerentage.map((_x: any, index: any) => (
+                    <Cell className={classnames('pie')} key={_x.value} fill={colors[index % colors.length]} />
+                  ))
+                }
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );
