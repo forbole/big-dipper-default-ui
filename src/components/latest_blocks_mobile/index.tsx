@@ -30,7 +30,7 @@ const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
                 {x.proposer}
               </span>
               <span className={classnames('height')}>
-                {x.height}
+                {x.height.display}
               </span>
             </div>
             <div className={classnames('flex')}>

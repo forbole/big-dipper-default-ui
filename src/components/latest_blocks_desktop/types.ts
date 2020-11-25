@@ -2,7 +2,10 @@ import React from 'react';
 
 export type Data = {
   proposer: React.ReactNode;
-  height: React.ReactNode;
+  height: {
+    value: number;
+    display: React.ReactNode;
+  }
   time: string
   hash: string
   tx: string | number;

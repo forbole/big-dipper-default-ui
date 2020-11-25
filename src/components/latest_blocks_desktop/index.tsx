@@ -48,7 +48,7 @@ const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
                 </TableCell>
                 <TableCell align="right" className={classnames('cell', 'tx')}>{row.tx}</TableCell>
                 <TableCell align="right" className={classnames('cell', 'height')}>
-                  {row.height}
+                  {row.height.display}
                 </TableCell>
               </TableRow>
             );
