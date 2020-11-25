@@ -6,9 +6,16 @@ import {
 import { Avatar } from '../..';
 import LatestActivitiesMobile from '.';
 
+const spies = {
+  onClick() {
+    console.log('does something');
+  },
+};
+
 describe('LatestActivitiesMobile', () => {
   it('Works', () => {
     expect(LatestActivitiesMobile).toBeTruthy();
+    const onClickSpy = jest.spyOn(spies, 'onClick');
     const wrap = mount(
       <LatestActivitiesMobile
         data={[
@@ -26,8 +33,10 @@ describe('LatestActivitiesMobile', () => {
             },
             time: '1 hour',
             success: true,
+            hash: '123',
           },
         ]}
+        onClick={spies.onClick}
       />,
     );
     expect(wrap).not.toBeNull();
@@ -36,5 +45,8 @@ describe('LatestActivitiesMobile', () => {
     expect(wrap.find('.activity')).toHaveLength(1);
     expect(wrap.find(Cancel)).toHaveLength(0);
     expect(wrap.find(CheckCircle)).toHaveLength(1);
+    expect(onClickSpy).toHaveBeenCalledTimes(0);
+    wrap.find('.activity').first().simulate('click');
+    expect(onClickSpy).toHaveBeenCalledTimes(1);
   });
 });
