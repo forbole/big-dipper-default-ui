@@ -5,6 +5,7 @@ import {
 import classnames from 'classnames';
 import { Props } from './types';
 import { useGetStyles } from './styles';
+import icon from './favicon.png';
 
 const ConsensusState = (prop: Props) => {
   const { classes } = useGetStyles();
@@ -27,9 +28,6 @@ const ConsensusState = (prop: Props) => {
 
   const colorsMain = [colors[0], '#00000000'];
   const colorBackground = [colors[1]];
-
-  // eslint-disable-next-line global-require
-  const icon = require('./favicon.png');
 
   const renderCustomizedLabel = ({
     cx, cy,
