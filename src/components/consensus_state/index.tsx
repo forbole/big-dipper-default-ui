@@ -15,8 +15,9 @@ const ConsensusState = (prop: Props) => {
     step,
     round,
     votingPower,
-    classname,
+    className,
     colors,
+    icon,
   } = prop;
 
   const votingPowerPerentage = [{
@@ -28,8 +29,7 @@ const ConsensusState = (prop: Props) => {
   const colorsMain = [colors[0], '#00000000'];
   const colorBackground = [colors[1]];
 
-  // eslint-disable-next-line global-require
-  const icon = require('./favicon.png');
+  const iconPath = require(icon);
 
   const renderCustomizedLabel = ({
     cx, cy,
@@ -45,7 +45,7 @@ const ConsensusState = (prop: Props) => {
 
   return (
 
-    <div className={classnames(classes.root, classname)}>
+    <div className={classnames(classes.root, className)}>
       <div className={classes.container}>
         <h1>
           {title}
@@ -65,7 +65,7 @@ const ConsensusState = (prop: Props) => {
             </h4>
 
             <p className={classnames('proposer')}>
-              <img src={icon} alt="" className={classnames('icon')} />
+              <img src={iconPath} alt="" className={classnames('icon')} />
               {proposer.display}
             </p>
           </div>

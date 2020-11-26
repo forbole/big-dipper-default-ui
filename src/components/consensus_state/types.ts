@@ -4,9 +4,10 @@ export interface Props {
   proposer: Detail;
   votingPower: Data;
   colors: string[];
-  classname?: string;
+  className?: string;
   round: Detail;
   step: Detail;
+  icon: string;
 }
 
 type Detail = {

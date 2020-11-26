@@ -5,7 +5,7 @@ export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
       maxWidth: '100%',
-      height: 'auto',
+      height: '100%',
       display: 'flex',
       borderRadius: '2px',
       overflow: 'auto',
