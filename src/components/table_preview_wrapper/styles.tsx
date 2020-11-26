@@ -12,7 +12,7 @@ export const useGetStyles = () => {
         justifyContent: 'space-between',
         paddingBottom: '1rem',
         '& h3': {
-          fontSize: '1.1125rem',
+          fontSize: '1.125rem',
           margin: 0,
           fontWeight: 600,
         },

@@ -16,8 +16,8 @@ import {
   <Story name="Default">
     <TablePreviewWrapper
       title="Blocks"
-      action={ActionButton}
-      footerAction={FooterAction}
+      action={<ActionButton />}
+      footerAction={<FooterAction />}
     >
       <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla, metus sit amet bibendum dapibus, sem ligula molestie lectus, vitae mollis ex nibh id leo. Sed lacus nisl, finibus vitae sodales posuere, malesuada ac lorem. Morbi vulputate lectus sed pellentesque volutpat. Maecenas in convallis augue,
@@ -29,8 +29,8 @@ import {
 ```
 <TablePreviewWrapper
   title="Blocks"
-  action={ActionButton}
-  footerAction={FooterAction}
+  action={<ActionButton />}
+  footerAction={<FooterAction />}
 >
   <div>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla, metus sit amet bibendum dapibus, sem ligula molestie lectus, vitae mollis ex nibh id leo. Sed lacus nisl, finibus vitae sodales posuere, malesuada ac lorem. Morbi vulputate lectus sed pellentesque volutpat. Maecenas in convallis augue,
@@ -39,6 +39,7 @@ import {
 ```
 ## Props
 <table>
+<thead>
   <tr>
     <th>Property</th>
     <th>Required</th>
@@ -46,7 +47,8 @@ import {
     <th>Description</th>
     <th>Default</th>
   </tr>
-
+</thead>
+<tbody>
   <tr>
     <td>title</td>
     <td>true</td>
@@ -64,7 +66,7 @@ import {
     <td>true</td>
     <td>
 
-`React.FC`
+`React.ReactNode`
 
   </td>
     <td>Action component</td>
@@ -76,7 +78,7 @@ import {
     <td>true</td>
     <td>
 
-`React.FC`
+`React.ReactNode`
 
   </td>
     <td>Footer component</td>
@@ -94,5 +96,6 @@ import {
     <td>-</td>
     <td>-</td>
   </tr>
+  </tbody>
 </table>
 <br/>

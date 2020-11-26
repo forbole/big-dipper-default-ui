@@ -9,16 +9,17 @@ import {
 } from '@material-ui/core';
 import { LatestBlocksDesktopProps } from './types';
 import { useGetStyles } from './styles';
+import { latestBlocksDesktopUtils } from './utils';
 
 const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
   const {
-    data, labels, className,
+    data, labels, className, onClick,
   } = props;
   const { classes } = useGetStyles();
-
+  const { handleClick } = latestBlocksDesktopUtils(onClick);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-desktop')}>
-      <Table className={classnames('table')} size="small">
+      <Table className={classnames('table')}>
         <TableHead>
           <TableRow>
             <TableCell className={classnames('label', 'time')}>{labels.time}</TableCell>
@@ -31,7 +32,11 @@ const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
         <TableBody>
           {data.map((row) => {
             return (
-              <TableRow key={row.time} className={classnames('single-row')}>
+              <TableRow
+                key={row.time}
+                className={classnames('single-row')}
+                onClick={() => handleClick(row)}
+              >
                 <TableCell className={classnames('cell', 'time')}>
                   {row.time}
                 </TableCell>
@@ -43,7 +48,7 @@ const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
                 </TableCell>
                 <TableCell align="right" className={classnames('cell', 'tx')}>{row.tx}</TableCell>
                 <TableCell align="right" className={classnames('cell', 'height')}>
-                  {row.height}
+                  {row.height.display}
                 </TableCell>
               </TableRow>
             );

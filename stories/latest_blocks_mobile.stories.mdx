@@ -43,6 +43,7 @@ import {
 
 ## Props
 <table>
+<thead>
   <tr>
     <th>Property</th>
     <th>Required</th>
@@ -50,7 +51,8 @@ import {
     <th>Description</th>
     <th>Default</th>
   </tr>
-
+</thead>
+<tbody>
   <tr>
     <td>title</td>
     <td>true</td>
@@ -100,6 +102,18 @@ import {
   </tr>
 
   <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
     <td>className</td>
     <td>-</td>
     <td>
@@ -110,6 +124,7 @@ import {
     <td>-</td>
     <td>-</td>
   </tr>
+  </tbody>
 </table>
 <br/>
 
@@ -118,7 +133,7 @@ import {
   <Story name="With TabletPreviewWrapper">
     <TablePreviewWrapper
       title="Latest Blocks"
-      action={ActionButton}
+      action={<ActionButton />}
     >
       <LatestBlocksMobile labels={dummyLabelMobile} data={dummyData} />
     </TablePreviewWrapper>
@@ -128,7 +143,7 @@ import {
 ```
 <TablePreviewWrapper
   title="Latest Blocks"
-  action={ActionButton}
+  action={<ActionButton />}
 >
   <LatestBlocksMobile
     labels={{
