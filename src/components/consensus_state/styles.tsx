@@ -9,7 +9,6 @@ export const useGetStyles = () => {
       display: 'flex',
       borderRadius: '2px',
       overflow: 'auto',
-      // background: 'yellow',
       '& h1': {
         fontSize: '1.375rem',
         fontWeight: 500,
@@ -29,14 +28,10 @@ export const useGetStyles = () => {
       },
       '& .proposer': {
         display: 'flex',
-        fontSize: '1rem',
-        fontWeight: 400,
-        margin: '0.625rem 0 0 0rem',
-        color: '#1D86FF',
+        marginTop: '0.625rem',
       },
       '& .box': {
         display: 'flex',
-        // background: 'red',
         marginBottom: '2rem',
       },
       '& .icon': {
@@ -49,19 +44,14 @@ export const useGetStyles = () => {
         fontWeight: 400,
         margin: '0',
         height: '1.65rem',
-        [getMinMediaQuery(1600)]: {
-          // fontSize: '1.25rem',
-        },
       },
       '& .inChart': {
         height: '1rem',
         marginLeft: '0rem',
         marginTop: '0rem',
-        fontSize: '0.5rem',
+        fontSize: '0.75rem',
         color: '#414141',
-        [getMinMediaQuery(1600)]: {
-          // fontSize: '0.875rem',
-        },
+        fontWeight: 300,
       },
     },
     container: {
@@ -73,7 +63,6 @@ export const useGetStyles = () => {
       },
     },
     boxSmall: {
-      // background: 'blue',
       marginRight: '2rem',
       margin: '0',
     },
@@ -81,17 +70,9 @@ export const useGetStyles = () => {
       display: 'flex',
       width: '60%',
       height: '45%',
-      // background: 'red',
       marginTop: '2rem',
       marginLeft: 'auto',
       marginRight: 'auto',
-      // [getMinMediaQuery(1080)]: {
-      //   width: '40%',
-      // },
-      // [getMinMediaQuery(1600)]: {
-      //   width: '50%',
-      //   height: '150px',
-      // },
     },
   });
 

@@ -29,16 +29,16 @@ const ConsensusState = (prop: Props) => {
   const colorsMain = [colors[0], '#00000000'];
   const colorBackground = [colors[1]];
 
-  const iconPath = require(icon);
+  const iconPath = require(`${icon}`);
 
   const renderCustomizedLabel = ({
     cx, cy,
   }: any) => {
     return (
       <text className={classnames(classes.root)} fill="black" textAnchor="middle">
-        <tspan className={classnames('amountInChart')} y={cy} x={cx}>85 %</tspan>
-        <tspan className={classnames('inChart')} x={cx} y={cy + 20}>{`${round.title} ${round.display}`}</tspan>
-        <tspan className={classnames('inChart')} x={cx} y={cy + 30}>{`${step.title} ${step.display}`}</tspan>
+        <tspan className={classnames('amountInChart')} y={cy + 3} x={cx}>85 %</tspan>
+        <tspan className={classnames('inChart')} x={cx} y={cy + 26}>{`${round.title} ${round.display}`}</tspan>
+        <tspan className={classnames('inChart')} x={cx} y={cy + 39}>{`${step.title} ${step.display}`}</tspan>
       </text>
     );
   };
@@ -63,11 +63,11 @@ const ConsensusState = (prop: Props) => {
             <h4>
               {proposer.title}
             </h4>
-
-            <p className={classnames('proposer')}>
+            <div className={classnames('proposer')}>
               <img src={iconPath} alt="" className={classnames('icon')} />
               {proposer.display}
-            </p>
+            </div>
+
           </div>
         </div>
         <h4>
@@ -110,7 +110,6 @@ const ConsensusState = (prop: Props) => {
                   dataKey="value"
                   labelLine={false}
                   stroke="none"
-                // label={renderCustomizedLabel}
                 >
                   {
                     votingPowerPerentage.map((_x: any, index: any) => (

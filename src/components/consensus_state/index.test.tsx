@@ -13,7 +13,7 @@ describe('ConsensusState', () => {
       },
       proposer: {
         title: 'Proposer',
-        display: 'Forbole',
+        display: <div>forbole</div>,
       },
       votingPower: {
         title: 'Voting Power',
@@ -28,6 +28,7 @@ describe('ConsensusState', () => {
         title: 'Step',
         display: '4',
       },
+      icon: './favicon.png',
     };
     const wrap = mount(
       <ConsensusState

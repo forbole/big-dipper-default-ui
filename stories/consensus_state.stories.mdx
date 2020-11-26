@@ -1,5 +1,8 @@
 import { Consensus } from '../src';
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import {
+  dummyProposer,
+} from './utils/consensus';
 
 <Meta title="ConsensusState" component={Consensus} />
 
@@ -14,10 +17,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
         title: 'Height',
         display: '2,769,405'
       }}
-      proposer={{
-        title: 'Proposer',
-        display: 'Forbole'
-      }}
+      proposer={dummyProposer}
       votingPower={{
         title: 'Voting Power',
         value: 0.85
