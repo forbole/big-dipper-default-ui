@@ -53,7 +53,7 @@ const Row = (props:RowProps) => {
           {data.content}
         </TableCell>
         <TableCell className={classnames('status')} align="right">
-          {data.success
+          {data.success && labels
             ? (
               <CheckCircle
                 className={classnames('icon', 'success', {
