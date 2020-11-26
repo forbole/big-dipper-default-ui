@@ -22,7 +22,7 @@ const LatestActivitiesDesktop = (props:LatestActivitiesDesktopProps) => {
       elevation={0}
       className={classnames(classes.root, className, 'big-dipper', 'latest-activities-desktop')}
     >
-      <Table className={classnames('table')} size="small">
+      <Table className={classnames('table')}>
         <TableBody>
           {data.map((x:any, i) => (
             <Row

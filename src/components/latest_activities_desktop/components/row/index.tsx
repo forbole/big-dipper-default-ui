@@ -53,7 +53,7 @@ const Row = (props:RowProps) => {
           {data.content}
         </TableCell>
         <TableCell className={classnames('status')} align="right">
-          {data.success && labels
+          {data.success
             ? (
               <CheckCircle
                 className={classnames('icon', 'success', {
@@ -69,7 +69,7 @@ const Row = (props:RowProps) => {
               />
             )}
         </TableCell>
-        {data.collapsibleData && (
+        {data.collapsibleData && labels && (
           <TableCell align="right" className={classnames('collapsible')}>
             <span onClick={toggleOpen} role="button">
               {

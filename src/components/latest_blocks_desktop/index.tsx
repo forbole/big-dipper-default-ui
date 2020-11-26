@@ -19,7 +19,7 @@ const LatestBlocksDesktop = (props:LatestBlocksDesktopProps) => {
   const { handleClick } = latestBlocksDesktopUtils(onClick);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-desktop')}>
-      <Table className={classnames('table')} size="small">
+      <Table className={classnames('table')}>
         <TableHead>
           <TableRow>
             <TableCell className={classnames('label', 'time')}>{labels.time}</TableCell>
