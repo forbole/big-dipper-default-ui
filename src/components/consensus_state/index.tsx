@@ -17,7 +17,6 @@ const ConsensusState = (prop: Props) => {
     votingPower,
     className,
     colors,
-    icon,
   } = prop;
 
   const votingPowerPerentage = [{
@@ -28,8 +27,6 @@ const ConsensusState = (prop: Props) => {
 
   const colorsMain = [colors[0], '#00000000'];
   const colorBackground = [colors[1]];
-
-  const iconPath = require(`${icon}`);
 
   const renderCustomizedLabel = ({
     cx, cy,
@@ -45,13 +42,13 @@ const ConsensusState = (prop: Props) => {
 
   return (
 
-    <div className={classnames(classes.root, className)}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'consensus')}>
       <div className={classes.container}>
         <h1>
           {title}
         </h1>
         <div className={classnames('box')}>
-          <div className={classes.boxSmall}>
+          <div className={classnames('boxSmall1')}>
             <h4>
               {height.title}
             </h4>
@@ -59,12 +56,11 @@ const ConsensusState = (prop: Props) => {
               {height.display}
             </p>
           </div>
-          <div className={classes.boxSmall}>
+          <div className={classnames('boxSmall2')}>
             <h4>
               {proposer.title}
             </h4>
             <div className={classnames('proposer')}>
-              <img src={iconPath} alt="" className={classnames('icon')} />
               {proposer.display}
             </div>
 
@@ -74,14 +70,7 @@ const ConsensusState = (prop: Props) => {
           {votingPower.title}
         </h4>
         <div className={classnames(classes.chartBox)}>
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              position: 'relative',
-              marginTop: '0',
-            }}
-          >
+          <div className={classnames(classes.boxFlexible)}>
             <ResponsiveContainer width="100%">
               <PieChart>
                 <Pie

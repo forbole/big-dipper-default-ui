@@ -12,8 +12,7 @@ export const useGetStyles = () => {
       '& h1': {
         fontSize: '1.375rem',
         fontWeight: 500,
-        margin: '0',
-        marginBottom: '2rem',
+        margin: '0 0 2rem 0',
       },
       '& h4': {
         fontSize: '0.875rem',
@@ -34,11 +33,6 @@ export const useGetStyles = () => {
         display: 'flex',
         marginBottom: '2rem',
       },
-      '& .icon': {
-        width: '1.5rem',
-        height: '1.5rem',
-        marginRight: '0.3rem',
-      },
       '& .amountInChart': {
         fontSize: '1.5rem',
         fontWeight: 400,
@@ -53,6 +47,13 @@ export const useGetStyles = () => {
         color: '#414141',
         fontWeight: 300,
       },
+      '& .boxSmall1': {
+        marginRight: '2rem',
+        margin: '0',
+      },
+      '& .boxSmall2': {
+        margin: '0',
+      },
     },
     container: {
       height: 'auto',
@@ -62,17 +63,22 @@ export const useGetStyles = () => {
         margin: '2rem 1.5rem 2rem 1.5rem',
       },
     },
-    boxSmall: {
-      marginRight: '2rem',
-      margin: '0',
-    },
     chartBox: {
       display: 'flex',
       width: '60%',
       height: '45%',
-      marginTop: '2rem',
+      marginTop: '1.5rem',
       marginLeft: 'auto',
       marginRight: 'auto',
+      [getMinMediaQuery(1600)]: {
+        marginTop: '2rem',
+      },
+    },
+    boxFlexible: {
+      width: '100%',
+      height: '100%',
+      position: 'relative',
+      marginTop: '0',
     },
   });
 

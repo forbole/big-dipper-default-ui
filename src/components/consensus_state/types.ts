@@ -9,7 +9,6 @@ export interface Props {
   className?: string;
   round: Detail;
   step: Detail;
-  icon?: string;
 }
 
 type Detail = {

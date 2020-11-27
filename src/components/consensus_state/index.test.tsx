@@ -28,7 +28,6 @@ describe('ConsensusState', () => {
         title: 'Step',
         display: '4',
       },
-      icon: './favicon.png',
     };
     const wrap = mount(
       <ConsensusState

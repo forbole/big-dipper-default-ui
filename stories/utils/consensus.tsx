@@ -2,6 +2,7 @@ import React from 'react';
 import {
   createStyles, makeStyles,
 } from '@material-ui/core';
+import classnames from 'classnames';
 import { Proposer } from '../../src/components/consensus_state/types';
 
 const ProposerData = () => {
@@ -10,15 +11,28 @@ const ProposerData = () => {
       display: 'flex',
       fontSize: '1rem',
       fontWeight: 400,
-      margin: '0 0 0 0rem',
+      margin: '0',
       color: '#1D86FF',
+    },
+    icon: {
+      width: '1.5rem',
+      height: '1.5rem',
+      marginRight: '0.3rem',
     },
   }));
 
   const classes = useStyles();
+  const path = './stories/assests/images/favicon.png';
 
   return (
-    <p className={classes.root}>Forbole</p>
+    <a
+      style={{
+        display: 'flex',
+      }}
+    >
+      <img src={path} alt="" className={(classes.icon)} />
+      <p className={(classes.root)}>forbole</p>
+    </a>
   );
 };
 
