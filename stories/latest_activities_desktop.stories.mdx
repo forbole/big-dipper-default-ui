@@ -1,0 +1,213 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import {
+  LatestActivitiesDesktop,
+  TablePreviewWrapper,
+  Avatar,
+} from '../src';
+import {
+  ActionButton, FooterAction,
+} from './utils/table_preview_wrapper';
+import {
+  dummyDataDesktop, dummyLabelsDesktop, dummyDataDesktopWithoutCollapsible
+} from './utils/latest_activities';
+
+<Meta title="LatestActivitiesDesktop" component={LatestActivitiesDesktop} />
+
+# LatestBlocksMobile
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <LatestActivitiesDesktop
+      data={dummyDataDesktop}
+      collapsibleLabels={dummyLabelsDesktop}
+      onClick={(data) => console.log(`Row with hash ${data.hash} clicked`)}
+    />
+  </Story>
+</Canvas>
+
+```
+<LatestActivitiesDesktop
+  data={[
+    {
+      type: {
+        display: 'Delegate',
+        className: 'delegate',
+      },
+      time: '1 hour',
+      success: true,
+      content: <ContentMobile />,
+      collapsibleData: {
+        hash: '12344566',
+        height: <div>height</div>,
+        fee: '123 uatm',
+        gas: '1,234 / 20, 999',
+        memo: 'baby shark doo doodo dooo',
+      },
+    },
+  ]}
+  collapsibleLabels={{
+    hash: 'hash',
+    height: 'height',
+    fee: 'fee',
+    gas: 'Gas (used/ wanted)',
+    status: 'Status',
+    memo: 'Memo',
+  }}
+  onClick={(data) => console.log(`Row with hash ${data.hash} clicked`)}
+/>
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  type: {
+    display: string;
+    className: string;
+  },
+  time: string;
+  success: boolean;
+  content: React.ReactNode;
+  collapsibleData?: {
+    hash: string;
+    height: React.ReactNode;
+    fee: string;
+    gas: string;
+    memo: string;
+  }
+}[]
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>collapsibleLabels</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  hash: string;
+  height: string;
+  fee: string;
+  gas: string;
+  status: string;
+  memo: string;
+}
+```
+
+  </td>
+    <td>Required if there is collapsible data</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+## Without Collapsible
+<Canvas>
+  <Story name="Without Collapsible">
+    <LatestActivitiesDesktop
+      data={dummyDataDesktopWithoutCollapsible}
+    />
+  </Story>
+</Canvas>
+
+```
+<LatestActivitiesDesktop
+  data={[
+    {
+      type: {
+        display: 'Delegate',
+        className: 'delegate',
+      },
+      time: '1 hour',
+      success: true,
+      content: <ContentMobile />,
+    }
+  ]}
+/>
+```
+
+## With Wrapper
+<Canvas>
+  <Story name="With TabletPreviewWrapper">
+    <TablePreviewWrapper
+      title="Latest Activities"
+      action={<ActionButton />}
+      footerAction={<FooterAction />}
+    >
+      <LatestActivitiesDesktop
+        data={dummyDataDesktopWithoutCollapsible}
+      />
+    </TablePreviewWrapper>
+  </Story>
+</Canvas>
+
+```
+<TablePreviewWrapper
+  title="Latest Activities"
+  action={<ActionButton />}
+  footerAction={<FooterAction />}
+>
+  <LatestActivitiesDesktop
+    data={[
+      {
+        type: {
+          display: 'Delegate',
+          className: 'delegate',
+        },
+        time: '1 hour',
+        success: true,
+        content: <ContentMobile />,
+      }
+    ]}
+  />
+</TablePreviewWrapper>
+```

@@ -1,0 +1,157 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import {
+  LatestActivitiesMobile,
+  TablePreviewWrapper,
+  Avatar,
+} from '../src';
+import {
+  ActionButton, FooterAction,
+} from './utils/table_preview_wrapper';
+import {
+  dummyDataMobile
+} from './utils/latest_activities';
+
+<Meta title="LatestActivitiesMobile" component={LatestActivitiesMobile} />
+
+# LatestBlocksMobile
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <LatestActivitiesMobile
+      data={dummyDataMobile}
+      onClick={(data) => console.log(`Row with hash ${data.hash} clicked`)}
+    />
+  </Story>
+</Canvas>
+
+```
+<LatestActivitiesMobile
+  data={[
+    {
+      avatar: <Avatar
+        imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+        alt="avatar image"
+        width="40px"
+        height="40px"
+        />,
+      content: <ContentMobile />,
+      type: {
+        display: 'Delegateaaaasvbbbbbbbbbaaaaaaaa',
+        className: 'delegate',
+      },
+      time: '1 hour',
+      success: true,
+    }
+  ]}
+  onClick={(data) => console.log(`Row with hash ${data.hash} clicked`)}
+/>
+```
+
+## Props
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Required</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  avatar: React.ReactNode;
+  content: React.ReactNode;
+  time: string;
+  type: {
+    className?: string;
+    display: string;
+  };
+  success: boolean;
+}[]
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</tbody>
+</table>
+<br/>
+
+## With Wrapper
+<Canvas>
+  <Story name="With TabletPreviewWrapper">
+    <TablePreviewWrapper
+      title="Latest Activities"
+      action={<ActionButton />}
+      footerAction={<FooterAction />}
+    >
+      <LatestActivitiesMobile
+        data={dummyDataMobile}
+      />
+    </TablePreviewWrapper>
+  </Story>
+</Canvas>
+
+```
+<TablePreviewWrapper
+  title="Latest Activities"
+  action={<ActionButton />}
+  footerAction={<FooterAction />}
+>
+  <LatestActivitiesMobile
+    data={[
+      {
+        avatar: <Avatar
+          imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+          alt="avatar image"
+          width="40px"
+          height="40px"
+          />,
+        content: <ContentMobile />,
+        type: {
+          display: 'Delegateaaaasvbbbbbbbbbaaaaaaaa',
+          className: 'delegate',
+        },
+        time: '1 hour',
+        success: true,
+      }
+    ]}
+  />
+</TablePreviewWrapper>
+```

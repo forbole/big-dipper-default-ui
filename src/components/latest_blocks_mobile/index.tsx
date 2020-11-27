@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { useGetStyles } from './styles';
 import { LatestBlocksMobileProps } from './types';
-import { formatHash } from './utils';
+import { latestBlocksMobileUtils } from './utils';
 
 const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
   const { classes } = useGetStyles();
@@ -10,19 +10,27 @@ const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
     className,
     data,
     labels,
+    onClick,
   } = props;
-
+  const {
+    formatHash, handleClick,
+  } = latestBlocksMobileUtils(onClick);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-mobile')}>
       {data.map((x) => {
         return (
-          <div className={classnames('single-block')} key={x.time}>
+          <div
+            className={classnames('single-block')}
+            key={x.time}
+            onClick={() => handleClick(x)}
+            role="button"
+          >
             <div className={classnames('flex')}>
               <span className={classnames('proposer')}>
                 {x.proposer}
               </span>
               <span className={classnames('height')}>
-                {x.height}
+                {x.height.display}
               </span>
             </div>
             <div className={classnames('flex')}>
