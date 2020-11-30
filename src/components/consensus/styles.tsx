@@ -1,14 +1,20 @@
 import { makeStyles } from '@material-ui/styles';
-import { getMinMediaQuery } from './utils';
+import { getMinMediaQuery } from '../utils';
 
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      maxWidth: '100%',
       height: '100%',
       display: 'flex',
       borderRadius: '2px',
-      overflow: 'auto',
+      '& .container': {
+        height: 'auto',
+        width: '100%',
+        padding: '1.5rem 1rem 1.5rem 1rem',
+        [getMinMediaQuery(1600)]: {
+          padding: '2rem 1.5rem 2rem 1.5rem',
+        },
+      },
       '& h1': {
         fontSize: '1.375rem',
         fontWeight: 500,
@@ -47,38 +53,28 @@ export const useGetStyles = () => {
         color: '#414141',
         fontWeight: 300,
       },
-      '& .boxSmall1': {
-        marginRight: '2rem',
+      '& .boxHeight': {
+        margin: '0',
+        width: '50%',
+      },
+      '& .boxProposer': {
         margin: '0',
       },
-      '& .boxSmall2': {
-        margin: '0',
+      '& .chartContainer': {
+        display: 'flex',
+        width: '60%',
+        height: '45%',
+        marginTop: '1.5rem ',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        position: 'relative',
+        [getMinMediaQuery(1600)]: {
+          marginTop: '2rem',
+        },
       },
-    },
-    container: {
-      height: 'auto',
-      width: '100%',
-      margin: '1.5rem 1rem 1.5rem 1rem',
-      [getMinMediaQuery(1600)]: {
-        margin: '2rem 1.5rem 2rem 1.5rem',
+      '& .chart': {
+        width: '100%',
       },
-    },
-    chartBox: {
-      display: 'flex',
-      width: '60%',
-      height: '45%',
-      marginTop: '1.5rem',
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      [getMinMediaQuery(1600)]: {
-        marginTop: '2rem',
-      },
-    },
-    boxFlexible: {
-      width: '100%',
-      height: '100%',
-      position: 'relative',
-      marginTop: '0',
     },
   });
 

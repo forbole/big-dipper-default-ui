@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import { Props } from './types';
 import { useGetStyles } from './styles';
 
-const ConsensusState = (prop: Props) => {
+const Consensus = (prop: Props) => {
   const { classes } = useGetStyles();
   const {
     title,
@@ -43,12 +43,12 @@ const ConsensusState = (prop: Props) => {
   return (
 
     <div className={classnames(classes.root, className, 'big-dipper', 'consensus')}>
-      <div className={classes.container}>
+      <div className={classnames('container')}>
         <h1>
           {title}
         </h1>
         <div className={classnames('box')}>
-          <div className={classnames('boxSmall1')}>
+          <div className={classnames('boxHeight')}>
             <h4>
               {height.title}
             </h4>
@@ -56,7 +56,7 @@ const ConsensusState = (prop: Props) => {
               {height.display}
             </p>
           </div>
-          <div className={classnames('boxSmall2')}>
+          <div className={classnames('boxProposer')}>
             <h4>
               {proposer.title}
             </h4>
@@ -69,8 +69,8 @@ const ConsensusState = (prop: Props) => {
         <h4>
           {votingPower.title}
         </h4>
-        <div className={classnames(classes.chartBox)}>
-          <div className={classnames(classes.boxFlexible)}>
+        <div className={classnames('chartContainer')}>
+          <div className={classnames('chart')}>
             <ResponsiveContainer width="100%">
               <PieChart>
                 <Pie
@@ -115,4 +115,4 @@ const ConsensusState = (prop: Props) => {
   );
 };
 
-export default ConsensusState;
+export default Consensus;

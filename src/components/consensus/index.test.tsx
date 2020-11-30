@@ -1,11 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ConsensusState from '.';
+import Consensus from '.';
+import { Props } from './types';
 
-describe('ConsensusState', () => {
+describe('Consensus', () => {
   it('Works with base props', () => {
-    expect(ConsensusState).toBeTruthy();
-    const args = {
+    expect(Consensus).toBeTruthy();
+    const args:Props = {
       title: 'Consensus State',
       height: {
         title: 'Height',
@@ -30,7 +31,7 @@ describe('ConsensusState', () => {
       },
     };
     const wrap = mount(
-      <ConsensusState
+      <Consensus
         {...args}
       />,
     );

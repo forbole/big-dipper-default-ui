@@ -4,7 +4,7 @@ import {
   dummyProposer,
 } from './utils/consensus';
 
-<Meta title="ConsensusState" component={Consensus} />
+<Meta title="Consensus" component={Consensus} />
 
 # Stabilities
 ---
@@ -42,7 +42,10 @@ import {
     title: 'Height',
     display: '2,769,405'
   }}
-  proposer={dummyProposer}
+  proposer={{
+    title: 'Proposer',
+    display: <ProposerData />,
+  }}
   votingPower={{
     title: 'Voting Power',
     value: 0.85
@@ -80,7 +83,7 @@ import {
 `string`
 
   </td>
-    <td>Title Displayed</td>
+    <td>Title displayed</td>
     <td>-</td>
   </tr>
     <tr>
@@ -96,7 +99,7 @@ import {
 ```
 
   </td>
-    <td>Height Displayed</td>
+    <td>Height displayed</td>
     <td>-</td>
   </tr>
   <tr>
@@ -112,7 +115,7 @@ import {
 ```
 
   </td>
-    <td>Proposer Displayed</td>
+    <td>Proposer displayed</td>
     <td>-</td>
   </tr>
   <tr>
@@ -128,7 +131,7 @@ import {
 ```
 
   </td>
-    <td>Voting Power Displayed</td>
+    <td>Voting power displayed</td>
     <td>-</td>
   </tr>
   <tr>
@@ -139,7 +142,7 @@ import {
 `string[]`
 
   </td>
-    <td>Colors of Chart Displayed</td>
+    <td>Main color and background color of the chart displayed</td>
     <td>-</td>
   </tr>
   <tr>
@@ -166,7 +169,7 @@ import {
 ```
 
   </td>
-    <td>Round Displayed</td>
+    <td>Round displayed</td>
     <td>-</td>
   </tr>
   <tr>
@@ -182,7 +185,7 @@ import {
 ```
 
   </td>
-    <td>Step Displayed</td>
+    <td>Step displayed</td>
     <td>-</td>
   </tr>
 
