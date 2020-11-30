@@ -1,7 +1,7 @@
 import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
-import { OnlineVotingPower } from '../src';
+import { OnlineVotingPower, SelectTabs } from '../src';
 import { data } from './utils/online_voting_power';
 
 <Meta title="OnlineVotingPower" component={OnlineVotingPower} />
@@ -13,6 +13,9 @@ import { data } from './utils/online_voting_power';
   <Story name="Default">
     <OnlineVotingPower
       data={data}
+      cartesianGrid={{
+        stroke: '#E8E8E8'
+      }}
     />
   </Story>
 </Canvas>
@@ -102,3 +105,25 @@ hello
   </tbody>
 </table>
 <br/>
+
+## With SelectTabs
+<Canvas>
+  <Story name="With SelectTabs">
+    <SelectTabs
+      tabs={[
+        {
+          key: 'onlineVotingPower',
+          display: 'Online Voting Power',
+          component: (
+            <OnlineVotingPower
+              data={data}
+              cartesianGrid={{
+                stroke: '#E8E8E8'
+              }}
+            />
+          )
+        }
+      ]}
+    />
+  </Story>
+</Canvas>

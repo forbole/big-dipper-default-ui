@@ -20,6 +20,9 @@ export const useGetStyles = () => {
         fontWeight: 500,
         margin: 0,
       },
+      '& .selected-component-container': {
+        marginTop: '1.5rem',
+      },
     },
   });
 

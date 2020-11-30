@@ -5,15 +5,13 @@ import {
 } from 'recharts';
 import { useGetStyles } from './styles';
 import { ResponsiveRecharts } from '../..';
+import { OnlineVotingPowerProps } from './types';
 
-const OnlineVotingPower = (props:any) => {
-  const { data } = props;
-  const dev = {
-    stroke: '#E8E8E8',
-  };
+const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
   const {
     className,
-    cartesianGrid = dev,
+    data,
+    cartesianGrid,
     linearGradient = [
       {
         offset: 0,
@@ -62,10 +60,17 @@ const OnlineVotingPower = (props:any) => {
             dataKey="date"
             dy={20}
             height={50}
+            tick={{
+              fontSize: 10,
+            }}
           />
           <YAxis
             dx={-10}
             tickSize={0}
+            width={30}
+            tick={{
+              fontSize: 10,
+            }}
           />
           <CartesianGrid stroke={cartesianGrid?.stroke ?? undefined} />
           <Tooltip cursor={false} />

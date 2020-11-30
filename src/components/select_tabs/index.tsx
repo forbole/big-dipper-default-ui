@@ -28,7 +28,10 @@ const SelectTabs = (props:SelectTabsProps) => {
       {
         tabs.length === 1
           ? (
-            <h3 className={classnames('selected-title')}> hello world </h3>
+            <h3 className={classnames('selected-title')}>
+              {tabs[0].display}
+              {' '}
+            </h3>
           ) : (
             <Select
               MenuProps={{
