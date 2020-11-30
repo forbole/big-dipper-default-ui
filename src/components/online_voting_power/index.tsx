@@ -73,7 +73,7 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
             }}
           />
           <CartesianGrid stroke={cartesianGrid?.stroke ?? undefined} />
-          <Tooltip cursor={false} />
+          {/* <Tooltip cursor={false} /> */}
           <Line
             type="monotone"
             dataKey="value"
