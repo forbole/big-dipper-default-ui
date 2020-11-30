@@ -48,6 +48,7 @@ const SelectTabs = (props:SelectTabsProps) => {
               {tabs.map((x, i: number) => {
                 return (
                   <MenuItem
+                    key={x.key}
                     onClick={() => handleClick({
                       key: x.key,
                       index: i,
