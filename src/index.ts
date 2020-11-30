@@ -8,6 +8,7 @@ import Avatar from './components/avatar';
 import LatestActivitiesMobile from './components/latest_activities_mobile';
 import LatestActivitiesDesktop from './components/latest_activities_desktop';
 import SelectTabs from './components/select_tabs';
+import OnlineVotingPower from './components/online_voting_power';
 
 export {
   DataBlock,
@@ -20,4 +21,5 @@ export {
   LatestActivitiesMobile,
   LatestActivitiesDesktop,
   SelectTabs,
+  OnlineVotingPower,
 };
