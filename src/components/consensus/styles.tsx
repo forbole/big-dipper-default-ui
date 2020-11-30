@@ -6,7 +6,7 @@ export const useGetStyles = () => {
     root: {
       height: '100%',
       display: 'flex',
-      borderRadius: '2px',
+      borderRadius: '6px',
       '& .container': {
         height: 'auto',
         width: '100%',
