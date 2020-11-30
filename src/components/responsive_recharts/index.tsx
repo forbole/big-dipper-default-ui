@@ -1,0 +1,28 @@
+import React from 'react';
+import classnames from 'classnames';
+import { ResponsiveContainer } from 'recharts';
+import { useGetStyles } from './styles';
+import { ResponsiveRechartsProps } from './types';
+
+/**
+ * Recharts helper to setup responsive and remove resizing lag
+ */
+const ResponsiveRecharts = (props:ResponsiveRechartsProps) => {
+  const { children } = props;
+  const { classes } = useGetStyles();
+  return (
+    <div
+      className={classnames(classes.root, 'big-dipper', 'responsive-recharts')}
+    >
+      <div
+        className={classnames(classes.absolute)}
+      >
+        <ResponsiveContainer height="100%" width="99%" aspect={3}>
+          {children}
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+};
+
+export default ResponsiveRecharts;
