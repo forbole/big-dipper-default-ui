@@ -5,7 +5,7 @@ export interface Props {
   height: Detail;
   proposer: Proposer;
   votingPower: Data;
-  colors: string[];
+  colors: [string, string];
   className?: string;
   round: Detail;
   step: Detail;

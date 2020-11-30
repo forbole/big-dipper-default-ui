@@ -22,7 +22,7 @@ const ProposerData = () => {
   }));
 
   const classes = useStyles();
-  const path = './stories/assests/images/favicon.png';
+  const path = './stories/assets/images/favicon.png';
 
   return (
     <a

@@ -23,7 +23,7 @@ export const useGetStyles = () => {
       '& .amount': {
         fontSize: '1rem',
         fontWeight: 400,
-        margin: '0.625rem 0 0 0rem',
+        margin: '0.625rem 0 0 0',
       },
       '& .proposer': {
         display: 'flex',
@@ -41,8 +41,8 @@ export const useGetStyles = () => {
       },
       '& .inChart': {
         height: '1rem',
-        marginLeft: '0rem',
-        marginTop: '0rem',
+        marginLeft: '0',
+        marginTop: '0',
         fontSize: '0.75rem',
         color: '#414141',
         fontWeight: 300,
