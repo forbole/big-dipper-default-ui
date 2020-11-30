@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      background: 'pink',
+      background: 'white',
       borderRadius: '2px',
       padding: '1rem',
       '& .MuiInputBase-root': {

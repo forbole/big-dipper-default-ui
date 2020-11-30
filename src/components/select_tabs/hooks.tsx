@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Tab } from './types';
 
-export const useSelectTabsHook = (selected: string | number, tabs: any[]) => {
+export const useSelectTabsHook = (selected: string | number, tabs: Tab[]) => {
   const [selectedValue, setSelectedValue] = useState(selected);
   const [selectedIndex, setSelectedIndex] = useState(tabs.findIndex((x) => {
     return x.key === selectedValue;

@@ -5,11 +5,12 @@ import {
 } from '@material-ui/core';
 import { useGetStyles } from './styles';
 import { useSelectTabsHook } from './hooks';
+import { SelectTabsProps } from './types';
 
 /**
  * Helper component that will switch tabs based on the selected
  */
-const SelectTabs = (props:any) => {
+const SelectTabs = (props:SelectTabsProps) => {
   const { classes } = useGetStyles();
   const {
     className,
@@ -44,7 +45,7 @@ const SelectTabs = (props:any) => {
               value={selectedValue}
               input={<InputBase />}
             >
-              {tabs.map((x: any, i: number) => {
+              {tabs.map((x, i: number) => {
                 return (
                   <MenuItem
                     onClick={() => handleClick({
