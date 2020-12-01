@@ -5,7 +5,7 @@ import { useGetStyles } from './styles';
 import { ResponsiveRechartsProps } from './types';
 
 /**
- * Recharts helper to setup responsive and remove resizing lag
+ * Recharts helper to setup responsive
  */
 const ResponsiveRecharts = (props:ResponsiveRechartsProps) => {
   const {
