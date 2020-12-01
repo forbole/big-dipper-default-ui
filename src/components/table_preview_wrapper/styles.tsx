@@ -14,7 +14,7 @@ export const useGetStyles = () => {
         '& h3': {
           fontSize: '1.125rem',
           margin: 0,
-          fontWeight: 600,
+          fontWeight: 500,
         },
       },
       '& .footer-action': {

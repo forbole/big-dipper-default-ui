@@ -5,7 +5,7 @@ export const useGetStyles = () => {
     root: {
       background: 'white',
       height: '100%',
-      borderRadius: '2px',
+      borderRadius: '6px',
       padding: '1rem',
       '& .MuiInputBase-root': {
         maxWidth: '100%',
