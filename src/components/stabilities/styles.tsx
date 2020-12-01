@@ -10,10 +10,13 @@ export const useGetStyles = () => {
       borderRadius: '2px',
       overflow: 'auto',
       '& h1': {
-        fontSize: '1.375rem',
+        fontSize: '1.125rem',
         fontWeight: 500,
         margin: '0',
         marginBottom: '1rem',
+        [getMinMediaQuery(769)]: {
+          fontSize: '1.375rem',
+        },
         [getMinMediaQuery(1600)]: {
           marginBottom: '1.5rem',
         },
