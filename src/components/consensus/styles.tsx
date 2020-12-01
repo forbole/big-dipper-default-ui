@@ -17,9 +17,12 @@ export const useGetStyles = () => {
         },
       },
       '& h1': {
-        fontSize: '1.375rem',
+        fontSize: '1.125rem',
         fontWeight: 500,
         margin: '0 0 2rem 0',
+        [getMinMediaQuery(1080)]: {
+          fontSize: '1.375rem',
+        },
       },
       '& h4': {
         fontSize: '0.875rem',
