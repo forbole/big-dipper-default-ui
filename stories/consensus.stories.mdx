@@ -1,0 +1,194 @@
+import { Consensus } from '../src';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import {
+  dummyProposer,
+} from './utils/consensus';
+
+<Meta title="Consensus" component={Consensus} />
+
+# Stabilities
+---
+## Default
+<Canvas>
+  <Story name="Default">
+    <Consensus
+      title='Consensus State'
+      height={{
+        title: 'Height',
+        display: '2,769,405'
+      }}
+      proposer={dummyProposer}
+      votingPower={{
+        title: 'Voting Power',
+        value: 0.85
+      }}
+      colors={['#FD3B4C', '#E8E8E8']}
+      round={{
+        title: 'Round',
+        display: '6'
+      }}
+      step={{
+        title: 'Step',
+        display: '4'
+      }}
+    />
+  </Story>
+</Canvas>
+
+```
+<Consensus
+  title='Consensus State'
+  height={{
+    title: 'Height',
+    display: '2,769,405'
+  }}
+  proposer={{
+    title: 'Proposer',
+    display: <ProposerData />,
+  }}
+  votingPower={{
+    title: 'Voting Power',
+    value: 0.85
+  }}
+  colors={['#FD3B4C', '#E8E8E8']}
+  round={{
+    title: 'Round',
+    display: '6'
+  }}
+  step={{
+    title: 'Step',
+    display: '4'
+  }}
+/>
+```
+
+## Props
+
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>title</td>
+    <td>True</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>Title displayed</td>
+    <td>-</td>
+  </tr>
+    <tr>
+    <td>height</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  display: string;
+}
+```
+
+  </td>
+    <td>Height displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>proposer</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  display: React.ReactNode;
+}
+```
+
+  </td>
+    <td>Proposer displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>votingPower</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  value: number;
+}
+```
+
+  </td>
+    <td>Voting power displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>colors</td>
+    <td>True</td>
+    <td>
+
+`string[]`
+
+  </td>
+    <td>Main color and background color of the chart displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>round</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  display: string;
+}
+```
+
+  </td>
+    <td>Round displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>step</td>
+    <td>True</td>
+    <td>
+
+```
+{
+  title: string;
+  display: string;
+}
+```
+
+  </td>
+    <td>Step displayed</td>
+    <td>-</td>
+  </tr>
+
+  </tbody>
+</table>
+<br/>
