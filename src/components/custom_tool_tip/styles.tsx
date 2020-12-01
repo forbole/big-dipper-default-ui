@@ -11,7 +11,7 @@ export const useGetStyles = () => {
         margin: '0',
         color: 'black',
       },
-      '& .customToolTip_label': {
+      '& .custom-tool-tip__label': {
         marginBottom: '0.5rem',
       },
     },

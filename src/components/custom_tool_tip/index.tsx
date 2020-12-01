@@ -23,9 +23,9 @@ const CustomToolTip = (props:CustomToolTipProps) => {
       value = formatter(value);
     }
     return (
-      <div className={classnames(classes.root, className, 'big-dipper', 'customToolTip')}>
-        <p className="customToolTip_label">{label}</p>
-        <p className="customToolTip_value">{value}</p>
+      <div className={classnames(classes.root, className, 'big-dipper', 'custom-tool-tip')}>
+        <p className="custom-tool-tip__label">{label}</p>
+        <p className="custom-tool-tip__value">{value}</p>
       </div>
     );
   }
