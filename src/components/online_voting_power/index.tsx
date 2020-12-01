@@ -48,7 +48,8 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
             height={50}
             interval="preserveStartEnd"
             tick={{
-              fontSize: 10,
+              fontSize: recharts?.axis?.fontSize ?? 10,
+              stroke: recharts?.axis?.stroke ?? undefined,
             }}
           />
           <YAxis
@@ -57,6 +58,7 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
             width={30}
             tick={{
               fontSize: 10,
+              stroke: recharts?.axis?.stroke ?? undefined,
             }}
           />
           <CartesianGrid stroke={recharts?.cartesianGrid?.stroke ?? undefined} />

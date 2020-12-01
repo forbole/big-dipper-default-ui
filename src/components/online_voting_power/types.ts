@@ -5,6 +5,10 @@ export interface OnlineVotingPowerProps {
     cartesianGrid?: {
       stroke?: string;
     }
+    axis?: {
+      stroke?: string;
+      fontSize?: number | string;
+    },
     gridAspect?: number;
     toolTipFormatter?: (value:string) => any;
   }

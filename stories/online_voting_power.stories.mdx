@@ -25,7 +25,20 @@ import { formatNumber } from './utils/convert_number';
 </Canvas>
 
 ```
-hello
+<OnlineVotingPower
+  data={[
+    {
+    date: 'JAN 1', value: 1500,
+    },
+    ...
+  ]}
+  recharts={{
+    cartesianGrid: {
+      stroke: '#E8E8E8'
+    },
+    toolTipFormatter: (value) => formatNumber(value)
+  }}
+/>
 ```
 ## Props
 <table>
@@ -88,8 +101,13 @@ hello
 {
   cartesianGrid?: {
     stroke?: string;
-  }
+  },
+  axis?: {
+    stroke?: string;
+    fontSize?: number | string;
+  },
   gridAspect?: number;
+  toolTipFormatter?: (value:string) => any;
 }
 ```
 
@@ -99,6 +117,9 @@ hello
 
 ```
 {
+  axis: {
+    fontSize: 10,
+  },
   gridAspect: 1.5
 }
 ```
@@ -115,7 +136,7 @@ hello
 {
   date: string;
   value: number;
-}
+}[]
 ```
 
   </td>
@@ -149,8 +170,11 @@ hello
           component: (
             <OnlineVotingPower
               data={data}
-              cartesianGrid={{
-                stroke: '#E8E8E8'
+              recharts={{
+                cartesianGrid: {
+                  stroke: '#E8E8E8'
+                },
+                toolTipFormatter: (value) => formatNumber(value)
               }}
             />
           )
@@ -159,3 +183,30 @@ hello
     />
   </Story>
 </Canvas>
+
+```
+<SelectTabs
+  tabs={[
+    {
+      key: 'onlineVotingPower',
+      display: 'Online Voting Power',
+      component: (
+        <OnlineVotingPower
+          data={[
+            {
+            date: 'JAN 1', value: 1500,
+            },
+            ...
+          ]}
+          recharts={{
+            cartesianGrid: {
+              stroke: '#E8E8E8'
+            },
+            toolTipFormatter: (value) => formatNumber(value)
+          }}
+        />
+      )
+    }
+  ]}
+/>
+```
