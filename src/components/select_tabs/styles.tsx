@@ -17,7 +17,7 @@ export const useGetStyles = () => {
         fontWeight: 500,
       },
       '& .selected-title': {
-        fontSize: '1.25rem',
+        fontSize: '1.125rem',
         fontWeight: 500,
         margin: 0,
       },
