@@ -7,6 +7,7 @@ export const useGetStyles = () => {
       height: '100%',
       display: 'flex',
       borderRadius: '6px',
+      boxSizing: 'border-box',
       '& .container': {
         height: 'auto',
         width: '100%',
