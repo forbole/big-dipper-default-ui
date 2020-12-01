@@ -5,6 +5,7 @@ export interface OnlineVotingPowerProps {
     stroke?: string;
   }
   data: Data[];
+  gridAspect?: number;
 }
 
 export type Gradient = {

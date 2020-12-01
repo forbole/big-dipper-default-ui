@@ -8,7 +8,10 @@ import { ResponsiveRechartsProps } from './types';
  * Recharts helper to setup responsive and remove resizing lag
  */
 const ResponsiveRecharts = (props:ResponsiveRechartsProps) => {
-  const { children } = props;
+  const {
+    children,
+    aspect = 0,
+  } = props;
   const { classes } = useGetStyles();
   return (
     <div
@@ -17,7 +20,7 @@ const ResponsiveRecharts = (props:ResponsiveRechartsProps) => {
       <div
         className={classnames(classes.absolute)}
       >
-        <ResponsiveContainer height="100%" width="99%" aspect={3}>
+        <ResponsiveContainer height="100%" width="99%" aspect={aspect}>
           {children}
         </ResponsiveContainer>
       </div>

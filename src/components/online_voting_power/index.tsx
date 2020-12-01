@@ -6,30 +6,15 @@ import {
 import { useGetStyles } from './styles';
 import { ResponsiveRecharts } from '../..';
 import { OnlineVotingPowerProps } from './types';
+import { linearGradientBase } from './utils';
 
 const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
   const {
     className,
     data,
     cartesianGrid,
-    linearGradient = [
-      {
-        offset: 0,
-        color: '#FD9526',
-      },
-      {
-        offset: 25,
-        color: '#f5d442',
-      },
-      {
-        offset: 50,
-        color: '#f03a85',
-      },
-      {
-        offset: 75,
-        color: '#b641fa',
-      },
-    ],
+    linearGradient = linearGradientBase,
+    gridAspect = 1.5,
   } = props;
   const { classes } = useGetStyles();
 
@@ -37,7 +22,7 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
     <div
       className={classnames(classes.root, className, 'big-dipper', 'online-voting-power')}
     >
-      <ResponsiveRecharts>
+      <ResponsiveRecharts aspect={gridAspect}>
         <LineChart
           data={data}
           margin={{
@@ -60,6 +45,7 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
             dataKey="date"
             dy={20}
             height={50}
+            interval="preserveStartEnd"
             tick={{
               fontSize: 10,
             }}
