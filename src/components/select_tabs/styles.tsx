@@ -4,6 +4,7 @@ export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
       background: 'white',
+      height: '100%',
       borderRadius: '2px',
       padding: '1rem',
       '& .MuiInputBase-root': {

@@ -17,13 +17,9 @@ const ResponsiveRecharts = (props:ResponsiveRechartsProps) => {
     <div
       className={classnames(classes.root, 'big-dipper', 'responsive-recharts')}
     >
-      <div
-        className={classnames(classes.absolute)}
-      >
-        <ResponsiveContainer height="100%" width="99%" aspect={aspect}>
-          {children}
-        </ResponsiveContainer>
-      </div>
+      <ResponsiveContainer height="100%" width="99%" aspect={aspect}>
+        {children}
+      </ResponsiveContainer>
     </div>
   );
 };
