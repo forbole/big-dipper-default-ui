@@ -12,7 +12,7 @@ export const useGetStyles = () => {
       '& .MuiSelect-select.MuiSelect-select': {
         paddingTop: 0,
         paddingBottom: 0,
-        fontSize: '1.25rem',
+        fontSize: '1.125rem',
         fontWeight: 500,
       },
       '& .selected-title': {

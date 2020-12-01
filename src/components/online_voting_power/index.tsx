@@ -57,7 +57,7 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
             tickSize={0}
             width={30}
             tick={{
-              fontSize: 10,
+              fontSize: recharts?.axis?.fontSize ?? 10,
               stroke: recharts?.axis?.stroke ?? undefined,
             }}
           />
