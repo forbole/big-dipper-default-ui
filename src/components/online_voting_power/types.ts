@@ -1,11 +1,13 @@
 export interface OnlineVotingPowerProps {
   className?: string;
   linearGradient?: Gradient[],
-  cartesianGrid?: {
-    stroke?: string;
+  recharts?: {
+    cartesianGrid?: {
+      stroke?: string;
+    }
+    gridAspect?: number;
   }
   data: Data[];
-  gridAspect?: number;
 }
 
 export type Gradient = {
@@ -15,5 +17,5 @@ export type Gradient = {
 
 export type Data = {
   date: string;
-  value: number
+  value: number;
 }

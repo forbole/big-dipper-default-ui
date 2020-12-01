@@ -12,9 +12,8 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
   const {
     className,
     data,
-    cartesianGrid,
+    recharts,
     linearGradient = linearGradientBase,
-    gridAspect = 1.5,
   } = props;
   const { classes } = useGetStyles();
 
@@ -22,7 +21,7 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
     <div
       className={classnames(classes.root, className, 'big-dipper', 'online-voting-power')}
     >
-      <ResponsiveRecharts aspect={gridAspect}>
+      <ResponsiveRecharts aspect={recharts?.gridAspect ?? 1.5}>
         <LineChart
           data={data}
           margin={{
@@ -58,8 +57,8 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
               fontSize: 10,
             }}
           />
-          <CartesianGrid stroke={cartesianGrid?.stroke ?? undefined} />
-          {/* <Tooltip cursor={false} /> */}
+          <CartesianGrid stroke={recharts?.cartesianGrid?.stroke ?? undefined} />
+          <Tooltip cursor={false} />
           <Line
             type="monotone"
             dataKey="value"

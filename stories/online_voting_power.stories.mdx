@@ -13,8 +13,10 @@ import { data } from './utils/online_voting_power';
   <Story name="Default">
     <OnlineVotingPower
       data={data}
-      cartesianGrid={{
-        stroke: '#E8E8E8'
+      recharts={{
+        cartesianGrid: {
+          stroke: '#E8E8E8'
+        }
       }}
     />
   </Story>
@@ -36,59 +38,87 @@ hello
   </thead>
 <tbody>
   <tr>
-    <td>imageUrl</td>
+    <td>linearGradient</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  offset: number;
+  color: string;
+}[]
+```
+
+  </td>
+    <td>Line graph gradient colors</td>
+  <td>
+
+```
+[
+  {
+    offset: 0,
+    color: '#FD9526',
+  },
+  {
+    offset: 25,
+    color: '#f5d442',
+  },
+  {
+    offset: 50,
+    color: '#f03a85',
+  },
+  {
+    offset: 75,
+    color: '#b641fa',
+  },
+]
+```
+
+  </td>
+  </tr>
+
+  <tr>
+    <td>recharts</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  cartesianGrid?: {
+    stroke?: string;
+  }
+  gridAspect?: number;
+}
+```
+
+  </td>
+    <td>Settings for the recharts grid</td>
+  <td>
+
+```
+{
+  gridAspect: 1.5
+}
+```
+
+  </td>
+  </tr>
+
+  <tr>
+    <td>data</td>
     <td>true</td>
     <td>
 
-`string`
+```
+{
+  date: string;
+  value: number;
+}
+```
 
   </td>
     <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>alt</td>
-    <td>-</td>
-    <td>
-
-`string`
-
-  </td>
-    <td>alt description for the image</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>width</td>
-    <td>-</td>
-    <td>
-
-`string | number`
-
-  </td>
-    <td>-</td>
-      <td>
-
-`50px`
-
-  </td>
-  </tr>
-
-  <tr>
-    <td>height</td>
-    <td>-</td>
-    <td>
-
-`string | number`
-
-  </td>
-    <td>-</td>
-      <td>
-
-`50px`
-
-  </td>
+      <td>-</td>
   </tr>
 
   <tr>
