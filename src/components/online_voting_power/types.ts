@@ -6,6 +6,7 @@ export interface OnlineVotingPowerProps {
       stroke?: string;
     }
     gridAspect?: number;
+    toolTipFormatter?: (value:string) => any;
   }
   data: Data[];
 }

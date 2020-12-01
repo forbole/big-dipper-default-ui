@@ -4,7 +4,9 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
 import { useGetStyles } from './styles';
-import { ResponsiveRecharts } from '../..';
+import {
+  ResponsiveRecharts, CustomToolTip,
+} from '../..';
 import { OnlineVotingPowerProps } from './types';
 import { linearGradientBase } from './utils';
 
@@ -58,7 +60,10 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
             }}
           />
           <CartesianGrid stroke={recharts?.cartesianGrid?.stroke ?? undefined} />
-          <Tooltip cursor={false} />
+          <Tooltip
+            cursor={false}
+            content={<CustomToolTip formatter={recharts?.toolTipFormatter} />}
+          />
           <Line
             type="monotone"
             dataKey="value"

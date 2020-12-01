@@ -3,6 +3,7 @@ import {
 } from '@storybook/addon-docs/blocks';
 import { OnlineVotingPower, SelectTabs } from '../src';
 import { data } from './utils/online_voting_power';
+import { formatNumber } from './utils/convert_number';
 
 <Meta title="OnlineVotingPower" component={OnlineVotingPower} />
 
@@ -16,7 +17,8 @@ import { data } from './utils/online_voting_power';
       recharts={{
         cartesianGrid: {
           stroke: '#E8E8E8'
-        }
+        },
+        toolTipFormatter: (value) => formatNumber(value)
       }}
     />
   </Story>
