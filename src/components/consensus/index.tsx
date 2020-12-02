@@ -77,6 +77,7 @@ const Consensus = (prop: Props) => {
                   data={votingPowerPerentage}
                   startAngle={240}
                   endAngle={-60}
+                  isAnimationActive={false}
                   innerRadius="95%"
                   outerRadius="100%"
                   dataKey="value"
