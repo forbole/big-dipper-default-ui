@@ -62,7 +62,10 @@ const Example = (prop: Props) => {
               </h4>
               <p
                 className={classes.atom}
-                style={{ height: '1rem', marginLeft: '0rem', marginTop: '0rem' }}>
+                style={{
+                  height: '1rem', marginLeft: '0rem', marginTop: '0rem',
+                }}
+              >
                 ATOMs
               </p>
             </div>
@@ -124,10 +127,20 @@ const Example = (prop: Props) => {
               $
               {toCurrency(Math.round((info.price) * 100) / 100)}
             </p>
-            <h4 className={classes.itemTitle} style={{ marginLeft: '0rem' }} >
+            <h4
+              className={classes.itemTitle}
+              style={{
+                marginLeft: '0rem',
+              }}
+            >
               Market Cap
             </h4>
-            <p className={classes.amount} style={{ marginLeft: '0rem' }} >
+            <p
+              className={classes.amount}
+              style={{
+                marginLeft: '0rem',
+              }}
+            >
               $
               {toCurrency(Math.round((info.marketCap) * 100) / 100)}
             </p>
