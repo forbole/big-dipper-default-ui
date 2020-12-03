@@ -1,0 +1,88 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { Tabs } from '../src';
+import {
+  ActionButton, FooterAction,
+} from './utils/table_preview_wrapper';
+
+<Meta title="TabsSwitcher" component={Tabs} />
+
+# Tabs
+
+wrapper component that handles all the tab switches
+
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <Tabs />
+  </Story>
+</Canvas>
+
+```
+Hello
+```
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>title</td>
+    <td>true</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>action</td>
+    <td>true</td>
+    <td>
+
+`React.ReactNode`
+
+  </td>
+    <td>Action component</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>footerAction</td>
+    <td>true</td>
+    <td>
+
+`React.ReactNode`
+
+  </td>
+    <td>Footer component</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
