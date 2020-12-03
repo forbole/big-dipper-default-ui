@@ -7,7 +7,7 @@ describe('Stabilities', () => {
     expect(Stabilities).toBeTruthy();
     const args = {
       title: 'Stabilities',
-      coin: 'ATOM',
+      coin: 'Daric',
       price: {
         title: 'Price',
         display: '$2.756',
@@ -49,6 +49,6 @@ describe('Stabilities', () => {
     expect(wrap.find(Stabilities)).toHaveLength(1);
     expect(wrap.find('.marginBottom')).toHaveLength(2);
     expect(wrap.find('h1').first().text()).toBe('Stabilities');
-    expect(wrap.find('div').last().text()).toBe('370,000.74ATOM');
+    expect(wrap.find('div').last().text()).toBe('370,000.74Daric');
   });
 });
