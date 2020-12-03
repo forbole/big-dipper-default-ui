@@ -5,17 +5,23 @@ export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
       maxWidth: '100%',
-      height: 'auto',
+      height: '100% ',
       display: 'flex',
-      borderRadius: '2px',
+      borderRadius: '6px',
       overflow: 'auto',
       '& h1': {
-        fontSize: '1.375rem',
+        fontSize: '1.125rem',
         fontWeight: 500,
         margin: '0',
         marginBottom: '1rem',
+        [getMinMediaQuery(769)]: {
+          fontSize: '1.375rem',
+        },
         [getMinMediaQuery(1600)]: {
           marginBottom: '1.5rem',
+        },
+        [getMinMediaQuery(1080)]: {
+          marginBottom: '2rem',
         },
       },
       '& .itemTitle': {
@@ -65,6 +71,9 @@ export const useGetStyles = () => {
         width: 'auto',
         background: '#E8E8E8',
         margin: '1.5rem 0 1.5rem 0',
+        [getMinMediaQuery(1600)]: {
+          marginBottom: '2rem',
+        },
       },
       '& .bonded': {
         display: 'block',
@@ -83,6 +92,39 @@ export const useGetStyles = () => {
         marginLeft: '5%',
         borderRadius: '8px',
         background: '#FFD800',
+      },
+      '& .chartBox': {
+        display: 'flex',
+        width: '45%',
+        height: 'auto',
+        margin: '0',
+        [getMinMediaQuery(1200)]: {
+          width: '50%',
+          height: '10rem',
+        },
+        [getMinMediaQuery(1600)]: {
+          width: '60%',
+          height: '12rem',
+        },
+      },
+      '& .boxMedium': {
+        width: '55%',
+        height: '70%',
+        margin: 'auto',
+        marginLeft: '0',
+        display: 'flex-end',
+        [getMinMediaQuery(1080)]: {
+          width: '60%',
+        },
+        [getMinMediaQuery(1600)]: {
+          marginLeft: '0',
+          width: '8.5rem',
+        },
+      },
+      '& .box': {
+        display: 'flex',
+        width: '100%',
+        height: 'auto',
       },
     },
     container: {
@@ -115,37 +157,6 @@ export const useGetStyles = () => {
       fontSize: '0.5rem',
       fontWeight: 400,
       margin: '0rem 0 0 0.25rem',
-    },
-    box: {
-      display: 'flex',
-      width: '100%',
-      height: 'auto',
-    },
-    chartBox: {
-      display: 'flex',
-      width: '45%',
-      height: 'auto',
-      margin: '0',
-      [getMinMediaQuery(1080)]: {
-        width: '40%',
-      },
-      [getMinMediaQuery(1600)]: {
-        width: '50%',
-        height: '150px',
-      },
-    },
-    boxMedium: {
-      width: '55%',
-      height: '70%',
-      margin: 'auto',
-      marginLeft: '0',
-      [getMinMediaQuery(1080)]: {
-        width: '60%',
-      },
-      [getMinMediaQuery(1600)]: {
-        marginLeft: '0',
-        width: '50%',
-      },
     },
     boxSmall: {
       display: 'flex',

@@ -40,18 +40,18 @@ const Stabilities = (prop: Props) => {
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'stabilities')}>
       <div className={classnames(classes.container, 'container')}>
-
         <h1>
           {title}
         </h1>
-        <div className={classnames(classes.box, 'box')}>
-          <div className={classnames(classes.chartBox, 'box')}>
+        <div className={classnames('box')}>
+          <div className={classnames('chartBox', 'box')}>
             <ResponsiveContainer height="100%">
               <PieChart>
                 <Pie
                   data={data.detail}
                   startAngle={70}
                   endAngle={-290}
+                  isAnimationActive={false}
                   innerRadius="85%"
                   outerRadius="100%"
                   dataKey="value"
@@ -68,7 +68,7 @@ const Stabilities = (prop: Props) => {
               </PieChart>
             </ResponsiveContainer>
           </div>
-          <div className={classes.boxMedium}>
+          <div className={classnames('boxMedium')}>
             <div className={classes.boxSmall}>
               <div
                 className={classnames('bonded')}
