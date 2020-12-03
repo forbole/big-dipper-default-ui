@@ -16,11 +16,11 @@ export type Data = {
   imageUrl: string;
   displayName: string;
   operatorAddress: string;
-  status?: {
+  status: {
     className: string;
     display: string;
   }
-  commission: string;
+  commission?: string;
   votingPower: {
     rawValue: number;
     display: string;

@@ -20,16 +20,24 @@ const SingleValidator = (props: SingleValidatorProps) => {
     >
       <Avatar imageUrl={data.imageUrl} alt={data.displayName} width={40} height={40} />
       <div className={classnames('validator-list-mobile__content', 'content')}>
-        <div className={classnames('content__top-container', 'flex-content')}>
+        <div className={classnames('content__top-container', 'flex-content', 'top-container')}>
           <p>{data.displayName}</p>
-          <p>{data.votingPower.display}</p>
+          <p className={classnames('top-container__voting-power')}>{data.votingPower.display}</p>
         </div>
         <div className={classnames('content__bottom-container', 'bottom-container', 'flex-content')}>
-          <p className={classnames('bottom-container__commission')}>
-            {labels.commission}
-            :&nbsp;
-            {data.commission}
-          </p>
+          {
+            data.commission ? (
+              <p className={classnames('bottom-container__commission')}>
+                {labels.commission}
+                :&nbsp;
+                {data.commission}
+              </p>
+            ) : (
+              <p className={classnames('bottom-container__status', data?.status?.className)}>
+                {data.status.display}
+              </p>
+            )
+          }
           <p>{data.votingPower.percentDisplay}</p>
         </div>
       </div>

@@ -25,11 +25,32 @@ export const useGetStyles = () => {
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
       },
+      '& .content__top-container': {
+        marginBottom: '0.5rem',
+      },
       '& .content__bottom-container': {
         fontSize: '0.875rem',
       },
       '& .bottom-container__commission': {
         maxWidth: 'none',
+      },
+      '& .top-container__voting-power': {
+        fontWeight: 600,
+      },
+      '& .bottom-container__status': {
+        position: 'relative',
+        paddingLeft: '0.7rem',
+        '&:before': {
+          content: '""',
+          width: '5px',
+          height: '100%',
+          left: '0',
+          top: '0',
+          background: '#b3b3b3',
+          display: 'block',
+          position: 'absolute',
+          borderRadius: '15px',
+        },
       },
     },
   });
