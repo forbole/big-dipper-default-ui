@@ -1,23 +1,26 @@
 import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
-import { Tabs } from '../src';
-import {
-  ActionButton, FooterAction,
-} from './utils/table_preview_wrapper';
+import { ValidatorListMobile } from '../src';
+import { dummyData, labelsList } from './utils/validators_list';
 
-<Meta title="TabsSwitcher" component={Tabs} />
+<Meta title="ValidatorListMobile" component={ValidatorListMobile}/>
 
 # Tabs
-
-wrapper component that handles all the tab switches
 
 ---
 
 ## Default
 <Canvas>
   <Story name="Default">
-    <Tabs />
+    <ValidatorListMobile
+      onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+      labels={labelsList}
+      active={{
+        tab: 'Active Validators',
+        data: dummyData,
+      }}
+    />
   </Story>
 </Canvas>
 

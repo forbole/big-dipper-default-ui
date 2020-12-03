@@ -12,7 +12,8 @@ import SelectTabs from './components/select_tabs';
 import OnlineVotingPower from './components/online_voting_power';
 import ResponsiveRecharts from './components/responsive_recharts';
 import CustomToolTip from './components/custom_tool_tip';
-import Tabs from './components/tabs';
+import ValidatorListMobile from './components/validator_list_mobile';
+import TabPanel from './components/tab_panel';
 
 export {
   DataBlock,
@@ -29,5 +30,6 @@ export {
   OnlineVotingPower,
   ResponsiveRecharts,
   CustomToolTip,
-  Tabs,
+  TabPanel,
+  ValidatorListMobile,
 };
