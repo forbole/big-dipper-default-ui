@@ -2,7 +2,7 @@ import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
 import { ValidatorListMobile } from '../src';
-import { dummyData, labelsList } from './utils/validators_list';
+import { dummyData, labelsList, dummyDataInactive } from './utils/validators_list';
 
 <Meta title="ValidatorListMobile" component={ValidatorListMobile}/>
 
@@ -16,10 +16,8 @@ import { dummyData, labelsList } from './utils/validators_list';
     <ValidatorListMobile
       onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
       labels={labelsList}
-      active={{
-        tab: 'Active Validators',
-        data: dummyData,
-      }}
+      active={dummyData}
+      inactive={dummyDataInactive}
     />
   </Story>
 </Canvas>

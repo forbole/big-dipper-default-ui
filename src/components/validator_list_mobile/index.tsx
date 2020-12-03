@@ -12,7 +12,8 @@ import { ValidatorListMobileProps } from './types';
 
 const ValidatorListMobile = (props: ValidatorListMobileProps) => {
   const {
-    active,
+    active = [],
+    inactive = [],
     labels,
     className,
     onClick,
@@ -38,15 +39,15 @@ const ValidatorListMobile = (props: ValidatorListMobileProps) => {
         scrollButtons="auto"
         aria-label="scrollable auto tabs example"
       >
-        <Tab disableRipple label={active.tab} {...getAllyProps(0)} />
-        <Tab disableRipple label="Item Two" {...getAllyProps(1)} />
+        <Tab disableRipple label={labels.active} {...getAllyProps(0)} />
+        <Tab disableRipple label={labels.inactive} {...getAllyProps(1)} />
       </Tabs>
       {/* =================================== */}
       {/* active */}
       {/* =================================== */}
       <TabPanel value={value} index={0}>
         <div className={classnames('validator-list-mobile__data-container')}>
-          {active.data.map((x) => {
+          {active.map((x) => {
             return (
               <SingleValidator
                 data={x}
@@ -62,7 +63,18 @@ const ValidatorListMobile = (props: ValidatorListMobileProps) => {
       {/* inactive */}
       {/* =================================== */}
       <TabPanel value={value} index={1}>
-        Item Two
+        <div className={classnames('validator-list-mobile__data-container')}>
+          {inactive.map((x) => {
+            return (
+              <SingleValidator
+                data={x}
+                key={x.operatorAddress}
+                labels={labels}
+                onClick={onClick}
+              />
+            );
+          })}
+        </div>
       </TabPanel>
     </div>
   );

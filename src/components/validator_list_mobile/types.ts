@@ -1,15 +1,15 @@
 export interface ValidatorListMobileProps {
   className?: string;
   labels: Labels;
-  active: {
-    tab: string;
-    data: Data[];
-  }
+  active: Data[];
+  inactive: Data[];
   onClick: () => void;
 }
 
 export type Labels = {
   commission: string;
+  active: string;
+  inactive: string;
 }
 
 export type Data = {
