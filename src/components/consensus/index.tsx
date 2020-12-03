@@ -81,6 +81,7 @@ const Consensus = (prop: Props) => {
                   outerRadius="100%"
                   dataKey="value"
                   labelLine={false}
+                  isAnimationActive={false}
                   stroke="none"
                   label={renderCustomizedLabel}
                 >

@@ -1,15 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
 import { useGetStyles } from './styles';
-import { AvatarProps } from './types';
+import { AvatarDisplayProps } from './types';
 
 /**
  * Avatar Component
  */
-const AvatarDisplay = (props:AvatarProps) => {
+const AvatarDisplay = (props:AvatarDisplayProps) => {
   const {
     imageUrl,
     alt,
+    title,
     width,
     height,
     className,
@@ -23,6 +24,7 @@ const AvatarDisplay = (props:AvatarProps) => {
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'avatar')}>
       <img src={imageUrl} alt={alt} className={classnames('image')} />
+      <div>{title}</div>
     </div>
   );
 };
