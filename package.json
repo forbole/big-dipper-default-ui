@@ -40,7 +40,6 @@
     "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-console": "^1.2.2",
     "@storybook/addon-essentials": "^6.0.26",
-    "@storybook/addon-knobs": "^6.0.28",
     "@storybook/addon-links": "^6.0.26",
     "@storybook/react": "^6.0.26",
     "@testing-library/react": "^9.5.0",
@@ -51,7 +50,7 @@
     "@types/node": "^12.12.38",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
-    "@types/recharts": "^1.8.16",
+    "@types/recharts": "^1.8.17",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "babel-eslint": "^10.0.3",
@@ -83,8 +82,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "@types/recharts": "^1.8.16"
-  }
+  ]
 }
