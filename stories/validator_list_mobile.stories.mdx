@@ -23,7 +23,49 @@ import { dummyData, labelsList, dummyDataInactive } from './utils/validators_lis
 </Canvas>
 
 ```
-Hello
+<ValidatorListMobile
+  onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+  labels={{
+    commission: 'Commission',
+    active: 'Active Validators',
+    inactive: 'Inactive Validators',
+  }}
+  active={[
+    {
+      imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+      displayName: 'Forbsdsfgkbhfskhfsdhole',
+      operatorAddress: '312',
+      commission: '100%',
+      votingPower: {
+        rawValue: 1000,
+        display: '110,000,08511111111321654649845',
+        percentDisplay: '10654654654654654654654564%',
+      },
+      status: {
+        className: 'active',
+        display: 'active',
+      },
+    },
+    ...
+  ]}
+  inactive={[
+    {
+      imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+      displayName: 'Forbsdsfgkbhfskhfsdhole',
+      operatorAddress: '312',
+      votingPower: {
+        rawValue: 1000,
+        display: '110,000,08511111111321654649845',
+        percentDisplay: '10654654654654654654654564%',
+      },
+      status: {
+        className: 'active',
+        display: 'active',
+      },
+    },
+    ...
+  ]}
+/>
 ```
 ## Props
 <table>
@@ -38,11 +80,15 @@ Hello
 </thead>
 <tbody>
   <tr>
-    <td>title</td>
+    <td>labels</td>
     <td>true</td>
     <td>
 
-`string`
+```
+commission: string;
+active: string;
+inactive: string;
+```
 
   </td>
     <td>-</td>
@@ -50,26 +96,70 @@ Hello
   </tr>
 
   <tr>
-    <td>action</td>
+    <td>active</td>
     <td>true</td>
     <td>
 
-`React.ReactNode`
+```
+{
+  imageUrl: string;
+  displayName: string;
+  operatorAddress: string;
+  status: {
+    className: string;
+    display: string;
+  }
+  commission?: string;
+  votingPower: {
+    rawValue: number;
+    display: string;
+    percentDisplay: string;
+  }
+}[]
+```
 
   </td>
-    <td>Action component</td>
+    <td>-</td>
     <td>-</td>
   </tr>
 
   <tr>
-    <td>footerAction</td>
+    <td>inactive</td>
     <td>true</td>
     <td>
 
-`React.ReactNode`
+```
+{
+  imageUrl: string;
+  displayName: string;
+  operatorAddress: string;
+  status: {
+    className: string;
+    display: string;
+  }
+  commission?: string;
+  votingPower: {
+    rawValue: number;
+    display: string;
+    percentDisplay: string;
+  }
+}[]
+```
 
   </td>
-    <td>Footer component</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data: Data) => void`
+
+  </td>
+    <td>-</td>
     <td>-</td>
   </tr>
 
