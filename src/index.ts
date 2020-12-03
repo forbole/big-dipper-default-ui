@@ -7,6 +7,10 @@ import LatestBlocksDesktop from './components/latest_blocks_desktop';
 import Avatar from './components/avatar';
 import LatestActivitiesMobile from './components/latest_activities_mobile';
 import LatestActivitiesDesktop from './components/latest_activities_desktop';
+import SelectTabs from './components/select_tabs';
+import OnlineVotingPower from './components/online_voting_power';
+import ResponsiveRecharts from './components/responsive_recharts';
+import CustomToolTip from './components/custom_tool_tip';
 
 export {
   DataBlock,
@@ -18,4 +22,8 @@ export {
   Avatar,
   LatestActivitiesMobile,
   LatestActivitiesDesktop,
+  SelectTabs,
+  OnlineVotingPower,
+  ResponsiveRecharts,
+  CustomToolTip,
 };
