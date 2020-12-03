@@ -60,6 +60,10 @@ export const dummyData = [
       display: '110,000,08511111111321654649845',
       percentDisplay: '10654654654654654654654564%',
     },
+    status: {
+      className: 'active',
+      display: 'active',
+    },
   },
   {
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
@@ -70,6 +74,10 @@ export const dummyData = [
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
       percentDisplay: '10%',
+    },
+    status: {
+      className: 'active',
+      display: 'active',
     },
   },
   {
@@ -82,6 +90,10 @@ export const dummyData = [
       display: '110,000,08511111111321654649845',
       percentDisplay: '10%',
     },
+    status: {
+      className: 'active',
+      display: 'active',
+    },
   },
   {
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
@@ -93,6 +105,10 @@ export const dummyData = [
       display: '110,000,08511111111321654649845',
       percentDisplay: '10%',
     },
+    status: {
+      className: 'active',
+      display: 'active',
+    },
   },
   {
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
@@ -103,6 +119,10 @@ export const dummyData = [
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
       percentDisplay: '10%',
+    },
+    status: {
+      className: 'active',
+      display: 'active',
     },
   },
 ];
