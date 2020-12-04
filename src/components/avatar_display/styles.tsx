@@ -1,17 +1,10 @@
 import { makeStyles } from '@material-ui/styles';
-import { UseGetStylesProps } from './types';
 
-export const useGetStyles = ({
-  width = '1.5rem', height = '1.5rem',
-}: UseGetStylesProps) => {
+export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
       display: 'flex',
-      '& img': {
-        height,
-        width,
-        borderRadius: '50%',
-        overflow: 'hidden',
+      '& .img': {
         marginRight: '0.3rem',
       },
       '& div': {

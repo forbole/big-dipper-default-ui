@@ -14,7 +14,7 @@ describe('AvatarDisplay', () => {
     );
     expect(wrap).not.toBeNull();
 
-    expect(wrap.find('.avatar')).toHaveLength(1);
+    expect(wrap.find('.avatarDisplay')).toHaveLength(1);
     expect(wrap.find('div').first().text()).toBe('Forbole');
   });
 });
