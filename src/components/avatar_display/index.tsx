@@ -4,7 +4,7 @@ import { useGetStyles } from './styles';
 import { AvatarDisplayProps } from './types';
 
 /**
- * Avatar Component
+ * AvatarDisplay Component
  */
 const AvatarDisplay = (props:AvatarDisplayProps) => {
   const {
@@ -24,7 +24,7 @@ const AvatarDisplay = (props:AvatarDisplayProps) => {
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'avatar')}>
       <img src={imageUrl} alt={alt} className={classnames('image')} />
-      <div>{title}</div>
+      <div className={classnames('image')}>{title}</div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { AvatarProps } from './types';
 /**
  * Avatar Component
  */
-const AvatarDisplay = (props:AvatarProps) => {
+const Avatar = (props:AvatarProps) => {
   const {
     imageUrl,
     alt,
@@ -27,4 +27,4 @@ const AvatarDisplay = (props:AvatarProps) => {
   );
 };
 
-export default AvatarDisplay;
+export default Avatar;
