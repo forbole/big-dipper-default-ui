@@ -1,10 +1,19 @@
 import React from 'react';
 import {
-  ValidatorListData as Data, ValidatorListLabels as Labels, ValidatorListProps,
+  ValidatorListData as Data, ValidatorListLabels, ValidatorListProps,
 } from '../../types/validator_list';
 
 export interface ValidatorListDesktopProps extends ValidatorListProps {
   search: Search;
+  labels: Labels;
+}
+
+export interface Labels extends ValidatorListLabels {
+  rank: string;
+  moniker: string;
+  votingPower: string;
+  self: string;
+  commission: string;
 }
 
 export type Search = {
@@ -16,5 +25,4 @@ export type Search = {
 
 export type {
   Data,
-  Labels,
 };

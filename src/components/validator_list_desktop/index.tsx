@@ -4,6 +4,16 @@ import {
   Tabs,
   InputAdornment,
   OutlinedInput,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+  TableSortLabel,
+  TextField,
 } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 import classnames from 'classnames';
@@ -11,7 +21,10 @@ import { getAllyProps } from '../../utils';
 import { TabPanel } from '../..';
 import { useGetStyles } from './styles';
 import { ValidatorListDesktopProps } from './types';
-import { useValidatorListDesktopHook } from './hooks';
+import {
+  useValidatorListDesktopHook, useTableHook,
+} from './hooks';
+import { getActiveColumns } from './utils';
 
 const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
   const {
@@ -25,7 +38,10 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
   } = props;
 
   const { classes } = useGetStyles();
-  const { handleSubmit } = useValidatorListDesktopHook(search.onSearchCallback);
+  const { handleSearchSubmit } = useValidatorListDesktopHook(search.onSearchCallback);
+  const activeTable = useTableHook(active);
+  const activeColumn = getActiveColumns(labels);
+
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'validator-list-desktop')}>
       {/* =================================== */}
@@ -42,7 +58,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
           <Tab disableRipple label={labels.active} {...getAllyProps(0)} />
           <Tab disableRipple label={labels.inactive} {...getAllyProps(1)} />
         </Tabs>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSearchSubmit}>
           <OutlinedInput
             value={search.value}
             onChange={search.handleChange}
@@ -59,8 +75,39 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
       {/* active */}
       {/* =================================== */}
       <TabPanel value={tabs.value} index={0}>
-        <div className={classnames('validator-list-mobile__data-container')}>
-          active
+        <div className={classnames('validator-list-desktop__data-container')}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                {activeColumn.map((column) => {
+                  if (column.sort) {
+                    return (
+                      <TableCell
+                        key={column.id}
+                        align={column.align as any}
+                      >
+                        <TableSortLabel
+                          active={activeTable.state.activeSort === column.id}
+                          direction={activeTable.state.activeSort === column.id ? activeTable.state.sortDirection : 'asc'}
+                          onClick={activeTable.handleSort(column.id)}
+                        >
+                          {column.label}
+                        </TableSortLabel>
+                      </TableCell>
+                    );
+                  }
+                  return (
+                    <TableCell
+                      key={column.id}
+                      align={column.align as any}
+                    >
+                      {column.label}
+                    </TableCell>
+                  );
+                })}
+              </TableRow>
+            </TableHead>
+          </Table>
           {/* {active.map((x) => {
             return (
               <SingleValidator
@@ -77,7 +124,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
       {/* inactive */}
       {/* =================================== */}
       <TabPanel value={tabs.value} index={1}>
-        <div className={classnames('validator-list-mobile__data-container')}>
+        <div className={classnames('validator-list-desktop_data-container')}>
           inactive
           {/* {inactive.map((x) => {
             return (

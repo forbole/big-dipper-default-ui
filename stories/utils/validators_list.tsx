@@ -4,6 +4,10 @@ export const labelsList = {
   commission: 'Commission',
   active: 'Active Validators',
   inactive: 'Inactive Validators',
+  rank: 'Rank',
+  moniker: 'moniker',
+  votingPower: 'Voting Power',
+  self: 'Self',
 };
 
 export const dummyDataInactive = [
