@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DataBlockCustom } from './data_block';
 
 export const labelsList = {
   commission: 'Commission',
@@ -19,6 +20,10 @@ export const dummyDataInactive = [
       className: 'jailed',
       display: 'jailed',
     },
+    self: {
+      rawValue: 10,
+      display: '10%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000',
@@ -33,6 +38,10 @@ export const dummyDataInactive = [
       className: 'jailed',
       display: 'jailed',
     },
+    self: {
+      rawValue: 10,
+      display: '10%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
@@ -46,6 +55,10 @@ export const dummyDataInactive = [
     status: {
       className: 'commission',
       display: 'Commission',
+    },
+    self: {
+      rawValue: 10,
+      display: '10%',
     },
     votingPower: {
       rawValue: 1000,
@@ -64,10 +77,15 @@ export const dummyData = [
       rawValue: 100,
       display: '100%',
     },
+    self: {
+      rawValue: 10,
+      display: '10%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
       percentDisplay: '10654654654654654654654564%',
+      visual: <DataBlockCustom />,
     },
     status: {
       className: 'active',
@@ -82,10 +100,15 @@ export const dummyData = [
       rawValue: 100,
       display: '100%',
     },
+    self: {
+      rawValue: 10,
+      display: '10%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
       percentDisplay: '10%',
+      visual: <DataBlockCustom />,
     },
     status: {
       className: 'active',
@@ -100,10 +123,15 @@ export const dummyData = [
       rawValue: 100,
       display: '100%',
     },
+    self: {
+      rawValue: 10,
+      display: '10%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
       percentDisplay: '10%',
+      visual: <DataBlockCustom />,
     },
     status: {
       className: 'active',
@@ -118,10 +146,15 @@ export const dummyData = [
       rawValue: 100,
       display: '100%',
     },
+    self: {
+      rawValue: 10,
+      display: '10%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
       percentDisplay: '10%',
+      visual: <DataBlockCustom />,
     },
     status: {
       className: 'active',
@@ -136,10 +169,15 @@ export const dummyData = [
       rawValue: 100,
       display: '100%',
     },
+    self: {
+      rawValue: 10,
+      display: '10%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
       percentDisplay: '10%',
+      visual: <DataBlockCustom />,
     },
     status: {
       className: 'active',

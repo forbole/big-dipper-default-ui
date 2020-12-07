@@ -29,7 +29,7 @@ export const getActiveColumns = (labels: Labels) => {
       align: 'right',
     },
     {
-      id: 'graph',
+      id: 'visual',
       label: '',
     },
   ]);

@@ -1,5 +1,5 @@
-import Row from './row';
+import ValidatorTable from './validator_table';
 
 export {
-  Row,
+  ValidatorTable,
 };

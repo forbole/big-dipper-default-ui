@@ -25,6 +25,7 @@ import {
   useValidatorListDesktopHook, useTableHook,
 } from './hooks';
 import { getActiveColumns } from './utils';
+import { ValidatorTable } from './components';
 
 const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
   const {
@@ -76,67 +77,11 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
       {/* =================================== */}
       <TabPanel value={tabs.value} index={0}>
         <div className={classnames('validator-list-desktop__data-container')}>
-          <Table className={classnames('data-container__table')}>
-            <TableHead>
-              <TableRow>
-                {activeColumns.map((column) => {
-                  if (column.sort) {
-                    return (
-                      <TableCell
-                        key={column.id}
-                        align={column.align as any}
-                      >
-                        <TableSortLabel
-                          active={activeTable.state.activeSort === column.id}
-                          direction={activeTable.state.activeSort === column.id ? activeTable.state.sortDirection : 'asc'}
-                          onClick={activeTable.handleSort(column.id)}
-                        >
-                          {column.label}
-                        </TableSortLabel>
-                      </TableCell>
-                    );
-                  }
-                  return (
-                    <TableCell
-                      key={column.id}
-                      align={column.align as any}
-                    >
-                      {column.label}
-                    </TableCell>
-                  );
-                })}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {active.map((row, i) => {
-                return (
-                  <TableRow key={i}>
-                    {activeColumns.map((column, index) => {
-                      const value = row[column.id];
-                      return (
-                        <TableCell
-                          key={index}
-                          align={column.align as any}
-                        >
-                          {value?.display ?? value}
-                        </TableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-          {/* {active.map((x) => {
-            return (
-              <SingleValidator
-                data={x}
-                key={x.operatorAddress}
-                labels={labels}
-                onClick={onClick}
-              />
-            );
-          })} */}
+          <ValidatorTable
+            columns={activeColumns}
+            state={activeTable.state}
+            handleSort={activeTable.handleSort}
+          />
         </div>
       </TabPanel>
       {/* =================================== */}

@@ -3,6 +3,7 @@ import {
   TableCell,
   TableRow,
 } from '@material-ui/core';
+import { formatRow } from './utils';
 
 const Row = (props: any) => {
   const {
@@ -10,22 +11,18 @@ const Row = (props: any) => {
     columns,
     index,
   } = props;
+  const formatData = formatRow(data, index);
 
   return (
-    <TableRow
-      hover
-      role="checkbox"
-      tabIndex={-1}
-      key={data.user}
-    >
-      {columns.map((column, i) => {
-        const value = data[column.id];
+    <TableRow>
+      {columns.map((column:any) => {
+        const value = formatData[column.id];
         return (
           <TableCell
-            key={i}
+            key={column.id}
             align={column.align}
           >
-            {value?.display ?? value}
+            {value}
           </TableCell>
         );
       })}
