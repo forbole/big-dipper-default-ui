@@ -21,6 +21,11 @@ export const useGetStyles = () => {
         alignItems: 'center',
         justifyContent: 'space-between',
       },
+      '& .data-container__table': {
+        '& .MuiTableCell-root': {
+          border: 'none',
+        },
+      },
     },
   });
 

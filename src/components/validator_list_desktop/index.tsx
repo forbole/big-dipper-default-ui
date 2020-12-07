@@ -40,7 +40,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
   const { classes } = useGetStyles();
   const { handleSearchSubmit } = useValidatorListDesktopHook(search.onSearchCallback);
   const activeTable = useTableHook(active);
-  const activeColumn = getActiveColumns(labels);
+  const activeColumns = getActiveColumns(labels);
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'validator-list-desktop')}>
@@ -76,10 +76,10 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
       {/* =================================== */}
       <TabPanel value={tabs.value} index={0}>
         <div className={classnames('validator-list-desktop__data-container')}>
-          <Table>
+          <Table className={classnames('data-container__table')}>
             <TableHead>
               <TableRow>
-                {activeColumn.map((column) => {
+                {activeColumns.map((column) => {
                   if (column.sort) {
                     return (
                       <TableCell
@@ -107,6 +107,25 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
                 })}
               </TableRow>
             </TableHead>
+            <TableBody>
+              {active.map((row, i) => {
+                return (
+                  <TableRow key={i}>
+                    {activeColumns.map((column, index) => {
+                      const value = row[column.id];
+                      return (
+                        <TableCell
+                          key={index}
+                          align={column.align as any}
+                        >
+                          {value?.display ?? value}
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                );
+              })}
+            </TableBody>
           </Table>
           {/* {active.map((x) => {
             return (

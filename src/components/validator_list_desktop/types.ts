@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ValidatorListData as Data, ValidatorListLabels, ValidatorListProps,
+  ValidatorListData, ValidatorListLabels, ValidatorListProps,
 } from '../../types/validator_list';
 
 export interface ValidatorListDesktopProps extends ValidatorListProps {
@@ -16,13 +16,16 @@ export interface Labels extends ValidatorListLabels {
   commission: string;
 }
 
+export interface Data extends ValidatorListData {
+  self: {
+    rawValue: number;
+    display: string;
+  }
+}
+
 export type Search = {
   placeholder: string;
   value: string;
   onSearchCallback: (value:string) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-
-export type {
-  Data,
-};

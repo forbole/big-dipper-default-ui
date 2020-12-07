@@ -30,7 +30,7 @@ export const getActiveColumns = (labels: Labels) => {
     },
     {
       id: 'graph',
-      label: 'graph-placeholder',
+      label: '',
     },
   ]);
 };

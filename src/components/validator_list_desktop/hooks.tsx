@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import * as R from 'ramda';
 
 export const useValidatorListDesktopHook = (callback: any) => {
   const handleSearchSubmit = (e:any) => {
@@ -14,7 +13,7 @@ export const useValidatorListDesktopHook = (callback: any) => {
   };
 };
 
-export const useTableHook = (data:any[], active?:string = 'moniker') => {
+export const useTableHook = (data:any[], active = 'moniker') => {
   const [state, setState] = useState<any>({
     data,
     activeSort: active,

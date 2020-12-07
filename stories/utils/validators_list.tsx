@@ -5,7 +5,7 @@ export const labelsList = {
   active: 'Active Validators',
   inactive: 'Inactive Validators',
   rank: 'Rank',
-  moniker: 'moniker',
+  moniker: 'Moniker',
   votingPower: 'Voting Power',
   self: 'Self',
 };
@@ -60,7 +60,10 @@ export const dummyData = [
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbsdsfgkbhfskhfsdhole',
     operatorAddress: '312',
-    commission: '100%',
+    commission: {
+      rawValue: 100,
+      display: '100%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
@@ -75,7 +78,10 @@ export const dummyData = [
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbole',
     operatorAddress: 'ce312',
-    commission: '100%',
+    commission: {
+      rawValue: 100,
+      display: '100%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
@@ -90,7 +96,10 @@ export const dummyData = [
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbole',
     operatorAddress: '3sd12',
-    commission: '100%',
+    commission: {
+      rawValue: 100,
+      display: '100%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
@@ -105,7 +114,10 @@ export const dummyData = [
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbole',
     operatorAddress: '3v12',
-    commission: '100%',
+    commission: {
+      rawValue: 100,
+      display: '100%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',
@@ -120,7 +132,10 @@ export const dummyData = [
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbole',
     operatorAddress: '31asd2',
-    commission: '100%',
+    commission: {
+      rawValue: 100,
+      display: '100%',
+    },
     votingPower: {
       rawValue: 1000,
       display: '110,000,08511111111321654649845',

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface ValidatorListProps {
   className?: string;
   labels: ValidatorListLabels;
@@ -26,10 +28,14 @@ export type ValidatorListData = {
     className: string;
     display: string;
   }
-  commission?: string;
+  commission?: {
+    rawValue: number;
+    display: string;
+  };
   votingPower: {
     rawValue: number;
     display: string;
     percentDisplay: string;
+    visual?: React.ReactNode;
   }
 }

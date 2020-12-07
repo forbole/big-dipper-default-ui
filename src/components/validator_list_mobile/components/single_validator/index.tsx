@@ -30,7 +30,7 @@ const SingleValidator = (props: SingleValidatorProps) => {
               <p className={classnames('bottom-container__commission')}>
                 {labels.commission}
                 :&nbsp;
-                {data.commission}
+                {data.commission.display}
               </p>
             ) : (
               <p className={classnames('bottom-container__status', data?.status?.className)}>
