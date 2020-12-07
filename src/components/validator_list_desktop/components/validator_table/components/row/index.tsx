@@ -3,6 +3,7 @@ import {
   TableCell,
   TableRow,
 } from '@material-ui/core';
+import classnames from 'classnames';
 import { formatRow } from './utils';
 
 const Row = (props: any) => {
@@ -15,7 +16,7 @@ const Row = (props: any) => {
   const formatData = formatRow(data, index);
 
   return (
-    <TableRow onClick={() => onClick(data)}>
+    <TableRow onClick={() => onClick(data)} className={classnames('table__row')}>
       {columns.map((column:any) => {
         const value = formatData[column.id];
         return (

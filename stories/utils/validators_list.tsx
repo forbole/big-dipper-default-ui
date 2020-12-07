@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DataBlockCustom } from './data_block';
+import { AvatarDisplay } from '../../src';
 
 export const labelsList = {
   commission: 'Commission',
@@ -72,6 +73,11 @@ export const dummyData = [
   {
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbsdsfgkbhfskhfsdhole',
+    display: <AvatarDisplay
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+      title="Forbole"
+    />,
     operatorAddress: '312',
     commission: {
       rawValue: 100,
@@ -95,6 +101,11 @@ export const dummyData = [
   {
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbole',
+    display: <AvatarDisplay
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+      title="Forbole"
+    />,
     operatorAddress: 'ce312',
     commission: {
       rawValue: 100,
@@ -119,6 +130,11 @@ export const dummyData = [
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbole',
     operatorAddress: '3sd12',
+    display: <AvatarDisplay
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+      title="Forbole"
+    />,
     commission: {
       rawValue: 100,
       display: '100%',
@@ -142,6 +158,11 @@ export const dummyData = [
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbole',
     operatorAddress: '3v12',
+    display: <AvatarDisplay
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+      title="Forbole"
+    />,
     commission: {
       rawValue: 100,
       display: '100%',
@@ -165,6 +186,11 @@ export const dummyData = [
     imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
     displayName: 'Forbole',
     operatorAddress: '31asd2',
+    display: <AvatarDisplay
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+      title="Forbole"
+    />,
     commission: {
       rawValue: 100,
       display: '100%',

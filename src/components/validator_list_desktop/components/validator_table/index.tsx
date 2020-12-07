@@ -26,7 +26,7 @@ const ValidatorTable = (props:any) => {
   } = useTableHook(data, onClick);
 
   return (
-    <Table className={classnames('data-container__table')}>
+    <Table className={classnames('data-container__table', 'table')}>
       <TableHead>
         <TableRow>
           {columns.map((column: any) => {

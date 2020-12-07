@@ -26,6 +26,14 @@ export const useGetStyles = () => {
           border: 'none',
         },
       },
+      '& .table__row': {
+        '&:nth-of-type(odd)': {
+          background: '#F8F8F8',
+        },
+        '&:hover': {
+          cursor: 'pointer',
+        },
+      },
     },
   });
 
