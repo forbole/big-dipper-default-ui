@@ -18,10 +18,10 @@ const SingleValidator = (props: SingleValidatorProps) => {
       onClick={handleOnClick}
       role="button"
     >
-      <Avatar imageUrl={data.imageUrl} alt={data.displayName} width={40} height={40} />
+      <Avatar imageUrl={data.moniker.imageUrl} alt={data.moniker.display} width={40} height={40} />
       <div className={classnames('validator-list-mobile__content', 'content')}>
         <div className={classnames('content__top-container', 'flex-content', 'top-container')}>
-          <p>{data.displayName}</p>
+          <p>{data.moniker.display}</p>
           <p className={classnames('top-container__voting-power')}>{data.votingPower.display}</p>
         </div>
         <div className={classnames('content__bottom-container', 'bottom-container', 'flex-content')}>

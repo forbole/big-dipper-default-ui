@@ -8,9 +8,6 @@ export const useTableHook = (data:any[], handleClick?: any, active = 'moniker') 
     sortDirection: 'asc',
   });
 
-  /**
-   * lol idk if this works yet
-   */
   const handleSort = (key:string) => () => {
     const {
       sortDirection,
@@ -26,8 +23,8 @@ export const useTableHook = (data:any[], handleClick?: any, active = 'moniker') 
         compareA = compareA?.toLowerCase() ?? '';
         compareB = compareB?.toLowerCase() ?? '';
       } else if (compareA && typeof compareA === 'object') {
-        compareA = compareA?.value ?? null;
-        compareB = compareB?.value ?? null;
+        compareA = compareA?.rawValue ?? null;
+        compareB = compareB?.rawValue ?? null;
       }
       if (newSortDirection === 'desc') {
         return compareA > compareB ? -1 : 1;

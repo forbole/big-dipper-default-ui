@@ -5,8 +5,9 @@ import {
 } from '@material-ui/core';
 import classnames from 'classnames';
 import { formatRow } from './utils';
+import { RowProps } from './types';
 
-const Row = (props: any) => {
+const Row = (props: RowProps) => {
   const {
     data,
     columns,

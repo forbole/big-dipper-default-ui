@@ -8,6 +8,7 @@ export interface ValidatorListDesktopProps extends ValidatorListProps {
   labels: Labels;
   active: Data[];
   inactive: Data[];
+  onClick?: (data:Data) => void;
 }
 
 export interface Labels extends ValidatorListLabels {
@@ -20,7 +21,10 @@ export interface Labels extends ValidatorListLabels {
 }
 
 export interface Data extends ValidatorListData {
-  display: React.ReactNode;
+  moniker: {
+    rawValue: string;
+    display: React.ReactNode;
+  }
   self: {
     rawValue: number;
     display: string;

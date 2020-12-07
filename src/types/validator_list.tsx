@@ -5,13 +5,12 @@ export interface ValidatorListProps {
   labels: ValidatorListLabels;
   active: ValidatorListData[];
   inactive: ValidatorListData[];
-  onClick?: (data:ValidatorListData) => void;
   tabs: ValidatorListTabs;
 }
 
 export type ValidatorListTabs = {
   handleChange: (_event: any, newValue: number) => void;
-  value: number;
+  value: 0 | 1;
 }
 
 export type ValidatorListLabels = {
@@ -23,6 +22,7 @@ export type ValidatorListLabels = {
 export type ValidatorListData = {
   operatorAddress: string;
   status: {
+    rawValue: string;
     className: string;
     display: string;
   }

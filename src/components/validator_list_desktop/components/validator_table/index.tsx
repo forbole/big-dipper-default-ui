@@ -11,8 +11,9 @@ import {
 import { Row } from './components';
 import { Data } from '../../types';
 import { useTableHook } from './hooks';
+import { ValidatorTableProps } from './types';
 
-const ValidatorTable = (props:any) => {
+const ValidatorTable = (props:ValidatorTableProps) => {
   const {
     data,
     onRowClick: onClick,

@@ -4,16 +4,6 @@ import {
   Tabs,
   InputAdornment,
   OutlinedInput,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TablePagination,
-  TableRow,
-  TableSortLabel,
-  TextField,
 } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 import classnames from 'classnames';
@@ -88,8 +78,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
       {/* inactive */}
       {/* =================================== */}
       <TabPanel value={tabs.value} index={1}>
-        <div className={classnames('validator-list-desktop_data-container')}>
-          inactive
+        <div className={classnames('validator-list-desktop__data-container')}>
           <ValidatorTable
             columns={inactiveColumns}
             data={inactive}

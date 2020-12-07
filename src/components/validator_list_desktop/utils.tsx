@@ -60,6 +60,7 @@ export const getInactiveColumns = (labels: Labels) => {
     {
       id: 'status',
       label: labels.status,
+      sort: true,
     },
   ]);
 };
