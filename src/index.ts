@@ -14,6 +14,7 @@ import ResponsiveRecharts from './components/responsive_recharts';
 import CustomToolTip from './components/custom_tool_tip';
 import ValidatorListMobile from './components/validator_list_mobile';
 import TabPanel from './components/tab_panel';
+import ValidatorListDesktop from './components/validator_list_desktop';
 
 export {
   DataBlock,
@@ -32,4 +33,5 @@ export {
   CustomToolTip,
   TabPanel,
   ValidatorListMobile,
+  ValidatorListDesktop,
 };
