@@ -33,6 +33,22 @@ export const useGetStyles = () => {
         '&:hover': {
           cursor: 'pointer',
         },
+
+        '& .status': {
+          position: 'relative',
+          paddingLeft: '0.7rem',
+          '&:before': {
+            content: '""',
+            width: '5px',
+            height: '100%',
+            left: '0',
+            top: '0',
+            background: '#b3b3b3',
+            display: 'block',
+            position: 'absolute',
+            borderRadius: '15px',
+          },
+        },
       },
     },
   });

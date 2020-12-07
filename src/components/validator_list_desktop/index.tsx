@@ -22,7 +22,9 @@ import { TabPanel } from '../..';
 import { useGetStyles } from './styles';
 import { ValidatorListDesktopProps } from './types';
 import { useValidatorListDesktopHook } from './hooks';
-import { getActiveColumns } from './utils';
+import {
+  getActiveColumns, getInactiveColumns,
+} from './utils';
 import { ValidatorTable } from './components';
 
 const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
@@ -39,6 +41,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
   const { classes } = useGetStyles();
   const { handleSearchSubmit } = useValidatorListDesktopHook(search.onSearchCallback);
   const activeColumns = getActiveColumns(labels);
+  const inactiveColumns = getInactiveColumns(labels);
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'validator-list-desktop')}>
@@ -87,16 +90,11 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
       <TabPanel value={tabs.value} index={1}>
         <div className={classnames('validator-list-desktop_data-container')}>
           inactive
-          {/* {inactive.map((x) => {
-            return (
-              <SingleValidator
-                data={x}
-                key={x.operatorAddress}
-                labels={labels}
-                onClick={onClick}
-              />
-            );
-          })} */}
+          <ValidatorTable
+            columns={inactiveColumns}
+            data={inactive}
+            onRowClick={onClick}
+          />
         </div>
       </TabPanel>
     </div>

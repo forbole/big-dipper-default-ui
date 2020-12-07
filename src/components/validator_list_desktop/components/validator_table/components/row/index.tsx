@@ -19,12 +19,20 @@ const Row = (props: any) => {
     <TableRow onClick={() => onClick(data)} className={classnames('table__row')}>
       {columns.map((column:any) => {
         const value = formatData[column.id];
+
         return (
           <TableCell
             key={column.id}
             align={column.align}
           >
-            {value}
+            <span
+              className={classnames({
+                [data.status.className]: column.id === 'status',
+                status: column.id === 'status',
+              })}
+            >
+              {value}
+            </span>
           </TableCell>
         );
       })}

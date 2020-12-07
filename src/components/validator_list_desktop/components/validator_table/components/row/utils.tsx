@@ -8,5 +8,6 @@ export const formatRow = (data:Data, index: number) => {
     self: data.self?.display,
     commission: data.commission?.display,
     visual: data.votingPower?.visual,
+    status: data.status.display,
   });
 };

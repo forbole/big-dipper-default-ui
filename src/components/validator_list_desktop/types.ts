@@ -16,6 +16,7 @@ export interface Labels extends ValidatorListLabels {
   votingPower: string;
   self: string;
   commission: string;
+  status: string;
 }
 
 export interface Data extends ValidatorListData {
