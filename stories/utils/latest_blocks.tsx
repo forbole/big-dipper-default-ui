@@ -3,17 +3,15 @@ import {
   createStyles, makeStyles,
 } from '@material-ui/core';
 import { Data } from '../../src/components/latest_blocks_mobile/types';
+import { AvatarDisplay } from '../../src';
 
 const Proposer = () => {
-  const useStyles = makeStyles((theme: any) => createStyles({
-    root: {
-      color: '#1D86FF',
-    },
-  }));
-
-  const classes = useStyles();
   return (
-    <p className={classes.root}>Forbole</p>
+    <AvatarDisplay
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+      title="Forbole"
+    />
   );
 };
 
