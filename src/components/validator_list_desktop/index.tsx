@@ -1,13 +1,17 @@
 import React from 'react';
 import {
-  Tab, Tabs,
+  Tab,
+  Tabs,
+  InputAdornment,
+  OutlinedInput,
 } from '@material-ui/core';
+import { Search } from '@material-ui/icons';
 import classnames from 'classnames';
 import { getAllyProps } from '../../utils';
-import { useTabsHook } from '../../hooks';
 import { TabPanel } from '../..';
 import { useGetStyles } from './styles';
 import { ValidatorListDesktopProps } from './types';
+import { useValidatorListDesktopHook } from './hooks';
 
 const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
   const {
@@ -16,35 +20,45 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
     labels,
     className,
     onClick,
+    tabs,
+    search,
   } = props;
 
-  const {
-    value,
-    handleChange,
-  } = useTabsHook();
   const { classes } = useGetStyles();
-
+  const { handleSubmit } = useValidatorListDesktopHook(search.onSearchCallback);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'validator-list-desktop')}>
       {/* =================================== */}
       {/* tabs */}
       {/* =================================== */}
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        variant="fullWidth"
-        scrollButtons="auto"
-        aria-label="scrollable auto tabs example"
-      >
-        <Tab disableRipple label={labels.active} {...getAllyProps(0)} />
-        <Tab disableRipple label={labels.inactive} {...getAllyProps(1)} />
-      </Tabs>
+      <div className={classnames('flex')}>
+        <Tabs
+          value={tabs.value}
+          onChange={tabs.handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          aria-label="validator list tabs"
+        >
+          <Tab disableRipple label={labels.active} {...getAllyProps(0)} />
+          <Tab disableRipple label={labels.inactive} {...getAllyProps(1)} />
+        </Tabs>
+        <form onSubmit={handleSubmit}>
+          <OutlinedInput
+            value={search.value}
+            onChange={search.handleChange}
+            placeholder={search.placeholder}
+            startAdornment={(
+              <InputAdornment position="start">
+                <Search fontSize="small" className="outline-input__icon" />
+              </InputAdornment>
+          )}
+          />
+        </form>
+      </div>
       {/* =================================== */}
       {/* active */}
       {/* =================================== */}
-      <TabPanel value={value} index={0}>
+      <TabPanel value={tabs.value} index={0}>
         <div className={classnames('validator-list-mobile__data-container')}>
           active
           {/* {active.map((x) => {
@@ -62,7 +76,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
       {/* =================================== */}
       {/* inactive */}
       {/* =================================== */}
-      <TabPanel value={value} index={1}>
+      <TabPanel value={tabs.value} index={1}>
         <div className={classnames('validator-list-mobile__data-container')}>
           inactive
           {/* {inactive.map((x) => {

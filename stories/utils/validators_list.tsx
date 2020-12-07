@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 export const labelsList = {
   commission: 'Commission',
   active: 'Active Validators',
@@ -126,3 +128,37 @@ export const dummyData = [
     },
   },
 ];
+
+/**
+ * Helper hook that deals with tab changing in mui Tabs
+ */
+export const useTabsHook = () => {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (_event:any, newValue: number) => {
+    setValue(newValue);
+  };
+
+  return {
+    value,
+    handleChange,
+  };
+};
+
+export const useSearchHook = (callback:any) => {
+  const [search, setSearch] = useState('');
+
+  const handleChange = (e:any) => {
+    setSearch(e?.target?.value);
+  };
+
+  const handleSubmit = () => {
+    console.log(`searched with values: ${search}`);
+  };
+
+  return {
+    value: search,
+    handleChange,
+    onSearchCallback: handleSubmit,
+  };
+};

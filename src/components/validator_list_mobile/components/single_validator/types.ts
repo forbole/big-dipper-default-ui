@@ -5,5 +5,5 @@ import {
 export interface SingleValidatorProps {
   data: Data;
   labels: Labels;
-  onClick: (operatorAddress:string) => void | undefined;
+  onClick?: (data:Data) => void;
 }

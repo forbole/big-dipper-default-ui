@@ -4,7 +4,6 @@ import {
 } from '@material-ui/core';
 import classnames from 'classnames';
 import { getAllyProps } from '../../utils';
-import { useTabsHook } from '../../hooks';
 import { TabPanel } from '../..';
 import { SingleValidator } from './components';
 import { useGetStyles } from './styles';
@@ -17,12 +16,9 @@ const ValidatorListMobile = (props: ValidatorListMobileProps) => {
     labels,
     className,
     onClick,
+    tabs,
   } = props;
 
-  const {
-    value,
-    handleChange,
-  } = useTabsHook();
   const { classes } = useGetStyles();
 
   return (
@@ -31,13 +27,13 @@ const ValidatorListMobile = (props: ValidatorListMobileProps) => {
       {/* tabs */}
       {/* =================================== */}
       <Tabs
-        value={value}
-        onChange={handleChange}
+        value={tabs.value}
+        onChange={tabs.handleChange}
         indicatorColor="primary"
         textColor="primary"
         variant="fullWidth"
         scrollButtons="auto"
-        aria-label="scrollable auto tabs example"
+        aria-label="validator list tabs"
       >
         <Tab disableRipple label={labels.active} {...getAllyProps(0)} />
         <Tab disableRipple label={labels.inactive} {...getAllyProps(1)} />
@@ -45,7 +41,7 @@ const ValidatorListMobile = (props: ValidatorListMobileProps) => {
       {/* =================================== */}
       {/* active */}
       {/* =================================== */}
-      <TabPanel value={value} index={0}>
+      <TabPanel value={tabs.value} index={0}>
         <div className={classnames('validator-list-mobile__data-container')}>
           {active.map((x) => {
             return (
@@ -62,7 +58,7 @@ const ValidatorListMobile = (props: ValidatorListMobileProps) => {
       {/* =================================== */}
       {/* inactive */}
       {/* =================================== */}
-      <TabPanel value={value} index={1}>
+      <TabPanel value={tabs.value} index={1}>
         <div className={classnames('validator-list-mobile__data-container')}>
           {inactive.map((x) => {
             return (

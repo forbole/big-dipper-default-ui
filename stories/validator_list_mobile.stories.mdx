@@ -2,7 +2,7 @@ import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
 import { ValidatorListMobile } from '../src';
-import { dummyData, labelsList, dummyDataInactive } from './utils/validators_list';
+import { dummyData, labelsList, dummyDataInactive, useTabsHook } from './utils/validators_list';
 
 <Meta title="ValidatorListMobile" component={ValidatorListMobile}/>
 
@@ -18,6 +18,7 @@ import { dummyData, labelsList, dummyDataInactive } from './utils/validators_lis
       labels={labelsList}
       active={dummyData}
       inactive={dummyDataInactive}
+      tabs={useTabsHook()}
     />
   </Story>
 </Canvas>

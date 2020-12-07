@@ -3,7 +3,13 @@ export interface ValidatorListProps {
   labels: ValidatorListLabels;
   active: ValidatorListData[];
   inactive: ValidatorListData[];
-  onClick: () => void;
+  onClick?: (data:ValidatorListData) => void;
+  tabs: ValidatorListTabs;
+}
+
+export type ValidatorListTabs = {
+  handleChange: (_event: any, newValue: number) => void;
+  value: number;
 }
 
 export type ValidatorListLabels = {
