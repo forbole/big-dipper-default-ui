@@ -10,13 +10,20 @@ import {
 } from '@material-ui/core';
 import { Row } from './components';
 import { Data } from '../../types';
+import { useTableHook } from './hooks';
 
 const ValidatorTable = (props:any) => {
   const {
+    data,
+    onRowClick: onClick,
     columns,
+  } = props;
+
+  const {
     state,
     handleSort,
-  } = props;
+    onRowClick,
+  } = useTableHook(data, onClick);
 
   return (
     <Table className={classnames('data-container__table')}>
@@ -54,7 +61,8 @@ const ValidatorTable = (props:any) => {
         {state.data.map((row: Data, i: number) => {
           return (
             <Row
-              key={row.displayName}
+              onClick={onRowClick}
+              key={row.operatorAddress}
               data={row}
               columns={columns}
               index={i}

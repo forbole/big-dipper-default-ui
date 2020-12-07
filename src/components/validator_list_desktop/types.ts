@@ -6,6 +6,8 @@ import {
 export interface ValidatorListDesktopProps extends ValidatorListProps {
   search: Search;
   labels: Labels;
+  active: Data[];
+  inactive: Data[];
 }
 
 export interface Labels extends ValidatorListLabels {
@@ -17,6 +19,7 @@ export interface Labels extends ValidatorListLabels {
 }
 
 export interface Data extends ValidatorListData {
+  display: React.ReactNode;
   self: {
     rawValue: number;
     display: string;

@@ -21,9 +21,7 @@ import { getAllyProps } from '../../utils';
 import { TabPanel } from '../..';
 import { useGetStyles } from './styles';
 import { ValidatorListDesktopProps } from './types';
-import {
-  useValidatorListDesktopHook, useTableHook,
-} from './hooks';
+import { useValidatorListDesktopHook } from './hooks';
 import { getActiveColumns } from './utils';
 import { ValidatorTable } from './components';
 
@@ -40,7 +38,6 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
 
   const { classes } = useGetStyles();
   const { handleSearchSubmit } = useValidatorListDesktopHook(search.onSearchCallback);
-  const activeTable = useTableHook(active);
   const activeColumns = getActiveColumns(labels);
 
   return (
@@ -79,8 +76,8 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
         <div className={classnames('validator-list-desktop__data-container')}>
           <ValidatorTable
             columns={activeColumns}
-            state={activeTable.state}
-            handleSort={activeTable.handleSort}
+            data={active}
+            onRowClick={onClick}
           />
         </div>
       </TabPanel>

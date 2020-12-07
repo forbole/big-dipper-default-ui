@@ -10,11 +10,12 @@ const Row = (props: any) => {
     data,
     columns,
     index,
+    onClick,
   } = props;
   const formatData = formatRow(data, index);
 
   return (
-    <TableRow>
+    <TableRow onClick={() => onClick(data)}>
       {columns.map((column:any) => {
         const value = formatData[column.id];
         return (

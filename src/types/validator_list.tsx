@@ -21,8 +21,6 @@ export type ValidatorListLabels = {
 }
 
 export type ValidatorListData = {
-  imageUrl: string;
-  displayName: string;
   operatorAddress: string;
   status: {
     className: string;
