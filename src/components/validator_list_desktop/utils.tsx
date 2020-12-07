@@ -31,6 +31,7 @@ export const getActiveColumns = (labels: Labels) => {
     {
       id: 'visual',
       label: '',
+      align: 'right',
     },
   ]);
 };
