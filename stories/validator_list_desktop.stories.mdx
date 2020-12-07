@@ -2,7 +2,7 @@ import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
 import { ValidatorListDesktop } from '../src';
-import { dummyData, labelsList, dummyDataInactive, useTabsHook, useSearchHook } from './utils/validators_list';
+import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHook } from './utils/validators_list';
 
 <Meta title="ValidatorListDesktop" component={ValidatorListDesktop}/>
 
@@ -16,8 +16,8 @@ import { dummyData, labelsList, dummyDataInactive, useTabsHook, useSearchHook } 
     <ValidatorListDesktop
       onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
       labels={labelsList}
-      active={dummyData}
-      inactive={dummyDataInactive}
+      active={getActiveDummy('desktop')}
+      inactive={getInactiveDummy('desktop')}
       tabs={useTabsHook()}
       search={{
         ...useSearchHook(),
