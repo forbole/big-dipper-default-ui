@@ -28,25 +28,40 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
 </Canvas>
 
 ```
-<ValidatorListMobile
+<ValidatorListDesktop
   onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
   labels={{
     commission: 'Commission',
     active: 'Active Validators',
     inactive: 'Inactive Validators',
+    rank: 'Rank',
+    moniker: 'Moniker',
+    votingPower: 'Voting Power',
+    self: 'Self',
+    status: 'Status',
   }}
   active={[
     {
-      imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
-      displayName: 'Forbsdsfgkbhfskhfsdhole',
-      operatorAddress: '312',
-      commission: '100%',
+      moniker: {
+        rawValue: 'Forbole',
+        display: <div>Forbole</div>,
+      },
+      operatorAddress: '3s12',
+      commission: {
+        rawValue: 90,
+        display: '90%',
+      },
+      self: {
+        rawValue: 11,
+        display: '11%',
+      },
       votingPower: {
-        rawValue: 1000,
-        display: '110,000,08511111111321654649845',
-        percentDisplay: '10654654654654654654654564%',
+        rawValue: 10,
+        display: '10',
+        percentDisplay: '45%',
       },
       status: {
+        rawValue: 'active',
         className: 'active',
         display: 'active',
       },
@@ -55,23 +70,40 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
   ]}
   inactive={[
     {
-      imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
-      displayName: 'Forbsdsfgkbhfskhfsdhole',
-      operatorAddress: '312',
+      moniker: {
+        rawValue: 'Forbole',
+        display: <div>Forbole</div>,
+      },
+      operatorAddress: '31afsdff2',
+      self: {
+        rawValue: 10,
+        display: '10%',
+      },
       votingPower: {
         rawValue: 1000,
-        display: '110,000,08511111111321654649845',
-        percentDisplay: '10654654654654654654654564%',
+        display: '110',
+        percentDisplay: '106%',
       },
       status: {
+        rawValue: 'active',
         className: 'active',
         display: 'active',
       },
     },
     ...
   ]}
+  tabs={{
+    value: 1,
+    handleChange: () => {}
+  }}
+  search={{
+    value: '',
+    handleChange: (e) => console.log(e.target.value),
+    placeholder: 'A good placeholder',
+  }}
 />
 ```
+
 ## Props
 <table>
 <thead>
@@ -107,18 +139,26 @@ inactive: string;
 
 ```
 {
-  imageUrl: string;
-  displayName: string;
   operatorAddress: string;
+  moniker: {
+    display: React.ReactNode;
+    rawValue: string;
+    imageUrl: string;
+  }
   status: {
+    rawValue: string;
     className: string;
     display: string;
   }
-  commission?: string;
+  commission?: {
+    rawValue: number;
+    display: string;
+  };
   votingPower: {
     rawValue: number;
     display: string;
     percentDisplay: string;
+    visual?: React.ReactNode;
   }
 }[]
 ```
@@ -135,18 +175,22 @@ inactive: string;
 
 ```
 {
-  imageUrl: string;
-  displayName: string;
   operatorAddress: string;
+  moniker: {
+    display: React.ReactNode;
+    rawValue: string;
+    imageUrl: string;
+  }
   status: {
+    rawValue: string;
     className: string;
     display: string;
   }
-  commission?: string;
   votingPower: {
     rawValue: number;
     display: string;
     percentDisplay: string;
+    visual?: React.ReactNode;
   }
 }[]
 ```
@@ -165,6 +209,42 @@ inactive: string;
 
   </td>
     <td>-</td>
+    <td>-</td>
+  </tr>
+
+<tr>
+    <td>tabs</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  handleChange: (_event: any, newValue: number) => void;
+  value: 0 | 1;
+}
+```
+
+  </td>
+    <td>handles mui tabs</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>search</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  placeholder: string;
+  value: string;
+  onSearchCallback: (value:string) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+```
+
+  </td>
+    <td>handles search bar</td>
     <td>-</td>
   </tr>
 
