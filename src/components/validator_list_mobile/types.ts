@@ -1,29 +1,10 @@
-export interface ValidatorListMobileProps {
-  className?: string;
-  labels: Labels;
-  active: Data[];
-  inactive: Data[];
-  onClick: () => void;
-}
+import {
+  ValidatorListData as Data, ValidatorListLabels as Labels, ValidatorListProps,
+} from '../../types/validator_list';
 
-export type Labels = {
-  commission: string;
-  active: string;
-  inactive: string;
-}
+export interface ValidatorListMobileProps extends ValidatorListProps {}
 
-export type Data = {
-  imageUrl: string;
-  displayName: string;
-  operatorAddress: string;
-  status: {
-    className: string;
-    display: string;
-  }
-  commission?: string;
-  votingPower: {
-    rawValue: number;
-    display: string;
-    percentDisplay: string;
-  }
-}
+export type {
+  Data,
+  Labels,
+};
