@@ -29,7 +29,7 @@ const InfoPopover = (props: InfoPopoverProps) => {
       onMouseEnter={handlePopoverOpen}
       onMouseLeave={handlePopoverClose}
     >
-      <HelpOutline fontSize="small" className="question-icon" />
+      <HelpOutline fontSize="small" className="question-icon icon" />
       <Popover
         id="mouse-over-popover"
         className={classes.popover}

@@ -6,6 +6,7 @@ export const useGetStyles = () => {
       pointerEvents: 'none',
       '& .popover__container': {
         padding: '1rem',
+        maxWidth: '300px',
       },
     },
   });

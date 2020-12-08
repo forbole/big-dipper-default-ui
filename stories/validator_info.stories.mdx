@@ -42,7 +42,34 @@ import { ValidatorInfo } from '../src';
 </Canvas>
 
 ```
-Here
+<ValidatorInfo
+  title='Validator Info'
+  copyCallback={(value) => {console.log(`copied with value: ${value}`)}}
+  operatorAddress={{
+    label: 'Operator Address',
+    rawValue: '123456678',
+    display: '123...56758'
+  }}
+  selfDelegateAddress={{
+    label: 'Self-Delegate Address',
+    rawValue: '123456678',
+    display: <p>'123...5678'</p>
+  }}
+  commissionRate={{
+    label: 'Commission Rate',
+    display: '10%',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+  }}
+  maxChangeRate={{
+    label: 'Max Change Rate',
+    display: '2%'
+  }}
+  maxRate={{
+    label: 'Max Rate',
+    display: '5%',
+    description: 'Max Rate Description'
+  }}
+/>
 ```
 ## Props
 <table>
@@ -126,3 +153,39 @@ Here
   </tbody>
 </table>
 <br/>
+
+
+## Desktop
+<Canvas>
+  <Story name="Desktop">
+    <ValidatorInfo
+      title='Validator Info'
+      copyCallback={(value) => {console.log(`copied with value: ${value}`)}}
+      desktop
+      operatorAddress={{
+        label: 'Operator Address',
+        rawValue: '123456678',
+        display: '123456678'
+      }}
+      selfDelegateAddress={{
+        label: 'Self-Delegate Address',
+        rawValue: '123456678',
+        display: <p>123456678</p>
+      }}
+      commissionRate={{
+        label: 'Commission Rate',
+        display: '10%',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+      }}
+      maxChangeRate={{
+        label: 'Max Change Rate',
+        display: '2%'
+      }}
+      maxRate={{
+        label: 'Max Rate',
+        display: '5%',
+        description: 'Max Rate Description'
+      }}
+    />
+  </Story>
+</Canvas>

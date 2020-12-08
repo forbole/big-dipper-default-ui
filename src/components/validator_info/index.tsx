@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { Paper } from '@material-ui/core';
 import { FileCopyOutlined } from '@material-ui/icons';
 import { useGetStyles } from './styles';
 import { useValidatorInfoHook } from './hooks';
@@ -26,7 +27,8 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
     copyCallback,
   });
   return (
-    <div
+    <Paper
+      elevation={0}
       className={classnames(classes.root, responsiveClass, className, responsiveClassKey, 'big-dipper', 'validator-info')}
     >
       <h2 className={classnames('validator-info__header')}>{title}</h2>
@@ -40,7 +42,7 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
           <span onClick={() => handleCopyClick(operatorAddress.rawValue)} role="button">
             <FileCopyOutlined
               fontSize="small"
-              className="copy-icon"
+              className="copy-icon icon"
             />
           </span>
         </div>
@@ -53,7 +55,7 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
           <span onClick={() => handleCopyClick(selfDelegateAddress.rawValue)} role="button">
             <FileCopyOutlined
               fontSize="small"
-              className="copy-icon"
+              className="copy-icon icon"
             />
           </span>
         </div>
@@ -93,7 +95,7 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
           {valueConvertor(maxRate.display)}
         </div>
       </div>
-    </div>
+    </Paper>
   );
 };
 

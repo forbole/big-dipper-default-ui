@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      background: 'pink',
       padding: '1rem',
       boxSizing: 'border-box',
       '& .validator-info__header': {
@@ -17,9 +16,19 @@ export const useGetStyles = () => {
       '& .detail, & .label': {
         display: 'flex',
         alignItems: 'center',
+        '& span': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
       },
       '& .copy-icon, & .question-icon': {
         marginLeft: '0.5rem',
+      },
+      '& .icon': {
+        '&:hover': {
+          cursor: 'pointer',
+        },
       },
     },
     mobile: {
@@ -36,7 +45,15 @@ export const useGetStyles = () => {
       },
     },
     desktop: {
-
+      '& .validator-info__header': {
+        fontSize: '1.5rem',
+        marginBottom: '1rem',
+      },
+      '& .validator-info__content': {
+        display: 'grid',
+        gridTemplateColumns: '1fr 3fr',
+        gridGap: '0.5rem 0',
+      },
     },
   });
 
