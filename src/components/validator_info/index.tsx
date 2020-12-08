@@ -39,7 +39,11 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
         <p className={classnames('content__operator-address--label', 'label')}>{operatorAddress.label}</p>
         <div className={classnames('content__operator-address--detail', 'detail')}>
           {valueConvertor(operatorAddress.display)}
-          <span onClick={() => handleCopyClick(operatorAddress.rawValue)} role="button">
+          <span
+            onClick={() => handleCopyClick(operatorAddress.rawValue)}
+            role="button"
+            className="icon__wrapper"
+          >
             <FileCopyOutlined
               fontSize="small"
               className="copy-icon icon"
@@ -52,7 +56,11 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
         <p className={classnames('content__validator-self-address--label', 'label')}>{selfDelegateAddress.label}</p>
         <div className={classnames('content__validator-self-address--detail', 'detail')}>
           {valueConvertor(selfDelegateAddress.display)}
-          <span onClick={() => handleCopyClick(selfDelegateAddress.rawValue)} role="button">
+          <span
+            onClick={() => handleCopyClick(selfDelegateAddress.rawValue)}
+            role="button"
+            className="icon__wrapper"
+          >
             <FileCopyOutlined
               fontSize="small"
               className="copy-icon icon"
@@ -77,6 +85,10 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
         {/* ================================ */}
         <p className={classnames('content__max-change-rate--label', 'label')}>
           {maxChangeRate.label}
+          <InfoPopover
+            detail={maxChangeRate.description}
+            className={maxChangeRate.descriptionClassname}
+          />
         </p>
         <div className={classnames('content__max-change-rate--detail', 'detail')}>
           {valueConvertor(maxChangeRate.display)}

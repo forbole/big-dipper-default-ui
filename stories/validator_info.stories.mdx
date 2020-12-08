@@ -30,7 +30,8 @@ import { ValidatorInfo } from '../src';
       }}
       maxChangeRate={{
         label: 'Max Change Rate',
-        display: '2%'
+        display: '2%',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
       }}
       maxRate={{
         label: 'Max Rate',
@@ -71,6 +72,7 @@ import { ValidatorInfo } from '../src';
   }}
 />
 ```
+
 ## Props
 <table>
 <thead>
@@ -84,7 +86,31 @@ import { ValidatorInfo } from '../src';
   </thead>
 <tbody>
   <tr>
-    <td>imageUrl</td>
+    <td>desktop</td>
+    <td>-</td>
+    <td>
+
+`boolean`
+
+  </td>
+    <td>switches to use desktop styling</td>
+    <td>false</td>
+  </tr>
+
+  <tr>
+    <td>copyCallback</td>
+    <td>-</td>
+    <td>
+
+`copyCallback?: (value: string) => void;`
+
+  </td>
+    <td>copy address callback</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>title</td>
     <td>true</td>
     <td>
 
@@ -96,47 +122,96 @@ import { ValidatorInfo } from '../src';
   </tr>
 
   <tr>
-    <td>alt</td>
-    <td>-</td>
+    <td>operatorAddress</td>
+    <td>true</td>
     <td>
 
-`string`
+```
+{
+  label: string;
+  rawValue: string;
+  display: string | React.ReactNode;
+}
+```
 
   </td>
-    <td>alt description for the image</td>
+    <td>-</td>
     <td>-</td>
   </tr>
 
   <tr>
-    <td>width</td>
-    <td>-</td>
+    <td>selfDelegateAddress</td>
+    <td>true</td>
     <td>
 
-`string | number`
+```
+{
+  label: string;
+  rawValue: string;
+  display: string | React.ReactNode;
+}
+```
 
   </td>
     <td>-</td>
-      <td>
-
-`50px`
-
-  </td>
+    <td>-</td>
   </tr>
 
   <tr>
-    <td>height</td>
-    <td>-</td>
+    <td>commissionRate</td>
+    <td>true</td>
     <td>
 
-`string | number`
+```
+{
+  label: string;
+  display: string | React.ReactNode;
+  description: string;
+  descriptionClassname?: string;
+}
+```
 
   </td>
     <td>-</td>
-      <td>
+    <td>-</td>
+  </tr>
 
-`50px`
+  <tr>
+    <td>maxChangeRate</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  label: string;
+  display: string | React.ReactNode;
+  description: string;
+  descriptionClassname?: string;
+}
+```
 
   </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>maxRate</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  label: string;
+  display: string | React.ReactNode;
+  description: string;
+  descriptionClassname?: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
   </tr>
 
   <tr>
@@ -179,7 +254,8 @@ import { ValidatorInfo } from '../src';
       }}
       maxChangeRate={{
         label: 'Max Change Rate',
-        display: '2%'
+        display: '2%',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
       }}
       maxRate={{
         label: 'Max Rate',
@@ -189,3 +265,35 @@ import { ValidatorInfo } from '../src';
     />
   </Story>
 </Canvas>
+
+```
+<ValidatorInfo
+  title='Validator Info'
+  copyCallback={(value) => {console.log(`copied with value: ${value}`)}}
+  desktop
+  operatorAddress={{
+    label: 'Operator Address',
+    rawValue: '123456678',
+    display: '123456678'
+  }}
+  selfDelegateAddress={{
+    label: 'Self-Delegate Address',
+    rawValue: '123456678',
+    display: <p>123456678</p>
+  }}
+  commissionRate={{
+    label: 'Commission Rate',
+    display: '10%',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+  }}
+  maxChangeRate={{
+    label: 'Max Change Rate',
+    display: '2%'
+  }}
+  maxRate={{
+    label: 'Max Rate',
+    display: '5%',
+    description: 'Max Rate Description'
+  }}
+/>
+```
