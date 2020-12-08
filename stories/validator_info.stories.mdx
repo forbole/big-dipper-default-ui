@@ -10,7 +10,34 @@ import { ValidatorInfo } from '../src';
 ## Default
 <Canvas>
   <Story name="Default">
-    <ValidatorInfo />
+    <ValidatorInfo
+      title='Validator Info'
+      copyCallback={(value) => {console.log(`copied with value: ${value}`)}}
+      operatorAddress={{
+        label: 'Operator Address',
+        rawValue: '123456678',
+        display: '123...56758'
+      }}
+      selfDelegateAddress={{
+        label: 'Self-Delegate Address',
+        rawValue: '123456678',
+        display: <p>'123...5678'</p>
+      }}
+      commissionRate={{
+        label: 'Commission Rate',
+        display: '10%',
+        description: 'A commission rate description'
+      }}
+      maxChangeRate={{
+        label: 'Max Change Rate',
+        display: '2%'
+      }}
+      maxRate={{
+        label: 'Max Rate',
+        display: '5%',
+        description: 'Max Rate Description'
+      }}
+    />
   </Story>
 </Canvas>
 

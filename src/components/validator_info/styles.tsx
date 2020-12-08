@@ -17,9 +17,9 @@ export const useGetStyles = () => {
       '& .detail, & .label': {
         display: 'flex',
         alignItems: 'center',
-        '& p': {
-          marginRight: '1rem',
-        },
+      },
+      '& .copy-icon, & .question-icon': {
+        marginLeft: '0.5rem',
       },
     },
     mobile: {

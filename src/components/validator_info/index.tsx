@@ -5,57 +5,88 @@ import {
 } from '@material-ui/icons';
 import { useGetStyles } from './styles';
 import { useValidatorInfoHook } from './hooks';
+import { ValidatorInfoProps } from './types';
+import { valueConvertor } from './utils';
 
-const ValidatorInfo = (props: any) => {
+const ValidatorInfo = (props: ValidatorInfoProps) => {
   const {
     className,
     desktop,
     copyCallback,
+    title,
+    operatorAddress,
+    selfDelegateAddress,
+    commissionRate,
+    maxChangeRate,
+    maxRate,
   } = props;
   const { classes } = useGetStyles();
   const responsiveClass = desktop ? classes.desktop : classes.mobile;
   const responsiveClassKey = desktop ? 'validator-info-desktop' : 'validator-info-mobile';
-
+  const { handleCopyClick } = useValidatorInfoHook({
+    copyCallback,
+  });
   return (
     <div
       className={classnames(classes.root, responsiveClass, className, responsiveClassKey, 'big-dipper', 'validator-info')}
     >
-      <h2 className={classnames('validator-info__header')}>Validator Info</h2>
+      <h2 className={classnames('validator-info__header')}>{title}</h2>
       <div className={classnames('validator-info__content', 'content')}>
         {/* ================================ */}
         {/* address */}
         {/* ================================ */}
-        <p className={classnames('content__operator-address--label', 'label')}>operate Address</p>
+        <p className={classnames('content__operator-address--label', 'label')}>{operatorAddress.label}</p>
         <div className={classnames('content__operator-address--detail', 'detail')}>
-          <p>operate Address detail</p>
-          <FileCopyOutlined fontSize="small" className="copy-icon" />
+          {valueConvertor(operatorAddress.display)}
+          <span onClick={() => handleCopyClick(operatorAddress.rawValue)} role="button">
+            <FileCopyOutlined
+              fontSize="small"
+              className="copy-icon"
+            />
+          </span>
         </div>
         {/* ================================ */}
         {/* self address */}
         {/* ================================ */}
-        <p className={classnames('content__validator-self-address--label', 'label')}>Validator Self address</p>
-        <p className={classnames('content__validator-self-address--detail', 'detail')}>Validator Self address detail</p>
+        <p className={classnames('content__validator-self-address--label', 'label')}>{selfDelegateAddress.label}</p>
+        <div className={classnames('content__validator-self-address--detail', 'detail')}>
+          {valueConvertor(selfDelegateAddress.display)}
+          <span onClick={() => handleCopyClick(selfDelegateAddress.rawValue)} role="button">
+            <FileCopyOutlined
+              fontSize="small"
+              className="copy-icon"
+            />
+          </span>
+        </div>
         {/* ================================ */}
         {/* commission rate */}
         {/* ================================ */}
         <div className={classnames('content__commission-rate--label', 'label')}>
-          <p>Validator Self commission rate</p>
+          <p>{commissionRate.label}</p>
           <HelpOutline fontSize="small" className="question-icon" />
         </div>
-        <p className={classnames('content__commission-rate--detail', 'detail')}>Validator Self commission detail</p>
+        <div className={classnames('content__commission-rate--detail', 'detail')}>
+          {valueConvertor(commissionRate.display)}
+        </div>
         {/* ================================ */}
         {/* max change rate */}
         {/* ================================ */}
-        <p className={classnames('content__max-change-rate--label', 'label')}>Validator max change rate</p>
-        <p className={classnames('content__max-change-rate--detail', 'detail')}>Validator max change rate detail</p>
+        <p className={classnames('content__max-change-rate--label', 'label')}>
+          {maxChangeRate.label}
+        </p>
+        <div className={classnames('content__max-change-rate--detail', 'detail')}>
+          {valueConvertor(maxChangeRate.display)}
+        </div>
         {/* ================================ */}
         {/* max rate */}
         {/* ================================ */}
         <div className={classnames('content__max-rate--label', 'label')}>
-          <p>Validator max rate</p>
+          <p>{maxRate.label}</p>
           <HelpOutline fontSize="small" className="question-icon" />
         </div>
-        <p className={classnames('content__max-rate--detail', 'detail')}>Validator max rate detail</p>
+        <div className={classnames('content__max-rate--detail', 'detail')}>
+          {valueConvertor(maxRate.display)}
+        </div>
       </div>
     </div>
   );
