@@ -12,6 +12,7 @@ import SelectTabs from './components/select_tabs';
 import OnlineVotingPower from './components/online_voting_power';
 import ResponsiveRecharts from './components/responsive_recharts';
 import CustomToolTip from './components/custom_tool_tip';
+import ValidatorInfo from './components/validator_info';
 
 export {
   DataBlock,
@@ -28,4 +29,5 @@ export {
   OnlineVotingPower,
   ResponsiveRecharts,
   CustomToolTip,
+  ValidatorInfo,
 };

@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { useGetStyles } from './styles';
 import { LatestBlocksMobileProps } from './types';
 import { latestBlocksMobileUtils } from './utils';
+import { formatMiddleEllipse as formatHash } from '../../utils';
 
 const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
   const { classes } = useGetStyles();
@@ -12,9 +13,7 @@ const LatestBlocksMobile = (props:LatestBlocksMobileProps) => {
     labels,
     onClick,
   } = props;
-  const {
-    formatHash, handleClick,
-  } = latestBlocksMobileUtils(onClick);
+  const { handleClick } = latestBlocksMobileUtils(onClick);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-mobile')}>
       {data.map((x) => {
