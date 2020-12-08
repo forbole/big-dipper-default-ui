@@ -1,12 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
-import {
-  FileCopyOutlined, HelpOutline,
-} from '@material-ui/icons';
+import { FileCopyOutlined } from '@material-ui/icons';
 import { useGetStyles } from './styles';
 import { useValidatorInfoHook } from './hooks';
 import { ValidatorInfoProps } from './types';
 import { valueConvertor } from './utils';
+import { InfoPopover } from './components';
 
 const ValidatorInfo = (props: ValidatorInfoProps) => {
   const {
@@ -63,7 +62,10 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
         {/* ================================ */}
         <div className={classnames('content__commission-rate--label', 'label')}>
           <p>{commissionRate.label}</p>
-          <HelpOutline fontSize="small" className="question-icon" />
+          <InfoPopover
+            detail={commissionRate.description}
+            className={commissionRate.descriptionClassname}
+          />
         </div>
         <div className={classnames('content__commission-rate--detail', 'detail')}>
           {valueConvertor(commissionRate.display)}
@@ -82,7 +84,10 @@ const ValidatorInfo = (props: ValidatorInfoProps) => {
         {/* ================================ */}
         <div className={classnames('content__max-rate--label', 'label')}>
           <p>{maxRate.label}</p>
-          <HelpOutline fontSize="small" className="question-icon" />
+          <InfoPopover
+            detail={maxRate.description}
+            className={maxRate.descriptionClassname}
+          />
         </div>
         <div className={classnames('content__max-rate--detail', 'detail')}>
           {valueConvertor(maxRate.display)}

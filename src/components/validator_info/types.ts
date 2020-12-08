@@ -19,6 +19,7 @@ export interface ValidatorInfoProps {
     label: string;
     display: string | React.ReactNode;
     description: string;
+    descriptionClassname?: string;
   }
   maxChangeRate: {
     label: string;
@@ -28,5 +29,6 @@ export interface ValidatorInfoProps {
     label: string;
     display: string | React.ReactNode;
     description: string;
+    descriptionClassname?: string;
   }
 }
