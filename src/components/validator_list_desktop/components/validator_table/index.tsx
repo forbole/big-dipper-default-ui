@@ -8,6 +8,7 @@ import {
   TableRow,
   TableSortLabel,
 } from '@material-ui/core';
+import { ArrowDropDown } from '@material-ui/icons';
 import { Row } from './components';
 import { Data } from '../../types';
 import { useTableHook } from './hooks';
@@ -41,6 +42,7 @@ const ValidatorTable = (props:ValidatorTableProps) => {
                     active={state.activeSort === column.id}
                     direction={state.activeSort === column.id ? state.sortDirection : 'asc'}
                     onClick={handleSort(column.id)}
+                    IconComponent={ArrowDropDown}
                   >
                     {column.label}
                   </TableSortLabel>

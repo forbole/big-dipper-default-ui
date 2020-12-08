@@ -26,14 +26,15 @@ const Row = (props: RowProps) => {
             key={column.id}
             align={column.align}
           >
-            <span
+            <div
               className={classnames({
                 [data.status.className]: column.id === 'status',
                 status: column.id === 'status',
+                rank: column.id === 'rank',
               })}
             >
               {value}
-            </span>
+            </div>
           </TableCell>
         );
       })}

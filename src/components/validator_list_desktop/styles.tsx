@@ -29,11 +29,25 @@ export const useGetStyles = () => {
       '& .table__row': {
         '&:nth-of-type(odd)': {
           background: '#F8F8F8',
+          '& .rank': {
+            '&:nth-of-type(odd)': {
+              background: '#FFFFFF',
+            },
+          },
         },
         '&:hover': {
           cursor: 'pointer',
         },
-
+        '& .rank': {
+          borderRadius: '50%',
+          width: '30px',
+          height: '30px',
+          padding: '8px',
+          background: '#F8F8F8',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
         '& .status': {
           position: 'relative',
           paddingLeft: '0.7rem',
