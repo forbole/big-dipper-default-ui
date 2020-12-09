@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import classnames from 'classnames';
 import {
@@ -9,6 +10,25 @@ import {
 import { ProposalListProps } from './types';
 import { useGetStyles } from './styles';
 import { latestBlocksDesktopUtils } from './utils';
+import {
+  Title, Button, Status,
+} from './component';
+
+const Component = (props: { current: boolean, display: string }) => {
+  // const { classes } = useGetStyles();
+  if (props.current === true) {
+    return (
+      <div className={classnames('button')}>
+        <Button display={props.display} />
+      </div>
+    );
+  }
+  return (
+    <div className={classnames('status')}>
+      <Status display={props.display} />
+    </div>
+  );
+};
 
 const ProposalList = (props: ProposalListProps) => {
   const {
@@ -17,7 +37,7 @@ const ProposalList = (props: ProposalListProps) => {
   const { classes } = useGetStyles();
   const { handleClick } = latestBlocksDesktopUtils(onClick);
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'latest-blocks-desktop')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'proposalList')}>
       <Table className={classnames('table')}>
         <TableBody>
           {data.map((row) => {
@@ -28,35 +48,57 @@ const ProposalList = (props: ProposalListProps) => {
                 onClick={() => handleClick(row)}
               >
                 <TableCell className={classnames('cell', 'id')}>
-                  <p>
-                    #01
-                  </p>
+                  {row.id}
                 </TableCell>
                 <TableCell className={classnames('cell', 'proposal')}>
-                  <p className={classnames('proposal', 'proposer')}>
-                    <div className={classnames('proposer')}>
-                      Proposer
-                    </div>
-                    <div>
-                      PlaceHolder
-                    </div>
-                  </p>
-                  <div className={classnames('proposal', 'title')}>
-                    Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?
-                  </div>
-                  <div className={classnames('proposal', 'content')}>
-                    This governance proposal is intended to act purely as a signalling proposal.
-                  </div>
+                  <div className={classnames('layout', 'proposal', 'proposer')}>
+                    <p className={classnames('mainContent')}>
+                      <div className={classnames('proposer')}>
+                        <div className={classnames('proposerText')}>
+                          Proposer
+                        </div>
+                        {row.proposer}
+                      </div>
+                      <div className={classnames('mainContent', 'title')}>
+                        <Title display={row.title.display} id={row.title.id} />
+                      </div>
+                      <div className={classnames('mainContent', 'content')}>
+                        {row.content}
+                      </div>
 
-                  <div className={classnames('proposal', 'time', 'content')}>
-                    <div className={classnames('voting')}>
-                      Voting Time: 12 Dec 2019 16:22 to 26 Dec 2019, 16:22 UTC
-                    </div>
-                    <div className={classnames('days')}>
-                      {' '}
-                      (In 14 days)
+                      <div className={classnames('mainContent', 'time')}>
+                        <div className={classnames('voting')}>
+                          {row.time}
+                          {' '}
+                        </div>
+                        <div className={classnames('days')}>
+                          &nbsp;
+                          {row.duration}
+                        </div>
+                      </div>
+                    </p>
+                    <div className={classnames('component')}>
+                      <Component {...row.status} />
                     </div>
 
+                    {/* <div
+                      className={classes.button}
+                      style={{
+                        display: row.status.current === true ? 'block' : 'none',
+                      }}
+                    >
+                      <Button
+                        display={row.status.display}
+                      />
+                    </div>
+                    <div
+                      className={classes.status}
+                      style={{
+                        display: row.status.current === false ? 'block' : 'none',
+                      }}
+                    >
+                      <Status display={row.status.display} />
+                    </div> */}
                   </div>
                 </TableCell>
               </TableRow>

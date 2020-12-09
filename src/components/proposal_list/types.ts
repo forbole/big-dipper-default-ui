@@ -3,13 +3,17 @@ import React from 'react';
 export type Data = {
   id: string;
   proposer: React.ReactNode;
-  title: string | React.ReactNode;
+  title: {
+    display: string;
+    id: string
+  }
+  content: string;
   status: {
     current: boolean;
     display: string;
   }
   time: string;
-  //  | React.ReactNode;
+  duration?: string;
 };
 
 export type OnClick = (data: Data) => void;

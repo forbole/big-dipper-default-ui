@@ -1,96 +1,135 @@
 import React from 'react';
-import {
-  createStyles, makeStyles,
-} from '@material-ui/core';
-import { Data } from '../../src/components/latest_blocks_mobile/types';
+import { Data } from '../../src/components/proposal_list/types';
+import { AvatarDisplay, Status, Button, } from '../../src';
 
 const Proposer = () => {
-  const useStyles = makeStyles((theme: any) => createStyles({
-    root: {
-      color: '#1D86FF',
-    },
-  }));
-
-  const classes = useStyles();
   return (
-    <p className={classes.root}>Forbole</p>
+    // <div
+    //   style={{
+    //     display: 'flex',
+    //   }}
+    // >
+    //   Proposer
+    //   &nbsp;
+      <AvatarDisplay
+        imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+        alt="avatar image"
+        title="Forbole"
+      />
+    // </div>
   );
 };
 
-const Height = () => {
-  const useStyles = makeStyles((theme: any) => createStyles({
-    root: {
-      color: '#1D86FF',
-    },
-  }));
-
-  const classes = useStyles();
+const CurrentStatus = () => {
   return (
-    <p className={classes.root}>102,155</p>
+
+    <Status
+      display="Passed"
+    />
   );
 };
 
-export const dummyLabelMobile = {
-  tx: 'tx',
+const CurrentButton = () => {
+  return (
+
+    <Button
+      display="Vote"
+    />
+  );
 };
 
-export const dummyLabelDesktop = {
-  proposer: 'Proposer',
-  height: 'Height',
-  time: 'Time',
-  hash: 'Hash',
-  tx: 'TXs',
-};
-
-export const dummyData:Data[] = [
+export const dummyData: Data[] = [
   {
+    id: '#01',
     proposer: <Proposer />,
-    height: {
-      value: 1234,
-      display: <Height />,
+    title: {
+      display: 'Lunie.io on iOS and Android 📱🔥🚀',
+      id: '123',
     },
+    content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
     time: '10 Jan 2020,13:00:22 UTC',
-    hash: 'D2DCA95541D962A9AA599D43C0E022030986DF23D0BC8AC7A5F0AA0AF401E489',
-    tx: 2,
+    status: {
+      current: true,
+      display: 'Vote',
+    },
+    duration: '(In 12 days)',
+    statusComponent: <CurrentButton />,
   },
   {
+    id: '#02',
     proposer: <Proposer />,
-    height: {
-      value: 1234,
-      display: <Height />,
+    title: {
+      display: 'Lunie.io on iOS and Android 📱🔥🚀',
+      id: '123',
     },
+    content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
     time: '10 Jan 2020,13:00:22 UTC',
-    hash: 'D2DCA95541D962A9AA599D43C0E022030986DF23D0BC8AC7A5F0AA0AF401E489',
-    tx: 2,
+    status: {
+      current: false,
+      display: 'Passed',
+    },
+    statusComponent: <CurrentButton />,
   },
   {
+    id: '#03',
     proposer: <Proposer />,
-    height: {
-      value: 1234,
-      display: <Height />,
+    title: {
+      display: 'Lunie.io on iOS and Android 📱🔥🚀',
+      id: '123',
     },
+    content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
     time: '10 Jan 2020,13:00:22 UTC',
-    hash: '89832B67F594asddw32',
-    tx: 2,
+    status: {
+      current: true,
+      display: 'Deposit',
+    },
+    duration: '(In 12 days)',
+    statusComponent: <CurrentButton />,
   },
   {
+    id: '#04',
     proposer: <Proposer />,
-    height: {
-      value: 1234,
-      display: <Height />,
+    title: {
+      display: 'Lunie.io on iOS and Android 📱🔥🚀',
+      id: '123',
     },
+    content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
     time: '10 Jan 2020,13:00:22 UTC',
-    hash: '89832B67F594asddw32',
-    tx: 2,
+    status: {
+      current: false,
+      display: 'Rejected',
+    },
+    statusComponent: <CurrentStatus />,
   },
   {
+    id: '#05',
     proposer: <Proposer />,
-    height: {
-      value: 1234,
-      display: <Height />,
+    title: {
+      display: 'Lunie.io on iOS and Android 📱🔥🚀',
+      id: '123',
     },
+    content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
     time: '10 Jan 2020,13:00:22 UTC',
-    hash: '89832B67F594asddw32',
-    tx: 2,
+    status: {
+      current: false,
+      display: 'Removed',
+    },
+    statusComponent: <CurrentStatus />,
+  },
+  {
+    id: '#06',
+    proposer: <Proposer />,
+    title: {
+      display: 'Lunie.io on iOS and Android 📱🔥🚀',
+      id: '123',
+    },
+    content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
+    time: '10 Jan 2020,13:00:22 UTC',
+    status: {
+      current: true,
+      display: 'Vote',
+    },
+    duration: '(In 12 days)',
+    statusComponent: <CurrentButton />,
   },
 ];
