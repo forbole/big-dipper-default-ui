@@ -9,7 +9,6 @@ import {
 } from '@material-ui/core';
 import { ProposalListProps } from './types';
 import { useGetStyles } from './styles';
-import { latestBlocksDesktopUtils } from './utils';
 import {
   Title, Button, Status,
 } from './component';
@@ -32,12 +31,12 @@ const Component = (props: { current: boolean, display: string }) => {
 
 const ProposalList = (props: ProposalListProps) => {
   const {
-    data, className, onClick,
+    data, className, desktop, imageUrl,
   } = props;
   const { classes } = useGetStyles();
-  const { handleClick } = latestBlocksDesktopUtils(onClick);
+  const responsiveClass = desktop ? classes.desktop : classes.mobile;
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'proposalList')}>
+    <div className={classnames(classes.root, responsiveClass, className, 'big-dipper', 'proposalList')}>
       <Table className={classnames('table')}>
         <TableBody>
           {data.map((row) => {
@@ -45,60 +44,41 @@ const ProposalList = (props: ProposalListProps) => {
               <TableRow
                 key={row.time}
                 className={classnames('single-row')}
-                onClick={() => handleClick(row)}
               >
                 <TableCell className={classnames('cell', 'id')}>
                   {row.id}
                 </TableCell>
                 <TableCell className={classnames('cell', 'proposal')}>
-                  <div className={classnames('layout', 'proposal', 'proposer')}>
-                    <p className={classnames('mainContent')}>
-                      <div className={classnames('proposer')}>
-                        <div className={classnames('proposerText')}>
-                          Proposer
-                        </div>
-                        {row.proposer}
+                  <div className={classnames('mainContent')}>
+                    <div className={classnames('proposer')}>
+                      <div className={classnames('proposerText')}>
+                        Proposer
                       </div>
-                      <div className={classnames('mainContent', 'title')}>
-                        <Title display={row.title.display} id={row.title.id} />
-                      </div>
-                      <div className={classnames('mainContent', 'content')}>
-                        {row.content}
-                      </div>
-
-                      <div className={classnames('mainContent', 'time')}>
-                        <div className={classnames('voting')}>
-                          {row.time}
-                          {' '}
-                        </div>
-                        <div className={classnames('days')}>
+                      {row.proposer}
+                    </div>
+                    <div className={classnames('mainContent', 'title')}>
+                      <Title display={row.title.display} id={row.title.id} />
+                    </div>
+                    <div className={classnames('mainContent', 'content')}>
+                      {row.content}
+                    </div>
+                    <div className={classnames('mainContent', 'time')}>
+                      <div className={classnames('voting')}>
+                        <span className={classnames('clock')}>
+                          <img src={imageUrl} alt="" className={classnames('clockImage')} />
+                          &nbsp;
+                        </span>
+                        {row.time}
+                        <span className={classnames('days')}>
                           &nbsp;
                           {row.duration}
-                        </div>
+                        </span>
                       </div>
-                    </p>
-                    <div className={classnames('component')}>
-                      <Component {...row.status} />
-                    </div>
 
-                    {/* <div
-                      className={classes.button}
-                      style={{
-                        display: row.status.current === true ? 'block' : 'none',
-                      }}
-                    >
-                      <Button
-                        display={row.status.display}
-                      />
                     </div>
-                    <div
-                      className={classes.status}
-                      style={{
-                        display: row.status.current === false ? 'block' : 'none',
-                      }}
-                    >
-                      <Status display={row.status.display} />
-                    </div> */}
+                  </div>
+                  <div className={classnames('component')}>
+                    <Component {...row.status} />
                   </div>
                 </TableCell>
               </TableRow>

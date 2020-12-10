@@ -2,10 +2,11 @@ import { makeStyles } from '@material-ui/styles';
 
 export const useGetStyles = () => {
   const useStyles = makeStyles({
-    root: {
-      '& .title': {
-        fontSize: '1.25rem',
-        fontWeight: 400,
+    popover: {
+      pointerEvents: 'none',
+      '& .popover__container': {
+        padding: '1rem',
+        maxWidth: '300px',
       },
     },
   });

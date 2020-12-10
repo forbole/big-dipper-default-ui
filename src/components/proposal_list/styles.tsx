@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      padding: '0 1.5rem 0 1.5rem',
       background: 'white',
       overflow: 'auto',
       '& .label': {
@@ -13,26 +12,23 @@ export const useGetStyles = () => {
       '& .id': {
         width: '1rem',
         fontSize: '1rem',
-        padding: '1.5rem 0 0 0',
         verticalAlign: 'top',
         horizontalAlign: 'left',
         margin: '1.5rem 0 0 0',
       },
-      '& .layout': {
-        // display: 'block',
-      },
       '& .proposer': {
         display: 'flex',
         marginRight: '0.5rem',
+      },
+      '& .proposerText': {
+        display: 'none',
       },
       '& .mainContent': {
         display: 'block',
         margin: '0',
       },
       '& .title': {
-        fontSize: '1.25rem',
         fontWeight: 400,
-        color: '#000000',
       },
       '& .content': {
         marginTop: '0.875rem',
@@ -40,36 +36,20 @@ export const useGetStyles = () => {
       '& .time': {
         marginTop: '0.875rem',
         display: 'flex',
-        marginBottom: '1.6875rem',
+        marginBottom: '1rem',
       },
-
       '& .days': {
         color: '#FD7522',
       },
       '& .proposal': {
-        paddingLeft: '1.375rem',
-        fontSize: '1rem',
-        color: '#414141',
-      },
-      '& .cell': {
         padding: '1.5rem 0 0 0',
-        '&.hash': {
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          textOverflow: 'ellipsis',
-          maxWidth: '120px',
-        },
+        color: '#414141',
+        display: 'flex',
+        flexDirection: 'column',
       },
-      // '& .component': {
-        // position: 'absolute',
-        // right: '40px',
-      // },
       '& .button': {
         width: '100px',
         height: '30px',
-        position: 'absolute',
-        right: '40px',
-        display: 'block',
         color: '#FFFFFF',
         fontSize: '0.875rem',
         borderRadius: '6px',
@@ -84,11 +64,9 @@ export const useGetStyles = () => {
       '& .status': {
         width: '100px',
         height: '30px',
-        position: 'absolute',
-        right: '40px',
         display: 'flex',
       },
-      '& .type': {
+      '& .statusType': {
         marginTop: '8px',
         width: '4px',
         height: '0.75rem',
@@ -108,6 +86,83 @@ export const useGetStyles = () => {
         fontSize: '0.875rem',
         marginLeft: '0.4rem',
       },
+    },
+    desktop: {
+      '& .content': {
+        display: 'block',
+      },
+      '& .layout': {
+        display: 'flex',
+      },
+      '& .proposerText': {
+        display: 'flex',
+        '&:after': {
+          content: '""',
+          width: '5px',
+          height: '1rem',
+          display: 'block',
+        },
+      },
+      '& .proposal': {
+        flexDirection: 'row',
+        fontSize: '1rem',
+      },
+      '& .title': {
+        fontSize: '1.25rem',
+      },
+      '& .id': {
+        padding: '1.5rem 1.5rem 0 0',
+      },
+      '& .button, & .status': {
+        float: 'right',
+      },
+      '& .component': {
+        flex: 1,
+      },
+      '& .clock': {
+        display: 'none',
+      },
+    },
+    mobile: {
+      '& .content': {
+        display: 'none',
+      },
+      '& .layout': {
+      },
+      '& .proposerText': {
+        display: 'none',
+      },
+      '& .proposal': {
+        flexDirection: 'column',
+        fontSize: '0.875rem',
+      },
+      '& .title': {
+        fontSize: '1rem',
+      },
+      '& .id': {
+        padding: '1.5rem 0.5rem 0 0',
+      },
+      '& .component': {
+        marginBottom: '1rem',
+      },
+      '& .clockImage': {
+        verticalAlign: 'text-bottom',
+        height: '1rem',
+        width: '1rem',
+      },
+      '& .voting': {
+        verticalAlign: 'text-bottom',
+      },
+    },
+    '& .clock': {
+      // '&:after': {
+      //   content: '""',
+      //   width: '5px',
+      //   height: '1rem',
+      //   background: '#b3b3b3',
+      //   display: 'block',
+      //   borderRadius: '15px',
+      // },
     },
   });
 

@@ -15,6 +15,7 @@ import CustomToolTip from './components/custom_tool_tip';
 import ProposalList from './components/proposal_list';
 import Button from './components/proposal_list/component/button';
 import Status from './components/proposal_list/component/status';
+import ValidatorInfo from './components/validator_info';
 
 export {
   DataBlock,
@@ -34,4 +35,5 @@ export {
   ProposalList,
   Button,
   Status,
+  ValidatorInfo,
 };

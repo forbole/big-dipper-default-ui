@@ -1,0 +1,299 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { ValidatorInfo } from '../src';
+
+<Meta title="ValidatorInfo" component={ValidatorInfo} />
+
+# Avatar
+---
+## Default
+<Canvas>
+  <Story name="Default">
+    <ValidatorInfo
+      title='Validator Info'
+      copyCallback={(value) => {console.log(`copied with value: ${value}`)}}
+      operatorAddress={{
+        label: 'Operator Address',
+        rawValue: '123456678',
+        display: '123...56758'
+      }}
+      selfDelegateAddress={{
+        label: 'Self-Delegate Address',
+        rawValue: '123456678',
+        display: <p>'123...5678'</p>
+      }}
+      commissionRate={{
+        label: 'Commission Rate',
+        display: '10%',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+      }}
+      maxChangeRate={{
+        label: 'Max Change Rate',
+        display: '2%',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+      }}
+      maxRate={{
+        label: 'Max Rate',
+        display: '5%',
+        description: 'Max Rate Description'
+      }}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorInfo
+  title='Validator Info'
+  copyCallback={(value) => {console.log(`copied with value: ${value}`)}}
+  operatorAddress={{
+    label: 'Operator Address',
+    rawValue: '123456678',
+    display: '123...56758'
+  }}
+  selfDelegateAddress={{
+    label: 'Self-Delegate Address',
+    rawValue: '123456678',
+    display: <p>'123...5678'</p>
+  }}
+  commissionRate={{
+    label: 'Commission Rate',
+    display: '10%',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+  }}
+  maxChangeRate={{
+    label: 'Max Change Rate',
+    display: '2%'
+  }}
+  maxRate={{
+    label: 'Max Rate',
+    display: '5%',
+    description: 'Max Rate Description'
+  }}
+/>
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td>desktop</td>
+    <td>-</td>
+    <td>
+
+`boolean`
+
+  </td>
+    <td>switches to use desktop styling</td>
+    <td>false</td>
+  </tr>
+
+  <tr>
+    <td>copyCallback</td>
+    <td>-</td>
+    <td>
+
+`copyCallback?: (value: string) => void;`
+
+  </td>
+    <td>copy address callback</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>title</td>
+    <td>true</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>operatorAddress</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  label: string;
+  rawValue: string;
+  display: string | React.ReactNode;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>selfDelegateAddress</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  label: string;
+  rawValue: string;
+  display: string | React.ReactNode;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>commissionRate</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  label: string;
+  display: string | React.ReactNode;
+  description: string;
+  descriptionClassname?: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>maxChangeRate</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  label: string;
+  display: string | React.ReactNode;
+  description: string;
+  descriptionClassname?: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>maxRate</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  label: string;
+  display: string | React.ReactNode;
+  description: string;
+  descriptionClassname?: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+
+## Desktop
+<Canvas>
+  <Story name="Desktop">
+    <ValidatorInfo
+      title='Validator Info'
+      copyCallback={(value) => {console.log(`copied with value: ${value}`)}}
+      desktop
+      operatorAddress={{
+        label: 'Operator Address',
+        rawValue: '123456678',
+        display: '123456678'
+      }}
+      selfDelegateAddress={{
+        label: 'Self-Delegate Address',
+        rawValue: '123456678',
+        display: <p>123456678</p>
+      }}
+      commissionRate={{
+        label: 'Commission Rate',
+        display: '10%',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+      }}
+      maxChangeRate={{
+        label: 'Max Change Rate',
+        display: '2%',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+      }}
+      maxRate={{
+        label: 'Max Rate',
+        display: '5%',
+        description: 'Max Rate Description'
+      }}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorInfo
+  title='Validator Info'
+  copyCallback={(value) => {console.log(`copied with value: ${value}`)}}
+  desktop
+  operatorAddress={{
+    label: 'Operator Address',
+    rawValue: '123456678',
+    display: '123456678'
+  }}
+  selfDelegateAddress={{
+    label: 'Self-Delegate Address',
+    rawValue: '123456678',
+    display: <p>123456678</p>
+  }}
+  commissionRate={{
+    label: 'Commission Rate',
+    display: '10%',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
+  }}
+  maxChangeRate={{
+    label: 'Max Change Rate',
+    display: '2%'
+  }}
+  maxRate={{
+    label: 'Max Rate',
+    display: '5%',
+    description: 'Max Rate Description'
+  }}
+/>
+```

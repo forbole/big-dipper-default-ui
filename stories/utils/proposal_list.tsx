@@ -1,22 +1,17 @@
 import React from 'react';
 import { Data } from '../../src/components/proposal_list/types';
-import { AvatarDisplay, Status, Button, } from '../../src';
+import {
+  AvatarDisplay, Status, Button,
+} from '../../src';
 
 const Proposer = () => {
   return (
-    // <div
-    //   style={{
-    //     display: 'flex',
-    //   }}
-    // >
-    //   Proposer
-    //   &nbsp;
-      <AvatarDisplay
-        imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-        alt="avatar image"
-        title="Forbole"
-      />
-    // </div>
+    <AvatarDisplay
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+      title="Forbole"
+    />
+  // </div>
   );
 };
 
@@ -53,7 +48,6 @@ export const dummyData: Data[] = [
       display: 'Vote',
     },
     duration: '(In 12 days)',
-    statusComponent: <CurrentButton />,
   },
   {
     id: '#02',
@@ -68,7 +62,6 @@ export const dummyData: Data[] = [
       current: false,
       display: 'Passed',
     },
-    statusComponent: <CurrentButton />,
   },
   {
     id: '#03',
@@ -84,7 +77,6 @@ export const dummyData: Data[] = [
       display: 'Deposit',
     },
     duration: '(In 12 days)',
-    statusComponent: <CurrentButton />,
   },
   {
     id: '#04',
@@ -99,7 +91,6 @@ export const dummyData: Data[] = [
       current: false,
       display: 'Rejected',
     },
-    statusComponent: <CurrentStatus />,
   },
   {
     id: '#05',
@@ -114,7 +105,6 @@ export const dummyData: Data[] = [
       current: false,
       display: 'Removed',
     },
-    statusComponent: <CurrentStatus />,
   },
   {
     id: '#06',
@@ -130,6 +120,5 @@ export const dummyData: Data[] = [
       display: 'Vote',
     },
     duration: '(In 12 days)',
-    statusComponent: <CurrentButton />,
   },
 ];

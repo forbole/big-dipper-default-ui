@@ -1,44 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Collapsible from '.';
+import Title from '.';
 
-describe('Collapsible', () => {
+describe('Title', () => {
   it('Works', () => {
-    expect(Collapsible).toBeTruthy();
+    expect(Title).toBeTruthy();
     const wrap = mount(
-      <Collapsible
-        data={
-          [
-            {
-              label: 'hash',
-              value: 'hash',
-            },
-            {
-              label: 'height',
-              value: 'height',
-            },
-            {
-              label: 'fee',
-              value: 'fee',
-            },
-            {
-              label: 'gas',
-              value: 'gas',
-            },
-            {
-              label: 'status',
-              value: 'status',
-            },
-            {
-              label: 'memo',
-              value: 'memo',
-            },
-          ]
-        }
+      <Title
+        display="Lunie.io on iOS and Android 📱🔥🚀"
+        id="123"
       />,
     );
     expect(wrap).not.toBeNull();
-
-    expect(wrap.find('.padding')).toHaveLength(1);
   });
 });

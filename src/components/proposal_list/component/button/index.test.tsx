@@ -1,44 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Collapsible from '.';
+import Button from '.';
 
-describe('Collapsible', () => {
+describe('Button', () => {
   it('Works', () => {
-    expect(Collapsible).toBeTruthy();
+    expect(Button).toBeTruthy();
     const wrap = mount(
-      <Collapsible
-        data={
-          [
-            {
-              label: 'hash',
-              value: 'hash',
-            },
-            {
-              label: 'height',
-              value: 'height',
-            },
-            {
-              label: 'fee',
-              value: 'fee',
-            },
-            {
-              label: 'gas',
-              value: 'gas',
-            },
-            {
-              label: 'status',
-              value: 'status',
-            },
-            {
-              label: 'memo',
-              value: 'memo',
-            },
-          ]
-        }
+      <Button
+        display="Vote"
       />,
     );
     expect(wrap).not.toBeNull();
-
-    expect(wrap.find('.padding')).toHaveLength(1);
   });
 });

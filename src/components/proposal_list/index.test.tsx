@@ -1,43 +1,34 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import {
-  Table,
-  TableHead,
-} from '@material-ui/core';
-import LatestBlocksDesktop from '.';
+import ProposalList from '.';
 
-describe('LatestBlocksDesktop', () => {
+describe('ProposalList', () => {
   it('Works', () => {
-    expect(LatestBlocksDesktop).toBeTruthy();
+    expect(ProposalList).toBeTruthy();
     const wrap = mount(
-      <LatestBlocksDesktop
-        labels={
-          {
-            tx: 'tx',
-            proposer: 'Proposer',
-            height: 'height',
-            hash: 'hash',
-            time: 'time',
-          }
-        }
+      <ProposalList
         data={[{
-          proposer: <div>proposer</div>,
-          height: {
-            value: 1234,
-            display: <div>1,234</div>,
+          id: '#01',
+          proposer: <div>forbole</div>,
+          title: {
+            display: 'Lunie.io on iOS and Android 📱🔥🚀',
+            id: '123',
           },
+          content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
           time: '10 Jan 2020,13:00:22 UTC',
-          hash: '89832B67F594asddw32',
-          tx: 2,
+          status: {
+            current: true,
+            display: 'Vote',
+          },
+          duration: '(In 12 days)',
         },
         ]}
+        desktop={false}
+        imageUrl="./stories/assets/images/wall-clock.png"
       />,
     );
     expect(wrap).not.toBeNull();
-
-    expect(wrap.find('.latest-blocks-desktop')).toHaveLength(1);
-    expect(wrap.find(Table)).toHaveLength(1);
-    expect(wrap.find(TableHead)).toHaveLength(1);
-    expect(wrap.find('.cell').find('.time').first().text()).toEqual('10 Jan 2020,13:00:22 UTC');
+    expect(wrap.find('.proposerText').first().text()).toEqual('Proposer');
+    expect(wrap.find('.content').first().text()).toEqual('Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏');
   });
 });

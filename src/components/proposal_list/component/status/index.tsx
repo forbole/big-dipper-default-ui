@@ -1,10 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
 import { StatusProp } from './types';
-// import { useGetStyles } from './styles';
 
 const Status = (props: StatusProp) => {
-  // const { classes } = useGetStyles();
   const { display } = props;
 
   return (
@@ -13,7 +11,7 @@ const Status = (props: StatusProp) => {
       className={classnames('status')}
     >
       <div
-        className={classnames('type', display)}
+        className={classnames('statusType', display)}
       />
       <div
         className={classnames('statusContent')}
