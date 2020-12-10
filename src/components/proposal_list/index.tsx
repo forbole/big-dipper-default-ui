@@ -14,7 +14,6 @@ import {
 } from './component';
 
 const Component = (props: { current: boolean, display: string }) => {
-  // const { classes } = useGetStyles();
   if (props.current === true) {
     return (
       <div className={classnames('button')}>

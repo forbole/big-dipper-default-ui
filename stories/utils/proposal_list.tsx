@@ -1,8 +1,9 @@
 import React from 'react';
 import { Data } from '../../src/components/proposal_list/types';
+import { AvatarDisplay } from '../../src';
 import {
-  AvatarDisplay, Status, Button,
-} from '../../src';
+  Status, Button,
+} from '../../src/components/proposal_list/component';
 
 const Proposer = () => {
   return (

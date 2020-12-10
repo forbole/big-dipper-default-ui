@@ -154,16 +154,6 @@ export const useGetStyles = () => {
         verticalAlign: 'text-bottom',
       },
     },
-    '& .clock': {
-      // '&:after': {
-      //   content: '""',
-      //   width: '5px',
-      //   height: '1rem',
-      //   background: '#b3b3b3',
-      //   display: 'block',
-      //   borderRadius: '15px',
-      // },
-    },
   });
 
   return {

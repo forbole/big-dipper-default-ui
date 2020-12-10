@@ -13,8 +13,6 @@ import OnlineVotingPower from './components/online_voting_power';
 import ResponsiveRecharts from './components/responsive_recharts';
 import CustomToolTip from './components/custom_tool_tip';
 import ProposalList from './components/proposal_list';
-import Button from './components/proposal_list/component/button';
-import Status from './components/proposal_list/component/status';
 import ValidatorInfo from './components/validator_info';
 
 export {
@@ -33,7 +31,5 @@ export {
   ResponsiveRecharts,
   CustomToolTip,
   ProposalList,
-  Button,
-  Status,
   ValidatorInfo,
 };
