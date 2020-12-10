@@ -12,25 +12,6 @@ const Proposer = () => {
       alt="avatar image"
       title="Forbole"
     />
-  // </div>
-  );
-};
-
-const CurrentStatus = () => {
-  return (
-
-    <Status
-      display="Passed"
-    />
-  );
-};
-
-const CurrentButton = () => {
-  return (
-
-    <Button
-      display="Vote"
-    />
   );
 };
 
