@@ -5,11 +5,9 @@ import { ButtonProp } from './types';
 const Button = (props: ButtonProp) => {
   const { display } = props;
   return (
-    <input
-      type="button"
-      value={display}
-      className={classnames('button', display)}
-    />
+    <button type="button" disabled className={classnames('button', display)}>
+      {display}
+    </button>
   );
 };
 

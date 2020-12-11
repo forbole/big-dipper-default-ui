@@ -10,18 +10,37 @@ import {
 
 <Meta title="ProposalList" component={ProposalList} />
 
-# LatestBlocksDesktop
+# ProposalList
 ---
 
 ## Default
 <Canvas>
   <Story name="Default">
-    <ProposalList data={dummyData} desktop={false} imageUrl='./stories/assets/images/wall-clock.png' />
+    <ProposalList data={dummyData} desktop={false} />
   </Story>
 </Canvas>
 
 ```
-<ProposalList data={dummyData} desktop={false} imageUrl='./stories/assets/images/wall-clock.png' />
+<ProposalList data={[
+  {
+    id: string;
+    proposer: React.ReactNode;
+    title: {
+      display: string;
+      id: string
+    }
+    content: string;
+    status: {
+      current: boolean;
+      display: string;
+    }
+    time: string;
+    duration?: string;
+  },
+  ...
+  ]}
+  desktop={false}
+/>
 ```
 
 ## Props
@@ -75,18 +94,6 @@ import {
     <td>desktop and mobile layouts switching</td>
     <td>-</td>
   </tr>
-
-  <tr>
-    <td>imageUrl</td>
-    <td>-</td>
-    <td>
-
-`string`
-
-  </td>
-    <td>icon displayed</td>
-    <td>-</td>
-  </tr>
   <tr>
     <td>className</td>
     <td>-</td>
@@ -98,7 +105,47 @@ import {
     <td>styles displayed</td>
     <td>-</td>
   </tr>
+    <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
   </tbody>
 </table>
 <br/>
 
+## Desktop
+<Canvas>
+  <Story name="Desktop">
+    <ProposalList data={dummyData} desktop={true} />
+  </Story>
+</Canvas>
+
+```
+<ProposalList data={[
+  {
+    id: string;
+    proposer: React.ReactNode;
+    title: {
+      display: string;
+      id: string
+    }
+    content: string;
+    status: {
+      current: boolean;
+      display: string;
+    }
+    time: string;
+    duration?: string;
+  },
+  ...
+  ]}
+  desktop={true}
+/>
+```

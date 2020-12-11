@@ -5,15 +5,21 @@ export const useGetStyles = () => {
     root: {
       background: 'white',
       overflow: 'auto',
-      '& .label': {
+      '& .cell': {
         borderBottom: 'none',
-        fontWeight: 500,
+      },
+      '& .table': {
+        '& tr': {
+          borderBottom: '1px solid #E8E8E8',
+          '&:last-child': {
+            borderBottom: 'none',
+          },
+        },
       },
       '& .id': {
         width: '1rem',
         fontSize: '1rem',
         verticalAlign: 'top',
-        horizontalAlign: 'left',
         margin: '1.5rem 0 0 0',
       },
       '& .proposer': {
@@ -71,6 +77,7 @@ export const useGetStyles = () => {
         width: '4px',
         height: '0.75rem',
         borderRadius: '8px',
+        background: '#b3b3b3',
       },
       '& .Rejected': {
         background: '#FD3B4C',
@@ -113,11 +120,10 @@ export const useGetStyles = () => {
       '& .id': {
         padding: '1.5rem 1.5rem 0 0',
       },
-      '& .button, & .status': {
-        float: 'right',
-      },
       '& .component': {
+        display: 'inline-flex',
         flex: 1,
+        justifyContent: 'flex-end',
       },
       '& .clock': {
         display: 'none',
@@ -126,8 +132,6 @@ export const useGetStyles = () => {
     mobile: {
       '& .content': {
         display: 'none',
-      },
-      '& .layout': {
       },
       '& .proposerText': {
         display: 'none',

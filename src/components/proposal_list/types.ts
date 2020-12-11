@@ -16,9 +16,11 @@ export type Data = {
   duration?: string;
 };
 
+export type OnClick = (data: Data) => void;
+
 export interface ProposalListProps {
   className?: string;
   data: Data[]
   desktop?: boolean;
-  imageUrl?: string;
+  onClick?: OnClick;
 }

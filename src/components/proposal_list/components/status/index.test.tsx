@@ -11,5 +11,6 @@ describe('Status', () => {
       />,
     );
     expect(wrap).not.toBeNull();
+    expect(wrap.find('.statusContent').first().text()).toEqual('Passed');
   });
 });

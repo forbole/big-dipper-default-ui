@@ -3,7 +3,7 @@ import { Data } from '../../src/components/proposal_list/types';
 import { AvatarDisplay } from '../../src';
 import {
   Status, Button,
-} from '../../src/components/proposal_list/component';
+} from '../../src/components/proposal_list/components';
 
 const Proposer = () => {
   return (

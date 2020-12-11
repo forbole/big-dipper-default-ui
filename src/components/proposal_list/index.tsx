@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import classnames from 'classnames';
 import {
@@ -7,32 +6,21 @@ import {
   TableCell,
   TableRow,
 } from '@material-ui/core';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import { ProposalListProps } from './types';
 import { useGetStyles } from './styles';
 import {
   Title, Button, Status,
-} from './component';
-
-const Component = (props: { current: boolean, display: string }) => {
-  if (props.current === true) {
-    return (
-      <div className={classnames('button')}>
-        <Button display={props.display} />
-      </div>
-    );
-  }
-  return (
-    <div className={classnames('status')}>
-      <Status display={props.display} />
-    </div>
-  );
-};
+} from './components';
+import { ProposalUtils } from './utils';
 
 const ProposalList = (props: ProposalListProps) => {
   const {
-    data, className, desktop, imageUrl,
+    data, className, desktop, onClick,
   } = props;
+
   const { classes } = useGetStyles();
+  const { handleClick } = ProposalUtils(onClick);
   const responsiveClass = desktop ? classes.desktop : classes.mobile;
   return (
     <div className={classnames(classes.root, responsiveClass, className, 'big-dipper', 'proposalList')}>
@@ -43,6 +31,7 @@ const ProposalList = (props: ProposalListProps) => {
               <TableRow
                 key={row.time}
                 className={classnames('single-row')}
+                onClick={() => handleClick(row)}
               >
                 <TableCell className={classnames('cell', 'id')}>
                   {row.id}
@@ -64,7 +53,7 @@ const ProposalList = (props: ProposalListProps) => {
                     <div className={classnames('mainContent', 'time')}>
                       <div className={classnames('voting')}>
                         <span className={classnames('clock')}>
-                          <img src={imageUrl} alt="" className={classnames('clockImage')} />
+                          <AccessTimeIcon className={classnames('clockImage')} />
                           &nbsp;
                         </span>
                         {row.time}
@@ -77,7 +66,9 @@ const ProposalList = (props: ProposalListProps) => {
                     </div>
                   </div>
                   <div className={classnames('component')}>
-                    <Component {...row.status} />
+                    {row.status.current
+                      ? <Button display={row.status.display} />
+                      : <Status display={row.status.display} /> }
                   </div>
                 </TableCell>
               </TableRow>
