@@ -5,18 +5,57 @@ import { ActivityDetails } from '../src';
 
 <Meta title="ActivityDetails" component={ActivityDetails} />
 
-# Avatar
+# ActivityDetails
 ---
 ## Default
 <Canvas>
   <Story name="Default">
-    <ActivityDetails />
+    <ActivityDetails
+      labels={{
+        hash: 'hash',
+        height: 'height',
+        fee: 'fee',
+        gas: 'Gas (used/ wanted)',
+        status: 'Status',
+        memo: 'Memo',
+      }}
+      data={{
+        time: '1 hour',
+        success: true,
+        content: <div>custom content</div>,
+        hash: '12344566',
+        height: <div>height</div>,
+        fee: '123 uatm',
+        gas: '1,234 / 20, 999',
+        memo: 'baby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooo',
+      }}
+    />
   </Story>
 </Canvas>
 
 ```
-HERE
+<ActivityDetails
+  labels={{
+    hash: 'hash',
+    height: 'height',
+    fee: 'fee',
+    gas: 'Gas (used/ wanted)',
+    status: 'Status',
+    memo: 'Memo',
+  }}
+  data={{
+    time: '1 hour',
+    success: true,
+    content: <div>custom content</div>,
+    hash: '12344566',
+    height: <div>height</div>,
+    fee: '123 uatm',
+    gas: '1,234 / 20, 999',
+    memo: 'baby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooo',
+  }}
+/>
 ```
+
 ## Props
 <table>
 <thead>
@@ -30,59 +69,59 @@ HERE
   </thead>
 <tbody>
   <tr>
-    <td>imageUrl</td>
+    <td>desktop</td>
+    <td>-</td>
+    <td>
+
+`boolean`
+
+  </td>
+    <td>-</td>
+    <td>false</td>
+  </tr>
+
+  <tr>
+    <td>labels</td>
     <td>true</td>
     <td>
 
-`string`
+```
+{
+  hash: string;
+  height: string;
+  fee: string;
+  gas: string;
+  status: string;
+  memo: string;
+}
+```
 
   </td>
-    <td>-</td>
+    <td>required labels</td>
     <td>-</td>
   </tr>
 
   <tr>
-    <td>alt</td>
-    <td>-</td>
+    <td>Data</td>
+    <td>true</td>
     <td>
 
-`string`
+```
+{
+  time: string;
+  success: boolean;
+  content: React.ReactNode;
+  hash: string;
+  height: React.ReactNode;
+  fee: string;
+  gas: string;
+  memo: string;
+}
+```
 
   </td>
-    <td>alt description for the image</td>
+    <td>toggles between responsive styling</td>
     <td>-</td>
-  </tr>
-
-  <tr>
-    <td>width</td>
-    <td>-</td>
-    <td>
-
-`string | number`
-
-  </td>
-    <td>-</td>
-      <td>
-
-`50px`
-
-  </td>
-  </tr>
-
-  <tr>
-    <td>height</td>
-    <td>-</td>
-    <td>
-
-`string | number`
-
-  </td>
-    <td>-</td>
-      <td>
-
-`50px`
-
-  </td>
   </tr>
 
   <tr>
@@ -99,3 +138,55 @@ HERE
   </tbody>
 </table>
 <br/>
+
+
+## Desktop
+<Canvas>
+  <Story name="Desktop">
+    <ActivityDetails
+      desktop
+      labels={{
+        hash: 'hash',
+        height: 'height',
+        fee: 'fee',
+        gas: 'Gas (used/ wanted)',
+        status: 'Status',
+        memo: 'Memo',
+      }}
+      data={{
+        time: '1 hour',
+        success: true,
+        content: <div>custom content</div>,
+        hash: '12344566',
+        height: <div>height</div>,
+        fee: '123 uatm',
+        gas: '1,234 / 20, 999',
+        memo: 'baby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooo',
+      }}
+    />
+  </Story>
+</Canvas>
+
+```
+<ActivityDetails
+  desktop
+  labels={{
+    hash: 'hash',
+    height: 'height',
+    fee: 'fee',
+    gas: 'Gas (used/ wanted)',
+    status: 'Status',
+    memo: 'Memo',
+  }}
+  data={{
+    time: '1 hour',
+    success: true,
+    content: <div>custom content</div>,
+    hash: '12344566',
+    height: <div>height</div>,
+    fee: '123 uatm',
+    gas: '1,234 / 20, 999',
+    memo: 'baby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooobaby shark doo doodo dooo',
+  }}
+/>
+```

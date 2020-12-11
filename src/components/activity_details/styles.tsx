@@ -11,6 +11,8 @@ export const useGetStyles = () => {
         marginBottom: '1rem',
       },
       '& .activity-details__content-wrapper': {
+        borderTop: '1px solid #E8E8E8',
+        padding: '1rem 0',
         '& .success': {
           fill: '#15CF74',
         },
@@ -22,12 +24,7 @@ export const useGetStyles = () => {
     mobile: {
       padding: '1rem',
       '& .content-wrapper__label': {
-        paddingTop: '1rem',
-        borderTop: '1px solid #E8E8E8',
         marginBottom: '0.5rem',
-      },
-      '& .content-wrapper__value': {
-        marginBottom: '1rem',
       },
     },
     desktop: {
@@ -35,7 +32,7 @@ export const useGetStyles = () => {
       '& .activity-details__content-wrapper': {
         display: 'grid',
         gridTemplateColumns: '1fr 4fr',
-        gridGap: '1.5rem',
+        gridGap: '1rem',
       },
     },
   });
