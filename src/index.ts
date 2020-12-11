@@ -13,6 +13,7 @@ import OnlineVotingPower from './components/online_voting_power';
 import ResponsiveRecharts from './components/responsive_recharts';
 import CustomToolTip from './components/custom_tool_tip';
 import ValidatorInfo from './components/validator_info';
+import ActivityDetails from './components/activity_details';
 
 export {
   DataBlock,
@@ -30,4 +31,5 @@ export {
   ResponsiveRecharts,
   CustomToolTip,
   ValidatorInfo,
+  ActivityDetails,
 };

@@ -5,7 +5,7 @@ import { FileCopyOutlined } from '@material-ui/icons';
 import { useGetStyles } from './styles';
 import { useValidatorInfoHook } from './hooks';
 import { ValidatorInfoProps } from './types';
-import { valueConvertor } from './utils';
+import { valueConvertor } from '../../utils';
 import { InfoPopover } from './components';
 
 const ValidatorInfo = (props: ValidatorInfoProps) => {
