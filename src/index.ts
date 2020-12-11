@@ -14,6 +14,7 @@ import ResponsiveRecharts from './components/responsive_recharts';
 import CustomToolTip from './components/custom_tool_tip';
 import ProposalList from './components/proposal_list';
 import ValidatorInfo from './components/validator_info';
+import ActivityDetails from './components/activity_details';
 
 export {
   DataBlock,
@@ -32,4 +33,5 @@ export {
   CustomToolTip,
   ProposalList,
   ValidatorInfo,
+  ActivityDetails,
 };
