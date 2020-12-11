@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      background: 'yellow',
+      background: 'white',
       '& p': {
         margin: 0,
       },

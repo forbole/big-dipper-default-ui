@@ -9,7 +9,7 @@ const ActivityDetails = (props: any) => {
   const { classes } = useGetStyles();
   const {
     className,
-    desktop,
+    desktop = true,
   } = props;
   const {
     labels, data,
