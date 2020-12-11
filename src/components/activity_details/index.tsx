@@ -33,7 +33,10 @@ const ActivityDetails = (props: ActivityDetailsProps) => {
       <div>
         {formattedData.map((x) => {
           return (
-            <div className={classnames('activity-details__content-wrapper')}>
+            <div
+              key={x.label}
+              className={classnames('activity-details__content-wrapper')}
+            >
               <p className={classnames('content-wrapper__label')}>{x.label}</p>
               <div className={classnames('content-wrapper__value')}>{x.value}</div>
             </div>
