@@ -24,7 +24,6 @@ describe('ProposalList', () => {
         },
         ]}
         desktop={false}
-        imageUrl="./stories/assets/images/wall-clock.png"
       />,
     );
     expect(wrap).not.toBeNull();
