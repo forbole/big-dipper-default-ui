@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { OutlinedInput } from '@material-ui/core';
-import { ValidatorTable } from './components';
+import { Row } from './components';
 import ValidatorListDesktop from '.';
 
 describe('ValidatorListDesktop', () => {
@@ -9,7 +9,7 @@ describe('ValidatorListDesktop', () => {
     expect(ValidatorListDesktop).toBeTruthy();
     const wrap = mount(
       <ValidatorListDesktop
-        active={[{
+        data={[{
           operatorAddress: 'forbole12345',
           moniker: {
             rawValue: 'forbole',
@@ -33,57 +33,27 @@ describe('ValidatorListDesktop', () => {
             display: '100',
             percentDisplay: '100%',
           },
-        }]}
-        inactive={[{
-          operatorAddress: 'forbole12345',
-          moniker: {
-            rawValue: 'forbole',
-            display: <div>forbole</div>,
-          },
-          self: {
-            rawValue: 100,
-            display: '100%',
-          },
-          status: {
-            className: 'jailed',
-            rawValue: 'jailed',
-            display: 'jailed',
-          },
-          commission: {
-            rawValue: 100,
-            display: '100',
-          },
-          votingPower: {
-            rawValue: 100,
-            display: '100',
-            percentDisplay: '100%',
+          condition: {
+            rawValue: 'healthy',
+            className: 'healthy',
           },
         }]}
         labels={{
-          active: 'active',
-          inactive: 'inactive',
-          rank: 'rank',
           moniker: 'moniker',
           votingPower: 'voting power',
           self: 'self',
           commission: 'commission',
           status: 'status',
-        }}
-        tabs={{
-          handleChange: () => {},
-          value: 1,
-        }}
-        search={{
-          placeholder: 'placeholder',
-          value: '',
-          onSearchCallback: () => {},
-          handleChange: () => {},
+          condition: {
+            display: 'Condition',
+            description: 'hello world',
+          },
         }}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find(OutlinedInput)).toHaveLength(1);
-    expect(wrap.find('.validator-list-desktop__data-container')).toHaveLength(1);
-    expect(wrap.find(ValidatorTable)).toHaveLength(1);
+    expect(wrap.find(OutlinedInput)).toHaveLength(0);
+    expect(wrap.find('.validator-list-desktop__data-container')).toHaveLength(0);
+    expect(wrap.find(Row)).toHaveLength(1);
   });
 });

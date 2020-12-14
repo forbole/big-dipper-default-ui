@@ -31,8 +31,6 @@ describe('SingleValidator', () => {
         }}
         labels={{
           commission: 'commission',
-          active: 'active',
-          inactive: 'inactive',
         }}
         onClick={() => {}}
       />,
@@ -67,8 +65,6 @@ describe('SingleValidator', () => {
         }}
         labels={{
           commission: 'commission',
-          active: 'active',
-          inactive: 'inactive',
         }}
         onClick={() => {}}
       />,

@@ -33,6 +33,10 @@ describe('Row', () => {
                 display: '100',
                 percentDisplay: '100%',
               },
+              condition: {
+                rawValue: 'healthy',
+                className: 'healthy',
+              }
             }}
             columns={[
               {

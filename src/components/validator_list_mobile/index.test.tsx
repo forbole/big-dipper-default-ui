@@ -9,7 +9,7 @@ describe('ValidatorListMobile', () => {
     expect(ValidatorListMobile).toBeTruthy();
     const wrap = mount(
       <ValidatorListMobile
-        inactive={[
+        data={[
           {
             moniker: {
               imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
@@ -28,44 +28,15 @@ describe('ValidatorListMobile', () => {
             },
           },
         ]}
-        active={[
-          {
-            moniker: {
-              imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
-              display: 'Forbole1',
-            },
-            operatorAddress: '312',
-            commission: {
-              rawValue: 100,
-              display: '100%',
-            },
-            votingPower: {
-              rawValue: 1000,
-              display: '110,000,08511111111321654649845',
-              percentDisplay: '10654654654654654654654564%',
-            },
-            status: {
-              rawValue: 'active',
-              className: 'active',
-              display: 'active',
-            },
-          },
-        ]}
         labels={{
           commission: 'commission',
-          active: 'active',
-          inactive: 'inactive',
         }}
         onClick={() => {}}
-        tabs={{
-          handleChange: (() => {}),
-          value: 0,
-        }}
       />,
     );
     expect(wrap).not.toBeNull();
 
-    expect(wrap.find(Tab)).toHaveLength(2);
+    expect(wrap.find(Tab)).toHaveLength(0);
     expect(wrap.find(SingleValidator)).toHaveLength(1);
   });
 });

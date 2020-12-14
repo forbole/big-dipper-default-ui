@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Data } from '../../types';
+import { Data } from './types';
 
 export const useTableHook = (data:any[], handleClick?: any, active = 'moniker') => {
   const [state, setState] = useState<any>({
