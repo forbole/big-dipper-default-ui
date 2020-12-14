@@ -1,14 +1,14 @@
 import React from 'react';
-import {
-  ValidatorListData, ValidatorListLabels, ValidatorListProps,
-} from '../../types/validator_list';
+// import {
+//   ValidatorListData, ValidatorListLabels, ValidatorListProps,
+// } from '../../types/validator_list';
 
 export interface ValidatorListDesktopProps extends ValidatorListProps {
   search: Search;
   labels: Labels;
   active: Data[];
   inactive: Data[];
-  onClick?: (data:Data) => void;
+  onClick?: (data: Data) => void;
 }
 
 export interface Labels extends ValidatorListLabels {
@@ -34,6 +34,6 @@ export interface Data extends ValidatorListData {
 export type Search = {
   placeholder: string;
   value: string;
-  onSearchCallback: (value:string) => void;
+  onSearchCallback: (value: string) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
