@@ -26,7 +26,6 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
   onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
   labels={{
     commission: 'Commission',
-    rank: 'Rank',
     moniker: 'Moniker',
     votingPower: 'Voting Power',
     self: 'Self',
@@ -61,7 +60,149 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
     },
     ...
   ]}
-  inactive={[
+/>
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>labels</td>
+    <td>true</td>
+    <td>
+
+```
+moniker: string;
+votingPower: string;
+self: string;
+commission: string;
+status: string;
+condition: string;
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>inactive</td>
+    <td>-</td>
+    <td>
+
+`boolean`
+
+  </td>
+    <td>handles column labels between active and inactive</td>
+    <td>false</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  operatorAddress: string;
+  status: {
+    rawValue: string;
+    className: string;
+    display: string;
+  }
+  commission?: {
+    rawValue: number;
+    display: string;
+  };
+  votingPower: {
+    rawValue: number;
+    display: string;
+    percentDisplay: string;
+    visual?: React.ReactNode;
+  };
+  moniker: {
+    rawValue: string;
+    display: React.ReactNode;
+  }
+  self: {
+    rawValue: number;
+    display: string;
+  }
+  condition: {
+    className: string;
+    rawValue: string;
+  }
+}[]
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data: Data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+
+## Default Inactive
+<Canvas>
+  <Story name="Default Inactive">
+    <ValidatorListDesktop
+      inactive
+      onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+      labels={labelsList}
+      data={getActiveDummy('desktop')}
+    />
+  </Story>
+</Canvas>
+
+
+```
+<ValidatorListDesktop
+  inactive
+  onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+  labels={{
+    commission: 'Commission',
+    moniker: 'Moniker',
+    votingPower: 'Voting Power',
+    self: 'Self',
+    status: 'Status',
+    condition: 'Condition',
+  }}
+  data={[
     {
       moniker: {
         rawValue: 'Forbole',
@@ -87,162 +228,3 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
   ]}
 />
 ```
-
-## Props
-<table>
-<thead>
-  <tr>
-    <th>Property</th>
-    <th>Required</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>labels</td>
-    <td>true</td>
-    <td>
-
-```
-commission: string;
-active: string;
-inactive: string;
-```
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>active</td>
-    <td>true</td>
-    <td>
-
-```
-{
-  operatorAddress: string;
-  moniker: {
-    display: React.ReactNode;
-    rawValue: string;
-    imageUrl: string;
-  }
-  status: {
-    rawValue: string;
-    className: string;
-    display: string;
-  }
-  commission?: {
-    rawValue: number;
-    display: string;
-  };
-  votingPower: {
-    rawValue: number;
-    display: string;
-    percentDisplay: string;
-    visual?: React.ReactNode;
-  }
-}[]
-```
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>inactive</td>
-    <td>true</td>
-    <td>
-
-```
-{
-  operatorAddress: string;
-  moniker: {
-    display: React.ReactNode;
-    rawValue: string;
-    imageUrl: string;
-  }
-  status: {
-    rawValue: string;
-    className: string;
-    display: string;
-  }
-  votingPower: {
-    rawValue: number;
-    display: string;
-    percentDisplay: string;
-    visual?: React.ReactNode;
-  }
-}[]
-```
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>onClick</td>
-    <td>-</td>
-    <td>
-
-`(data: Data) => void`
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-<tr>
-    <td>tabs</td>
-    <td>true</td>
-    <td>
-
-```
-{
-  handleChange: (_event: any, newValue: number) => void;
-  value: 0 | 1;
-}
-```
-
-  </td>
-    <td>handles mui tabs</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>search</td>
-    <td>true</td>
-    <td>
-
-```
-{
-  placeholder: string;
-  value: string;
-  onSearchCallback: (value:string) => void;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-```
-
-  </td>
-    <td>handles search bar</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>className</td>
-    <td>-</td>
-    <td>
-
-`string`
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  </tbody>
-</table>
-<br/>

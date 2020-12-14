@@ -9,7 +9,6 @@ export interface ValidatorListDesktopProps {
 }
 
 export interface Labels {
-  rank: string;
   moniker: string;
   votingPower: string;
   self: string;
@@ -46,5 +45,7 @@ export interface Data {
   condition: {
     className: string;
     rawValue: string;
+    description: string;
+    descriptionClassname?: string;
   }
 }

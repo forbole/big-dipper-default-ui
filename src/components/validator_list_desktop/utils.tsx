@@ -1,4 +1,6 @@
+import React from 'react';
 import { Labels } from './types';
+import { InfoPopover } from '../../../src/components/validator_info/components';
 
 export const getActiveColumns = (labels: Labels) => {
   return ([
@@ -31,7 +33,12 @@ export const getActiveColumns = (labels: Labels) => {
     },
     {
       id: 'condition',
-      label: labels.condition,
+      label: (
+        <div>
+          {labels.condition}
+          <InfoPopover detail="hello world" />
+        </div>
+      ),
       align: 'center',
       sort: true,
     },
@@ -42,7 +49,8 @@ export const getInactiveColumns = (labels: Labels) => {
   return ([
     {
       id: 'rank',
-      label: labels.rank,
+      label: '',
+      align: 'center',
     },
     {
       id: 'moniker',
