@@ -4,8 +4,6 @@ import { AvatarDisplay } from '../../src';
 
 export const labelsList = {
   commission: 'Commission',
-  active: 'Active Validators',
-  inactive: 'Inactive Validators',
   rank: 'Rank',
   moniker: 'Moniker',
   votingPower: 'Voting Power',
@@ -13,7 +11,7 @@ export const labelsList = {
   status: 'Status',
 };
 
-export const getInactiveDummy = (device:string) => {
+export const getInactiveDummy = (device: string) => {
   const display = device === 'mobile' ? 'Forbole' : (
     <AvatarDisplay
       imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
@@ -73,7 +71,7 @@ export const getInactiveDummy = (device:string) => {
   );
 };
 
-export const getActiveDummy = (device:string) => {
+export const getActiveDummy = (device: string) => {
   const display = device === 'mobile' ? 'Forbole' : (
     <AvatarDisplay
       imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
@@ -166,38 +164,4 @@ export const getActiveDummy = (device:string) => {
       },
     ]
   );
-};
-
-/**
- * Helper hook that deals with tab changing in mui Tabs
- */
-export const useTabsHook = () => {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (_event:any, newValue: number) => {
-    setValue(newValue);
-  };
-
-  return {
-    value,
-    handleChange,
-  };
-};
-
-export const useSearchHook = (callback:any) => {
-  const [search, setSearch] = useState('');
-
-  const handleChange = (e:any) => {
-    setSearch(e?.target?.value);
-  };
-
-  const handleSubmit = () => {
-    console.log(`searched with values: ${search}`);
-  };
-
-  return {
-    value: search,
-    handleChange,
-    onSearchCallback: handleSubmit,
-  };
 };

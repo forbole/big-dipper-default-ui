@@ -16,9 +16,7 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook } from './uti
     <ValidatorListMobile
       onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
       labels={labelsList}
-      active={getActiveDummy('mobile')}
-      inactive={getInactiveDummy('mobile')}
-      tabs={useTabsHook()}
+      data={getActiveDummy('mobile')}
     />
   </Story>
 </Canvas>
