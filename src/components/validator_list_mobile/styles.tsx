@@ -12,9 +12,6 @@ export const useGetStyles = () => {
           border: 'none',
         },
       },
-      '& .validator-list-mobile__data-container': {
-        padding: '1rem',
-      },
     },
   });
 

@@ -26,10 +26,8 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook } from './uti
   onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
   labels={{
     commission: 'commission',
-    active: 'active',
-    inactive: 'inactive',
   }}
-  active={[
+  data={[
     {
       moniker: {
         rawValue: 'Forbole',
@@ -58,7 +56,115 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook } from './uti
     },
     ...
   ]}
-  inactive={[
+/>
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>labels</td>
+    <td>true</td>
+    <td>
+
+```
+commission: string;
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  operatorAddress: string;
+  status: {
+    rawValue: string;
+    className: string;
+    display: string;
+  }
+  commission?: {
+    rawValue: number;
+    display: string;
+  };
+  votingPower: {
+    rawValue: number;
+    display: string;
+    percentDisplay: string;
+    visual?: React.ReactNode;
+  };
+  moniker: {
+    display: string;
+    imageUrl: string;
+  }
+}[]
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data: Data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+## Inactive Default
+<Canvas>
+  <Story name="Inactive Default">
+    <ValidatorListMobile
+      onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+      labels={labelsList}
+      data={getInactiveDummy('mobile')}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorListMobile
+  onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+  labels={{
+    commission: 'commission',
+  }}
+  data={[
     {
       moniker: {
         rawValue: 'Forbole',
@@ -83,149 +189,5 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook } from './uti
     },
     ...
   ]}
-  tabs={{
-    value: 1,
-    handleChange: () => {}
-  }}
 />
 ```
-
-## Props
-<table>
-<thead>
-  <tr>
-    <th>Property</th>
-    <th>Required</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>labels</td>
-    <td>true</td>
-    <td>
-
-```
-commission: string;
-active: string;
-inactive: string;
-```
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>active</td>
-    <td>true</td>
-    <td>
-
-```
-{
-  operatorAddress: string;
-  moniker: {
-    display: string;
-    rawValue: string;
-    imageUrl: string;
-  }
-  status: {
-    rawValue: string;
-    className: string;
-    display: string;
-  }
-  commission?: {
-    rawValue: number;
-    display: string;
-  };
-  votingPower: {
-    rawValue: number;
-    display: string;
-    percentDisplay: string;
-    visual?: React.ReactNode;
-  }
-}[]
-```
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>inactive</td>
-    <td>true</td>
-    <td>
-
-```
-{
-  operatorAddress: string;
-  moniker: {
-    display: string;
-    rawValue: string;
-    imageUrl: string;
-  }
-  status: {
-    rawValue: string;
-    className: string;
-    display: string;
-  }
-  votingPower: {
-    rawValue: number;
-    display: string;
-    percentDisplay: string;
-    visual?: React.ReactNode;
-  }
-}[]
-```
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>onClick</td>
-    <td>-</td>
-    <td>
-
-`(data: Data) => void`
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-<tr>
-    <td>tabs</td>
-    <td>true</td>
-    <td>
-
-```
-{
-  handleChange: (_event: any, newValue: number) => void;
-  value: 0 | 1;
-}
-```
-
-  </td>
-    <td>handles mui tabs</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>className</td>
-    <td>-</td>
-    <td>
-
-`string`
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  </tbody>
-</table>
-<br/>

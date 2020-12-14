@@ -7,6 +7,9 @@ export const useGetStyles = () => {
       alignItems: 'center',
       padding: '1rem 0',
       boxSizing: 'border-box',
+      '&:hover': {
+        cursor: 'pointer',
+      },
       '& .content': {
         flex: 1,
         marginLeft: '0.5rem',
