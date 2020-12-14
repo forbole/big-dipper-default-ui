@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { FileCopyOutlined } from '@material-ui/icons';
 import ValidatorInfo from '.';
-import { InfoPopover } from './components';
+import { InfoPopover } from '../..';
 
 const spies = {
   onCopyCallback() {
