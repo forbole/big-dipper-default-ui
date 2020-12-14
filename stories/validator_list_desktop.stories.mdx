@@ -30,7 +30,10 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
     votingPower: 'Voting Power',
     self: 'Self',
     status: 'Status',
-    condition: 'Condition',
+    condition: {
+      display: 'Condition',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu tristique lorem, id commodo lectus. In faucibus sem eu tellus gravida, id blandit ex tincidunt. Nam tincidunt dolor eros, eget porttitor metus co',
+    },
   }}
   data={[
     {
@@ -81,12 +84,17 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
     <td>
 
 ```
-moniker: string;
-votingPower: string;
-self: string;
-commission: string;
-status: string;
-condition: string;
+{
+  moniker: string;
+  votingPower: string;
+  self: string;
+  commission: string;
+  status: string;
+  condition: {
+    display: string;
+    description: string;
+  }
+}
 ```
 
   </td>
