@@ -17,6 +17,7 @@ import ValidatorListDesktop from './components/validator_list_desktop';
 import ProposalList from './components/proposal_list';
 import ValidatorInfo from './components/validator_info';
 import ActivityDetails from './components/activity_details';
+import InfoPopover from './components/info_popover';
 
 export {
   DataBlock,
@@ -38,4 +39,5 @@ export {
   ProposalList,
   ValidatorInfo,
   ActivityDetails,
+  InfoPopover,
 };

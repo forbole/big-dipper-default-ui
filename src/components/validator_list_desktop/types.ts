@@ -14,7 +14,11 @@ export interface Labels {
   self: string;
   commission: string;
   status: string;
-  condition: string;
+  condition: {
+    display: string;
+    description: string;
+    descriptionClassname?: string;
+  };
 }
 
 export interface Data {
@@ -45,7 +49,5 @@ export interface Data {
   condition: {
     className: string;
     rawValue: string;
-    description: string;
-    descriptionClassname?: string;
   }
 }

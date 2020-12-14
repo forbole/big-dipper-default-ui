@@ -1,6 +1,6 @@
 import React from 'react';
 import { Labels } from './types';
-import { InfoPopover } from '../../../src/components/validator_info/components';
+import { InfoPopover } from '../..'
 
 export const getActiveColumns = (labels: Labels) => {
   return ([
@@ -34,9 +34,9 @@ export const getActiveColumns = (labels: Labels) => {
     {
       id: 'condition',
       label: (
-        <div>
-          {labels.condition}
-          <InfoPopover detail="hello world" />
+        <div className="condition__label">
+          {labels.condition.display}
+          <InfoPopover detail={labels.condition.description} />
         </div>
       ),
       align: 'center',

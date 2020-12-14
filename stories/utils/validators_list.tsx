@@ -9,7 +9,10 @@ export const labelsList = {
   votingPower: 'Voting Power',
   self: 'Self',
   status: 'Status',
-  condition: 'Condition',
+  condition: {
+    display: 'Condition',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu tristique lorem, id commodo lectus. In faucibus sem eu tellus gravida, id blandit ex tincidunt. Nam tincidunt dolor eros, eget porttitor metus co',
+  },
 };
 
 export const getInactiveDummy = (device: string) => {

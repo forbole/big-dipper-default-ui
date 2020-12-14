@@ -26,6 +26,13 @@ export const useGetStyles = () => {
           border: 'none',
         },
       },
+      '& .condition__label': {
+        display: 'flex',
+        alignItems: 'center',
+        '& .question-icon': {
+          marginLeft: '0.3rem',
+        },
+      },
       '& .table__row': {
         '&:nth-of-type(odd)': {
           background: '#F8F8F8',
