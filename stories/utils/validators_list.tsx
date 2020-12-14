@@ -9,6 +9,7 @@ export const labelsList = {
   votingPower: 'Voting Power',
   self: 'Self',
   status: 'Status',
+  condition: 'Condition',
 };
 
 export const getInactiveDummy = (device: string) => {
@@ -36,7 +37,6 @@ export const getInactiveDummy = (device: string) => {
           rawValue: 1000,
           display: '110',
           percentDisplay: '106%',
-          visual: <DataBlockCustom />,
         },
         status: {
           rawValue: 'active',
@@ -59,7 +59,6 @@ export const getInactiveDummy = (device: string) => {
           rawValue: 1000,
           display: '110,000',
           percentDisplay: '10%',
-          visual: <DataBlockCustom />,
         },
         status: {
           rawValue: 'active',
@@ -100,13 +99,16 @@ export const getActiveDummy = (device: string) => {
           rawValue: 10,
           display: '10',
           percentDisplay: '45%',
-          visual: <DataBlockCustom />,
         },
         status: {
           rawValue: 'active',
           className: 'active',
           display: 'active',
         },
+        condition: {
+          className: 'healthy',
+          rawValue: 'healthy',
+        }
       },
       {
         moniker: {
@@ -127,13 +129,16 @@ export const getActiveDummy = (device: string) => {
           rawValue: 55,
           display: '55',
           percentDisplay: '5%',
-          visual: <DataBlockCustom />,
         },
         status: {
           rawValue: 'active',
           className: 'active',
           display: 'active',
         },
+        condition: {
+          className: 'healthy',
+          rawValue: 'healthy',
+        }
       },
       {
         moniker: {
@@ -154,13 +159,16 @@ export const getActiveDummy = (device: string) => {
           rawValue: 1000,
           display: '110,000',
           percentDisplay: '10%',
-          visual: <DataBlockCustom />,
         },
         status: {
           rawValue: 'active',
           className: 'active',
           display: 'active',
         },
+        condition: {
+          className: 'healthy',
+          rawValue: 'healthy',
+        }
       },
     ]
   );

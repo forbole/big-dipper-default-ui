@@ -16,13 +16,7 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
     <ValidatorListDesktop
       onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
       labels={labelsList}
-      active={getActiveDummy('desktop')}
-      inactive={getInactiveDummy('desktop')}
-      tabs={useTabsHook()}
-      search={{
-        ...useSearchHook(),
-        placeholder: 'A good placeholder',
-      }}
+      data={getActiveDummy('desktop')}
     />
   </Story>
 </Canvas>
@@ -32,15 +26,14 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
   onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
   labels={{
     commission: 'Commission',
-    active: 'Active Validators',
-    inactive: 'Inactive Validators',
     rank: 'Rank',
     moniker: 'Moniker',
     votingPower: 'Voting Power',
     self: 'Self',
     status: 'Status',
+    condition: 'Condition',
   }}
-  active={[
+  data={[
     {
       moniker: {
         rawValue: 'Forbole',
@@ -92,15 +85,6 @@ import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHoo
     },
     ...
   ]}
-  tabs={{
-    value: 1,
-    handleChange: () => {}
-  }}
-  search={{
-    value: '',
-    handleChange: (e) => console.log(e.target.value),
-    placeholder: 'A good placeholder',
-  }}
 />
 ```
 

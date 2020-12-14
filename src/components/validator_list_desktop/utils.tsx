@@ -29,8 +29,8 @@ export const getActiveColumns = (labels: Labels) => {
       align: 'right',
     },
     {
-      id: 'visual',
-      label: '',
+      id: 'condition',
+      label: labels.condition,
       align: 'right',
     },
   ]);
