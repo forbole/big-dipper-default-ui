@@ -49,10 +49,11 @@ export const useGetStyles = () => {
           justifyContent: 'center',
         },
         '& .condition': {
-          width: '5px',
-          height: '5px',
-          background: 'green',
+          width: '10px',
+          height: '10px',
+          background: '#b3b3b3',
           margin: '0 auto',
+          borderRadius: '50%',
         },
         '& .status': {
           position: 'relative',

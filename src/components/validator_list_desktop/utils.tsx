@@ -33,6 +33,7 @@ export const getActiveColumns = (labels: Labels) => {
       id: 'condition',
       label: labels.condition,
       align: 'center',
+      sort: true,
     },
   ]);
 };
