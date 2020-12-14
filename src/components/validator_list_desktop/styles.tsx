@@ -48,6 +48,12 @@ export const useGetStyles = () => {
           alignItems: 'center',
           justifyContent: 'center',
         },
+        '& .condition': {
+          width: '5px',
+          height: '5px',
+          background: 'green',
+          margin: '0 auto',
+        },
         '& .status': {
           position: 'relative',
           paddingLeft: '0.7rem',

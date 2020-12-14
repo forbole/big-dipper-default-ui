@@ -18,7 +18,7 @@ const Row = (props: RowProps) => {
 
   return (
     <TableRow onClick={() => onClick(data)} className={classnames('table__row')}>
-      {columns.map((column:any) => {
+      {columns.map((column: any) => {
         const value = formatData[column.id];
 
         return (
@@ -31,6 +31,8 @@ const Row = (props: RowProps) => {
                 [data.status.className]: column.id === 'status',
                 status: column.id === 'status',
                 rank: column.id === 'rank',
+                condition: column.id === 'condition',
+                [data.condition.className]: column.id === 'condition'
               })}
             >
               {value}

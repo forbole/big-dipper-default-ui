@@ -4,7 +4,8 @@ export const getActiveColumns = (labels: Labels) => {
   return ([
     {
       id: 'rank',
-      label: labels.rank,
+      label: '',
+      align: 'center',
     },
     {
       id: 'moniker',
@@ -31,7 +32,7 @@ export const getActiveColumns = (labels: Labels) => {
     {
       id: 'condition',
       label: labels.condition,
-      align: 'right',
+      align: 'center',
     },
   ]);
 };
