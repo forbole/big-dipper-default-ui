@@ -47,6 +47,7 @@ export const useGetStyles = () => {
       },
       '& .days': {
         color: '#FD7522',
+        marginLeft: '0.5rem',
       },
       '& .proposal': {
         padding: '1.5rem 0 0 0',

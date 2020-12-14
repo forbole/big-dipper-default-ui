@@ -56,7 +56,6 @@ const ProposalList = (props: ProposalListProps) => {
                         <AccessTime className={classnames('clockImage')} />
                         {row.time}
                         <span className={classnames('days')}>
-                          &nbsp;
                           {row.duration}
                         </span>
                       </div>
