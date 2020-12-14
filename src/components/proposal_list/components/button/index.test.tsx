@@ -12,5 +12,6 @@ describe('Button', () => {
     );
     expect(wrap).not.toBeNull();
     expect(wrap.find('button').first().text()).toEqual('Vote');
+    expect(wrap.find(Button)).toHaveLength(1);
   });
 });
