@@ -32,7 +32,7 @@ const Row = (props: RowProps) => {
                 status: column.id === 'status',
                 rank: column.id === 'rank',
                 condition: column.id === 'condition',
-                [data.condition.className]: column.id === 'condition'
+                [data.condition.className]: column.id === 'condition',
               })}
             >
               {value}

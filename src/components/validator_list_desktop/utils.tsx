@@ -1,6 +1,6 @@
 import React from 'react';
 import { Labels } from './types';
-import { InfoPopover } from '../..'
+import { InfoPopover } from '../..';
 
 export const getActiveColumns = (labels: Labels) => {
   return ([

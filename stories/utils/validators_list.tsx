@@ -111,8 +111,8 @@ export const getActiveDummy = (device: string) => {
         condition: {
           className: 'healthy',
           rawValue: 'healthy',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
-        }
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,',
+        },
       },
       {
         moniker: {
@@ -142,8 +142,8 @@ export const getActiveDummy = (device: string) => {
         condition: {
           className: 'healthy',
           rawValue: 'healthy',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
-        }
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,',
+        },
       },
       {
         moniker: {
@@ -173,8 +173,8 @@ export const getActiveDummy = (device: string) => {
         condition: {
           className: 'healthy',
           rawValue: 'healthy',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,'
-        }
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna libero, mattis nec ultrices sit amet, pharetra vitae lorem. Quisque pretium pulvinar eros,',
+        },
       },
     ]
   );

@@ -36,7 +36,7 @@ describe('Row', () => {
               condition: {
                 rawValue: 'healthy',
                 className: 'healthy',
-              }
+              },
             }}
             columns={[
               {
