@@ -15,6 +15,8 @@ import CustomToolTip from './components/custom_tool_tip';
 import ValidatorListMobile from './components/validator_list_mobile';
 import TabPanel from './components/tab_panel';
 import ValidatorListDesktop from './components/validator_list_desktop';
+import ValidatorInfo from './components/validator_info';
+import ActivityDetails from './components/activity_details';
 
 export {
   DataBlock,
@@ -34,4 +36,6 @@ export {
   TabPanel,
   ValidatorListMobile,
   ValidatorListDesktop,
+  ValidatorInfo,
+  ActivityDetails,
 };
