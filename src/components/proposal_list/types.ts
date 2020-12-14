@@ -3,10 +3,7 @@ import React from 'react';
 export type Data = {
   id: string;
   proposer: React.ReactNode;
-  title: {
-    display: string;
-    id: string
-  }
+  title: React.ReactNode;
   content: string;
   status: {
     current: boolean;

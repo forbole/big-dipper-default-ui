@@ -5,7 +5,6 @@ import {
   TableBody,
   TableCell,
   TableRow,
-  Link,
 } from '@material-ui/core';
 import { AccessTime } from '@material-ui/icons';
 import { ProposalListProps } from './types';
@@ -45,9 +44,9 @@ const ProposalList = (props: ProposalListProps) => {
                       </div>
                       {row.proposer}
                     </div>
-                    <Link className={classnames('title')} href={`/validators/${row.title.id}`}>
-                      {row.title.display}
-                    </Link>
+                    <div className={classnames('title')}>
+                      {row.title}
+                    </div>
                     <div className={classnames('mainContent', 'content')}>
                       {row.content}
                     </div>

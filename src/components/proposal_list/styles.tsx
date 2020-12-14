@@ -33,10 +33,6 @@ export const useGetStyles = () => {
         display: 'block',
         margin: '0',
       },
-      '& .title': {
-        fontWeight: 400,
-        color: '#000000',
-      },
       '& .content': {
         marginTop: '0.875rem',
       },
