@@ -14,6 +14,7 @@ import ResponsiveRecharts from './components/responsive_recharts';
 import CustomToolTip from './components/custom_tool_tip';
 import ValidatorListMobile from './components/validator_list_mobile';
 import ValidatorListDesktop from './components/validator_list_desktop';
+import ProposalList from './components/proposal_list';
 import ValidatorInfo from './components/validator_info';
 import ActivityDetails from './components/activity_details';
 
@@ -34,6 +35,7 @@ export {
   CustomToolTip,
   ValidatorListMobile,
   ValidatorListDesktop,
+  ProposalList,
   ValidatorInfo,
   ActivityDetails,
 };
