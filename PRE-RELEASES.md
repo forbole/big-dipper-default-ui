@@ -7,3 +7,4 @@
 - Add Latest Blocks component
 - Add Avatar component
 - Add Consensus component
+- Add Proposal component
