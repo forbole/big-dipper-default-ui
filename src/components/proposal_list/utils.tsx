@@ -3,7 +3,7 @@ import {
   Data, OnClick,
 } from './types';
 
-export const ProposalUtils = (onClick: OnClick | undefined) => {
+export const useProposalUtils = (onClick: OnClick | undefined) => {
   /**
    * Helper util to handle rows callback
    * @param singleData

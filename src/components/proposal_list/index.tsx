@@ -5,14 +5,15 @@ import {
   TableBody,
   TableCell,
   TableRow,
+  Link,
 } from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import { AccessTime } from '@material-ui/icons';
 import { ProposalListProps } from './types';
 import { useGetStyles } from './styles';
 import {
-  Title, Button, Status,
+  Button, Status,
 } from './components';
-import { ProposalUtils } from './utils';
+import { useProposalUtils } from './utils';
 
 const ProposalList = (props: ProposalListProps) => {
   const {
@@ -20,7 +21,7 @@ const ProposalList = (props: ProposalListProps) => {
   } = props;
 
   const { classes } = useGetStyles();
-  const { handleClick } = ProposalUtils(onClick);
+  const { handleClick } = useProposalUtils(onClick);
   const responsiveClass = desktop ? classes.desktop : classes.mobile;
   return (
     <div className={classnames(classes.root, responsiveClass, className, 'big-dipper', 'proposalList')}>
@@ -44,18 +45,15 @@ const ProposalList = (props: ProposalListProps) => {
                       </div>
                       {row.proposer}
                     </div>
-                    <div className={classnames('mainContent', 'title')}>
-                      <Title display={row.title.display} id={row.title.id} />
-                    </div>
+                    <Link className={classnames('title')} href={`/validators/${row.title.id}`}>
+                      {row.title.display}
+                    </Link>
                     <div className={classnames('mainContent', 'content')}>
                       {row.content}
                     </div>
                     <div className={classnames('mainContent', 'time')}>
                       <div className={classnames('voting')}>
-                        <span className={classnames('clock')}>
-                          <AccessTimeIcon className={classnames('clockImage')} />
-                          &nbsp;
-                        </span>
+                        <AccessTime className={classnames('clockImage')} />
                         {row.time}
                         <span className={classnames('days')}>
                           &nbsp;
@@ -68,7 +66,7 @@ const ProposalList = (props: ProposalListProps) => {
                   <div className={classnames('component')}>
                     {row.status.current
                       ? <Button display={row.status.display} />
-                      : <Status display={row.status.display} /> }
+                      : <Status display={row.status.display} />}
                   </div>
                 </TableCell>
               </TableRow>

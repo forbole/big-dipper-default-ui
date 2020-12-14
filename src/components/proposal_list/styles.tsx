@@ -24,7 +24,7 @@ export const useGetStyles = () => {
       },
       '& .proposer': {
         display: 'flex',
-        marginRight: '0.5rem',
+        margin: '0 0.5rem 0.5rem 0',
       },
       '& .proposerText': {
         display: 'none',
@@ -35,6 +35,7 @@ export const useGetStyles = () => {
       },
       '& .title': {
         fontWeight: 400,
+        color: '#000000',
       },
       '& .content': {
         marginTop: '0.875rem',
@@ -125,7 +126,7 @@ export const useGetStyles = () => {
         flex: 1,
         justifyContent: 'flex-end',
       },
-      '& .clock': {
+      '& .clockImage': {
         display: 'none',
       },
     },
@@ -153,9 +154,7 @@ export const useGetStyles = () => {
         verticalAlign: 'text-bottom',
         height: '1rem',
         width: '1rem',
-      },
-      '& .voting': {
-        verticalAlign: 'text-bottom',
+        marginRight: '0.2rem',
       },
     },
   });
