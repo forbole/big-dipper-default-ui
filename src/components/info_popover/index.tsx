@@ -28,6 +28,7 @@ const InfoPopover = (props: InfoPopoverProps) => {
       aria-haspopup="true"
       onMouseEnter={handlePopoverOpen}
       onMouseLeave={handlePopoverClose}
+      className={classes.root}
     >
       <HelpOutline fontSize="small" className="question-icon icon" />
       <Popover

@@ -6,7 +6,7 @@ import { useGetStyles } from './styles';
 import { useValidatorInfoHook } from './hooks';
 import { ValidatorInfoProps } from './types';
 import { valueConvertor } from '../../utils';
-import { InfoPopover } from './components';
+import { InfoPopover } from '../..';
 
 const ValidatorInfo = (props: ValidatorInfoProps) => {
   const {

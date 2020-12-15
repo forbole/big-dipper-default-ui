@@ -1,0 +1,242 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { ValidatorListDesktop } from '../src';
+import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook, useSearchHook } from './utils/validators_list';
+
+<Meta title="ValidatorListDesktop" component={ValidatorListDesktop}/>
+
+# Tabs
+
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <ValidatorListDesktop
+      onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+      labels={labelsList}
+      data={getActiveDummy('desktop')}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorListDesktop
+  onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+  labels={{
+    commission: 'Commission',
+    moniker: 'Moniker',
+    votingPower: 'Voting Power',
+    self: 'Self',
+    status: 'Status',
+    condition: {
+      display: 'Condition',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu tristique lorem, id commodo lectus. In faucibus sem eu tellus gravida, id blandit ex tincidunt. Nam tincidunt dolor eros, eget porttitor metus co',
+    },
+  }}
+  data={[
+    {
+      moniker: {
+        rawValue: 'Forbole',
+        display: <div>Forbole</div>,
+      },
+      operatorAddress: '3s12',
+      commission: {
+        rawValue: 90,
+        display: '90%',
+      },
+      self: {
+        rawValue: 11,
+        display: '11%',
+      },
+      votingPower: {
+        rawValue: 10,
+        display: '10',
+        percentDisplay: '45%',
+      },
+      status: {
+        rawValue: 'active',
+        className: 'active',
+        display: 'active',
+      },
+    },
+    ...
+  ]}
+/>
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>labels</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  moniker: string;
+  votingPower: string;
+  self: string;
+  commission: string;
+  status: string;
+  condition: {
+    display: string;
+    description: string;
+  }
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>inactive</td>
+    <td>-</td>
+    <td>
+
+`boolean`
+
+  </td>
+    <td>handles column labels between active and inactive</td>
+    <td>false</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  operatorAddress: string;
+  status: {
+    rawValue: string;
+    className: string;
+    display: string;
+  }
+  commission?: {
+    rawValue: number;
+    display: string;
+  };
+  votingPower: {
+    rawValue: number;
+    display: string;
+    percentDisplay: string;
+    visual?: React.ReactNode;
+  };
+  moniker: {
+    rawValue: string;
+    display: React.ReactNode;
+  }
+  self: {
+    rawValue: number;
+    display: string;
+  }
+  condition: {
+    className: string;
+    rawValue: string;
+  }
+}[]
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data: Data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+
+## Default Inactive
+<Canvas>
+  <Story name="Default Inactive">
+    <ValidatorListDesktop
+      inactive
+      onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+      labels={labelsList}
+      data={getActiveDummy('desktop')}
+    />
+  </Story>
+</Canvas>
+
+
+```
+<ValidatorListDesktop
+  inactive
+  onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+  labels={{
+    commission: 'Commission',
+    moniker: 'Moniker',
+    votingPower: 'Voting Power',
+    self: 'Self',
+    status: 'Status',
+    condition: 'Condition',
+  }}
+  data={[
+    {
+      moniker: {
+        rawValue: 'Forbole',
+        display: <div>Forbole</div>,
+      },
+      operatorAddress: '31afsdff2',
+      self: {
+        rawValue: 10,
+        display: '10%',
+      },
+      votingPower: {
+        rawValue: 1000,
+        display: '110',
+        percentDisplay: '106%',
+      },
+      status: {
+        rawValue: 'active',
+        className: 'active',
+        display: 'active',
+      },
+      condition: {
+        rawValue: 'healthy',
+        className: 'healthy',
+      },
+    },
+    ...
+  ]}
+/>
+```
