@@ -34,6 +34,7 @@ const ProposalList = (props: ProposalListProps) => {
                 onClick={() => handleClick(row)}
               >
                 <TableCell className={classnames('cell', 'id')}>
+                  #
                   {row.id}
                 </TableCell>
                 <TableCell className={classnames('cell', 'proposal')}>

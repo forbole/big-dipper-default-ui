@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type Data = {
-  id: string;
+  id: number | string;
   proposer: React.ReactNode;
   title: React.ReactNode;
   content: string;

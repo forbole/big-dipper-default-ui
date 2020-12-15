@@ -28,7 +28,7 @@ const Title = () => {
 
 export const dummyData: Data[] = [
   {
-    id: '#01',
+    id: '01',
     proposer: <Proposer />,
     title: <Title />,
     content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
@@ -40,7 +40,7 @@ export const dummyData: Data[] = [
     duration: '(In 12 days)',
   },
   {
-    id: '#02',
+    id: '02',
     proposer: <Proposer />,
     title: <Title />,
     content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
@@ -51,7 +51,7 @@ export const dummyData: Data[] = [
     },
   },
   {
-    id: '#03',
+    id: '03',
     proposer: <Proposer />,
     title: <Title />,
     content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
@@ -63,7 +63,7 @@ export const dummyData: Data[] = [
     duration: '(In 12 days)',
   },
   {
-    id: '#04',
+    id: '04',
     proposer: <Proposer />,
     title: <Title />,
     content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
@@ -74,7 +74,7 @@ export const dummyData: Data[] = [
     },
   },
   {
-    id: '#05',
+    id: '05',
     proposer: <Proposer />,
     title: <Title />,
     content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
@@ -85,7 +85,7 @@ export const dummyData: Data[] = [
     },
   },
   {
-    id: '#06',
+    id: '06',
     proposer: <Proposer />,
     title: <Title />,
     content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
