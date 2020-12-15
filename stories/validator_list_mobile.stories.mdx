@@ -1,0 +1,193 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { ValidatorListMobile } from '../src';
+import { getActiveDummy, labelsList, getInactiveDummy, useTabsHook } from './utils/validators_list';
+
+<Meta title="ValidatorListMobile" component={ValidatorListMobile}/>
+
+# ValidatorListMobile
+
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <ValidatorListMobile
+      onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+      labels={labelsList}
+      data={getActiveDummy('mobile')}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorListMobile
+  onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+  labels={{
+    commission: 'commission',
+  }}
+  data={[
+    {
+      moniker: {
+        rawValue: 'Forbole',
+        imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+        display: 'Forbole',
+      },
+      operatorAddress: '3s12',
+      commission: {
+        rawValue: 90,
+        display: '90%',
+      },
+      self: {
+        rawValue: 11,
+        display: '11%',
+      },
+      votingPower: {
+        rawValue: 10,
+        display: '10',
+        percentDisplay: '45%',
+      },
+      status: {
+        rawValue: 'active',
+        className: 'active',
+        display: 'active',
+      },
+    },
+    ...
+  ]}
+/>
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>labels</td>
+    <td>true</td>
+    <td>
+
+```
+commission: string;
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  operatorAddress: string;
+  status: {
+    rawValue: string;
+    className: string;
+    display: string;
+  }
+  commission?: {
+    rawValue: number;
+    display: string;
+  };
+  votingPower: {
+    rawValue: number;
+    display: string;
+    percentDisplay: string;
+    visual?: React.ReactNode;
+  };
+  moniker: {
+    display: string;
+    imageUrl: string;
+  }
+}[]
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data: Data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+## Inactive Default
+<Canvas>
+  <Story name="Inactive Default">
+    <ValidatorListMobile
+      onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+      labels={labelsList}
+      data={getInactiveDummy('mobile')}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorListMobile
+  onClick={(data) => console.log(`clicked validator with address: ${data.operatorAddress}`)}
+  labels={{
+    commission: 'commission',
+  }}
+  data={[
+    {
+      moniker: {
+        rawValue: 'Forbole',
+        imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+        display: <div>forbole</div>,
+      },
+      operatorAddress: '31afsdff2',
+      self: {
+        rawValue: 10,
+        display: '10%',
+      },
+      votingPower: {
+        rawValue: 1000,
+        display: '110',
+        percentDisplay: '106%',
+      },
+      status: {
+        rawValue: 'active',
+        className: 'active',
+        display: 'active',
+      },
+    },
+    ...
+  ]}
+/>
+```
