@@ -16,30 +16,32 @@ import {
 ## Default
 <Canvas>
   <Story name="Default">
-    <ProposalList data={dummyData} desktop={false} />
+    <ProposalList
+      data={dummyData}
+      desktop={false}
+      onClick={(data) => console.log(`Row with id ${data.id} clicked`)}
+    />
   </Story>
 </Canvas>
 
 ```
 <ProposalList data={[
   {
-    id: string;
+    id: string | number;
     proposer: React.ReactNode;
-    title: {
-      display: string;
-      id: string
-    }
+    title: React.ReactNode;
     content: string;
     status: {
       current: boolean;
       display: string;
     }
     time: string;
-    duration?: string;
+    duration: string;
   },
   ...
   ]}
   desktop={false}
+  onClick={(data) => console.log(`Row with id ${data.id} clicked`)}
 />
 ```
 
@@ -123,29 +125,31 @@ import {
 ## Desktop
 <Canvas>
   <Story name="Desktop">
-    <ProposalList data={dummyData} desktop={true} />
+    <ProposalList
+      data={dummyData}
+      desktop={true}
+      onClick={(data) => console.log(`Row with id ${data.id} clicked`)}
+    />
   </Story>
 </Canvas>
 
 ```
 <ProposalList data={[
   {
-    id: string;
+    id: string | number;
     proposer: React.ReactNode;
-    title: {
-      display: string;
-      id: string
-    }
+    title: React.ReactNode;
     content: string;
     status: {
       current: boolean;
       display: string;
     }
     time: string;
-    duration?: string;
+    duration: string;
   },
   ...
   ]}
   desktop={true}
+  onClick={(data) => console.log(`Row with id ${data.id} clicked`)}
 />
 ```
