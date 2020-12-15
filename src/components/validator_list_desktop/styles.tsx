@@ -77,6 +77,10 @@ export const useGetStyles = () => {
             borderRadius: '15px',
           },
         },
+        '& .percentage-data': {
+          marginLeft: '0.5rem',
+          fontWeight: 300,
+        },
       },
     },
   });
