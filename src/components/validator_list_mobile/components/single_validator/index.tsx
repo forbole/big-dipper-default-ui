@@ -14,12 +14,12 @@ const SingleValidator = (props: SingleValidatorProps) => {
 
   return (
     <div
-      className={classnames(classes.root, 'validator-list-mobile')}
+      className={classnames(classes.root, 'single-validator-mobile')}
       onClick={handleOnClick}
       role="button"
     >
       <Avatar imageUrl={data.moniker.imageUrl} alt={data.moniker.display} width={40} height={40} />
-      <div className={classnames('validator-list-mobile__content', 'content')}>
+      <div className={classnames('single-validator-mobile__content', 'content')}>
         <div className={classnames('content__top-container', 'flex-content', 'top-container')}>
           <p>{data.moniker.display}</p>
           <p className={classnames('top-container__voting-power')}>{data.votingPower.display}</p>
