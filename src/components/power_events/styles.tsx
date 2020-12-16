@@ -18,12 +18,15 @@ export const useGetStyles = (desktop: any) => {
       '& p': {
         margin: 0,
       },
+      '& .arrow': {
+        margin: '0 0.3rem',
+      },
       '& .event__body-container': {
         padding: '1rem',
       },
       '& .body-container__change': {
         display: 'flex',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: '1rem',
       },
@@ -31,7 +34,6 @@ export const useGetStyles = (desktop: any) => {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
-        justifyContent: 'space-between',
       },
       '& .difference__value': {
         fontSize: '1.125rem',
@@ -53,16 +55,22 @@ export const useGetStyles = (desktop: any) => {
         fontWeight: 600,
         marginLeft: '0.5rem',
       },
+      '& .info__redelegate': {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        marginTop: '0.875rem',
+      },
       [getMinMediaQuery(desktop)]: {
         '& .event__body-container': {
           display: 'flex',
           flexDirection: 'row-reverse',
           justifyContent: 'space-between',
-          alignItems: 'center',
         },
         '& .body-container__change': {
           flexDirection: 'column',
           marginBottom: 0,
+          justifyContent: 'flex-start',
         },
         '& .event__header, & .body-container__info': {
           fontSize: '1rem',

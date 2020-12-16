@@ -21,4 +21,8 @@ export type Data = {
     className?: string;
     display: string;
   }
+  redelegate?: {
+    to: React.ReactNode;
+    from: React.ReactNode;
+  }
 }

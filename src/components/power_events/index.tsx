@@ -25,6 +25,7 @@ const PowerEvents = (props:PowerEventsProps) => {
           user,
           value,
           type,
+          redelegate,
         } = x;
         return (
           <div key={date} className={classnames('event')}>
@@ -38,7 +39,7 @@ const PowerEvents = (props:PowerEventsProps) => {
               <div className={classnames('body-container__change')}>
                 <div className={classnames('change__difference')}>
                   <p className={classnames('difference__previous-value', 'difference__value')}>{previousValue}</p>
-                  <ArrowForward className={classnames('difference__arrow')} />
+                  <ArrowForward className={classnames('arrow', 'difference__arrow')} />
                   <p className={classnames('difference__current-value', 'difference__value')}>{currentValue}</p>
                 </div>
                 <p className={classnames('change__value', valueDifference.className)}>
@@ -53,6 +54,13 @@ const PowerEvents = (props:PowerEventsProps) => {
                   <p className={classnames('footer__type', type.className)}>{type.display}</p>
                   <p className={classnames('footer__value')}>{value}</p>
                 </div>
+                {!!redelegate && (
+                  <div className={classnames('info__redelegate')}>
+                    <span className={classnames('redelegate__from')}>{redelegate.from}</span>
+                    <ArrowForward className={classnames('arrow', 'redelegate__arrow')} />
+                    <span className={classnames('redelegate__from')}>{redelegate.to}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
