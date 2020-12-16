@@ -15,7 +15,7 @@ const PowerEvents = (props:PowerEventsProps) => {
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'power-events')}>
-      {data.map((x) => {
+      {data.map((x, i) => {
         const {
           blockHeight,
           date,
@@ -28,7 +28,7 @@ const PowerEvents = (props:PowerEventsProps) => {
           redelegate,
         } = x;
         return (
-          <div key={date} className={classnames('event')}>
+          <div key={`${date}-${i}`} className={classnames('event')}>
             <div className={classnames('event__header')}>
               <span className={classnames('header__block-height')}>
                 {blockHeight}

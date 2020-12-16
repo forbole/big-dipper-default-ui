@@ -50,6 +50,7 @@ export const useGetStyles = (desktop: any) => {
         background: '#c9c9c9',
         borderRadius: '4px',
         padding: '0.3rem 0.875rem',
+        color: 'white',
       },
       '& .footer__value': {
         fontWeight: 600,
@@ -66,11 +67,13 @@ export const useGetStyles = (desktop: any) => {
           display: 'flex',
           flexDirection: 'row-reverse',
           justifyContent: 'space-between',
+          padding: '1.5rem',
         },
         '& .body-container__change': {
           flexDirection: 'column',
           marginBottom: 0,
           justifyContent: 'flex-start',
+          alignItems: 'flex-end',
         },
         '& .event__header, & .body-container__info': {
           fontSize: '1rem',
