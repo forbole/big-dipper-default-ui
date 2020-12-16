@@ -18,6 +18,7 @@ import ProposalList from './components/proposal_list';
 import ValidatorInfo from './components/validator_info';
 import ActivityDetails from './components/activity_details';
 import InfoPopover from './components/info_popover';
+import PowerEvents from './components/power_events';
 
 export {
   DataBlock,
@@ -40,4 +41,5 @@ export {
   ValidatorInfo,
   ActivityDetails,
   InfoPopover,
+  PowerEvents,
 };
