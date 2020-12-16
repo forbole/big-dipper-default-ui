@@ -3,6 +3,7 @@ import React from 'react';
 export interface PowerEventsProps {
   className?: string;
   data: Data[];
+  desktop?: number;
 }
 
 export type Data = {

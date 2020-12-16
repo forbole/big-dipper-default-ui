@@ -1,8 +1,12 @@
 import { makeStyles } from '@material-ui/styles';
+import { getMinMediaQuery } from '../../utils';
 
-export const useGetStyles = () => {
+export const useGetStyles = (desktop: any) => {
   const useStyles = makeStyles({
     root: {
+      '& .event__header, & .change__value, & .body-container__info': {
+        fontSize: '0.875rem',
+      },
       '& .event__header': {
         background: '#F6F7F9',
         padding: '1rem',
@@ -10,7 +14,6 @@ export const useGetStyles = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        fontSize: '0.875rem',
       },
       '& p': {
         margin: 0,
@@ -27,16 +30,14 @@ export const useGetStyles = () => {
       '& .change__difference': {
         display: 'flex',
         flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'space-between',
       },
       '& .difference__value': {
         fontSize: '1.125rem',
       },
       '& .change__value': {
         marginLeft: '0.5rem',
-        fontSize: '0.875rem',
-      },
-      '& .body-container__info': {
-        fontSize: '0.875rem',
       },
       '& .info__footer': {
         display: 'flex',
@@ -51,6 +52,27 @@ export const useGetStyles = () => {
       '& .footer__value': {
         fontWeight: 600,
         marginLeft: '0.5rem',
+      },
+      [getMinMediaQuery(desktop)]: {
+        '& .event__body-container': {
+          display: 'flex',
+          flexDirection: 'row-reverse',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        },
+        '& .body-container__change': {
+          flexDirection: 'column',
+          marginBottom: 0,
+        },
+        '& .event__header, & .body-container__info': {
+          fontSize: '1rem',
+        },
+        '& .difference__value, & .change__value': {
+          fontSize: '1.75rem',
+        },
+        '& .footer__value': {
+          fontSize: '1.125rem',
+        },
       },
     },
   });

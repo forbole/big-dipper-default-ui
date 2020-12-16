@@ -5,11 +5,13 @@ import { useGetStyles } from './styles';
 import { PowerEventsProps } from './types';
 
 const PowerEvents = (props:PowerEventsProps) => {
-  const { classes } = useGetStyles();
   const {
     className,
+    desktop,
     data,
   } = props;
+
+  const { classes } = useGetStyles(desktop);
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'power-events')}>
@@ -25,7 +27,7 @@ const PowerEvents = (props:PowerEventsProps) => {
           type,
         } = x;
         return (
-          <div className={classnames('event')}>
+          <div key={date} className={classnames('event')}>
             <div className={classnames('event__header')}>
               <span className={classnames('header__block-height')}>
                 {blockHeight}
