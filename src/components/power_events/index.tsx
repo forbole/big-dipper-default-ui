@@ -58,7 +58,7 @@ const PowerEvents = (props:PowerEventsProps) => {
                   <div className={classnames('info__redelegate')}>
                     <span className={classnames('redelegate__from')}>{redelegate.from}</span>
                     <ArrowForward className={classnames('arrow', 'redelegate__arrow')} />
-                    <span className={classnames('redelegate__from')}>{redelegate.to}</span>
+                    <span className={classnames('redelegate__to')}>{redelegate.to}</span>
                   </div>
                 )}
               </div>
