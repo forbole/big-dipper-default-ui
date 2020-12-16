@@ -1,0 +1,23 @@
+import React from 'react';
+
+export interface PowerEventsProps {
+  className?: string;
+  data: Data[];
+}
+
+export type Data = {
+  blockHeight: React.ReactNode;
+  date: string;
+  previousValue: string;
+  currentValue: string;
+  user: React.ReactNode;
+  valueDifference: {
+    className?: string;
+    display: string;
+  }
+  value: string;
+  type: {
+    className?: string;
+    display: string;
+  }
+}
