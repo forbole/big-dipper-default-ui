@@ -1,0 +1,141 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { PowerEvents } from '../src';
+
+<Meta title="PowerEvents" component={PowerEvents} />
+
+# PowerEvents
+---
+## Default
+<Canvas>
+  <Story name="Default">
+    <PowerEvents
+      desktop={768}
+      data={[
+        {
+          blockHeight: <div>1,233</div>,
+          date: '10 Dec 2019 18:12 UTC',
+          previousValue: '12,468,123',
+          currentValue: '12,468,123',
+          user: <div>cosmos13pa4duhhy60vu63x…y4pq</div>,
+          valueDifference: {
+            className: 'negative',
+            display: '-1,123',
+          },
+          value: '1,2345.03 DARIC',
+          type: {
+            className: 'delegation',
+            display: 'Delegation',
+          },
+          redelegate: {
+            from: <div>Wallet A</div>,
+            to: <div>Wallet B</div>
+          }
+        },
+        {
+          blockHeight: <div>1,233</div>,
+          date: '10 Dec 2019 18:12 UTC',
+          previousValue: '12,468,123',
+          currentValue: '12,468,123',
+          user: <div>cosmos13pa4duhhy60vu63x…y4pq</div>,
+          valueDifference: {
+            className: 'negative',
+            display: '-1,123',
+          },
+          value: '1,2345.03 DARIC',
+          type: {
+            className: 'delegation',
+            display: 'Delegation',
+          }
+        }
+      ]}
+    />
+  </Story>
+</Canvas>
+
+```
+Hello
+```
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td>imageUrl</td>
+    <td>true</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>alt</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>alt description for the image</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>width</td>
+    <td>-</td>
+    <td>
+
+`string | number`
+
+  </td>
+    <td>-</td>
+      <td>
+
+`50px`
+
+  </td>
+  </tr>
+
+  <tr>
+    <td>height</td>
+    <td>-</td>
+    <td>
+
+`string | number`
+
+  </td>
+    <td>-</td>
+      <td>
+
+`50px`
+
+  </td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
