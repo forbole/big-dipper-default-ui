@@ -24,7 +24,7 @@ const ValidatorDelegationsDesktop = (props: ValidatorDelegationsDesktopProps) =>
     handleChangeRowsPerPage,
     page,
     rowsPerPage,
-  } = validatorDelegationsHook(data);
+  } = validatorDelegationsHook();
 
   const { classes } = useGetStyles();
   const { handleClick } = validatorDelegationsDesktopUtils(onClick);
@@ -41,7 +41,7 @@ const ValidatorDelegationsDesktop = (props: ValidatorDelegationsDesktopProps) =>
           {data.map((row) => {
             return (
               <TableRow
-                key={row.address}
+                key={row.amount}
                 className={classnames('single-row')}
                 onClick={() => handleClick(row)}
               >

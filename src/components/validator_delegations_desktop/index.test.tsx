@@ -29,6 +29,5 @@ describe('ValidatorDelegationsDesktop', () => {
     expect(wrap.find('.validator-delegations-desktop')).toHaveLength(1);
     expect(wrap.find(Table)).toHaveLength(1);
     expect(wrap.find(TableHead)).toHaveLength(1);
-    expect(wrap.find('.cell').find('.time').first().text()).toEqual('10 Jan 2020,13:00:22 UTC');
   });
 });
