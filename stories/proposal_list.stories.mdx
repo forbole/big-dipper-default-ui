@@ -16,7 +16,7 @@ import {
 ## Default
 <Canvas>
   <Story name="Default">
-    <ProposalList data={dummyData} desktop={false} />
+    <ProposalList data={dummyData} desktop={false} proposerDisplay='Proposer' />
   </Story>
 </Canvas>
 
@@ -40,6 +40,7 @@ import {
   ...
   ]}
   desktop={false}
+  proposerDisplay='Proposer'
 />
 ```
 
@@ -116,6 +117,17 @@ import {
     <td>-</td>
     <td>-</td>
   </tr>
+  <tr>
+    <td>proposerDisplay</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>proposer text displayed</td>
+    <td>-</td>
+  </tr>
   </tbody>
 </table>
 <br/>
@@ -123,7 +135,7 @@ import {
 ## Desktop
 <Canvas>
   <Story name="Desktop">
-    <ProposalList data={dummyData} desktop={true} />
+    <ProposalList data={dummyData} desktop={true} proposerDisplay='Proposer' />
   </Story>
 </Canvas>
 
