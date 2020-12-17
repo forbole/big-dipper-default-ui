@@ -65,35 +65,14 @@ const ValidatorDelegationsDesktop = (props: ValidatorDelegationsDesktopProps) =>
               count={data.length}
               rowsPerPage={rowsPerPage}
               page={page}
-              // SelectProps={{
-              //   inputProps: {
-              //     'aria-label': 'showing',
-              //   },
-              //   native: true,
-              // }}
               onChangePage={handleChangePage}
               onChangeRowsPerPage={handleChangeRowsPerPage}
               ActionsComponent={TablePaginationActions}
-              // backIconButtonProps={{
-              //   'aria-label': 'Previous',
-              //   // disabled: page === 0,
-              // }}
-              // nextIconButtonProps={{
-              //   'aria-label': 'Next',
-              // }}
+
             />
           </TableRow>
         </TableFooter>
       </Table>
-      {/* <TablePagination
-        rowsPerPageOptions={[10]}
-        component="div"
-        count={data.length}
-        rowsPerPage={10}
-        page={1}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      /> */}
 
     </div>
   );
