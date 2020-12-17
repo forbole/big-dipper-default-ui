@@ -20,5 +20,5 @@ export interface ProposalListProps {
   data: Data[]
   desktop?: boolean;
   onClick?: OnClick;
-  proposerDisplay: string;
+  proposerDisplay?: string;
 }
