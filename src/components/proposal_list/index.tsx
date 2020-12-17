@@ -16,7 +16,7 @@ import { useProposalUtils } from './utils';
 
 const ProposalList = (props: ProposalListProps) => {
   const {
-    data, className, desktop, onClick,
+    data, className, desktop, onClick, proposerDisplay,
   } = props;
 
   const { classes } = useGetStyles();
@@ -41,7 +41,7 @@ const ProposalList = (props: ProposalListProps) => {
                   <div className={classnames('mainContent')}>
                     <div className={classnames('proposer')}>
                       <div className={classnames('proposerText')}>
-                        Proposer
+                        {proposerDisplay}
                       </div>
                       {row.proposer}
                     </div>
