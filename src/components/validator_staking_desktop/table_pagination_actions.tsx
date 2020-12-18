@@ -8,6 +8,7 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
 import { TablePaginationActionsProps } from './types';
+import { validatorStakingHook } from './hooks';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   root: {
@@ -23,21 +24,12 @@ export function TablePaginationActions(props: TablePaginationActionsProps) {
     count, page, rowsPerPage, onChangePage,
   } = props;
 
-  const handleFirstPageButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    onChangePage(event, 0);
-  };
-
-  const handleBackButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    onChangePage(event, page - 1);
-  };
-
-  const handleNextButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    onChangePage(event, page + 1);
-  };
-
-  const handleLastPageButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-  };
+  const {
+    handleFirstPageButtonClick,
+    handleBackButtonClick,
+    handleNextButtonClick,
+    handleLastPageButtonClick,
+  } = validatorStakingHook(count, onChangePage);
 
   return (
     <div className={classes.root}>
