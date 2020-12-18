@@ -57,5 +57,65 @@ export const dummyDataRedelegations: Data[] = [
     redelegateTo: <Address />,
     amount: '1,000 ATOM',
   },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    from: <Address />,
+    redelegateTo: <Address />,
+    amount: '1,000 ATOM',
+  },
 
 ];

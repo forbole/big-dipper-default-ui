@@ -7,7 +7,8 @@ export const validatorStakingHook = () => {
 
   // const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
-  const handleChangePage = (_event: any, newPage: number) => {
+  // eslint-disable-next-line max-len
+  const handleChangePage = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null, newPage: number) => {
     setPage(newPage);
   };
 
@@ -19,9 +20,10 @@ export const validatorStakingHook = () => {
   };
 
   return {
-    handleChangePage,
-    handleChangeRowsPerPage,
     page,
     rowsPerPage,
+    handleChangePage,
+    handleChangeRowsPerPage,
+
   };
 };
