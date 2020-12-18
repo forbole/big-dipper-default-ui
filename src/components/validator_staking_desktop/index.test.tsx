@@ -4,13 +4,13 @@ import {
   Table,
   TableHead,
 } from '@material-ui/core';
-import ValidatorDelegationsDesktop from '.';
+import ValidatorStakingDesktop from '.';
 
-describe('ValidatorDelegationsDesktop', () => {
+describe('ValidatorStakingDesktop', () => {
   it('Works', () => {
-    expect(ValidatorDelegationsDesktop).toBeTruthy();
+    expect(ValidatorStakingDesktop).toBeTruthy();
     const wrap = mount(
-      <ValidatorDelegationsDesktop
+      <ValidatorStakingDesktop
         labels={
           {
             address: 'Address',
@@ -26,7 +26,7 @@ describe('ValidatorDelegationsDesktop', () => {
     );
     expect(wrap).not.toBeNull();
 
-    expect(wrap.find('.validator-delegations-desktop')).toHaveLength(1);
+    expect(wrap.find('.validator-staking-desktop')).toHaveLength(1);
     expect(wrap.find(Table)).toHaveLength(1);
     expect(wrap.find(TableHead)).toHaveLength(1);
   });

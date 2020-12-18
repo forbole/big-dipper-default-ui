@@ -2,29 +2,29 @@ import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
 import {
-  ValidatorDelegationsDesktop, TablePreviewWrapper,
+  ValidatorStakingDesktop, TablePreviewWrapper,
 } from '../src';
 import {
   ActionButton,
 } from './utils/table_preview_wrapper';
 import {
   dummyData, dummyLabelDesktop,
-} from './utils/validator_delegations';
+} from './utils/validator_staking';
 
-<Meta title="ValidatorDelegationsDesktop" component={ValidatorDelegationsDesktop} />
+<Meta title="ValidatorStakingDesktop" component={ValidatorStakingDesktop} />
 
-# ValidatorDelegationsDesktop
+# ValidatorStakingDesktop
 ---
 
 ## Default
 <Canvas>
   <Story name="Default">
-    <ValidatorDelegationsDesktop labels={dummyLabelDesktop} data={dummyData} />
+    <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} />
   </Story>
 </Canvas>
 
 ```
-<ValidatorDelegationsDesktop
+<ValidatorStakingDesktop
   labels={{
     address: 'Address',
     amount: 'Amount',
@@ -129,20 +129,20 @@ import {
 <Canvas>
   <Story name="With TabletPreviewWrapper">
     <TablePreviewWrapper
-      title="Validator Delegations"
+      title="Validator Staking"
       action={<ActionButton />}
     >
-      <ValidatorDelegationsDesktop labels={dummyLabelDesktop} data={dummyData} />
+      <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} />
     </TablePreviewWrapper>
   </Story>
 </Canvas>
 
 ```
 <TablePreviewWrapper
-  title="Validator Delegations"
+  title="Validator Staking"
   action={<ActionButton />}
 >
-  <ValidatorDelegationsDesktop
+  <ValidatorStakingDesktop
     labels={{
       address: 'Address',
       amount: 'Amount',

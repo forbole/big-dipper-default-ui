@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-export const validatorDelegationsHook = () => {
+export const validatorStakingHook = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 

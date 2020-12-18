@@ -2,7 +2,7 @@ import {
   Data, OnClick,
 } from './types';
 
-export const validatorDelegationsDesktopUtils = (onClick: OnClick | undefined) => {
+export const validatorStakingDesktopUtils = (onClick: OnClick | undefined) => {
   /**
    * Helper util to handle rows callback
    * @param singleData

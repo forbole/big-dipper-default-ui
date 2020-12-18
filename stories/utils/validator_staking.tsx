@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  createStyles, makeStyles,
-} from '@material-ui/core';
-import { Data } from '../../src/components/validator_delegations_desktop/types';
+import { Data } from '../../src/components/validator_staking_desktop/types';
 import { AvatarDisplay } from '../../src';
 
 const Address = () => {

@@ -7,7 +7,7 @@ export type Data = {
 
 export type OnClick = (data: Data) => void;
 
-export interface ValidatorDelegationsDesktopProps {
+export interface ValidatorStakingDesktopProps {
   className?: string;
   labels: {
     address: string;

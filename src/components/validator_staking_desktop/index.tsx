@@ -9,13 +9,13 @@ import {
   TablePagination,
   TableFooter,
 } from '@material-ui/core';
-import { ValidatorDelegationsDesktopProps } from './types';
+import { ValidatorStakingDesktopProps } from './types';
 import { useGetStyles } from './styles';
-import { validatorDelegationsDesktopUtils } from './utils';
-import { validatorDelegationsHook } from './hooks';
+import { validatorStakingDesktopUtils } from './utils';
+import { validatorStakingHook } from './hooks';
 import { TablePaginationActions } from './table_pagination_actions';
 
-const ValidatorDelegationsDesktop = (props: ValidatorDelegationsDesktopProps) => {
+const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
   const {
     data, labels, className, onClick,
   } = props;
@@ -24,12 +24,12 @@ const ValidatorDelegationsDesktop = (props: ValidatorDelegationsDesktopProps) =>
     handleChangeRowsPerPage,
     page,
     rowsPerPage,
-  } = validatorDelegationsHook();
+  } = validatorStakingHook();
 
   const { classes } = useGetStyles();
-  const { handleClick } = validatorDelegationsDesktopUtils(onClick);
+  const { handleClick } = validatorStakingDesktopUtils(onClick);
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'validator-delegations-desktop')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'validator-staking-desktop')}>
       <Table className={classnames('table')}>
         <TableHead>
           <TableRow>
@@ -78,4 +78,4 @@ const ValidatorDelegationsDesktop = (props: ValidatorDelegationsDesktopProps) =>
   );
 };
 
-export default ValidatorDelegationsDesktop;
+export default ValidatorStakingDesktop;
