@@ -5,6 +5,7 @@ import { useState } from 'react';
 export const validatorStakingHook = (count?: number, onChangePage?: any) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [totalCount] = useState(count || 1);
 
   // const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -37,7 +38,7 @@ export const validatorStakingHook = (count?: number, onChangePage?: any) => {
   };
 
   const handleLastPageButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
+    onChangePage(event, Math.max(0, Math.ceil(totalCount / rowsPerPage) - 1));
   };
 
   return {
