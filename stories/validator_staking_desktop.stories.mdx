@@ -8,7 +8,7 @@ import {
   ActionButton,
 } from './utils/table_preview_wrapper';
 import {
-  dummyData, dummyLabelDesktop,
+  dummyData, dummyLabelDesktop, dummyDataRedelegations, dummyLabelRedelegationsDesktop
 } from './utils/validator_staking';
 
 <Meta title="ValidatorStakingDesktop" component={ValidatorStakingDesktop} />
@@ -125,35 +125,75 @@ import {
 <br/>
 
 
-## With Wrapper
+## Delegations
 <Canvas>
-  <Story name="With TabletPreviewWrapper">
-    <TablePreviewWrapper
-      title="Validator Staking"
-      action={<ActionButton />}
-    >
-      <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} />
-    </TablePreviewWrapper>
+  <Story name="Delegations">
+    <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} />
   </Story>
 </Canvas>
 
 ```
-<TablePreviewWrapper
-  title="Validator Staking"
-  action={<ActionButton />}
->
-  <ValidatorStakingDesktop
-    labels={{
-      address: 'Address',
-      amount: 'Amount',
-    }}
-    data={[
-      {
-        address: <Address />,
-        amount: '1,000',
-      },
-      ...
-    ]}
+<ValidatorStakingDesktop
+  labels={{
+    address: 'Address',
+    amount: 'Amount',
+  }}
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
  />
-</TablePreviewWrapper>
+```
+
+## Redelegations
+<Canvas>
+  <Story name="Redelegations">
+    <ValidatorStakingDesktop labels={dummyLabelRedelegationsDesktop} data={dummyDataRedelegations} />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingDesktop
+  labels={{
+    address: 'Address',
+    from: 'From',
+    redelegateTo: 'Redelegate to'
+    amount: 'Amount',
+  }}
+  data={[
+    {
+      address: <Address />,
+      from: <Address />,
+      redelegateTo: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```
+
+## Undelegations
+<Canvas>
+  <Story name="Undelegations">
+    <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingDesktop
+  labels={{
+    address: 'Address',
+    amount: 'Amount',
+  }}
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
 ```

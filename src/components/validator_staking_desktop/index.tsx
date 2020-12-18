@@ -34,20 +34,37 @@ const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
         <TableHead>
           <TableRow>
             <TableCell className={classnames('label', 'address')}>{labels.address}</TableCell>
+            {labels.from
+              ? <TableCell align="left" className={classnames('label', 'from')}>{labels.from}</TableCell> : null }
+            {labels.redelegateTo
+              ? <TableCell align="left" className={classnames('label', 'redelegateTo')}>{labels.redelegateTo}</TableCell> : null }
+
             <TableCell align="right" className={classnames('label', 'amount')}>{labels.amount}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((row) => {
+          {data.map((row, i) => {
             return (
               <TableRow
-                key={row.amount}
+                key={i}
                 className={classnames('single-row')}
                 onClick={() => handleClick(row)}
               >
                 <TableCell className={classnames('cell', 'address')}>
                   {row.address}
                 </TableCell>
+                {row.from
+                  ? (
+                    <TableCell align="left" className={classnames('cell', 'from')}>
+                      {row.from}
+                    </TableCell>
+                  ) : null}
+                {row.redelegateTo
+                  ? (
+                    <TableCell align="left" className={classnames('cell', 'redelegateTo')}>
+                      {row.redelegateTo}
+                    </TableCell>
+                  ) : null }
                 <TableCell align="right" className={classnames('cell', 'amount')}>
                   {row.amount}
                 </TableCell>
@@ -61,7 +78,7 @@ const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
               rowsPerPageOptions={[5, 10, 25, 50, {
                 label: 'All', value: -1,
               }]}
-              colSpan={3}
+              colSpan={6}
               count={data.length}
               rowsPerPage={rowsPerPage}
               page={page}
