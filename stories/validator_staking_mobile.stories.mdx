@@ -8,7 +8,7 @@ import {
   ActionButton,
 } from './utils/table_preview_wrapper';
 import {
-  dummyData, dummyLabelDesktop, dummyDataRedelegations, dummyLabelRedelegationsDesktop
+  dummyData, dummyDataRedelegations, dummyDataRedelegationsMobile
 } from './utils/validator_staking';
 
 <Meta title="ValidatorStakingMobile" component={ValidatorStakingMobile} />
@@ -144,7 +144,7 @@ import {
 ## Redelegations
 <Canvas>
   <Story name="Redelegations">
-    <ValidatorStakingMobile data={dummyDataRedelegations} />
+    <ValidatorStakingMobile data={dummyDataRedelegationsMobile} />
   </Story>
 </Canvas>
 
