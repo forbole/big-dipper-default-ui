@@ -1,0 +1,183 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import {
+  ValidatorStakingMobile, TablePreviewWrapper,
+} from '../src';
+import {
+  ActionButton,
+} from './utils/table_preview_wrapper';
+import {
+  dummyData, dummyLabelDesktop, dummyDataRedelegations, dummyLabelRedelegationsDesktop
+} from './utils/validator_staking';
+
+<Meta title="ValidatorStakingMobile" component={ValidatorStakingMobile} />
+
+# ValidatorStakingMobile
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <ValidatorStakingMobile  data={dummyData} />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingMobile
+  
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>title</td>
+    <td>true</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>labels</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  address: string;
+  amount: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  address: React.ReactNode;
+  amount: string;
+}[];
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(data) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+
+## Delegations
+<Canvas>
+  <Story name="Delegations">
+    <ValidatorStakingMobile  data={dummyData} />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingMobile
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```
+
+## Redelegations
+<Canvas>
+  <Story name="Redelegations">
+    <ValidatorStakingMobile data={dummyDataRedelegations} />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingMobile
+  data={[
+    {
+      address: <Address />,
+      from: <Address />,
+      redelegateTo: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```
+
+## Undelegations
+<Canvas>
+  <Story name="Undelegations">
+    <ValidatorStakingMobile data={dummyData} />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingMobile
+ 
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```

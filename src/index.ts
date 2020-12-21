@@ -20,6 +20,7 @@ import ActivityDetails from './components/activity_details';
 import InfoPopover from './components/info_popover';
 import PowerEvents from './components/power_events';
 import ValidatorStakingDesktop from './components/validator_staking_desktop';
+import ValidatorStakingMobile from './components/validator_staking_mobile';
 
 export {
   DataBlock,
@@ -44,5 +45,6 @@ export {
   InfoPopover,
   PowerEvents,
   ValidatorStakingDesktop,
+  ValidatorStakingMobile,
 
 };

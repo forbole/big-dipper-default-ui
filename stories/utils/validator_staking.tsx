@@ -12,10 +12,6 @@ const Address = () => {
   );
 };
 
-export const dummyLabelMobile = {
-  address: 'Address',
-};
-
 export const dummyLabelDesktop = {
   address: 'Address',
   amount: 'Amount',
@@ -30,12 +26,51 @@ export const dummyData: Data[] = [
     address: <Address />,
     amount: '1,000 ATOM',
   },
-
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
+  {
+    address: <Address />,
+    amount: '1,000 ATOM',
+  },
 ];
-
-export const dummyLabelRedelegationsMobile = {
-  address: 'Address',
-};
 
 export const dummyLabelRedelegationsDesktop = {
   address: 'Address',
