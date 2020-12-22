@@ -7,8 +7,6 @@ export type Data = {
   amount: string;
 };
 
-export type OnClick = (data: Data) => void;
-
 export interface ValidatorStakingDesktopProps {
   className?: string;
   labels: {
@@ -18,7 +16,6 @@ export interface ValidatorStakingDesktopProps {
     amount: string;
   }
   data: Data[]
-  onClick?: OnClick;
 }
 
 export interface TablePaginationActionsProps {

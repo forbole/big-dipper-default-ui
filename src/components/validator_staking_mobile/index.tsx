@@ -4,7 +4,7 @@ import { TablePagination } from '@material-ui/core';
 import { ValidatorStakingMobileProps } from './types';
 import { useGetStyles } from './styles';
 import { validatorStakingMobileHook } from './hooks';
-import { TablePaginationActions } from './table_pagination_actions_mobile';
+import { TablePaginationActionsMobile } from './table_pagination_actions_mobile';
 
 const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
   const {
@@ -25,7 +25,7 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
       {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, i) => {
         return (
           <div
-            key={i}
+            key={`validator-staking-mobile-row-${i}`}
             className={classnames('staking', 'flex')}
           >
             <div className={classnames('validator-staking-container')}>
@@ -72,7 +72,7 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
           page={page}
           onChangePage={handleChangePage}
           onChangeRowsPerPage={handleChangeRowsPerPage}
-          ActionsComponent={TablePaginationActions}
+          ActionsComponent={TablePaginationActionsMobile}
         />
       </div>
     </div>

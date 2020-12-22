@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
   },
 }));
 
-export function TablePaginationActions(props: TablePaginationActionsMobileProps) {
+export function TablePaginationActionsMobile(props: TablePaginationActionsMobileProps) {
   const classes = useStyles();
   const theme = useTheme();
   const {

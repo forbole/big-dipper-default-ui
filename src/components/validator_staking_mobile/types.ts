@@ -7,14 +7,10 @@ export type Data = {
   amount: string;
 };
 
-export type OnClick = (data: Data) => void;
-
 export interface ValidatorStakingMobileProps {
   className?: string;
   data: Data[]
-  onClick?: OnClick;
 }
-
 export interface TablePaginationActionsMobileProps {
   count: number;
   page: number;

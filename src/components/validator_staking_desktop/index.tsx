@@ -46,7 +46,7 @@ const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
             {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, i) => {
               return (
                 <TableRow
-                  key={i}
+                  key={`validator-staking-row-${i}`}
                   className={classnames('single-row')}
                 >
                   <TableCell className={classnames('cell', 'address')}>

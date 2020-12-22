@@ -28,7 +28,6 @@ export const useGetStyles = () => {
         flex: 1,
         justifyContent: 'space-between',
         marginTop: '12px',
-
       },
       '& .flex': {
         display: 'flex',

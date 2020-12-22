@@ -7,8 +7,6 @@ export const validatorStakingHook = (count?: number, onChangePage?: any) => {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [totalCount] = useState(count || 1);
 
-  // const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-
   // eslint-disable-next-line max-len
   const handleChangePage = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null, newPage: number) => {
     setPage(newPage);

@@ -11,9 +11,7 @@ export const useGetStyles = () => {
       },
       '& .cell': {
         borderBottom: 'none',
-
       },
-
       '& .single-row': {
         '&:nth-of-type(odd)': {
           background: '#F8F8F8',
