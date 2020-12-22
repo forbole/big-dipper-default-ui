@@ -1,8 +1,11 @@
 import React from 'react';
+import classnames from 'classnames';
 import {
-  ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
+  ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, BarChart,
   Legend,
 } from 'recharts';
+import { useGetStyles } from './styles';
+import { ResponsiveRecharts } from '../..';
 
 const data = [
   {
@@ -25,24 +28,27 @@ const data = [
   },
 ];
 
-const ValidatorBlocks = () => {
+const ValidatorBlocks = (props:any) => {
+  const { classes } = useGetStyles();
+  const { className } = props;
+
   return (
-    <ComposedChart
-      layout="vertical"
-      width={500}
-      height={400}
-      data={data}
-      margin={{
-        top: 20, right: 20, bottom: 20, left: 20,
-      }}
+    <div
+      className={classnames(classes.root, className, 'big-dipper', 'validator-blocks')}
     >
-      <CartesianGrid stroke="#f5f5f5" />
-      <XAxis type="number" orientation="top" tickLine={false} />
-      <YAxis dataKey="name" type="category" hide />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-    </ComposedChart>
+      <ResponsiveRecharts>
+        <BarChart
+          layout="vertical"
+          data={data}
+        >
+          <XAxis type="number" orientation="top" tickLine={false} />
+          <YAxis dataKey="name" type="category" hide />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="pv" barSize={20} fill="#413ea0" />
+        </BarChart>
+      </ResponsiveRecharts>
+    </div>
   );
 };
 
