@@ -14,8 +14,10 @@ export interface ValidatorStakingDesktopProps {
     from?: string;
     redelegateTo?: string;
     amount: string;
-  }
-  data: Data[]
+  };
+  data: Data[];
+  tablePaginationColor: string
+
 }
 
 export interface TablePaginationActionsProps {

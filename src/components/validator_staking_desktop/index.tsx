@@ -17,7 +17,7 @@ import { TablePaginationActions } from './table_pagination_actions';
 
 const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
   const {
-    data, labels, className,
+    data, labels, className, tablePaginationColor,
   } = props;
   const {
     handleChangePage,
@@ -72,7 +72,11 @@ const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
             })}
           </TableBody>
           <TableFooter>
-            <TableRow>
+            <TableRow
+              style={{
+                background: tablePaginationColor,
+              }}
+            >
               <TablePagination
                 rowsPerPageOptions={[5, 10, 25, 50, {
                   label: 'All', value: -1,

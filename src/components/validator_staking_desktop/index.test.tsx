@@ -22,6 +22,7 @@ describe('ValidatorStakingDesktop', () => {
           amount: '1,000 ATOM',
         },
         ]}
+        tablePaginationColor="#fffff"
       />,
     );
     expect(wrap).not.toBeNull();

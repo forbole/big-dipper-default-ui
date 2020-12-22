@@ -8,7 +8,7 @@ import { TablePaginationActionsMobile } from './table_pagination_actions_mobile'
 
 const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
   const {
-    data, className,
+    data, className, tablePaginationColor,
   } = props;
   const {
     handleChangePage,
@@ -61,7 +61,12 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
           </div>
         );
       })}
-      <div className={classnames('table-pagination', 'flex')}>
+      <div
+        className={classnames('table-pagination', 'flex')}
+        style={{
+          background: tablePaginationColor,
+        }}
+      >
         <TablePagination
           rowsPerPageOptions={[5, 10, 25, 50, {
             label: 'All', value: -1,
