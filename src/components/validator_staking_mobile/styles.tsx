@@ -44,6 +44,7 @@ export const useGetStyles = () => {
 
       '& .table-pagination': {
         float: 'right',
+        overflow: 'auto',
       },
 
     },
