@@ -10,12 +10,108 @@ import { ValidatorBlocks } from '../src';
 ## Default
 <Canvas>
   <Story name="Default">
-    <ValidatorBlocks />
+    <ValidatorBlocks
+      title="Missed Blocks"
+      description="10/10000 (19h)"
+      labels={{
+        proposer: 'Proposer',
+        height: 'Height',
+        votingPower: 'Voting Power',
+        gas: 'Gas (used/wanted)',
+        vote: true,
+        missed: 'Missed',
+        voted: 'Voted',
+        yes: 'Yes',
+        no: 'No',
+        signatures: 'Signatures',
+      }}
+      legend={{
+        missed: '#FD3B4C',
+        voted: '#1EC4904D',
+      }}
+      recharts={{
+        gridAspect: 0.85,
+      }}
+      data={[
+        {
+          proposer: <div>forbole</div>,
+          height: '123,001',
+          votingPower: '78%',
+          gas: '1,500,794 / 3,000,000',
+          voted: false,
+          signatures: 100,
+        },
+        {
+          proposer: <div>forbole</div>,
+          height: '123,001',
+          votingPower: '78%',
+          gas: '1,500,794 / 3,000,000',
+          voted: false,
+          signatures: 100,
+        },
+        {
+          proposer: <div>stake fish</div>,
+          height: '123,002',
+          votingPower: '78%',
+          gas: '1,500,794 / 3,000,000',
+          voted: true,
+          signatures: 86,
+        },
+      ]}
+    />
   </Story>
 </Canvas>
 
 ```
-hello
+<ValidatorBlocks
+  title="Missed Blocks"
+  description="10/10000 (19h)"
+  labels={{
+    proposer: 'Proposer',
+    height: 'Height',
+    votingPower: 'Voting Power',
+    gas: 'Gas (used/wanted)',
+    vote: true,
+    missed: 'Missed',
+    voted: 'Voted',
+    yes: 'Yes',
+    no: 'No',
+    signatures: 'Signatures',
+  }}
+  legend={{
+    missed: '#FD3B4C',
+    voted: '#1EC4904D',
+  }}
+  recharts={{
+    gridAspect: 0.85,
+  }}
+  data={[
+    {
+      proposer: <div>forbole</div>,
+      height: '123,001',
+      votingPower: '78%',
+      gas: '1,500,794 / 3,000,000',
+      voted: false,
+      signatures: 100,
+    },
+    {
+      proposer: <div>forbole</div>,
+      height: '123,001',
+      votingPower: '78%',
+      gas: '1,500,794 / 3,000,000',
+      voted: false,
+      signatures: 100,
+    },
+    {
+      proposer: <div>stake fish</div>,
+      height: '123,002',
+      votingPower: '78%',
+      gas: '1,500,794 / 3,000,000',
+      voted: true,
+      signatures: 86,
+    },
+  ]}
+/>
 ```
 ## Props
 <table>
@@ -30,7 +126,7 @@ hello
   </thead>
 <tbody>
   <tr>
-    <td>imageUrl</td>
+    <td>title</td>
     <td>true</td>
     <td>
 
@@ -42,47 +138,73 @@ hello
   </tr>
 
   <tr>
-    <td>alt</td>
-    <td>-</td>
+    <td>description</td>
+    <td>true</td>
     <td>
 
 `string`
 
   </td>
-    <td>alt description for the image</td>
+    <td>-</td>
     <td>-</td>
   </tr>
 
   <tr>
-    <td>width</td>
-    <td>-</td>
+    <td>labels</td>
+    <td>true</td>
     <td>
 
-`string | number`
+```
+{
+  proposer: string;
+  height: string;
+  votingPower: string;
+  gas: string;
+  vote: string;
+  missed: string;
+  voted: string;
+  yes: string;
+  no: string;
+  signatures: string;
+}
+```
 
   </td>
     <td>-</td>
-      <td>
-
-`50px`
-
-  </td>
+    <td>-</td>
   </tr>
 
   <tr>
-    <td>height</td>
-    <td>-</td>
+    <td>legend</td>
+    <td>true</td>
     <td>
 
-`string | number`
+```
+{
+  missed: string;
+  voted: string;
+}
+```
 
   </td>
     <td>-</td>
-      <td>
+    <td></td>
+  </tr>
 
-`50px`
+  <tr>
+    <td>recharts</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  gridAspect: number;
+}
+```
 
   </td>
+    <td>-</td>
+    <td></td>
   </tr>
 
   <tr>

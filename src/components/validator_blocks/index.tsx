@@ -1,13 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 import {
-  ComposedChart,
-  Line,
-  Area,
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   BarChart,
   Legend,
@@ -15,81 +11,19 @@ import {
 } from 'recharts';
 import { useGetStyles } from './styles';
 import { ResponsiveRecharts } from '../..';
+import { ToolTip } from './components';
+import { ValidatorBlocksProps } from './types';
 
-const dummyData = [
-  {
-    proposer: <div>forbole</div>,
-    height: '123,000',
-    votingPower: '78%',
-    gas: '1,500,794 / 3,000,000',
-    voted: true,
-    signatures: 50,
-  },
-  {
-    proposer: <div>forbole</div>,
-    height: '123,001',
-    votingPower: '78%',
-    gas: '1,500,794 / 3,000,000',
-    voted: false,
-    signatures: 100,
-  },
-  {
-    proposer: <div>stake fish</div>,
-    height: '123,002',
-    votingPower: '78%',
-    gas: '1,500,794 / 3,000,000',
-    voted: true,
-    signatures: 86,
-  },
-  {
-    proposer: <div>stake fish</div>,
-    height: '123,002',
-    votingPower: '78%',
-    gas: '1,500,794 / 3,000,000',
-    voted: true,
-    signatures: 86,
-  },
-  {
-    proposer: <div>stake fish</div>,
-    height: '123,002',
-    votingPower: '78%',
-    gas: '1,500,794 / 3,000,000',
-    voted: true,
-    signatures: 86,
-  },
-  {
-    proposer: <div>stake fish</div>,
-    height: '123,002',
-    votingPower: '78%',
-    gas: '1,500,794 / 3,000,000',
-    voted: true,
-    signatures: 86,
-  },
-];
-
-const ValidatorBlocks = (props:any) => {
+const ValidatorBlocks = (props:ValidatorBlocksProps) => {
   const { classes } = useGetStyles();
   const {
     className,
-    title = 'Missed Blocks',
-    description = '10/10000 (19h)',
-    labels = {
-      proposer: 'Proposer',
-      height: 'Height',
-      votingPower: 'Voting Power',
-      gas: 'Gas (used/wanted)',
-      vote: true,
-      missed: 'Missed',
-      voted: 'Voted',
-    },
-    legend = {
-      missed: '#FD3B4C',
-      voted: '#1EC4904D',
-    },
-    recharts = {
-      gridAspect: 1.5,
-    },
-    data = dummyData,
+    data,
+    labels,
+    recharts,
+    legend,
+    title,
+    description,
   } = props;
 
   return (
@@ -99,15 +33,17 @@ const ValidatorBlocks = (props:any) => {
       <h3 className={classnames('validator-blocks__title')}>{title}</h3>
       <p className={classnames('validator-blocks__description')}>{description}</p>
       <div className={classnames('validator-blocks__bar-chart')}>
-        <ResponsiveRecharts aspect={recharts?.gridAspect ?? 1.5}>
+        <ResponsiveRecharts aspect={recharts.gridAspect}>
           <BarChart
             layout="vertical"
-            barCategoryGap={5}
             data={data}
           >
             <XAxis type="number" orientation="top" tickLine={false} />
             <YAxis dataKey="name" type="category" hide />
-            <Tooltip />
+            <Tooltip
+              cursor={false}
+              content={<ToolTip labels={labels} />}
+            />
             <Legend
               verticalAlign="top"
               align="left"

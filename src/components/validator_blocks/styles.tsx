@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
+      boxSizing: 'border-box',
       '&.validator-blocks': {
         padding: '1rem',
       },
@@ -15,7 +16,6 @@ export const useGetStyles = () => {
       },
       '& .validator-blocks__bar-chart': {
         height: '100%',
-        overflow: 'auto',
       },
     },
   });
