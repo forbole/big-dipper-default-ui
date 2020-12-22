@@ -37,5 +37,8 @@ export type Data = {
   votingPower: string;
   gas: string;
   voted: boolean;
-  signatures: number;
+  signatures: {
+    raw: number;
+    display: string | number;
+  };
 }

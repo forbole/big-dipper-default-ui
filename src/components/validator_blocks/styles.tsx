@@ -10,6 +10,7 @@ export const useGetStyles = () => {
       '& .validator-blocks__title': {
         fontSize: '1.375rem',
         margin: 0,
+        fontWeight: 500,
       },
       '& .validator-blocks__description': {
         margin: '0.5rem 0',

@@ -12,7 +12,7 @@ export const useGetStyles = () => {
         color: 'black',
       },
       '& .single__label': {
-        marginBottom: '0.5rem',
+        textAlign: 'left',
       },
       '& .single__value': {
         textAlign: 'right',
@@ -21,6 +21,7 @@ export const useGetStyles = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        marginBottom: '0.5rem',
       },
     },
   });

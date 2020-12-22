@@ -57,7 +57,7 @@ const ValidatorBlocks = (props:ValidatorBlocksProps) => {
                 },
               ]}
             />
-            <Bar dataKey="signatures">
+            <Bar dataKey="signatures.raw">
               {
               data.map((entry:any, index:any) => {
                 return (

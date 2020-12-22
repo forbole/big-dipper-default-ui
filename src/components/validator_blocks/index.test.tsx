@@ -35,7 +35,10 @@ describe('ValidatorBlocks', () => {
             votingPower: '78%',
             gas: '1,500,794 / 3,000,000',
             voted: false,
-            signatures: 100,
+            signatures: {
+              raw: 100,
+              display: '100',
+            },
           },
           {
             proposer: <div>forbole</div>,
@@ -43,7 +46,10 @@ describe('ValidatorBlocks', () => {
             votingPower: '78%',
             gas: '1,500,794 / 3,000,000',
             voted: false,
-            signatures: 100,
+            signatures: {
+              raw: 100,
+              display: '100',
+            },
           },
           {
             proposer: <div>stake fish</div>,
@@ -51,7 +57,10 @@ describe('ValidatorBlocks', () => {
             votingPower: '78%',
             gas: '1,500,794 / 3,000,000',
             voted: true,
-            signatures: 86,
+            signatures: {
+              raw: 86,
+              display: '86',
+            },
           },
         ]}
       />,

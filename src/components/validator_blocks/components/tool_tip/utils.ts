@@ -27,7 +27,7 @@ export const getData = (labels:Labels, data:Data) => {
       },
       {
         label: labels.signatures,
-        value: data.signatures,
+        value: data.signatures?.display,
       },
     ]
   );
