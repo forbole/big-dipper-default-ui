@@ -35,7 +35,6 @@ export const useGetStyles = () => {
       '& .validator-staking-content': {
         display: 'flex',
         justifyContent: 'space-between',
-        marginTop: '1rem',
       },
       '& .overflow': {
         overflow: 'hidden',

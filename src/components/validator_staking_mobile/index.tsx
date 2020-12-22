@@ -68,9 +68,7 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
         }}
       >
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25, 50, {
-            label: 'All', value: -1,
-          }]}
+          rowsPerPageOptions={[]}
           colSpan={6}
           component="div"
           count={data.length}

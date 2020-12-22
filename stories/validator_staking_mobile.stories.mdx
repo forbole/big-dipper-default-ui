@@ -16,16 +16,15 @@ import {
 # ValidatorStakingMobile
 ---
 
-## Default
+## Delegations
 <Canvas>
-  <Story name="Default">
-    <ValidatorStakingMobile  data={dummyData} tablePaginationColor = '#fffff'/>
+  <Story name="Delegations">
+    <ValidatorStakingMobile  data={dummyData} tablePaginationColor = '#fffff' />
   </Story>
 </Canvas>
 
 ```
 <ValidatorStakingMobile
-  
   data={[
     {
       address: <Address />,
@@ -85,6 +84,8 @@ import {
 ```
 {
   address: React.ReactNode;
+  from?: React.ReactNode;
+  redelegateTo?: React.ReactNode;
   amount: string;
 }[];
 ```
@@ -121,26 +122,6 @@ import {
 </table>
 <br/>
 
-
-## Delegations
-<Canvas>
-  <Story name="Delegations">
-    <ValidatorStakingMobile  data={dummyData} tablePaginationColor = '#fffff' />
-  </Story>
-</Canvas>
-
-```
-<ValidatorStakingMobile
-  data={[
-    {
-      address: <Address />,
-      amount: '1,000',
-    },
-    ...
-  ]}
- />
-```
-
 ## Redelegations
 <Canvas>
   <Story name="Redelegations">
@@ -171,7 +152,7 @@ import {
 
 ```
 <ValidatorStakingMobile
- 
+
   data={[
     {
       address: <Address />,
