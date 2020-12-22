@@ -1,53 +1,138 @@
 import React from 'react';
 import classnames from 'classnames';
 import {
-  ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, BarChart,
+  ComposedChart,
+  Line,
+  Area,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  BarChart,
   Legend,
+  Cell,
 } from 'recharts';
 import { useGetStyles } from './styles';
 import { ResponsiveRecharts } from '../..';
 
-const data = [
+const dummyData = [
   {
-    name: 'Page A', uv: 590, pv: 800, amt: 1400,
+    proposer: <div>forbole</div>,
+    height: '123,000',
+    votingPower: '78%',
+    gas: '1,500,794 / 3,000,000',
+    voted: true,
+    signatures: 50,
   },
   {
-    name: 'Page B', uv: 868, pv: 967, amt: 1506,
+    proposer: <div>forbole</div>,
+    height: '123,001',
+    votingPower: '78%',
+    gas: '1,500,794 / 3,000,000',
+    voted: false,
+    signatures: 100,
   },
   {
-    name: 'Page C', uv: 1397, pv: 1098, amt: 989,
+    proposer: <div>stake fish</div>,
+    height: '123,002',
+    votingPower: '78%',
+    gas: '1,500,794 / 3,000,000',
+    voted: true,
+    signatures: 86,
   },
   {
-    name: 'Page D', uv: 1480, pv: 1200, amt: 1228,
+    proposer: <div>stake fish</div>,
+    height: '123,002',
+    votingPower: '78%',
+    gas: '1,500,794 / 3,000,000',
+    voted: true,
+    signatures: 86,
   },
   {
-    name: 'Page E', uv: 1520, pv: 1108, amt: 1100,
+    proposer: <div>stake fish</div>,
+    height: '123,002',
+    votingPower: '78%',
+    gas: '1,500,794 / 3,000,000',
+    voted: true,
+    signatures: 86,
   },
   {
-    name: 'Page F', uv: 1400, pv: 680, amt: 1700,
+    proposer: <div>stake fish</div>,
+    height: '123,002',
+    votingPower: '78%',
+    gas: '1,500,794 / 3,000,000',
+    voted: true,
+    signatures: 86,
   },
 ];
 
 const ValidatorBlocks = (props:any) => {
   const { classes } = useGetStyles();
-  const { className } = props;
+  const {
+    className,
+    title = 'Missed Blocks',
+    description = '10/10000 (19h)',
+    labels = {
+      proposer: 'Proposer',
+      height: 'Height',
+      votingPower: 'Voting Power',
+      gas: 'Gas (used/wanted)',
+      vote: true,
+      missed: 'Missed',
+      voted: 'Voted',
+    },
+    legend = {
+      missed: '#FD3B4C',
+      voted: '#1EC4904D',
+    },
+    recharts = {
+      gridAspect: 1.5,
+    },
+    data = dummyData,
+  } = props;
 
   return (
     <div
       className={classnames(classes.root, className, 'big-dipper', 'validator-blocks')}
     >
-      <ResponsiveRecharts>
-        <BarChart
-          layout="vertical"
-          data={data}
-        >
-          <XAxis type="number" orientation="top" tickLine={false} />
-          <YAxis dataKey="name" type="category" hide />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-        </BarChart>
-      </ResponsiveRecharts>
+      <h3 className={classnames('validator-blocks__title')}>{title}</h3>
+      <p className={classnames('validator-blocks__description')}>{description}</p>
+      <div className={classnames('validator-blocks__bar-chart')}>
+        <ResponsiveRecharts aspect={recharts?.gridAspect ?? 1.5}>
+          <BarChart
+            layout="vertical"
+            barCategoryGap={5}
+            data={data}
+          >
+            <XAxis type="number" orientation="top" tickLine={false} />
+            <YAxis dataKey="name" type="category" hide />
+            <Tooltip />
+            <Legend
+              verticalAlign="top"
+              align="left"
+              iconSize={16}
+              payload={[
+                {
+                  value: labels.missed, type: 'square', id: 'missed', color: legend.missed,
+                },
+                {
+                  value: labels.voted, type: 'square', id: 'voted', color: legend.voted,
+                },
+              ]}
+            />
+            <Bar dataKey="signatures">
+              {
+              data.map((entry:any, index:any) => {
+                return (
+                  <Cell key={index} fill={entry.voted ? legend.voted : legend.missed} />
+                );
+              })
+            }
+            </Bar>
+          </BarChart>
+        </ResponsiveRecharts>
+      </div>
     </div>
   );
 };
