@@ -23,6 +23,7 @@ describe('ProposalList', () => {
         ]}
         desktop={false}
         onClick={spy}
+        proposerDisplay="Proposer"
       />,
     );
     expect(wrap).not.toBeNull();
