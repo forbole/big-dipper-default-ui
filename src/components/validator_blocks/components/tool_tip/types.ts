@@ -1,9 +1,10 @@
-import { Labels } from '../../types';
+import {
+  Labels, Data,
+} from '../../types';
 
 export interface ToolTipProps {
   active?: boolean;
   payload?: any;
-  label?: string;
-  labels?: Labels;
+  labels: Labels;
   className?: string;
 }

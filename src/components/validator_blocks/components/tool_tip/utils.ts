@@ -1,4 +1,8 @@
-export const getData = (labels:any, data:any) => {
+import {
+  Labels, Data,
+} from '../../types';
+
+export const getData = (labels:Labels, data:Data) => {
   return (
     [
       {
@@ -20,6 +24,10 @@ export const getData = (labels:any, data:any) => {
       {
         label: labels.voted,
         value: data.voted ? labels.yes : labels.no,
+      },
+      {
+        label: labels.signatures,
+        value: data.signatures,
       },
     ]
   );

@@ -15,7 +15,6 @@ export type Labels = {
   height: string;
   votingPower: string;
   gas: string;
-  vote: string;
   missed: string;
   voted: string;
   yes: string;
