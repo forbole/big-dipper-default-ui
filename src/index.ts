@@ -46,5 +46,4 @@ export {
   PowerEvents,
   ValidatorStakingDesktop,
   ValidatorStakingMobile,
-
 };
