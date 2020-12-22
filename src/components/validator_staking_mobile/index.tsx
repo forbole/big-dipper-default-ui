@@ -67,6 +67,7 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
             label: 'All', value: -1,
           }]}
           colSpan={6}
+          component="div"
           count={data.length}
           rowsPerPage={rowsPerPage}
           page={page}
