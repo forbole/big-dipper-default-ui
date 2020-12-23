@@ -65,6 +65,9 @@ export const useGetStyles = () => {
           },
         },
       },
+      '& .signatures': {
+        cursor: 'pointer',
+      },
     },
     desktop: {
       '& .title': {
