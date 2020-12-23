@@ -1,0 +1,151 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { ValidatorStakingMobile } from '../src';
+import {
+  dummyData,
+  dummyDataRedelegations,
+  labels,
+} from './utils/validator_staking';
+
+
+<Meta title="ValidatorStakingMobile" component={ValidatorStakingMobile} />
+
+# ValidatorStakingMobile
+---
+
+## Delegations
+<Canvas>
+  <Story name="Delegations">
+    <ValidatorStakingMobile
+      data={dummyData}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingMobile
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td>labels</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  from: string;
+  redelegateTo: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  address: React.ReactNode;
+  redelegate?: {
+    from: React.ReactNode;
+    to: React.ReactNode;
+  }
+  amount: string;
+}[];
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+## Redelegations
+<Canvas>
+  <Story name="Redelegations">
+    <ValidatorStakingMobile
+      data={dummyDataRedelegations}
+      labels={labels}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingMobile
+  labels={{
+    from: 'From',
+    redelegateTo: 'Redelegate To',
+  }}
+  data={[
+    {
+      address: <Address />,
+      redelegate: {
+        from: <Address />,
+        to: <Address />,
+      },
+      amount: '1,000 ATOM',
+    },
+    ...
+  ]}
+ />
+```
+
+## Undelegations
+<Canvas>
+  <Story name="Undelegations">
+    <ValidatorStakingMobile data={dummyData} />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingMobile
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```

@@ -1,0 +1,163 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import {
+  ValidatorStakingDesktop, TablePreviewWrapper,
+} from '../src';
+import {
+  ActionButton,
+} from './utils/table_preview_wrapper';
+import {
+  dummyData, dummyLabelDesktop, dummyDataRedelegations, dummyLabelRedelegationsDesktop
+} from './utils/validator_staking';
+
+<Meta title="ValidatorStakingDesktop" component={ValidatorStakingDesktop} />
+
+# ValidatorStakingDesktop
+---
+
+## Delegations
+<Canvas>
+  <Story name="Delegations">
+    <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} tablePaginationColor="#fffff"/>
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingDesktop
+  labels={{
+    address: 'Address',
+    amount: 'Amount',
+  }}
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td>labels</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  address: string;
+  from?: string;
+  redelegateTo?: string;
+  amount: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  address: React.ReactNode;
+  redelegate?: {
+    from: React.ReactNode;
+    to: React.ReactNode;
+  }
+  amount: string;
+}[];
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+
+## Redelegations
+<Canvas>
+  <Story name="Redelegations">
+    <ValidatorStakingDesktop
+      labels={dummyLabelRedelegationsDesktop}
+      data={dummyDataRedelegations}
+    />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingDesktop
+  labels={{
+    address: 'Address',
+    from: 'From',
+    redelegateTo: 'Redelegate to'
+    amount: 'Amount',
+  }}
+  data={[
+    {
+      address: <Address />,
+      redelegate: {
+        from: <Address />,
+        to: <Address />,
+      },
+      amount: '1,000 ATOM',
+    },
+    ...
+  ]}
+ />
+```
+
+## Undelegations
+<Canvas>
+  <Story name="Undelegations">
+    <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} />
+  </Story>
+</Canvas>
+
+```
+<ValidatorStakingDesktop
+  labels={{
+    address: 'Address',
+    amount: 'Amount',
+  }}
+  data={[
+    {
+      address: <Address />,
+      amount: '1,000',
+    },
+    ...
+  ]}
+ />
+```
