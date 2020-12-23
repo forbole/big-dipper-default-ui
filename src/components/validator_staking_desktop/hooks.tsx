@@ -4,7 +4,7 @@ import { useState } from 'react';
 // eslint-disable-next-line max-len
 export const validatorStakingHook = (count?: number, onChangePage?: any) => {
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [totalCount] = useState(count || 1);
 
   // eslint-disable-next-line max-len
