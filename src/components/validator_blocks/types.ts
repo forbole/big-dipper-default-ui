@@ -6,7 +6,7 @@ export interface ValidatorBlocksProps {
   description: string;
   labels: Labels;
   legend: Legend;
-  recharts: Recharts;
+  recharts?: Recharts;
   data: Data[];
 }
 
@@ -28,7 +28,7 @@ export type Legend = {
 }
 
 export type Recharts = {
-  gridAspect: number;
+  gridAspect?: number;
 }
 
 export type Data = {

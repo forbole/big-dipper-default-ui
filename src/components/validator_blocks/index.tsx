@@ -33,7 +33,7 @@ const ValidatorBlocks = (props:ValidatorBlocksProps) => {
       <h3 className={classnames('validator-blocks__title')}>{title}</h3>
       <p className={classnames('validator-blocks__description')}>{description}</p>
       <div className={classnames('validator-blocks__bar-chart')}>
-        <ResponsiveRecharts aspect={recharts.gridAspect}>
+        <ResponsiveRecharts aspect={recharts?.gridAspect}>
           <BarChart
             layout="vertical"
             data={data}
