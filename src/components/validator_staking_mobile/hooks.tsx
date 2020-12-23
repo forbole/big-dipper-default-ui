@@ -9,13 +9,7 @@ export const useTablePaginationHook = (data) => {
     _event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null,
     newPage: number,
   ) => {
-    if (newPage < 0) {
-      setPage(0);
-    } else if (newPage > Math.ceil(data.length / rowsPerPage) - 1) {
-      setPage(Math.ceil(data.length / rowsPerPage) - 1);
-    } else {
-      setPage(newPage);
-    }
+    setPage(newPage);
   };
 
   const handleChangeRowsPerPage = (

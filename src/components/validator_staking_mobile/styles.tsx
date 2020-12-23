@@ -5,45 +5,35 @@ export const useGetStyles = () => {
     root: {
       '&.validator-staking-mobile': {
         background: 'white',
-        padding: '1rem',
         boxSizing: 'border-box',
       },
       '& .staking': {
-        // padding: '1rem 0.5rem',
+        padding: '1rem 0',
         borderBottom: 'solid #E8E8E8 1px',
-      },
-      '&. validator-staking-address': {
-        // float: 'left',
-      },
-      '&. validator-staking-amount': {
-        // float: 'right',
-      },
-      '& .validator-staking-container': {
-        flex: 1,
-        minWidth: '0',
-        padding: '0 0.5rem',
       },
       '& .content': {
         fontSize: '1rem',
       },
-      '& .validator-staking-redelegate-message': {
-        display: 'flex',
-        flex: 1,
-        justifyContent: 'space-between',
-        marginTop: '12px',
-      },
-      '& .flex': {
-        display: 'flex',
-      },
       '& .validator-staking-content': {
         display: 'flex',
         justifyContent: 'space-between',
+        alignItems: 'center',
       },
       '& .validator-staking__pagination': {
         boxSizing: 'border-box',
         '& .MuiTablePagination-toolbar': {
           display: 'flex',
-          flexDirection: 'row-reverse',
+          justifyContent: 'flex-end',
+        },
+        '& .MuiTablePagination-spacer': {
+          flex: 'none',
+        },
+        '& .MuiToolbar-gutters': {
+          padding: 0,
+          margin: 0,
+        },
+        '& .MuiTablePagination-caption': {
+          flexShrink: 'initial',
         },
       },
     },

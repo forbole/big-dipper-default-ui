@@ -10,6 +10,7 @@ import {
 } from '@material-ui/icons';
 import { TablePaginationActionsMobileProps } from './types';
 import { useGetStyles } from './styles';
+import { useTablePaginationActionsHooks } from './hooks';
 
 /**
  * custom pagination buttons
@@ -22,42 +23,51 @@ const TablePaginationActions = (props: TablePaginationActionsMobileProps) => {
     count,
     page,
     rowsPerPage,
-    onChangePage,
   } = props;
 
+  const {
+    handleFirstPage,
+    handleNextPage,
+    handlePreviousPage,
+    handleLastPage,
+  } = useTablePaginationActionsHooks(props);
+
+  const disablePrevious = page === 0;
+  const disableNext = page >= Math.ceil(count / rowsPerPage) - 1;
+
   return (
-    <div className={classnames(classes.root)}>
+    <div className={classnames(classes.root, 'pagination-actions')}>
       <IconButton
         disableRipple
-        onClick={(e) => onChangePage(e, 0)}
-        disabled={page === 0}
+        onClick={handleFirstPage}
+        disabled={disablePrevious}
         aria-label="first page"
       >
         {theme.direction === 'rtl' ? <LastPage /> : <FirstPage />}
       </IconButton>
       <IconButton
         disableRipple
-        onClick={(e) => onChangePage(e, 0)}
-        disabled={page === 0}
+        onClick={handlePreviousPage}
+        disabled={disablePrevious}
         aria-label="previous page"
       >
         {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
       </IconButton>
-      <p>
+      <p className={classnames('pagination-actions__page')}>
         {page}
       </p>
       <IconButton
         disableRipple
-        onClick={(e) => onChangePage(e, 0)}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+        onClick={handleNextPage}
+        disabled={disableNext}
         aria-label="next page"
       >
         {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
       </IconButton>
       <IconButton
         disableRipple
-        onClick={(e) => onChangePage(e, 0)}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+        onClick={handleLastPage}
+        disabled={disableNext}
         aria-label="last page"
       >
         {theme.direction === 'rtl' ? <FirstPage /> : <LastPage />}

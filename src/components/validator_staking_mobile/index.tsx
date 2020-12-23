@@ -27,7 +27,7 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
         return (
           <div
             key={`validator-staking-mobile-row-${i}`}
-            className={classnames('staking', 'flex')}
+            className={classnames('staking')}
           >
             <div className={classnames('validator-staking-container')}>
 
@@ -44,7 +44,7 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
 
                 {row.from && row.redelegateTo ? (
                   <div
-                    className={classnames('validator-staking-redelegate-message', 'flex')}
+                    className={classnames('validator-staking-redelegate-message')}
                   >
                     From
                     {' '}
