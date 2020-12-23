@@ -3,17 +3,20 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      background: 'white',
-      overflow: 'auto',
+      '&.validator-staking-mobile': {
+        background: 'white',
+        padding: '1rem',
+        boxSizing: 'border-box',
+      },
       '& .staking': {
-        padding: '1rem 0.5rem',
+        // padding: '1rem 0.5rem',
         borderBottom: 'solid #E8E8E8 1px',
       },
       '&. validator-staking-address': {
-        float: 'left',
+        // float: 'left',
       },
       '&. validator-staking-amount': {
-        float: 'right',
+        // float: 'right',
       },
       '& .validator-staking-container': {
         flex: 1,
@@ -36,16 +39,13 @@ export const useGetStyles = () => {
         display: 'flex',
         justifyContent: 'space-between',
       },
-      '& .overflow': {
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
+      '& .validator-staking__pagination': {
+        boxSizing: 'border-box',
+        '& .MuiTablePagination-toolbar': {
+          display: 'flex',
+          flexDirection: 'row-reverse',
+        },
       },
-
-      '& .table-pagination': {
-        float: 'right',
-        overflow: 'auto',
-      },
-
     },
   });
 

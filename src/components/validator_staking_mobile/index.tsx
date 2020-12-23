@@ -3,19 +3,20 @@ import classnames from 'classnames';
 import { TablePagination } from '@material-ui/core';
 import { ValidatorStakingMobileProps } from './types';
 import { useGetStyles } from './styles';
-import { validatorStakingMobileHook } from './hooks';
-import { TablePaginationActionsMobile } from './table_pagination_actions_mobile';
+import { useTablePaginationHook } from './hooks';
+import { TablePaginationActions } from './components';
 
 const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
   const {
-    data, className, tablePaginationColor,
+    data,
+    className,
   } = props;
   const {
     handleChangePage,
     handleChangeRowsPerPage,
     page,
     rowsPerPage,
-  } = validatorStakingMobileHook();
+  } = useTablePaginationHook(data);
 
   const { classes } = useGetStyles();
   return (
@@ -61,24 +62,19 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
           </div>
         );
       })}
-      <div
-        className={classnames('table-pagination', 'flex')}
-        style={{
-          background: tablePaginationColor,
-        }}
-      >
-        <TablePagination
-          rowsPerPageOptions={[]}
-          colSpan={6}
-          component="div"
-          count={data.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
-          ActionsComponent={TablePaginationActionsMobile}
-        />
-      </div>
+      <TablePagination
+        className="validator-staking__pagination"
+        rowsPerPageOptions={[]}
+        labelRowsPerPage=""
+        colSpan={6}
+        component="div"
+        count={data.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+        ActionsComponent={(subProps:any) => <TablePaginationActions {...subProps} />}
+      />
     </div>
   );
 };

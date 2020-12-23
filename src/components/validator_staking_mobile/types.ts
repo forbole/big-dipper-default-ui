@@ -10,11 +10,5 @@ export type Data = {
 export interface ValidatorStakingMobileProps {
   className?: string;
   data: Data[]
-  tablePaginationColor: string
-}
-export interface TablePaginationActionsMobileProps {
-  count: number;
-  page: number;
-  rowsPerPage: number;
-  onChangePage: (event: React.MouseEvent<HTMLButtonElement>, newPage: number) => void;
+  // tablePaginationColor: string
 }
