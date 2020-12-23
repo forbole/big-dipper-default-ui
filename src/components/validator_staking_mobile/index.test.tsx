@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { TablePaginationActions } from './components';
 import ValidatorStakingMobile from '.';
 
 describe('ValidatorStakingMobile', () => {
@@ -23,6 +24,7 @@ describe('ValidatorStakingMobile', () => {
     expect(wrap.find('.validator-staking-mobile')).toHaveLength(1);
     expect(wrap.find('.staking')).toHaveLength(2);
     expect(wrap.find('.staking__redelegate')).toHaveLength(0);
+    expect(wrap.find(TablePaginationActions)).toHaveLength(1);
   });
 
   it('Redelegations', () => {
