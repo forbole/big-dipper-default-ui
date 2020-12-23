@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
+import { Data } from './types';
 
-export const useTablePaginationHook = (data) => {
+export const useTablePaginationHook = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 

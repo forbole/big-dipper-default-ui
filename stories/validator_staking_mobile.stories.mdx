@@ -1,14 +1,11 @@
 import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
+import { ValidatorStakingMobile } from '../src';
 import {
-  ValidatorStakingMobile, TablePreviewWrapper,
-} from '../src';
-import {
-  ActionButton,
-} from './utils/table_preview_wrapper';
-import {
-  dummyData, dummyDataRedelegations, dummyDataRedelegationsMobile
+  dummyData,
+  dummyDataRedelegations,
+  labels,
 } from './utils/validator_staking';
 
 <Meta title="ValidatorStakingMobile" component={ValidatorStakingMobile} />
@@ -19,7 +16,9 @@ import {
 ## Delegations
 <Canvas>
   <Story name="Delegations">
-    <ValidatorStakingMobile  data={dummyData} tablePaginationColor = '#fffff' />
+    <ValidatorStakingMobile
+      data={dummyData}
+    />
   </Story>
 </Canvas>
 
@@ -47,27 +46,16 @@ import {
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>title</td>
-    <td>true</td>
-    <td>
-
-`string`
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
 
   <tr>
     <td>labels</td>
-    <td>true</td>
+    <td>-</td>
     <td>
 
 ```
 {
-  address: string;
-  amount: string;
+  from: string;
+  redelegateTo: string;
 }
 ```
 
@@ -84,23 +72,13 @@ import {
 ```
 {
   address: React.ReactNode;
-  from?: React.ReactNode;
-  redelegateTo?: React.ReactNode;
+  redelegate?: {
+    from: React.ReactNode;
+    to: React.ReactNode;
+  }
   amount: string;
 }[];
 ```
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>onClick</td>
-    <td>-</td>
-    <td>
-
-`(data) => void`
 
   </td>
     <td>-</td>
@@ -125,18 +103,27 @@ import {
 ## Redelegations
 <Canvas>
   <Story name="Redelegations">
-    <ValidatorStakingMobile data={dummyDataRedelegationsMobile} tablePaginationColor = '#fffff'/>
+    <ValidatorStakingMobile
+      data={dummyDataRedelegations}
+      labels={labels}
+    />
   </Story>
 </Canvas>
 
 ```
 <ValidatorStakingMobile
+  labels={{
+    from: 'From',
+    redelegateTo: 'Redelegate To',
+  }}
   data={[
     {
       address: <Address />,
-      from: <div>Address</div>,
-      redelegateTo:<div>Address</div>,
-      amount: '1,000',
+      redelegate: {
+        from: <Address />,
+        to: <Address />,
+      },
+      amount: '1,000 ATOM',
     },
     ...
   ]}
@@ -146,13 +133,12 @@ import {
 ## Undelegations
 <Canvas>
   <Story name="Undelegations">
-    <ValidatorStakingMobile data={dummyData} tablePaginationColor = '#fffff' />
+    <ValidatorStakingMobile data={dummyData} />
   </Story>
 </Canvas>
 
 ```
 <ValidatorStakingMobile
-
   data={[
     {
       address: <Address />,

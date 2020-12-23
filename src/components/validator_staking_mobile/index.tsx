@@ -10,13 +10,15 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
   const {
     data,
     className,
+    labels,
   } = props;
+
   const {
     handleChangePage,
     handleChangeRowsPerPage,
     page,
     rowsPerPage,
-  } = useTablePaginationHook(data);
+  } = useTablePaginationHook();
 
   const { classes } = useGetStyles();
   return (
@@ -40,24 +42,19 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
                 </div>
 
               </div>
-              <div>
-
-                {row.from && row.redelegateTo ? (
-                  <div
-                    className={classnames('validator-staking-redelegate-message')}
-                  >
-                    From
-                    {' '}
-                    {row.from}
-                    {' '}
-                    redelegate to
-                    {' '}
-                    {row.redelegateTo}
-
+              {
+                !!row.redelegate && !!labels && (
+                  <div className={classnames('staking__redelegate')}>
+                    {labels.from}
+                    &nbsp;
+                    {row.redelegate.from}
+                    &nbsp;
+                    {labels.redelegateTo.toLowerCase()}
+                    &nbsp;
+                    {row.redelegate.to}
                   </div>
-                ) : null}
-              </div>
-
+                )
+              }
             </div>
           </div>
         );

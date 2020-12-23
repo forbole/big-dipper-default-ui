@@ -17,6 +17,11 @@ export const dummyLabelDesktop = {
   amount: 'Amount',
 };
 
+export const labels = {
+  from: 'From',
+  redelegateTo: 'Redelegate To',
+};
+
 export const dummyData: Data[] = [
   {
     address: <Address />,
@@ -82,150 +87,98 @@ export const dummyLabelRedelegationsDesktop = {
 export const dummyDataRedelegations: Data[] = [
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
   {
     address: <Address />,
-    from: <Address />,
-    redelegateTo: <Address />,
-    amount: '1,000 ATOM',
-  },
-
-];
-
-export const dummyDataRedelegationsMobile: Data[] = [
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
-    amount: '1,000 ATOM',
-  },
-  {
-    address: <Address />,
-    from: <a href="/">Forbole</a>,
-    redelegateTo: <a href="/">Sparkpool</a>,
+    redelegate: {
+      from: <Address />,
+      to: <Address />,
+    },
     amount: '1,000 ATOM',
   },
 

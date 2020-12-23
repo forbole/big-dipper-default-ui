@@ -19,6 +19,12 @@ export const useGetStyles = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
       },
+      '& .staking__redelegate': {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        marginTop: '1rem',
+      },
       '& .validator-staking__pagination': {
         boxSizing: 'border-box',
         '& .MuiTablePagination-toolbar': {

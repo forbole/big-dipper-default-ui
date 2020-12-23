@@ -2,8 +2,10 @@ import React from 'react';
 
 export type Data = {
   address: React.ReactNode;
-  from?: React.ReactNode;
-  redelegateTo?: React.ReactNode;
+  redelegate?: {
+    from: React.ReactNode;
+    to: React.ReactNode;
+  }
   amount: string;
 };
 
@@ -16,8 +18,6 @@ export interface ValidatorStakingDesktopProps {
     amount: string;
   };
   data: Data[];
-  tablePaginationColor: string
-
 }
 
 export interface TablePaginationActionsProps {
