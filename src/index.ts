@@ -22,6 +22,7 @@ import PowerEvents from './components/power_events';
 import ValidatorStakingDesktop from './components/validator_staking_desktop';
 import ValidatorStakingMobile from './components/validator_staking_mobile';
 import ValidatorBlocks from './components/validator_blocks';
+import TablePaginationActions from './components/table_pagination_actions';
 
 export {
   DataBlock,
@@ -48,4 +49,5 @@ export {
   ValidatorStakingDesktop,
   ValidatorStakingMobile,
   ValidatorBlocks,
+  TablePaginationActions,
 };

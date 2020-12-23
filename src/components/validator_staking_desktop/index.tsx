@@ -13,11 +13,14 @@ import {
 import { ValidatorStakingDesktopProps } from './types';
 import { useGetStyles } from './styles';
 import { validatorStakingHook } from './hooks';
-import { TablePaginationActions } from './table_pagination_actions';
+import { TablePaginationActions } from '../..';
+import { getRows } from './utils';
 
 const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
   const {
-    data, labels, className, tablePaginationColor,
+    data,
+    labels,
+    className,
   } = props;
   const {
     handleChangePage,
@@ -25,7 +28,7 @@ const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
     page,
     rowsPerPage,
   } = validatorStakingHook();
-
+  const rows = getRows(labels);
   const { classes } = useGetStyles();
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'validator-staking-desktop')}>
@@ -33,13 +36,19 @@ const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
         <Table className={classnames('table')}>
           <TableHead>
             <TableRow>
-              <TableCell className={classnames('label', 'address')}>{labels.address}</TableCell>
-              {labels.from
-                ? <TableCell align="left" className={classnames('label', 'from')}>{labels.from}</TableCell> : null }
-              {labels.redelegateTo
-                ? <TableCell align="left" className={classnames('label', 'redelegateTo')}>{labels.redelegateTo}</TableCell> : null }
-
-              <TableCell align="right" className={classnames('label', 'amount')}>{labels.amount}</TableCell>
+              {
+                rows.map((row) => {
+                  return (
+                    <TableCell
+                      key={row.className}
+                      className={classnames(`label__${row.className}`, 'label')}
+                      align={row.align}
+                    >
+                      {row.display}
+                    </TableCell>
+                  );
+                })
+              }
             </TableRow>
           </TableHead>
           <TableBody>
@@ -52,18 +61,16 @@ const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
                   <TableCell className={classnames('cell', 'address')}>
                     {row.address}
                   </TableCell>
-                  {row.from
-                    ? (
-                      <TableCell align="left" className={classnames('cell', 'from')}>
-                        {row.from}
+                  {!!row.redelegate && (
+                    <>
+                      <TableCell className={classnames('cell', 'from')}>
+                        {row.redelegate.from}
                       </TableCell>
-                    ) : null}
-                  {row.redelegateTo
-                    ? (
-                      <TableCell align="left" className={classnames('cell', 'redelegateTo')}>
-                        {row.redelegateTo}
+                      <TableCell className={classnames('cell', 'redelegate-to')}>
+                        {row.redelegate.to}
                       </TableCell>
-                    ) : null }
+                    </>
+                  )}
                   <TableCell align="right" className={classnames('cell', 'amount')}>
                     {row.amount}
                   </TableCell>
@@ -72,22 +79,16 @@ const ValidatorStakingDesktop = (props: ValidatorStakingDesktopProps) => {
             })}
           </TableBody>
           <TableFooter>
-            <TableRow
-              style={{
-                background: tablePaginationColor,
-              }}
-            >
+            <TableRow>
               <TablePagination
-                rowsPerPageOptions={[5, 10, 25, 50, {
-                  label: 'All', value: -1,
-                }]}
+                rowsPerPageOptions={[]}
                 colSpan={6}
                 count={data.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 onChangePage={handleChangePage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
-                ActionsComponent={TablePaginationActions}
+                ActionsComponent={(subProps:any) => <TablePaginationActions {...subProps} />}
               />
             </TableRow>
           </TableFooter>

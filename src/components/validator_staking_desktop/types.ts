@@ -9,20 +9,14 @@ export type Data = {
   amount: string;
 };
 
+export type Labels = {
+  address: string;
+  from?: string;
+  redelegateTo?: string;
+  amount: string;
+}
 export interface ValidatorStakingDesktopProps {
   className?: string;
-  labels: {
-    address: string;
-    from?: string;
-    redelegateTo?: string;
-    amount: string;
-  };
+  labels: Labels;
   data: Data[];
-}
-
-export interface TablePaginationActionsProps {
-  count: number;
-  page: number;
-  rowsPerPage: number;
-  onChangePage: (event: React.MouseEvent<HTMLButtonElement>, newPage: number) => void;
 }

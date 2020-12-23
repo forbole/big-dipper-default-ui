@@ -4,7 +4,7 @@ import { TablePagination } from '@material-ui/core';
 import { ValidatorStakingMobileProps } from './types';
 import { useGetStyles } from './styles';
 import { useTablePaginationHook } from './hooks';
-import { TablePaginationActions } from './components';
+import { TablePaginationActions } from '../..';
 
 const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
   const {

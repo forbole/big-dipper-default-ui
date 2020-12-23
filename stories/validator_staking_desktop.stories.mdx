@@ -16,9 +16,9 @@ import {
 # ValidatorStakingDesktop
 ---
 
-## Default
+## Delegations
 <Canvas>
-  <Story name="Default">
+  <Story name="Delegations">
     <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} tablePaginationColor="#fffff"/>
   </Story>
 </Canvas>
@@ -51,26 +51,17 @@ import {
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>title</td>
-    <td>true</td>
-    <td>
-
-`string`
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
 
   <tr>
     <td>labels</td>
-    <td>true</td>
+    <td>-</td>
     <td>
 
 ```
 {
   address: string;
+  from?: string;
+  redelegateTo?: string;
   amount: string;
 }
 ```
@@ -88,21 +79,13 @@ import {
 ```
 {
   address: React.ReactNode;
+  redelegate?: {
+    from: React.ReactNode;
+    to: React.ReactNode;
+  }
   amount: string;
 }[];
 ```
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-
-  <tr>
-    <td>onClick</td>
-    <td>-</td>
-    <td>
-
-`(data) => void`
 
   </td>
     <td>-</td>
@@ -124,34 +107,13 @@ import {
 </table>
 <br/>
 
-
-## Delegations
-<Canvas>
-  <Story name="Delegations">
-    <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} tablePaginationColor="#fffff"/>
-  </Story>
-</Canvas>
-
-```
-<ValidatorStakingDesktop
-  labels={{
-    address: 'Address',
-    amount: 'Amount',
-  }}
-  data={[
-    {
-      address: <Address />,
-      amount: '1,000',
-    },
-    ...
-  ]}
- />
-```
-
 ## Redelegations
 <Canvas>
   <Story name="Redelegations">
-    <ValidatorStakingDesktop labels={dummyLabelRedelegationsDesktop} data={dummyDataRedelegations} tablePaginationColor="#fffff"/>
+    <ValidatorStakingDesktop
+      labels={dummyLabelRedelegationsDesktop}
+      data={dummyDataRedelegations}
+    />
   </Story>
 </Canvas>
 
@@ -166,9 +128,11 @@ import {
   data={[
     {
       address: <Address />,
-      from: <Address />,
-      redelegateTo: <Address />,
-      amount: '1,000',
+      redelegate: {
+        from: <Address />,
+        to: <Address />,
+      },
+      amount: '1,000 ATOM',
     },
     ...
   ]}
@@ -178,7 +142,7 @@ import {
 ## Undelegations
 <Canvas>
   <Story name="Undelegations">
-    <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} tablePaginationColor="#fffff" />
+    <ValidatorStakingDesktop labels={dummyLabelDesktop} data={dummyData} />
   </Story>
 </Canvas>
 

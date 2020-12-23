@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { TablePaginationActions } from './components';
+import { TablePaginationActions } from '../..';
 import ValidatorStakingMobile from '.';
 
 describe('ValidatorStakingMobile', () => {

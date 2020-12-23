@@ -4,6 +4,7 @@ import {
   Table,
   TableHead,
 } from '@material-ui/core';
+import { TablePaginationActions } from '../..';
 import ValidatorStakingDesktop from '.';
 
 describe('ValidatorStakingDesktop', () => {
@@ -22,13 +23,15 @@ describe('ValidatorStakingDesktop', () => {
           amount: '1,000 ATOM',
         },
         ]}
-        tablePaginationColor="#fffff"
       />,
     );
     expect(wrap).not.toBeNull();
 
     expect(wrap.find('.validator-staking-desktop')).toHaveLength(1);
     expect(wrap.find(Table)).toHaveLength(1);
+    expect(wrap.find(TablePaginationActions)).toHaveLength(1);
     expect(wrap.find(TableHead)).toHaveLength(1);
+    expect(wrap.find('th')).toHaveLength(2);
+    expect(wrap.find('.label__redelegate-to')).toHaveLength(0);
   });
 });

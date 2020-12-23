@@ -54,7 +54,7 @@ const TablePaginationActions = (props: TablePaginationActionsMobileProps) => {
         {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
       </IconButton>
       <p className={classnames('pagination-actions__page')}>
-        {page}
+        {page + 1}
       </p>
       <IconButton
         disableRipple
