@@ -37,8 +37,10 @@ const ValidatorStakingMobile = (props: ValidatorStakingMobileProps) => {
                 <div className={classnames('validator-staking-address')}>
                   {row.address}
                 </div>
-                <div className={classnames('validator-staking-amount', 'overflow')}>
-                  {row.amount}
+                <div className={classnames('validator-staking-amount')}>
+                  <div className={classnames('validator-staking__amount--overflow')}>
+                    {row.amount}
+                  </div>
                 </div>
 
               </div>

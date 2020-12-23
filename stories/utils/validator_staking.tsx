@@ -25,7 +25,7 @@ export const labels = {
 export const dummyData: Data[] = [
   {
     address: <Address />,
-    amount: '1,000 ATOM',
+    amount: '1,0004444444444444444444444444444444 ATOM',
   },
   {
     address: <Address />,

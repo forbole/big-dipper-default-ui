@@ -25,6 +25,15 @@ export const useGetStyles = () => {
         alignItems: 'center',
         marginTop: '1rem',
       },
+      '& .validator-staking-amount': {
+        marginLeft: '1rem',
+        minWidth: '0',
+      },
+      '& .validator-staking__amount--overflow': {
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+      },
       '& .validator-staking__pagination': {
         boxSizing: 'border-box',
         '& .MuiTablePagination-toolbar': {
