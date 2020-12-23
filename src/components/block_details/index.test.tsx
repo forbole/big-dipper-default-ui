@@ -1,33 +1,56 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ProposalList from '.';
+import BlockDetails from '.';
+import {
+  ProposerDesktop,
+  signatureData,
+} from './utils';
 
-describe('ProposalList', () => {
+describe('BlockDetails', () => {
   it('Works', () => {
-    expect(ProposalList).toBeTruthy();
+    expect(BlockDetails).toBeTruthy();
     const wrap = mount(
-      <ProposalList
-        data={[{
-          id: '#01',
-          proposer: <div>forbole</div>,
-          title: <div>Lunie.io on iOS and Android</div>,
-          content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
-          time: '10 Jan 2020,13:00:22 UTC',
-          status: {
-            current: true,
-            display: 'Vote',
+      <BlockDetails
+        title="Block # 2,768,644"
+        txHash={{
+          display: 'Tx Hash',
+          value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
+        }}
+        time={{
+          display: 'Time',
+          value: '10 Jan 2020, 12:59:27 UTC',
+        }}
+        noTransactions={{
+          display: 'No of Transactions',
+          value: '1',
+        }}
+        proposer={{
+          display: 'Proposer',
+          value: <ProposerDesktop />,
+        }}
+        signedVotingPower={{
+          display: 'Signed voting power',
+          value: '89%',
+        }}
+        signatures={{
+          display: 'Signatures',
+          value: '100 signatures',
+          tableHead: {
+            validator: 'Validator',
+            votingPower: 'Voting Power',
+            votingPowerPercentage: 'Voting Power (Percentage)',
+            signStatus: 'Sign Status',
           },
-          duration: '(In 12 days)',
-        },
-        ]}
+        }}
+        data={signatureData}
         desktop={false}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find('.id').first().text()).toEqual('#01');
-    expect(wrap.find('.proposerText').first().text()).toEqual('Proposer');
-    expect(wrap.find('.component').first().text()).toEqual('Vote');
-    expect(wrap.find('.time').first().text()).toEqual('10 Jan 2020,13:00:22 UTC(In 12 days)');
-    expect(wrap.find('.content').first().text()).toEqual('Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏');
+    expect(wrap.find('h1').first().text()).toEqual('Block # 2,768,644');
+    expect(wrap.find('.time').find('.display').first().text()).toEqual('Time');
+    expect(wrap.find('.noTransactions').find('.display').first().text()).toEqual('No of Transactions');
+    expect(wrap.find('.signedVotingPower').find('.display').first().text()).toEqual('Signed voting power');
+    expect(wrap.find(BlockDetails)).toHaveLength(1);
   });
 });

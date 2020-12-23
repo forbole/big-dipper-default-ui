@@ -3,77 +3,85 @@ import classnames from 'classnames';
 import {
   Table,
   TableBody,
-  TableCell,
-  TableRow,
 } from '@material-ui/core';
-import { AccessTime } from '@material-ui/icons';
+import { KeyboardArrowRight } from '@material-ui/icons';
+import { useBlockDetailsHook } from './hooks';
 import { ProposalListProps } from './types';
 import { useGetStyles } from './styles';
 import {
-  Button, Status,
+  Dialog,
+  Row,
 } from './components';
-import { useProposalUtils } from './utils';
 
-const ProposalList = (props: ProposalListProps) => {
+const BlockDetails = (props: ProposalListProps) => {
   const {
-    data, className, desktop, onClick,
+    desktop,
+    title,
+    txHash,
+    time,
+    noTransactions,
+    proposer,
+    signatures,
+    signedVotingPower,
+    data,
   } = props;
 
+  const {
+    open,
+    handleClickOpen,
+    handleClickClose,
+  } = useBlockDetailsHook();
+
   const { classes } = useGetStyles();
-  const { handleClick } = useProposalUtils(onClick);
   const responsiveClass = desktop ? classes.desktop : classes.mobile;
+
   return (
-    <div className={classnames(classes.root, responsiveClass, className, 'big-dipper', 'proposalList')}>
+    <div className={classnames(classes.root, responsiveClass, 'big-dipper', 'blockDetails')}>
       <Table className={classnames('table')}>
         <TableBody>
-          {data.map((row) => {
-            return (
-              <TableRow
-                key={row.time}
-                className={classnames('single-row')}
-                onClick={() => handleClick(row)}
+          <Row display={<h1>{title}</h1>} className="title" />
+          <Row
+            display={txHash.display}
+            value={(
+              <div className={classnames('txHashValue')}>
+                {txHash.value}
+              </div>
+            )}
+            className="txHash"
+          />
+          <Row display={time.display} value={time.value} className="time" />
+          <Row display={noTransactions.display} value={noTransactions.value} className="noTransactions" />
+          <Row display={proposer.display} value={proposer.value} className="proposer" />
+          <Row display={signedVotingPower.display} value={signedVotingPower.value} className="signedVotingPower" />
+          <Row
+            handleClickOpen={handleClickOpen}
+            display={signatures.display}
+            value={(
+              <span
+                className={classnames('signatureValue')}
               >
-                <TableCell className={classnames('cell', 'id')}>
-                  {row.id}
-                </TableCell>
-                <TableCell className={classnames('cell', 'proposal')}>
-                  <div className={classnames('mainContent')}>
-                    <div className={classnames('proposer')}>
-                      <div className={classnames('proposerText')}>
-                        Proposer
-                      </div>
-                      {row.proposer}
-                    </div>
-                    <div className={classnames('title')}>
-                      {row.title}
-                    </div>
-                    <div className={classnames('mainContent', 'content')}>
-                      {row.content}
-                    </div>
-                    <div className={classnames('mainContent', 'time')}>
-                      <div className={classnames('voting')}>
-                        <AccessTime className={classnames('clockImage')} />
-                        {row.time}
-                        <span className={classnames('days')}>
-                          {row.duration}
-                        </span>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div className={classnames('component')}>
-                    {row.status.current
-                      ? <Button display={row.status.display} />
-                      : <Status display={row.status.display} />}
-                  </div>
-                </TableCell>
-              </TableRow>
-            );
-          })}
+                {signatures.value}
+                <span
+                  className={classnames('signatureContent')}
+                >
+                  <KeyboardArrowRight className={classnames('arrowRight')} />
+                </span>
+              </span>
+            )}
+            className="signatures"
+          />
         </TableBody>
       </Table>
+      <Dialog
+        open={open}
+        handleClose={handleClickClose}
+        tableHead={signatures.tableHead}
+        data={data}
+        desktop={desktop}
+        title={signatures.display}
+      />
     </div>
   );
 };
 
-export default ProposalList;
+export default BlockDetails;

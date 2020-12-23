@@ -1,5 +1,5 @@
 import React from 'react';
-import AvatarDisplay from '../avatar_display';
+import { AvatarDisplay } from '../../src';
 
 export const ProposerDesktop = () => {
   return (
@@ -8,6 +8,18 @@ export const ProposerDesktop = () => {
       alt="avatar image"
       title="Forbole"
     />
+  );
+};
+
+export const ProposerMobile = () => {
+  return (
+    <div
+      style={{
+        color: '#1D86FF',
+      }}
+    >
+      Forbole
+    </div>
   );
 };
 

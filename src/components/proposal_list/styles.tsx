@@ -8,9 +8,12 @@ export const useGetStyles = () => {
       '& .cell': {
         borderBottom: 'none',
       },
-      '& .table': {
+      '& .MuiTableCell-root': {
+        '&:last-child': {
+          borderBottom: 'none',
+        },
         '& tr': {
-          borderBottom: '1px solid #E8E8E8',
+          borderBottom: '10px solid #E8E8E8',
           '&:last-child': {
             borderBottom: 'none',
           },
