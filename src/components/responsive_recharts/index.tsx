@@ -10,7 +10,7 @@ import { ResponsiveRechartsProps } from './types';
 const ResponsiveRecharts = (props:ResponsiveRechartsProps) => {
   const {
     children,
-    aspect = 0,
+    aspect = 3,
   } = props;
   const { classes } = useGetStyles();
   return (
