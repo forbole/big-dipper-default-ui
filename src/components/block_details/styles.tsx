@@ -55,9 +55,6 @@ export const useGetStyles = () => {
         borderBottom: 'none',
         display: 'table-cell',
       },
-      '& .tableHead': {
-        background: '#F8F8F8',
-      },
       '& .tableRow': {
         '&:nth-of-type(even)': {
           background: '#F8F8F8',

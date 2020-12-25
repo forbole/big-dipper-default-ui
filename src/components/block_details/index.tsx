@@ -23,6 +23,7 @@ const BlockDetails = (props: ProposalListProps) => {
     proposer,
     signatures,
     signedVotingPower,
+    className,
   } = props;
 
   const {
@@ -35,7 +36,7 @@ const BlockDetails = (props: ProposalListProps) => {
   const responsiveClass = desktop ? classes.desktop : classes.mobile;
 
   return (
-    <div className={classnames(classes.root, responsiveClass, 'big-dipper', 'blockDetails')}>
+    <div className={classnames(classes.root, responsiveClass, className, 'big-dipper', 'blockDetails')}>
       <Table className={classnames('table')}>
         <TableBody>
           <Row display={<h1>{title}</h1>} className="title" />
@@ -78,7 +79,7 @@ const BlockDetails = (props: ProposalListProps) => {
         data={signatures.data}
         desktop={desktop}
         title={signatures.display}
-        className={classnames(classes.root)}
+        className={classnames(classes.root, className)}
       />
     </div>
   );
