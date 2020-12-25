@@ -8,3 +8,4 @@
 - Add Avatar component
 - Add Consensus component
 - Add Proposal component
+- Add BlockDetails component
