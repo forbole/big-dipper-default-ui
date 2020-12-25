@@ -1,8 +1,30 @@
 import React from 'react';
-import {
-  Data,
-  Labels,
-} from './components/signatureDialog/types';
+
+export interface Labels {
+  validator: string;
+  votingPower: string;
+  votingPowerPercentage: string;
+  signStatus: string;
+}
+
+export interface Data {
+  validator: {
+    rawValue: string;
+    display: React.ReactNode;
+  }
+  votingPower: {
+    rawValue: number;
+    display: string;
+  }
+  votingPowerPercentage: {
+    rawValue: number;
+    display: string;
+  }
+  signStatus: {
+    rawValue: number;
+    display: string;
+  }
+}
 
 export type OnClick = (data: any) => void;
 

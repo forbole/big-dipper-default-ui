@@ -1,4 +1,4 @@
-import { Labels } from './types';
+import { Labels } from '../../types';
 
 export const getColumns = (labels: Labels) => {
   return ([

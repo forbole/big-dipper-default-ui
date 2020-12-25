@@ -1,5 +1,5 @@
 import Row from './row';
-import Dialog from './signatureDialog';
+import Dialog from './signature_dialog';
 
 export {
   Row,
