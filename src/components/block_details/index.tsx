@@ -23,7 +23,6 @@ const BlockDetails = (props: ProposalListProps) => {
     proposer,
     signatures,
     signedVotingPower,
-    data,
   } = props;
 
   const {
@@ -75,10 +74,11 @@ const BlockDetails = (props: ProposalListProps) => {
       <Dialog
         open={open}
         handleClose={handleClickClose}
-        tableHead={signatures.tableHead}
-        data={data}
+        labels={signatures.labels}
+        data={signatures.data}
         desktop={desktop}
         title={signatures.display}
+        className={classnames(classes.root)}
       />
     </div>
   );

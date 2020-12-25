@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import BlockDetails from '.';
 import {
-  ProposerDesktop,
+  Proposer,
   signatureData,
 } from './utils';
 
@@ -26,7 +26,7 @@ describe('BlockDetails', () => {
         }}
         proposer={{
           display: 'Proposer',
-          value: <ProposerDesktop />,
+          value: <Proposer />,
         }}
         signedVotingPower={{
           display: 'Signed voting power',
@@ -35,22 +35,22 @@ describe('BlockDetails', () => {
         signatures={{
           display: 'Signatures',
           value: '100 signatures',
-          tableHead: {
+          labels: {
             validator: 'Validator',
             votingPower: 'Voting Power',
             votingPowerPercentage: 'Voting Power (Percentage)',
             signStatus: 'Sign Status',
           },
+          data: signatureData,
         }}
-        data={signatureData}
         desktop={false}
       />,
     );
     expect(wrap).not.toBeNull();
     expect(wrap.find('h1').first().text()).toEqual('Block # 2,768,644');
-    expect(wrap.find('.time').find('.display').first().text()).toEqual('Time');
-    expect(wrap.find('.noTransactions').find('.display').first().text()).toEqual('No of Transactions');
-    expect(wrap.find('.signedVotingPower').find('.display').first().text()).toEqual('Signed voting power');
+    expect(wrap.find('.time').find('.displayTitle').first().text()).toEqual('Time');
+    expect(wrap.find('.noTransactions').find('.displayTitle').first().text()).toEqual('No of Transactions');
+    expect(wrap.find('.signedVotingPower').find('.displayTitle').first().text()).toEqual('Signed voting power');
     expect(wrap.find(BlockDetails)).toHaveLength(1);
   });
 });

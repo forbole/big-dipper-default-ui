@@ -42,31 +42,42 @@ export const useGetStyles = () => {
       '& .value': {
         display: 'flex',
       },
-      '& .dialog': {
-        fontSize: '10rem',
-
-        '& tableHead': {
-          background: '#F8F8F8',
-        },
-        '& .signatureTable': {
-          background: 'red',
-        },
-        '& .table__row': {
-          '&:nth-of-type(odd)': {
-            background: '#F8F8F8',
-            '& .rank': {
-              '&:nth-of-type(odd)': {
-                background: '#FFFFFF',
-              },
-            },
-          },
-          '&:hover': {
-            cursor: 'pointer',
-          },
-        },
-      },
       '& .signatures': {
         cursor: 'pointer',
+      },
+      '& .signatureTable': {
+        borderBottom: 'none',
+        width: 'auto',
+        overflow: 'auto',
+        margin: '1rem 1.5rem 2.5rem 1.5rem',
+      },
+      '& .MuiTableCell-root': {
+        borderBottom: 'none',
+        display: 'table-cell',
+      },
+      '& .tableHead': {
+        background: '#F8F8F8',
+      },
+      '& .tableRow': {
+        '&:nth-of-type(even)': {
+          background: '#F8F8F8',
+        },
+      },
+      '& .arrowIcon': {
+        width: '1rem',
+        height: '1rem',
+        marginLeft: '0.3rem',
+        verticalAlign: 'text-bottom',
+      },
+      '& .closeIcon': {
+        position: 'absolute',
+        right: '1rem',
+        top: '1.2rem',
+        color: 'grey',
+      },
+      '& .dialogTitle': {
+        paddingTop: '1rem',
+        textAlign: 'center',
       },
     },
     desktop: {
@@ -75,18 +86,6 @@ export const useGetStyles = () => {
       },
       '& .MuiTableCell-root': {
         display: 'table-cell',
-        // '&:last-child': {
-        //   // borderBottom: '10px solid #E8E8E8',
-        // },
-        // '& tr': {
-        //   borderBottom: '10px solid #E8E8E8',
-        //   '&:last-child': {
-        //     borderBottom: 'none',
-        //   },
-        // },
-      },
-      '& .signatureTable': {
-        margin: '2.5rem',
       },
     },
     mobile: {
@@ -95,9 +94,9 @@ export const useGetStyles = () => {
       },
       '& .MuiTableCell-root': {
         display: 'block',
-        padding: '0.1rem 0 0.1rem 0',
+        padding: '0.3rem 0 0.1rem 0',
       },
-      '& .display': {
+      '& .displayTitle': {
         borderBottom: 'none',
         marginTop: '0.7rem',
       },

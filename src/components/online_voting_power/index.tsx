@@ -23,7 +23,7 @@ const OnlineVotingPower = (props:OnlineVotingPowerProps) => {
     <div
       className={classnames(classes.root, className, 'big-dipper', 'online-voting-power')}
     >
-      <ResponsiveRecharts aspect={recharts?.gridAspect ?? 1.5}>
+      <ResponsiveRecharts aspect={recharts?.gridAspect}>
         <LineChart
           data={data}
           margin={{

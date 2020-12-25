@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Data,
-  TableHead,
+  Labels,
 } from './components/signatureDialog/types';
 
 export type OnClick = (data: any) => void;
@@ -34,7 +34,7 @@ export interface ProposalListProps {
     display: string;
     value: string;
     onClick?: OnClick;
-    tableHead: TableHead;
+    labels: Labels;
+    data: Data[];
   };
-  data: Data[];
 }

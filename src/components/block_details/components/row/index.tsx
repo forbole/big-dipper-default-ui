@@ -16,7 +16,7 @@ const Row = (props: RowProps) => {
 
   return (
     <TableRow onClick={handleClickOpen} className={classnames(className)}>
-      <TableCell className={classnames('cell', 'display')}>
+      <TableCell className={classnames('cell', 'displayTitle')}>
         {display}
       </TableCell>
       <TableCell className={classnames('cell', 'value')}>

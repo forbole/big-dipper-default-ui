@@ -1,23 +1,36 @@
 import React from 'react';
 
-export type TableHead ={
+export type Labels ={
   validator: string;
   votingPower: string;
   votingPowerPercentage: string;
   signStatus: string;
 }
 
-export type Data ={
-  validator: React.ReactNode;
-  votingPower: string;
-  votingPowerPercentage: string;
-  signStatus: number;
+export interface Data {
+  validator: {
+    rawValue: string;
+    display: React.ReactNode;
+  }
+  votingPower: {
+    rawValue: number;
+    display: string;
+  }
+  votingPowerPercentage: {
+    rawValue: number;
+    display: string;
+  }
+  signStatus: {
+    rawValue: number;
+    display: string;
+  }
 }
 
 export interface DialogProps {
+  className?: string;
   handleClose: any;
   open: any;
-  tableHead: TableHead;
+  labels: Labels;
   data: Data[];
   desktop: boolean;
   title: string;

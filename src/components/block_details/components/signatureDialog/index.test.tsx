@@ -11,7 +11,7 @@ describe('Dialog', () => {
       <Dialog
         open
         handleClose={spy}
-        tableHead={{
+        labels={{
           validator: 'Validator',
           votingPower: 'Voting Power',
           votingPowerPercentage: 'Voting Power (Percentage)',
@@ -19,24 +19,26 @@ describe('Dialog', () => {
         }}
         data={[
           {
-            validator: <AvatarDisplay
-              imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-              alt="avatar image"
-              title="Forbole"
-            />,
-            votingPower: '3,880,293.53653856 ATOM',
-            votingPowerPercentage: '7.02%',
-            signStatus: 0,
-          },
-          {
-            validator: <AvatarDisplay
-              imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-              alt="avatar image"
-              title="Forbole"
-            />,
-            votingPower: '3,880,293.53653856 ATOM',
-            votingPowerPercentage: '7.02%',
-            signStatus: 0,
+            validator: {
+              rawValue: 'Forbole',
+              display: <AvatarDisplay
+                imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+                alt="avatar image"
+                title="Forbole"
+              />,
+            },
+            votingPower: {
+              rawValue: 3880293.53653856,
+              display: '3,880,293.53653856 ATOM',
+            },
+            votingPowerPercentage: {
+              rawValue: 7.02,
+              display: '7.02%',
+            },
+            signStatus: {
+              rawValue: 0,
+              display: 'Down',
+            },
           },
         ]}
         desktop

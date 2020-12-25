@@ -9,39 +9,37 @@ import {
   TableCell,
   TableRow,
   TableHead,
+  TableSortLabel,
 } from '@material-ui/core';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import {
-  UnfoldMoreSharp,
+  ArrowDropDown,
   Close,
 } from '@material-ui/icons';
+import { getColumns } from './utils';
 import { useSignatureHook } from './hooks';
 import {
   DialogProps,
   DialogTitleProps,
 } from './types';
-import { useGetStyles } from './styles';
+import { Data } from './types';
 
 const SignatureDialog = (props: DialogProps) => {
   const {
     handleClose,
     open,
     data,
-    tableHead,
+    labels,
     title,
-    desktop,
+    className,
   } = props;
 
-  const { classes } = useGetStyles();
+  const columns = getColumns(labels);
 
   const {
-    isAsc,
-    handleChange,
-  } = useSignatureHook();
-
-  const responsiveClass = desktop ? classes.desktop : classes.mobile;
-
-  const sortedData = data.sort((a, b) => a.signStatus - b.signStatus);
+    state,
+    handleSort,
+  } = useSignatureHook(data);
 
   const DialogTitle = (titleProps: DialogTitleProps) => {
     const {
@@ -69,37 +67,58 @@ const SignatureDialog = (props: DialogProps) => {
   };
 
   return (
-    <Dialog maxWidth="lg" fullWidth fullScreen={!desktop} className={classnames(classes.root, responsiveClass, 'dialog')} onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+    <Dialog maxWidth="lg" fullWidth className={classnames(className, 'dialog')} onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
       <DialogTitle onClose={handleClose}>
         {title}
       </DialogTitle>
-      <Table className={classnames('signatureTable')}>
+      <Table className={classnames('signatureTable')} stickyHeader aria-label="sticky table">
         <TableHead>
           <TableRow className={classnames('tableHead', 'table__row')}>
-            <TableCell className={classnames('headTitle')}>{tableHead.validator}</TableCell>
-            <TableCell className={classnames('headTitle')} align="right">{tableHead.votingPower}</TableCell>
-            <TableCell className={classnames('headTitle')} align="right">{tableHead.votingPowerPercentage}</TableCell>
-            <TableCell className={classnames('headTitle')} sortDirection="asc" onClick={handleChange}>
-              {tableHead.signStatus}
-              <UnfoldMoreSharp className={classnames('arrowIcon')} />
-            </TableCell>
+            {columns.map((column: any) => {
+              if (column.sort) {
+                return (
+                  <TableCell
+                    className={classnames('headTitle')}
+                    key={column.id}
+                    align={column.align as any}
+                  >
+                    <TableSortLabel
+                      active={state.activeSort === column.id}
+                      direction={state.activeSort === column.id ? state.sortDirection : 'asc'}
+                      onClick={handleSort(column.id)}
+                      IconComponent={ArrowDropDown}
+                    >
+                      {column.label}
+                    </TableSortLabel>
+                  </TableCell>
+                );
+              }
+              return (
+                <TableCell
+                  key={column.id}
+                  align={column.align as any}
+                >
+                  {column.label}
+                </TableCell>
+              );
+            })}
           </TableRow>
         </TableHead>
         <TableBody>
-          {(isAsc ? sortedData : Array.from(sortedData).reverse()).map((x) => {
+          {state.data.map((x: Data) => {
             return (
               <TableRow className={classnames('tableRow')}>
                 <TableCell className={classnames('display', 'validator')}>
-                  {x.validator}
+                  {x.validator.display}
                 </TableCell>
                 <TableCell align="right" className={classnames('value', 'votingPower')}>
-                  {x.votingPower}
+                  {x.votingPower.display}
                 </TableCell>
                 <TableCell align="right" className={classnames('value', 'votingPowerPercentage')}>
-                  {x.votingPowerPercentage}
+                  {x.votingPowerPercentage.display}
                 </TableCell>
                 <TableCell className={classnames('value', 'signStatus')}>
-                  {x.signStatus}
+                  {x.signStatus.display}
                 </TableCell>
               </TableRow>
             );
