@@ -19,12 +19,9 @@ import ValidatorInfo from './components/validator_info';
 import ActivityDetails from './components/activity_details';
 import InfoPopover from './components/info_popover';
 import PowerEvents from './components/power_events';
-<<<<<<< HEAD
 import BlockDetails from './components/block_details';
-=======
 import ValidatorStakingDesktop from './components/validator_staking_desktop';
 import ValidatorStakingMobile from './components/validator_staking_mobile';
->>>>>>> f5b487fe07d530c5cc6be379836b2431a5cf5728
 import ValidatorBlocks from './components/validator_blocks';
 import TablePaginationActions from './components/table_pagination_actions';
 
@@ -50,12 +47,9 @@ export {
   ActivityDetails,
   InfoPopover,
   PowerEvents,
-<<<<<<< HEAD
   BlockDetails,
-=======
   ValidatorStakingDesktop,
   ValidatorStakingMobile,
->>>>>>> f5b487fe07d530c5cc6be379836b2431a5cf5728
   ValidatorBlocks,
   TablePaginationActions,
 };
