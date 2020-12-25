@@ -6,14 +6,14 @@ import {
 } from '@material-ui/core';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { useBlockDetailsHook } from './hooks';
-import { ProposalListProps } from './types';
+import { BlockDetailsProps } from './types';
 import { useGetStyles } from './styles';
 import {
   Dialog,
   Row,
 } from './components';
 
-const BlockDetails = (props: ProposalListProps) => {
+const BlockDetails = (props: BlockDetailsProps) => {
   const {
     desktop,
     title,
@@ -40,15 +40,7 @@ const BlockDetails = (props: ProposalListProps) => {
       <Table className={classnames('table')}>
         <TableBody>
           <Row display={<h1>{title}</h1>} className="title" />
-          <Row
-            display={txHash.display}
-            value={(
-              <div className={classnames('txHashValue')}>
-                {txHash.value}
-              </div>
-            )}
-            className="txHash"
-          />
+          <Row display={txHash.display} value={txHash.display} className="txHash" />
           <Row display={time.display} value={time.value} className="time" />
           <Row display={noTransactions.display} value={noTransactions.value} className="noTransactions" />
           <Row display={proposer.display} value={proposer.value} className="proposer" />

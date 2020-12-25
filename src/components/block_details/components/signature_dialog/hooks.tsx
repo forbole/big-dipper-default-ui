@@ -1,12 +1,6 @@
 import { useState } from 'react';
 
 export const useSignatureHook = (data:any[], active = 'validator') => {
-  // const [isAsc, setIsAsc] = useState(true);
-
-  // const handleChange = () => {
-  //   setIsAsc(!isAsc);
-  // };
-
   const [state, setState] = useState<any>({
     data,
     activeSort: active,
@@ -47,7 +41,5 @@ export const useSignatureHook = (data:any[], active = 'validator') => {
   return {
     state,
     handleSort,
-    // isAsc,
-    // handleChange,
   };
 };

@@ -22,7 +22,7 @@ import {
   DialogProps,
   DialogTitleProps,
 } from './types';
-import { Data } from './types';
+import { Data } from '../../types';
 
 const SignatureDialog = (props: DialogProps) => {
   const {

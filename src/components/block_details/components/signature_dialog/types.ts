@@ -6,8 +6,8 @@ import {
 
 export interface DialogProps {
   className?: string;
-  handleClose: any;
-  open: any;
+  handleClose: () => void;
+  open: boolean;
   labels: Labels;
   data: Data[];
   desktop: boolean;

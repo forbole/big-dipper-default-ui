@@ -21,9 +21,6 @@ export const useGetStyles = () => {
           },
         },
       },
-      '& .txHashValue': {
-        color: '#1D86FF',
-      },
       '& .arrowRight': {
         paddingTop: '0.2rem',
         justifyContent: 'flex-end',
@@ -101,15 +98,8 @@ export const useGetStyles = () => {
         paddingBottom: '0.7rem',
         display: 'flex',
       },
-
       '& .title': {
         display: 'none',
-      },
-      '& .arrowRight': {
-        paddingTop: '0.2rem',
-        justifyContent: 'flex-end',
-        height: '1rem',
-        width: '1rem',
       },
       '& .signatureContent': {
         flex: 1,

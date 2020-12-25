@@ -4,5 +4,5 @@ export interface RowProps {
   className?: string;
   display: string| React.ReactNode;
   value?: string | React.ReactNode;
-  handleClickOpen?: any;
+  handleClickOpen?: () => void;
 }

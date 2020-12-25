@@ -28,7 +28,7 @@ export interface Data {
 
 export type OnClick = (data: any) => void;
 
-export interface ProposalListProps {
+export interface BlockDetailsProps {
   className?: string;
   desktop: boolean;
   title: string;
