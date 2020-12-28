@@ -8,13 +8,12 @@ export interface Labels {
 
 export interface Data {
   proposer: React.ReactNode;
-  time: string;
   amount: string;
+  time: string;
 }
 
-export interface ProposalDepositProps {
+export interface ProposalDepositDesktopProps {
   className?: string;
-  desktop: boolean;
   title: string;
   data: Data[];
   labels: Labels;

@@ -2,54 +2,27 @@ import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
 import {
-  ProposalDeposit,
+  ProposalDepositMobile,
 } from '../src';
-import {
-  Proposer, signatureData,
-} from './utils/block_details';
+import { depositData } from './utils/proposal_deposit';
 
-<Meta title="ProposalDeposit" component={ProposalDeposit} />
+<Meta title="ProposalDepositMobile" component={ProposalDepositMobile} />
 
-# ProposalDeposit
+# ProposalDepositMobile
 ---
 
 ## Default
 <Canvas>
   <Story name="Default">
-    <ProposalDeposit
-    title='Block # 2,768,644'
-    txHash={{
-    display: 'Tx Hash',
-    value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
+    <ProposalDepositMobile
+    title='Deposits (109.9 ATOM)'
+    data={depositData}
+    labels={{
+      depositor: 'Depositor',
+      amount: 'Amount',
+      time: 'Time [UTC]',
     }}
-    time={{
-    display: 'Time',
-    value: '10 Jan 2020, 12:59:27 UTC',
-    }}
-    noTransactions={{
-    display: 'No of Transactions',
-    value: '1',
-    }}
-    proposer={{
-      display: 'Proposer',
-      value: <Proposer/>,
-    }}
-    signedVotingPower={{
-    display: 'Signed voting power',
-    value: '89%',
-    }}
-    signatures={{
-    display: 'Signatures',
-    value: '100 signatures',
-    labels: {
-      validator: 'Validator',
-      votingPower: 'Voting Power',
-      votingPowerPercentage: 'Voting Power (Percentage)',
-      signStatus: 'Sign Status',
-    },
-    data:signatureData,
-    }}
-    desktop={false} />
+    />
   </Story>
 </Canvas>
 
@@ -253,106 +226,3 @@ import {
   </table>
 <br/>
 
-
-
-## Desktop
-<Canvas>
-  <Story name="Desktop">
-    <ProposalDeposit
-      title='Block # 2,768,644'
-      txHash={{
-        display: 'Tx Hash',
-        value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
-      }}
-      time={{
-        display: 'Time',
-        value: '10 Jan 2020, 12:59:27 UTC',
-      }}
-      noTransactions={{
-        display: 'No of Transactions',
-        value: '1',
-      }}
-      proposer={{
-        display: 'Proposer',
-        value: <Proposer/>,
-      }}
-      signedVotingPower={{
-        display: 'Signed voting power',
-        value: '89%',
-      }}
-      signatures={{
-        display: 'Signatures',
-        value: '100 signatures',
-        labels: {
-           validator: 'Validator',
-           votingPower: 'Voting Power',
-           votingPowerPercentage: 'Voting Power (Percentage)',
-           signStatus: 'Sign Status',
-        },
-        data:signatureData,
-      }}
-      desktop={true} />
-  </Story>
-</Canvas>
-
-```
-<BlockDetails
-  title='Block # 2,768,644'
-  txHash={{
-    display: 'Tx Hash',
-    value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
-  }}
-  time={{
-    display: 'Time',
-    value: '10 Jan 2020, 12:59:27 UTC',
-  }}
-  noTransactions={{
-    display: 'No of Transactions',
-    value: '1',
-  }}
-  proposer={{
-    display: 'Proposer',
-    value: <Proposer/>,
-  }}
-  signedVotingPower={{
-    display: 'Signed voting power',
-    value: '89%',
-  }}
-  signatures={{
-    display: 'Signatures',
-    value: '100 signatures',
-    labels: {
-      validator: 'Validator',
-      votingPower: 'Voting Power',
-      votingPowerPercentage: 'Voting Power (Percentage)',
-      signStatus: 'Sign Status',
-    },
-    data:{[
-      {
-        validator: {
-          rawValue: 'Forbole',
-          display: <AvatarDisplay
-            imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-            alt="avatar image"
-            title="Forbole"
-           />,
-       },
-        votingPower: {
-          rawValue: 3880293.53653856,
-          display: '3,880,293.53653856 ATOM',
-        },
-        votingPowerPercentage: {
-          rawValue: 7.02,
-          display: '7.02%',
-        },
-        signStatus: {
-          rawValue: 0,
-          display: 'Down',
-        },
-      },
-    ]},
-  }}
-  }}
-  desktop={true}
-/>
-```
