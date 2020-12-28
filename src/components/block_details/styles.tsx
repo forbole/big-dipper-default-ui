@@ -42,6 +42,9 @@ export const useGetStyles = () => {
       '& .signatures': {
         cursor: 'pointer',
       },
+      '&.dialog': {
+        backgroundColor: 'transparent',
+      },
       '& .signatureTable': {
         borderBottom: 'none',
         width: 'auto',
