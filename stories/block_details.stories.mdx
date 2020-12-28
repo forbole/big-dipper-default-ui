@@ -1,0 +1,358 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import {
+  BlockDetails,
+} from '../src';
+import {
+  Proposer, signatureData,
+} from './utils/block_details';
+
+<Meta title="BlockDetails" component={BlockDetails} />
+
+# BlockDetails
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <BlockDetails
+    title='Block # 2,768,644'
+    txHash={{
+    display: 'Tx Hash',
+    value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
+    }}
+    time={{
+    display: 'Time',
+    value: '10 Jan 2020, 12:59:27 UTC',
+    }}
+    noTransactions={{
+    display: 'No of Transactions',
+    value: '1',
+    }}
+    proposer={{
+      display: 'Proposer',
+      value: <Proposer/>,
+    }}
+    signedVotingPower={{
+    display: 'Signed voting power',
+    value: '89%',
+    }}
+    signatures={{
+    display: 'Signatures',
+    value: '100 signatures',
+    labels: {
+      validator: 'Validator',
+      votingPower: 'Voting Power',
+      votingPowerPercentage: 'Voting Power (Percentage)',
+      signStatus: 'Sign Status',
+    },
+    data:signatureData,
+    }}
+    desktop={false} />
+  </Story>
+</Canvas>
+
+```
+<BlockDetails
+  title='Block # 2,768,644'
+  txHash={{
+    display: 'Tx Hash',
+    value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
+  }}
+  time={{
+    display: 'Time',
+    value: '10 Jan 2020, 12:59:27 UTC',
+  }}
+  noTransactions={{
+    display: 'No of Transactions',
+    value: '1',
+  }}
+  proposer={{
+      display: 'Proposer',
+      value: <Proposer/>,
+  }}
+  signedVotingPower={{
+    display: 'Signed voting power',
+    value: '89%',
+  }}
+  signatures={{
+    display: 'Signatures',
+    value: '100 signatures',
+    labels: {
+      validator: 'Validator',
+      votingPower: 'Voting Power',
+      votingPowerPercentage: 'Voting Power (Percentage)',
+      signStatus: 'Sign Status',
+    },
+    data:{[
+      {
+        validator: {
+          rawValue: 'Forbole',
+          display: <AvatarDisplay
+            imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+            alt="avatar image"
+            title="Forbole"
+           />,
+       },
+        votingPower: {
+          rawValue: 3880293.53653856,
+          display: '3,880,293.53653856 ATOM',
+        },
+        votingPowerPercentage: {
+          rawValue: 7.02,
+          display: '7.02%',
+        },
+        signStatus: {
+          rawValue: 0,
+          display: 'Down',
+        },
+      },
+    ]},
+  }}
+  desktop={false}
+/>
+```
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+<tbody>
+  <tr>
+    <td>title</td>
+    <td>true</td>
+    <td>
+
+`string | React.ReactNode`
+
+  </td>
+    <td>title displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>txHash</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  display: string;
+  value: string;
+};
+```
+
+  </td>
+    <td>tx hash displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>proposer</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  display: string;
+  value: React.ReactNode;
+};
+```
+
+  </td>
+    <td>proposer displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>noTransactions</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  display: string;
+  value: string;
+};
+```
+
+  </td>
+    <td>no of transactions displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>signatures</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  display: string;
+  value: string;
+  onClick: ()=> void;
+    labels: {
+    validator: string;
+    votingPower: string;
+    votingPowerPercentage: string;
+    signStatus: string;
+  };
+  data:
+    {
+      validator: {
+        rawValue: string;
+        display: React.ReactNode;
+      };
+      votingPower: {
+        rawValue: number;
+        display: string;
+      };
+      votingPowerPercentage: {
+        rawValue: number;
+        display: string;
+      };
+      signStatus: {
+        rawValue: number;
+        display: string;
+      };
+    }[];
+};
+
+```
+
+  </td>
+    <td>data of signature dialog displayed</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>desktop</td>
+    <td>true</td>
+    <td>
+
+`boolean`
+
+  </td>
+    <td>desktop and mobile layouts switching</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>styles displayed</td>
+    <td>-</td>
+  </tr>
+</tbody>
+  </table>
+<br/>
+
+
+
+## Desktop
+<Canvas>
+  <Story name="Desktop">
+    <BlockDetails
+      title='Block # 2,768,644'
+      txHash={{
+        display: 'Tx Hash',
+        value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
+      }}
+      time={{
+        display: 'Time',
+        value: '10 Jan 2020, 12:59:27 UTC',
+      }}
+      noTransactions={{
+        display: 'No of Transactions',
+        value: '1',
+      }}
+      proposer={{
+        display: 'Proposer',
+        value: <Proposer/>,
+      }}
+      signedVotingPower={{
+        display: 'Signed voting power',
+        value: '89%',
+      }}
+      signatures={{
+        display: 'Signatures',
+        value: '100 signatures',
+        labels: {
+           validator: 'Validator',
+           votingPower: 'Voting Power',
+           votingPowerPercentage: 'Voting Power (Percentage)',
+           signStatus: 'Sign Status',
+        },
+        data:signatureData,
+      }}
+      desktop={true} />
+  </Story>
+</Canvas>
+
+```
+<BlockDetails
+  title='Block # 2,768,644'
+  txHash={{
+    display: 'Tx Hash',
+    value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
+  }}
+  time={{
+    display: 'Time',
+    value: '10 Jan 2020, 12:59:27 UTC',
+  }}
+  noTransactions={{
+    display: 'No of Transactions',
+    value: '1',
+  }}
+  proposer={{
+    display: 'Proposer',
+    value: <Proposer/>,
+  }}
+  signedVotingPower={{
+    display: 'Signed voting power',
+    value: '89%',
+  }}
+  signatures={{
+    display: 'Signatures',
+    value: '100 signatures',
+    labels: {
+      validator: 'Validator',
+      votingPower: 'Voting Power',
+      votingPowerPercentage: 'Voting Power (Percentage)',
+      signStatus: 'Sign Status',
+    },
+    data:{[
+      {
+        validator: {
+          rawValue: 'Forbole',
+          display: <AvatarDisplay
+            imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+            alt="avatar image"
+            title="Forbole"
+           />,
+       },
+        votingPower: {
+          rawValue: 3880293.53653856,
+          display: '3,880,293.53653856 ATOM',
+        },
+        votingPowerPercentage: {
+          rawValue: 7.02,
+          display: '7.02%',
+        },
+        signStatus: {
+          rawValue: 0,
+          display: 'Down',
+        },
+      },
+    ]},
+  }}
+  }}
+  desktop={true}
+/>
+```
