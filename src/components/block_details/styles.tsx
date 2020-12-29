@@ -86,9 +86,6 @@ export const useGetStyles = () => {
       },
     },
     mobile: {
-      '& .MuiTableCell-head': {
-        color: 'red',
-      },
       '& .MuiTableCell-root': {
         display: 'block',
         padding: '0.3rem 0 0.1rem 0',
