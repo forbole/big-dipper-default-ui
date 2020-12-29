@@ -5,7 +5,6 @@ export const useGetStyles = () => {
     root: {
       overflow: 'auto',
       '& .container': {
-
         display: 'flex',
         marginBottom: '0.5rem',
       },

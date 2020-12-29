@@ -9,3 +9,4 @@
 - Add Consensus component
 - Add Proposal component
 - Add BlockDetails component
+- Add ProposalDeposit component
