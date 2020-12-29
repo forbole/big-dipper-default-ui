@@ -24,6 +24,8 @@ import ValidatorStakingDesktop from './components/validator_staking_desktop';
 import ValidatorStakingMobile from './components/validator_staking_mobile';
 import ValidatorBlocks from './components/validator_blocks';
 import TablePaginationActions from './components/table_pagination_actions';
+import ProposalDepositDesktop from './components/proposal_deposit_desktop';
+import ProposalDepositMobile from './components/proposal_deposit_mobile';
 
 export {
   DataBlock,
@@ -52,4 +54,6 @@ export {
   ValidatorStakingMobile,
   ValidatorBlocks,
   TablePaginationActions,
+  ProposalDepositDesktop,
+  ProposalDepositMobile,
 };
