@@ -18,9 +18,9 @@ const ProposalDepositMobile = (props: ProposalDepositMobileProps) => {
       <h1>
         {title}
       </h1>
-      {data.map((row: any) => {
+      {data.map((row: any, i) => {
         return (
-          <Container depositor={row.depositor} amount={row.amount} time={row.time} />
+          <Container key={i} depositor={row.depositor} amount={row.amount} time={row.time} />
         );
       })}
     </div>

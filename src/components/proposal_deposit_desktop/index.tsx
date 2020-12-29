@@ -41,9 +41,9 @@ const ProposalDepositDesktop = (props: ProposalDepositDesktopProps) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((row: any) => {
+          {data.map((row: any, i) => {
             return (
-              <Row depositor={row.depositor} amount={row.amount} time={row.time} />
+              <Row key={i} depositor={row.depositor} amount={row.amount} time={row.time} />
             );
           })}
         </TableBody>
