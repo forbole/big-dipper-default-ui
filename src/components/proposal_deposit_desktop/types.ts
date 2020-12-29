@@ -7,7 +7,7 @@ export interface Labels {
 }
 
 export interface Data {
-  proposer: React.ReactNode;
+  depositor: React.ReactNode;
   amount: string;
   time: string;
 }

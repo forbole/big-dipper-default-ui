@@ -1,19 +1,9 @@
 import React from 'react';
 import { AvatarDisplay } from '../../src';
 
-export const Proposer = () => {
-  return (
-    <AvatarDisplay
-      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-      alt="avatar image"
-      title="Forbole"
-    />
-  );
-};
-
 export const depositData = [
   {
-    proposer: <AvatarDisplay
+    depositor: <AvatarDisplay
       imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
       alt="avatar image"
       title="Forbole"
@@ -22,7 +12,7 @@ export const depositData = [
     time: '09 Jan 2020, 10:00:19',
   },
   {
-    proposer: <AvatarDisplay
+    depositor: <AvatarDisplay
       imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
       alt="avatar image"
       title="Forbole"
@@ -31,7 +21,7 @@ export const depositData = [
     time: '09 Jan 2020, 10:00:20',
   },
   {
-    proposer: <AvatarDisplay
+    depositor: <AvatarDisplay
       imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
       alt="avatar image"
       title="Forbole"
@@ -40,7 +30,7 @@ export const depositData = [
     time: '09 Jan 2020, 12:00:19',
   },
   {
-    proposer: <AvatarDisplay
+    depositor: <AvatarDisplay
       imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
       alt="avatar image"
       title="Forbole"
@@ -49,7 +39,7 @@ export const depositData = [
     time: '09 Jan 2020, 10:30:19',
   },
   {
-    proposer: <AvatarDisplay
+    depositor: <AvatarDisplay
       imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
       alt="avatar image"
       title="Forbole"

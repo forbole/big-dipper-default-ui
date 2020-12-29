@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { ProposalDepositMobileProps } from './types';
 import { useGetStyles } from './styles';
+import { Container } from './components';
 
 const ProposalDepositMobile = (props: ProposalDepositMobileProps) => {
   const {
@@ -13,26 +14,13 @@ const ProposalDepositMobile = (props: ProposalDepositMobileProps) => {
   const { classes } = useGetStyles();
 
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'proposalDepositDesktop')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'proposalDepositMobile')}>
       <h1>
         {title}
       </h1>
       {data.map((row: any) => {
         return (
-          <div className={classnames('mainContainer')}>
-            <div className={classnames('line')} />
-            <div className={classnames('container')}>
-              <div>
-                {row.proposer}
-              </div>
-              <div className={classnames('amount')}>
-                {row.amount}
-              </div>
-            </div>
-            <div>
-              {row.time}
-            </div>
-          </div>
+          <Container depositor={row.depositor} amount={row.amount} time={row.time} />
         );
       })}
     </div>

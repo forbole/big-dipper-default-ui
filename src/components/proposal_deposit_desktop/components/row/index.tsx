@@ -8,15 +8,15 @@ import { RowProps } from './types';
 
 const Row = (props: RowProps) => {
   const {
-    proposer,
+    depositor,
     amount,
     time,
   } = props;
 
   return (
     <TableRow className={classnames('tableRow')}>
-      <TableCell className={classnames('cell', 'displayTitle')}>
-        {proposer}
+      <TableCell className={classnames('cell', 'depositor')}>
+        {depositor}
       </TableCell>
       <TableCell className={classnames('cell', 'amount')} align="right">
         {amount}

@@ -29,13 +29,13 @@ const ProposalDepositDesktop = (props: ProposalDepositDesktopProps) => {
       <Table className={classnames('table')}>
         <TableHead className={classnames('tableHead')}>
           <TableRow>
-            <TableCell className={classnames('cell')}>
+            <TableCell className={classnames('label', 'depositor')}>
               {labels.depositor}
             </TableCell>
-            <TableCell className={classnames('cell')} align="right">
+            <TableCell className={classnames('label', 'amount')} align="right">
               {labels.amount}
             </TableCell>
-            <TableCell className={classnames('cell')} align="right">
+            <TableCell className={classnames('label', 'time')} align="right">
               {labels.time}
             </TableCell>
           </TableRow>
@@ -43,7 +43,7 @@ const ProposalDepositDesktop = (props: ProposalDepositDesktopProps) => {
         <TableBody>
           {data.map((row: any) => {
             return (
-              <Row proposer={row.proposer} amount={row.amount} time={row.time} />
+              <Row depositor={row.depositor} amount={row.amount} time={row.time} />
             );
           })}
         </TableBody>

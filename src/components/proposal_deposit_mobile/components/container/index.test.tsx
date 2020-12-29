@@ -1,13 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Row from '.';
+import Container from '.';
 import AvatarDisplay from '../../../avatar_display';
 
-describe('Row', () => {
+describe('Container', () => {
   it('Works', () => {
-    expect(Row).toBeTruthy();
+    expect(Container).toBeTruthy();
     const wrap = mount(
-      <Row
+      <Container
         amount="10.8 ATOM"
         time="09 Jan 2020, 10:00:19"
         depositor={(
@@ -22,6 +22,6 @@ describe('Row', () => {
     expect(wrap).not.toBeNull();
     expect(wrap.find('.amount').first().text()).toEqual('10.8 ATOM');
     expect(wrap.find('.time').first().text()).toEqual('09 Jan 2020, 10:00:19');
-    expect(wrap.find(Row)).toHaveLength(1);
+    expect(wrap).toHaveLength(1);
   });
 });

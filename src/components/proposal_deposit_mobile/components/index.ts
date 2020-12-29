@@ -1,7 +1,5 @@
-import Row from './row';
-import Dialog from './signature_dialog';
+import Container from './container';
 
 export {
-  Row,
-  Dialog,
+  Container,
 };
