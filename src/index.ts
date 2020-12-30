@@ -26,6 +26,7 @@ import ValidatorBlocks from './components/validator_blocks';
 import TablePaginationActions from './components/table_pagination_actions';
 import ProposalDepositDesktop from './components/proposal_deposit_desktop';
 import ProposalDepositMobile from './components/proposal_deposit_mobile';
+import ProposalInfoDesktop from './components/proposal_info_desktop';
 
 export {
   DataBlock,
@@ -56,4 +57,5 @@ export {
   TablePaginationActions,
   ProposalDepositDesktop,
   ProposalDepositMobile,
+  ProposalInfoDesktop,
 };
