@@ -56,11 +56,11 @@ const TableDefault = (props: TableDefaultProps) => {
                   if (column.sort) {
                     return (
                       <TableCell
-                        className={classnames(`label__${column.label}`, 'table__label')}
                         key={column.label}
-                        align={column.align}
+                        align={column.align as any}
                       >
                         <TableSortLabel
+                          className={classnames(`label__${column.label}`, 'table__label')}
                           active={state.activeSort === column.label}
                           direction={state.activeSort === column.label ? state.sortDirection : 'asc'}
                           onClick={handleSort(column.label)}
@@ -76,7 +76,7 @@ const TableDefault = (props: TableDefaultProps) => {
                     <TableCell
                       key={column.label}
                       className={classnames(`label__${column.label}`, 'table__label')}
-                      align={column.align}
+                      align={column.align as any}
                     >
                       {column.display}
                     </TableCell>
@@ -96,14 +96,16 @@ const TableDefault = (props: TableDefaultProps) => {
                   className={classnames('table__row')}
                   onClick={() => handleRowClick(row)}
                 >
-                  {columns.map(({ label }) => {
+                  {columns.map(({
+                    label, align,
+                  }) => {
                     const cellData = row[label];
 
                     if (cellData) {
                       return (
                         <TableCell
                           key={`${label}-${i}`}
-                          align={cellData.align}
+                          align={align as any}
                           className={classnames(cellData.className, 'table__cell')}
                         >
                           {cellData.display}

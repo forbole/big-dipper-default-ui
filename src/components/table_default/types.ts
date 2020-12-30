@@ -3,14 +3,13 @@ import React from 'react';
 export type Columns = {
   label: string;
   display: string | React.ReactNode;
-  align?: 'left' | 'right' | 'inherit' | 'center' | 'justify' | undefined;
+  align?: string;
   sort?: boolean;
 }
 
 export type Data = {
   [key: string]: {
     className?: string;
-    align?: 'left' | 'right' | 'inherit' | 'center' | 'justify' | undefined;
     rawValue: string | number;
     display: string | React.ReactNode | number;
   }
