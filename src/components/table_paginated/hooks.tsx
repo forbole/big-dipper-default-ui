@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { useTablePaginatedHookProps } from './types';
+import {
+  useTablePaginatedHookProps, Data,
+} from './types';
 
 export const useTablePaginatedHook = (options: useTablePaginatedHookProps) => {
   const {
@@ -34,6 +36,12 @@ export const useTablePaginatedHook = (options: useTablePaginatedHookProps) => {
       page: 0,
       rowsPerPage: parseInt(event?.target?.value ?? 0, 10),
     });
+  };
+
+  const handleRowClick = (selectedData: Data) => {
+    if (onRowClick) {
+      onRowClick(selectedData);
+    }
   };
 
   const handleSort = (key:string) => () => {
@@ -72,5 +80,6 @@ export const useTablePaginatedHook = (options: useTablePaginatedHookProps) => {
     handleChangeRowsPerPage,
     state,
     handleSort,
+    handleRowClick,
   };
 };

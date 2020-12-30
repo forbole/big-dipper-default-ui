@@ -15,22 +15,12 @@ import { ArrowDropDown } from '@material-ui/icons';
 import { TablePaginationActions } from '../..';
 import { TablePaginatedProps } from './types';
 import { useTablePaginatedHook } from './hooks';
-import {
-  dummyLabels, dummyData,
-} from './utils';
 import { useGetStyles } from './styles';
 
 /**
  * Simple Table with pagination and striped rows
  */
-const TablePaginated = () => {
-  const props:TablePaginatedProps = {
-    className: '',
-    data: dummyData,
-    columns: dummyLabels,
-    initialActiveSort: 'validator',
-  };
-
+const TablePaginated = (props: TablePaginatedProps) => {
   const {
     data,
     columns,
@@ -43,6 +33,7 @@ const TablePaginated = () => {
   const {
     handleChangePage,
     handleChangeRowsPerPage,
+    handleRowClick,
     handleSort,
     state,
   } = useTablePaginatedHook({
@@ -65,6 +56,7 @@ const TablePaginated = () => {
                   if (column.sort) {
                     return (
                       <TableCell
+                        className={classnames(`label__${column.label}`, 'table__label')}
                         key={column.label}
                         align={column.align}
                       >
@@ -74,7 +66,7 @@ const TablePaginated = () => {
                           onClick={handleSort(column.label)}
                           IconComponent={ArrowDropDown}
                         >
-                          {column.label}
+                          {column.display}
                         </TableSortLabel>
                       </TableCell>
                     );
@@ -102,6 +94,7 @@ const TablePaginated = () => {
                 <TableRow
                   key={`row-${i}`}
                   className={classnames('table__row')}
+                  onClick={() => handleRowClick(row)}
                 >
                   {columns.map(({ label }) => {
                     const cellData = row[label];
