@@ -1,0 +1,147 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { TableDefault } from '../src';
+
+export const single = {
+  validator: {
+    rawValue: 'aforbole',
+    display: 'Forbole 1',
+  },
+  delegatedAmount: {
+    rawValue: 1000,
+    display: '1,000 ATOM',
+  },
+  ratio: {
+    rawValue: 77,
+    display: '0.77%',
+  },
+  reward: {
+    rawValue: 77,
+    display: '0.77%',
+  },
+  commission: {
+    rawValue: 77,
+    display: '0.77%',
+  },
+  vpRatio: {
+    rawValue: 77,
+    display: '0.77%',
+  },
+  condition: {
+    rawValue: 77,
+    display: '0.77%',
+  },
+};
+
+
+<Meta title="Reusable/TableDefault" component={TableDefault} />
+
+# TableDefault
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <TableDefault
+      data={[
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+        single,
+      ]}
+      columns={[
+        {
+          label: 'validator',
+          display: 'Validator',
+          sort: true,
+        },
+        {
+          label: 'delegatedAmount',
+          display: 'Delegated Amount',
+        },
+        {
+          label: 'ratio',
+          display: 'Amt Ratio',
+        },
+        {
+          label: 'reward',
+          display: 'Reward',
+        },
+        {
+          label: 'commission',
+          display: 'Commission',
+        },
+        {
+          label: 'vpRatio',
+          display: 'VP Ratio',
+        },
+        {
+          label: 'condition',
+          display: 'Condition',
+        },
+      ]}
+      initialActiveSort='validator'
+      onRowClick={(data) => { console.log(data, 'selected data')}}
+    />
+  </Story>
+</Canvas>
+
+```
+hello world
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  address: React.ReactNode;
+  amount: string;
+}[];
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>

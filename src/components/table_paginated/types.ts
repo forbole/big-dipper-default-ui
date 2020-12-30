@@ -4,7 +4,7 @@ export type Columns = {
   label: string;
   display: string | React.ReactNode;
   align?: 'left' | 'right' | 'inherit' | 'center' | 'justify' | undefined;
-  sort?: boolean; // need to imiplement
+  sort?: boolean;
 }
 
 export type Data = {
@@ -20,7 +20,7 @@ export interface TablePaginatedProps {
   className?: string;
   columns: Columns[];
   data: Data[];
-  onRowClick?: (data: Data) => void; // need to implement
+  onRowClick?: (data: Data) => void;
   rowsPerPage?: number;
   initialActiveSort?: string;
 }
