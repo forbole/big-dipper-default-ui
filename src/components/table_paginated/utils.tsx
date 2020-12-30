@@ -69,10 +69,10 @@ export const dummyData = [
       rawValue: 1000,
       display: '1,000 ATOM',
     },
-    // ratio: {
-    //   rawValue: 77,
-    //   display: '0.77%',
-    // },
+    ratio: {
+      rawValue: 77,
+      display: '0.77%',
+    },
     reward: {
       rawValue: 77,
       display: '0.77%',
