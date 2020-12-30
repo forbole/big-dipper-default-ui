@@ -9,7 +9,9 @@ import {
   TablePagination,
   TableFooter,
   TableContainer,
+  TableSortLabel,
 } from '@material-ui/core';
+import { ArrowDropDown } from '@material-ui/icons';
 import { TablePaginationActions } from '../..';
 import { TablePaginatedProps } from './types';
 import { useTablePaginatedHook } from './hooks';
@@ -18,25 +20,37 @@ import {
 } from './utils';
 import { useGetStyles } from './styles';
 
+/**
+ * Simple Table with pagination and striped rows
+ */
 const TablePaginated = () => {
   const props:TablePaginatedProps = {
     className: '',
     data: dummyData,
-    labels: dummyLabels,
+    columns: dummyLabels,
+    initialActiveSort: 'validator',
   };
 
   const {
     data,
-    labels,
+    columns,
     className,
+    rowsPerPage: rowsPerPageCount,
+    onRowClick,
+    initialActiveSort,
   } = props;
 
   const {
     handleChangePage,
     handleChangeRowsPerPage,
-    page,
-    rowsPerPage,
-  } = useTablePaginatedHook();
+    handleSort,
+    state,
+  } = useTablePaginatedHook({
+    rowsPerPageCount,
+    onRowClick,
+    initialActiveSort,
+    data,
+  });
 
   const { classes } = useGetStyles();
 
@@ -47,14 +61,32 @@ const TablePaginated = () => {
           <TableHead>
             <TableRow>
               {
-                labels.map((x) => {
+                columns.map((column) => {
+                  if (column.sort) {
+                    return (
+                      <TableCell
+                        key={column.label}
+                        align={column.align}
+                      >
+                        <TableSortLabel
+                          active={state.activeSort === column.label}
+                          direction={state.activeSort === column.label ? state.sortDirection : 'asc'}
+                          onClick={handleSort(column.label)}
+                          IconComponent={ArrowDropDown}
+                        >
+                          {column.label}
+                        </TableSortLabel>
+                      </TableCell>
+                    );
+                  }
+
                   return (
                     <TableCell
-                      key={x.label}
-                      className={classnames(`label__${x.label}`, 'table__label')}
-                      align={x.align}
+                      key={column.label}
+                      className={classnames(`label__${column.label}`, 'table__label')}
+                      align={column.align}
                     >
-                      {x.display}
+                      {column.display}
                     </TableCell>
                   );
                 })
@@ -62,13 +94,16 @@ const TablePaginated = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, i) => {
+            {data.slice(
+              state.page * state.rowsPerPage,
+              state.page * state.rowsPerPage + state.rowsPerPage,
+            ).map((row, i) => {
               return (
                 <TableRow
                   key={`row-${i}`}
                   className={classnames('table__row')}
                 >
-                  {labels.map(({ label }) => {
+                  {columns.map(({ label }) => {
                     const cellData = row[label];
 
                     if (cellData) {
@@ -95,8 +130,8 @@ const TablePaginated = () => {
               <TablePagination
                 rowsPerPageOptions={[]}
                 count={data.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
+                rowsPerPage={state.rowsPerPage}
+                page={state.page}
                 onChangePage={handleChangePage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
                 ActionsComponent={(subProps:any) => <TablePaginationActions {...subProps} />}

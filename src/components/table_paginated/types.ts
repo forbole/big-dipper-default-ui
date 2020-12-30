@@ -1,9 +1,10 @@
 import React from 'react';
 
-export type Labels = {
+export type Columns = {
   label: string;
   display: string | React.ReactNode;
   align?: 'left' | 'right' | 'inherit' | 'center' | 'justify' | undefined;
+  sort?: boolean; // need to imiplement
 }
 
 export type Data = {
@@ -17,6 +18,16 @@ export type Data = {
 
 export interface TablePaginatedProps {
   className?: string;
-  labels: Labels[];
-  data: Data[]
+  columns: Columns[];
+  data: Data[];
+  onRowClick?: (data: Data) => void; // need to implement
+  rowsPerPage?: number;
+  initialActiveSort?: string;
+}
+
+export interface useTablePaginatedHookProps {
+  rowsPerPageCount?: number;
+  onRowClick?: (data:Data) => void,
+  initialActiveSort?: string,
+  data: Data[];
 }
