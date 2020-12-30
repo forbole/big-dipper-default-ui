@@ -82,7 +82,9 @@ const TablePaginated = () => {
                         </TableCell>
                       );
                     }
-                    return null;
+                    return (
+                      <TableCell className={classnames('table__cell')} />
+                    );
                   })}
                 </TableRow>
               );

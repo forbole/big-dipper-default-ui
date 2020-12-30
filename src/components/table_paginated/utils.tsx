@@ -60,4 +60,34 @@ export const dummyData = [
       display: '0.77%',
     },
   },
+  {
+    validator: {
+      rawValue: 'forbole',
+      display: 'Forbole',
+    },
+    delegatedAmount: {
+      rawValue: 1000,
+      display: '1,000 ATOM',
+    },
+    // ratio: {
+    //   rawValue: 77,
+    //   display: '0.77%',
+    // },
+    reward: {
+      rawValue: 77,
+      display: '0.77%',
+    },
+    commission: {
+      rawValue: 77,
+      display: '0.77%',
+    },
+    vpRatio: {
+      rawValue: 77,
+      display: '0.77%',
+    },
+    condition: {
+      rawValue: 77,
+      display: '0.77%',
+    },
+  },
 ];
