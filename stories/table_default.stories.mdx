@@ -99,7 +99,74 @@ export const single = {
 </Canvas>
 
 ```
-hello world
+<TableDefault
+  data={[
+    {
+      validator: {
+        rawValue: 'aforbole',
+        display: 'Forbole 1',
+      },
+      delegatedAmount: {
+        rawValue: 1000,
+        display: '1,000 ATOM',
+      },
+      ratio: {
+        rawValue: 77,
+        display: '0.77%',
+      },
+      reward: {
+        rawValue: 77,
+        display: '0.77%',
+      },
+      commission: {
+        rawValue: 77,
+        display: '0.77%',
+      },
+      vpRatio: {
+        rawValue: 77,
+        display: '0.77%',
+      },
+      condition: {
+        rawValue: 77,
+        display: '0.77%',
+      },
+    }
+    ...
+  ]}
+  columns={[
+    {
+      label: 'validator',
+      display: 'Validator',
+      sort: true,
+    },
+    {
+      label: 'delegatedAmount',
+      display: 'Delegated Amount',
+    },
+    {
+      label: 'ratio',
+      display: 'Amt Ratio',
+    },
+    {
+      label: 'reward',
+      display: 'Reward',
+    },
+    {
+      label: 'commission',
+      display: 'Commission',
+    },
+    {
+      label: 'vpRatio',
+      display: 'VP Ratio',
+    },
+    {
+      label: 'condition',
+      display: 'Condition',
+    },
+  ]}
+  initialActiveSort='validator'
+  onRowClick={(data) => { console.log(data, 'selected data')}}
+/>
 ```
 
 ## Props
@@ -121,10 +188,74 @@ hello world
 
 ```
 {
-  address: React.ReactNode;
-  amount: string;
+  [key: string]: {
+    className?: string;
+    align?: 'left' | 'right' | 'inherit' | 'center' | 'justify' | undefined;
+    rawValue: string | number;
+    display: string | React.ReactNode | number;
+  }
 }[];
 ```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>columns</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  label: string;
+  display: string | React.ReactNode;
+  align?: 'left' | 'right' | 'inherit' | 'center' | 'justify' | undefined;
+  sort?: boolean;
+}[];
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+<tr>
+    <td>onRowClick</td>
+    <td>-</td>
+    <td>
+
+```
+(data: Data) => void
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+<tr>
+    <td>pagination</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  rowsPerPage: number | undefined;
+};
+```
+
+  </td>
+    <td>-</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>initialActiveSort</td>
+    <td>-</td>
+    <td>
+
+`string`
 
   </td>
     <td>-</td>

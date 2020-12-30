@@ -16,11 +16,20 @@ export type Data = {
   }
 }
 
-export interface TablePaginatedProps {
+export interface TableDefaultProps {
   className?: string;
   columns: Columns[];
   data: Data[];
   onRowClick?: (data: Data) => void;
-  rowsPerPage?: number;
   initialActiveSort?: string;
+  pagination?: {
+    rowsPerPage: number | undefined;
+  };
+}
+
+export interface useTableDefaultHookProps {
+  rowsPerPageCount?: number;
+  onRowClick?: (data:Data) => void,
+  initialActiveSort?: string,
+  data: Data[];
 }
