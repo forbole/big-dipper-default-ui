@@ -8,6 +8,7 @@ export const useGetStyles = ({
     root: {
       width,
       height,
+      minWidth: width,
       borderRadius: '50%',
       overflow: 'hidden',
       '& img': {

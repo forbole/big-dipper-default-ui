@@ -4,6 +4,7 @@ export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
       display: 'flex',
+      alignItems: 'center',
       '& .img': {
         marginRight: '0.3rem',
       },
