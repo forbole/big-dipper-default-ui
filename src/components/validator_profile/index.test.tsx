@@ -13,6 +13,12 @@ describe('ValidatorProfile', () => {
         name="Forbole"
         bio="Lorem **ipsum** dolor sit amet, consectetur adipiscing elit. Vivamus dignissim nibh eu ex ultrices, eget vehicula arcu auctor. Ut sed sem molestie eros tempus congue at eu lorem."
         desktopWidth={765}
+        keyBase={{
+          display: '12345678910',
+          verified: true,
+          url: 'https://keybase.io',
+        }}
+        website="https://www.forbole.com/"
         status={{
           display: 'Active',
           className: 'active',

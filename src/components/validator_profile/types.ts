@@ -11,4 +11,10 @@ export interface ValidatorProfileProps {
   }
   bio: string | React.ReactNode;
   desktopWidth?: number;
+  keyBase: {
+    display: string;
+    verified?: boolean;
+    url?: string,
+  }
+  website?: string;
 }

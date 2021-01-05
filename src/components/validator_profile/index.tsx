@@ -1,5 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
+import {
+  VpnKeyOutlined,
+  CheckCircle,
+  HomeOutlined,
+} from '@material-ui/icons';
 import { useGetStyles } from './styles';
 import { AvatarDisplay } from '../..';
 import { ValidatorProfileProps } from './types';
@@ -13,6 +18,8 @@ const ValidatorProfile = (props: ValidatorProfileProps) => {
     status,
     bio,
     desktopWidth,
+    website,
+    keyBase,
   } = props;
 
   const { classes } = useGetStyles(desktopWidth);
@@ -33,8 +40,34 @@ const ValidatorProfile = (props: ValidatorProfileProps) => {
           title={name}
         />
       </div>
-      <div className={classnames('validator-profile__bio')}>
-        {bio}
+      <div className={classnames('validator-profile__content')}>
+        <div className={classnames('content__bio')}>
+          {bio}
+        </div>
+        <div className={classnames('content__link', 'keybase')}>
+          <VpnKeyOutlined />
+          {keyBase.url ? (
+            <div className={classnames('keybase__display')}>
+              <a href={keyBase.url} target="_blank" rel="noreferrer">
+                {keyBase.display}
+              </a>
+              {!!keyBase.verified && <CheckCircle />}
+            </div>
+          ) : (
+            <div className={classnames('keybase__display')}>
+              {keyBase.display}
+              {!!keyBase.verified && <CheckCircle />}
+            </div>
+          )}
+        </div>
+        {!!website && (
+        <div className={classnames('content__link', 'website')}>
+          <HomeOutlined />
+          <a href={website} target="_blank" rel="noreferrer">
+            {website}
+          </a>
+        </div>
+        )}
       </div>
     </div>
   );
