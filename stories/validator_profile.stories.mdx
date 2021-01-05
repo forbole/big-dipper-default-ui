@@ -1,0 +1,87 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import { ValidatorProfile } from '../src';
+
+
+<Meta title="ValidatorProfile" component={ValidatorProfile} />
+
+# ValidatorProfile
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <ValidatorProfile />
+  </Story>
+</Canvas>
+
+```
+here
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td>labels</td>
+    <td>-</td>
+    <td>
+
+```
+{
+  from: string;
+  redelegateTo: string;
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>data</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  address: React.ReactNode;
+  redelegate?: {
+    from: React.ReactNode;
+    to: React.ReactNode;
+  }
+  amount: string;
+}[];
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>

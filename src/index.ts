@@ -29,6 +29,7 @@ import ProposalDepositMobile from './components/proposal_deposit_mobile';
 import UserStakingMobile from './components/user_staking_mobile';
 import TablePaginated from './components/table_paginated';
 import TableDefault from './components/table_default';
+import ValidatorProfile from './components/validator_profile';
 
 export {
   DataBlock,
@@ -62,4 +63,5 @@ export {
   UserStakingMobile,
   TablePaginated,
   TableDefault,
+  ValidatorProfile,
 };
