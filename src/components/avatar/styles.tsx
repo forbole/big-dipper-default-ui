@@ -6,11 +6,13 @@ export const useGetStyles = ({
 }: UseGetStylesProps) => {
   const useStyles = makeStyles({
     root: {
-      width,
-      height,
-      minWidth: width,
-      borderRadius: '50%',
-      overflow: 'hidden',
+      '&.avatar': {
+        width,
+        height,
+        minWidth: width,
+        borderRadius: '50%',
+        overflow: 'hidden',
+      },
       '& img': {
         maxWidth: '100%',
         height: 'auto',
