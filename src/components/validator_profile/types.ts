@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface ValidatorProfileProps {
   className?: string;
   imageUrl: string;
@@ -7,6 +9,6 @@ export interface ValidatorProfileProps {
     display: string;
     className: string;
   }
-  bio: string;
+  bio: string | React.ReactNode;
   desktopWidth?: number;
 }

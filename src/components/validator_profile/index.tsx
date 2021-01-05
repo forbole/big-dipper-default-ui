@@ -1,6 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-import ReactMarkdown from 'react-markdown';
 import { useGetStyles } from './styles';
 import { AvatarDisplay } from '../..';
 import { ValidatorProfileProps } from './types';
@@ -34,8 +33,8 @@ const ValidatorProfile = (props: ValidatorProfileProps) => {
           title={name}
         />
       </div>
-      <div>
-        <ReactMarkdown source={bio} />
+      <div className={classnames('validator-profile__bio')}>
+        {bio}
       </div>
     </div>
   );
