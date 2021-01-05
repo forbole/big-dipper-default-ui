@@ -8,5 +8,5 @@ export interface ValidatorProfileProps {
     className: string;
   }
   bio: string;
-  desktopWidth: number;
+  desktopWidth?: number;
 }

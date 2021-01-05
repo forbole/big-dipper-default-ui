@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/styles';
 import { getMinMediaQuery } from '../../utils';
 
-export const useGetStyles = (desktopWidth: number) => {
+export const useGetStyles = (desktopWidth?: number) => {
   const useStyles = makeStyles({
     root: {
       '& .validator-profile__header': {
@@ -18,7 +18,7 @@ export const useGetStyles = (desktopWidth: number) => {
         alignSelf: 'flex-end',
       },
 
-      [getMinMediaQuery(desktopWidth)]: {
+      [getMinMediaQuery(desktopWidth ?? '')]: {
         '& .avatarDisplay': {
           flexDirection: 'column',
           '& .avatar': {
