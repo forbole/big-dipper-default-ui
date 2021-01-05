@@ -20,7 +20,7 @@ const Row = (props: RowProps) => {
       <TableCell className={classnames(classNameLabel, 'cell', 'label')}>
         {label}
       </TableCell>
-      <TableCell className={classnames(classNameDisplay, 'cell', 'display')} align={align}>
+      <TableCell className={classnames('cell', 'displayContent', classNameDisplay)} align={align}>
         {display}
       </TableCell>
     </TableRow>

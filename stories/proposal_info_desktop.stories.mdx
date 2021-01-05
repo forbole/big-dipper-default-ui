@@ -5,7 +5,7 @@ import {
   ProposalInfoDesktop,
 } from '../src';
 import {
-  dummyData, Labels,
+  dummyData, Labels, dummyNonActiveData,
 } from './utils/proposal_info';
 
 <Meta title="ProposalInfoDesktop" component={ProposalInfoDesktop} />
@@ -18,33 +18,38 @@ import {
   <Story name="Default">
     <ProposalInfoDesktop
       data={dummyData}
-      desktop={true}
       label={Labels}
     />
   </Story>
 </Canvas>
 
 ```
-<ProposalList data={[
-  {
-    id: string;
-    proposer: React.ReactNode;
-    title: {
-      display: string;
-      id: string
-    }
-    content: string;
+<ProposalInfoDesktop
+  data={{
+    id: '01',
+    proposer: <Proposer />,
+    title: 'Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?',
+    description: 'Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏',
+    submittedTime: '12 Dec 2019, 16:22:11 UTC',
+    depositEndTime: '26 Dec 2019, 16:22:11 UTC',
+    votingStartTime: '26 Dec 2019, 16:22:11 UTC',
+    votingEndTime: '10 Jan 2020, 16:22:11 UTC',
     status: {
-      current: boolean;
-      display: string;
-    }
-    time: string;
-    duration?: string;
-  },
-  ...
-  ]}
-  desktop={false}
-  proposerDisplay='Proposer'
+      current: true,
+      display: 'Vote',
+    },
+    duration: '(In 12 days)',
+    type: 'Text proposal',
+  }}
+  label={{
+    proposer: 'Proposer',
+    type: 'Type',
+    description: 'Description',
+    submittedTime: 'Submitted Time',
+    depositEndTime: 'Deposit End Time',
+    votingStartTime: 'Voting Start Time',
+    votingEndTime: 'Voting End Time',
+  }}
 />
 ```
 
@@ -67,36 +72,46 @@ import {
 
 ```
 {
-  id: string;
-  proposer: React.ReactNode;
-  title: {
-    display: string;
-    id: string
-  }
-  content: string;
+  id: '01',
+  proposer: <Proposer />,
+  title: 'Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?',
+  description: 'Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏',
+  submittedTime: '12 Dec 2019, 16:22:11 UTC',
+  depositEndTime: '26 Dec 2019, 16:22:11 UTC',
+  votingStartTime: '26 Dec 2019, 16:22:11 UTC',
+  votingEndTime: '10 Jan 2020, 16:22:11 UTC',
   status: {
-    current: boolean;
-    display: string;
-  }
-  time: string;
-  duration?: string;
-}[];
+    current: true,
+    display: 'Vote',
+  },
+  duration: '(In 12 days)',
+  type: 'Text proposal',
+};
 ```
 
   </td>
     <td>Data Displayed</td>
     <td>-</td>
   </tr>
+    <tr>
+      <td>label</td>
+      <td>true</td>
+      <td>
 
-  <tr>
-    <td>desktop</td>
-    <td>-</td>
-    <td>
-
-`boolean`
+```
+{
+  proposer: 'Proposer',
+  type: 'Type',
+  description: 'Description',
+  submittedTime: 'Submitted Time',
+  depositEndTime: 'Deposit End Time',
+  votingStartTime: 'Voting Start Time',
+  votingEndTime: 'Voting End Time',
+};
+```
 
   </td>
-    <td>desktop and mobile layouts switching</td>
+    <td>Label Displayed</td>
     <td>-</td>
   </tr>
   <tr>
@@ -110,28 +125,45 @@ import {
     <td>styles displayed</td>
     <td>-</td>
   </tr>
-    <tr>
-    <td>onClick</td>
-    <td>-</td>
-    <td>
-
-`(data) => void`
-
-  </td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>proposerDisplay</td>
-    <td>-</td>
-    <td>
-
-`string`
-
-  </td>
-    <td>proposer text displayed</td>
-    <td>-</td>
-  </tr>
   </tbody>
 </table>
 <br/>
+
+## Non-Active Proposal
+<Canvas>
+  <Story name="Non-active">
+    <ProposalInfoDesktop
+      data={dummyNonActiveData}
+      label={Labels}
+    />
+  </Story>
+</Canvas>
+
+```
+<ProposalInfoDesktop
+  data={{
+    id: '01',
+    proposer: <Proposer />,
+    title: 'Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?',
+    description: 'Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏',
+    submittedTime: '12 Dec 2019, 16:22:11 UTC',
+    depositEndTime: '26 Dec 2019, 16:22:11 UTC',
+    votingStartTime: '26 Dec 2019, 16:22:11 UTC',
+    votingEndTime: '10 Jan 2020, 16:22:11 UTC',
+    status: {
+      current: false,
+      display: 'Passed',
+    },
+    type: 'Text proposal',
+  }}
+  label={{
+    proposer: 'Proposer',
+    type: 'Type',
+    description: 'Description',
+    submittedTime: 'Submitted Time',
+    depositEndTime: 'Deposit End Time',
+    votingStartTime: 'Voting Start Time',
+    votingEndTime: 'Voting End Time',
+  }}
+/>
+```

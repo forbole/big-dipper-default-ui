@@ -9,12 +9,13 @@ export const useGetStyles = (prop: boolean) => {
         borderBottom: 'none',
         fontSize: '1rem',
       },
-      '& .display': {
-        color: '#000000',
+      '& .displayContent': {
+        paddingRight: '0',
       },
       '& .label': {
         color: '#414141',
         verticalAlign: 'top',
+        paddingLeft: '0',
       },
       '& .descriptionLabel': {
         display: 'flex',
@@ -22,6 +23,8 @@ export const useGetStyles = (prop: boolean) => {
       '& .descriptionDisplay': {
         display: 'flex',
         paddingTop: '0',
+        paddingLeft: '0',
+        color: '#000000',
       },
       '& .detail': {
         verticalAlign: 'top',
