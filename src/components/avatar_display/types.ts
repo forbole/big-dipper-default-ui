@@ -3,4 +3,6 @@ export interface AvatarDisplayProps {
   title: string;
   alt?: string;
   className?: string;
+  width?: string | number;
+  height?: string | number;
 }
