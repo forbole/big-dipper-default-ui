@@ -3,7 +3,10 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      display: 'flex',
+      '&.avatarDisplay': {
+        display: 'flex',
+        alignItems: 'center',
+      },
       '& .img': {
         marginRight: '0.3rem',
       },

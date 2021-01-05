@@ -13,13 +13,15 @@ const AvatarDisplay = (props: AvatarDisplayProps) => {
     alt,
     title,
     className,
+    height = '1.5rem',
+    width = '1.5rem',
   } = props;
 
   const { classes } = useGetStyles();
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'avatarDisplay')}>
-      <Avatar imageUrl={imageUrl} alt={alt} width="1.5rem" height="1.5rem" className={classnames('img')} />
+      <Avatar imageUrl={imageUrl} alt={alt} width={width} height={height} className={classnames('img')} />
       <div className={classnames('display')}>{title}</div>
     </div>
   );

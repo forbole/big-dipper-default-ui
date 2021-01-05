@@ -25,9 +25,9 @@ export default [
         targets: ['dist/*'],
       }),
       typescript(),
+      filesize(),
       resolve(),
       commonjs(),
-      filesize(),
     ],
     external: [
       ...Object.keys(pkg.dependencies || {
