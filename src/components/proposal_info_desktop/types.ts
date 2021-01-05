@@ -3,24 +3,32 @@ import React from 'react';
 export type Data = {
   id: number | string;
   proposer: React.ReactNode;
-  title: React.ReactNode;
-  content: string;
+  title: string;
+  description: string;
   status: {
     current: boolean;
     display: string;
   }
-  time: string;
+  submittedTime: string;
+  depositEndTime: string;
+  votingStartTime: string;
+  votingEndTime: string;
   duration?: string;
+  type: string;
 };
 
-export type Detail = {
-  label: string;
-  display: string;
+export type Label = {
+  proposer: string;
+  type: string;
+  description: string;
+  submittedTime: string;
+  depositEndTime: string;
+  votingStartTime: string;
+  votingEndTime: string;
 };
 
 export interface ProposalInfoProps {
   className?: string;
   data: Data;
-  type: Detail;
-  description: Detail;
+  label: Label;
 }

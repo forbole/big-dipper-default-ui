@@ -6,31 +6,22 @@ import {
   TableCell,
   TableRow,
 } from '@material-ui/core';
-import { AccessTime } from '@material-ui/icons';
 import { ProposalListProps } from './types';
-import { useGetStyles } from './styles';
 import {
   Button, Status,
 } from './components';
-// import { useProposalUtils } from './utils';
 
 const ProposalList = (props: ProposalListProps) => {
   const {
-    data, className, desktop, proposerDisplay,
+    data, className, label,
   } = props;
 
-  const { classes } = useGetStyles();
-  // const { handleClick } = useProposalUtils(onClick);
-  const responsiveClass = desktop ? classes.desktop : classes.mobile;
   return (
-    <div className={classnames(classes.root, responsiveClass, className, 'big-dipper', 'proposalList')}>
+    <div className={classnames(className)}>
       <Table className={classnames('table')}>
         <TableBody>
-
           <TableRow
-            // key={data.time}
             className={classnames('single-row')}
-            // onClick={() => handleClick(row)}
           >
             <TableCell className={classnames('cell', 'id')}>
               #
@@ -40,25 +31,46 @@ const ProposalList = (props: ProposalListProps) => {
               <div className={classnames('mainContent')}>
                 <div className={classnames('proposer')}>
                   <div className={classnames('proposerText')}>
-                    {proposerDisplay}
+                    {label.proposer}
                   </div>
                   {data.proposer}
                 </div>
                 <div className={classnames('title')}>
                   {data.title}
                 </div>
-                {/* <div className={classnames('mainContent', 'content')}>
-                  {data.content}
-                </div> */}
                 <div className={classnames('mainContent', 'time')}>
-                  <div className={classnames('voting')}>
-                    <AccessTime className={classnames('clockImage')} />
-                    {data.time}
-                    <span className={classnames('days')}>
-                      {data.duration}
-                    </span>
+                  <div className={classnames('submitted_votingStart')}>
+                    <div className={classnames('submitted')}>
+                      {label.submittedTime}
+                      :
+                      &nbsp;
+                      {data.submittedTime}
+                    </div>
+                    <div className={classnames('votingStart')}>
+                      {label.votingStartTime}
+                      :
+                      &nbsp;
+                      {data.votingStartTime}
+                    </div>
                   </div>
 
+                  <div className={classnames('deposit_votingEnd')}>
+                    <div className={classnames('deposit')}>
+                      {label.depositEndTime}
+                      :
+                      &nbsp;
+                      {data.depositEndTime}
+                    </div>
+                    <div className={classnames('voting')}>
+                      {label.votingEndTime}
+                      :
+                      &nbsp;
+                      {data.votingEndTime}
+                      <span className={classnames('days')}>
+                        {data.duration}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className={classnames('component')}>

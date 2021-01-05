@@ -1,9 +1,7 @@
-import Button from './button';
-import Status from './status';
+import Detail from './detail';
 import Proposal from './proposal';
 
 export {
-  Button,
-  Status,
+  Detail,
   Proposal,
 };

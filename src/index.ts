@@ -27,6 +27,10 @@ import TablePaginationActions from './components/table_pagination_actions';
 import ProposalDepositDesktop from './components/proposal_deposit_desktop';
 import ProposalDepositMobile from './components/proposal_deposit_mobile';
 import ProposalInfoDesktop from './components/proposal_info_desktop';
+import ProposalInfoMobile from './components/proposal_info_mobile';
+import UserStakingMobile from './components/user_staking_mobile';
+import TablePaginated from './components/table_paginated';
+import TableDefault from './components/table_default';
 
 export {
   DataBlock,
@@ -58,4 +62,8 @@ export {
   ProposalDepositDesktop,
   ProposalDepositMobile,
   ProposalInfoDesktop,
+  ProposalInfoMobile,
+  UserStakingMobile,
+  TablePaginated,
+  TableDefault,
 };

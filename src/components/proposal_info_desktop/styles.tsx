@@ -3,31 +3,35 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
-      background: 'white',
       overflow: 'auto',
       '& .cell, & .label': {
         borderBottom: 'none',
       },
+      '& .MuiTableCell-root': {
+        paddingTop: '0',
+      },
+      '& .label': {
+        width: '10rem',
+      },
+      '& .detail': {
+        verticalAlign: 'top',
+      },
+      '& .type': {
+        paddingTop: '1.5rem',
+      },
       '& .table': {
-        '& tr': {
-          borderBottom: '1px solid #E8E8E8',
-          '&:last-child': {
-            borderBottom: 'none',
-          },
-        },
+        borderBottom: '1px solid #E8E8E8',
       },
       '& .id': {
         width: '1rem',
         fontSize: '1rem',
         verticalAlign: 'top',
-        margin: '1.5rem 0 0 0',
+        margin: '0',
+        padding: '0 1.5rem 0 0',
       },
       '& .proposer': {
         display: 'flex',
         margin: '0 0.5rem 0.5rem 0',
-      },
-      '& .proposerText': {
-        display: 'none',
       },
       '& .mainContent': {
         display: 'block',
@@ -35,21 +39,24 @@ export const useGetStyles = () => {
       },
       '& .content': {
         marginTop: '0.875rem',
+        display: 'block',
       },
       '& .time': {
         marginTop: '0.875rem',
         display: 'flex',
         marginBottom: '1rem',
+        color: '#414141',
       },
       '& .days': {
         color: '#FD7522',
         marginLeft: '0.5rem',
       },
       '& .proposal': {
-        padding: '1.5rem 0 0 0',
+        padding: '0',
         color: '#414141',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
+        fontSize: '1rem',
       },
       '& .button': {
         width: '100px',
@@ -91,11 +98,6 @@ export const useGetStyles = () => {
         fontSize: '0.875rem',
         marginLeft: '0.4rem',
       },
-    },
-    desktop: {
-      '& .content': {
-        display: 'block',
-      },
       '& .layout': {
         display: 'flex',
       },
@@ -108,50 +110,17 @@ export const useGetStyles = () => {
           display: 'block',
         },
       },
-      '& .proposal': {
-        flexDirection: 'row',
-        fontSize: '1rem',
-      },
       '& .title': {
         fontSize: '1.25rem',
-      },
-      '& .id': {
-        padding: '1.5rem 1.5rem 0 0',
       },
       '& .component': {
         display: 'inline-flex',
         flex: 1,
         justifyContent: 'flex-end',
       },
-      '& .clockImage': {
-        display: 'none',
-      },
-    },
-    mobile: {
-      '& .content': {
-        display: 'none',
-      },
-      '& .proposerText': {
-        display: 'none',
-      },
-      '& .proposal': {
-        flexDirection: 'column',
-        fontSize: '0.875rem',
-      },
-      '& .title': {
-        fontSize: '1rem',
-      },
-      '& .id': {
-        padding: '1.5rem 0.5rem 0 0',
-      },
-      '& .component': {
-        marginBottom: '1rem',
-      },
-      '& .clockImage': {
-        verticalAlign: 'text-bottom',
-        height: '1rem',
-        width: '1rem',
-        marginRight: '0.2rem',
+      '& .submitted_votingStart': {
+        width: 'fit-content',
+        marginRight: '3rem',
       },
     },
   });

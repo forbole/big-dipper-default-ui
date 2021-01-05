@@ -2,23 +2,22 @@ import {
   Meta, Story, Canvas,
 } from '@storybook/addon-docs/blocks';
 import {
-  ProposalInfoDesktop,
+  ProposalInfoMobile,
 } from '../src';
 import {
   dummyData, Labels,
 } from './utils/proposal_info';
 
-<Meta title="ProposalInfoDesktop" component={ProposalInfoDesktop} />
+<Meta title="ProposalInfoMobile" component={ProposalInfoMobile} />
 
-# ProposalInfoDesktop
+# ProposalInfoMobile
 ---
 
 ## Default
 <Canvas>
   <Story name="Default">
-    <ProposalInfoDesktop
+    <ProposalInfoMobile
       data={dummyData}
-      desktop={true}
       label={Labels}
     />
   </Story>

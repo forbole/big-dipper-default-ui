@@ -1,50 +1,36 @@
 import React from 'react';
 import classnames from 'classnames';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from '@material-ui/core';
-import { AccessTime } from '@material-ui/icons';
 import { ProposalInfoProps } from './types';
 import { useGetStyles } from './styles';
 import {
-  Button, Status, Proposal,
+  Proposal,
+  Detail,
 } from './components';
-import { useProposalUtils } from './utils';
 
 const ProposalInfoDesktop = (props: ProposalInfoProps) => {
   const {
-    data, className, type, description,
+    data, className, label,
   } = props;
 
   const { classes } = useGetStyles();
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'proposalInfo')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'proposalInfoDesktop')}>
       <Proposal
         data={data}
-        desktop
-        proposerDisplay="Proposer"
+        label={{
+          proposer: label.proposer,
+          submittedTime: label.submittedTime,
+          votingStartTime: label.votingStartTime,
+          votingEndTime: label.votingEndTime,
+          depositEndTime: label.depositEndTime,
+        }}
+        className={classnames(classes.root)}
       />
-      <Table className={classnames('tableDetail')}>
-        <TableRow>
-          <TableCell className={classnames('label', 'type')} style={{ width: '10rem'}}>
-            {type.label}
-          </TableCell>
-          <TableCell className={classnames('cell', 'type')}>
-            {type.display}
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell className={classnames('label', 'description')}>
-            {description.label}
-          </TableCell>
-          <TableCell className={classnames('cell', 'description')}>
-            {description.display}
-          </TableCell>
-        </TableRow>
-      </Table>
+      <Detail
+        data={data}
+        label={label}
+        className={classnames(classes.root)}
+      />
     </div>
   );
 };

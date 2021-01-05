@@ -1,5 +1,4 @@
 import React from 'react';
-import { Data } from '../../src/components/proposal_list/types';
 import { AvatarDisplay } from '../../src';
 
 const Proposer = () => {
@@ -12,29 +11,34 @@ const Proposer = () => {
   );
 };
 
-const Title = () => {
-  return (
-
-    <a
-      href="/validators/123"
-      style={{
-        color: 'black', textDecoration: 'none',
-      }}
-    >
-      Lunie.io on iOS and Android
-    </a>
-  );
-};
-
-export const dummyData: Data = {
+export const dummyData: any = {
   id: '01',
   proposer: <Proposer />,
-  title: <Title />,
-  content: 'Lunie Mobile now available in app stores near you! 📲 iOS - http://bit.ly/lunie-ios 📲 Android - http://bit.ly/lunie-android ❣️This proposal was sent from the Lunie iOS app 😏',
-  time: '10 Jan 2020,13:00:22 UTC',
+  title: 'Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?',
+  description: 'Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏',
+  submittedTime: '12 Dec 2019, 16:22:11 UTC',
+  depositEndTime: '26 Dec 2019, 16:22:11 UTC',
+  votingStartTime: '26 Dec 2019, 16:22:11 UTC',
+  votingEndTime: '10 Jan 2020, 16:22:11 UTC',
   status: {
     current: true,
     display: 'Vote',
   },
   duration: '(In 12 days)',
+  type: 'Text proposal',
+  deposit: '520 ATOM',
+};
+
+export const Labels: any = {
+  id: 'Proposal ID',
+  proposer: 'Proposer',
+  type: 'Type',
+  title: 'Title',
+  description: 'Description',
+  deposit: 'Deposit',
+  status: 'Status',
+  submittedTime: 'Submitted Time',
+  depositEndTime: 'Deposit End Time',
+  votingStartTime: 'Voting Start Time',
+  votingEndTime: 'Voting End Time',
 };

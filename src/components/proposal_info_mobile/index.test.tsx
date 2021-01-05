@@ -1,12 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ProposalInfoDesktop from '.';
+import ProposalInfoMobile from '.';
 
-describe('ProposalInfoDesktop', () => {
+describe('ProposalInfoMobile', () => {
   it('Works', () => {
-    expect(ProposalInfoDesktop).toBeTruthy();
+    expect(ProposalInfoMobile).toBeTruthy();
     const wrap = mount(
-      <ProposalInfoDesktop
+      <ProposalInfoMobile
         data={{
           id: '01',
           proposer: <div>forbole</div>,
@@ -22,11 +22,16 @@ describe('ProposalInfoDesktop', () => {
           },
           duration: '(In 12 days)',
           type: 'Text proposal',
+          deposit: '520 ATOM',
         }}
         label={{
+          id: 'Proposal ID',
           proposer: 'Proposer',
           type: 'Type',
+          title: 'Title',
           description: 'Description',
+          deposit: 'Deposit',
+          status: 'Status',
           submittedTime: 'Submitted Time',
           depositEndTime: 'Deposit End Time',
           votingStartTime: 'Voting Start Time',
@@ -35,9 +40,9 @@ describe('ProposalInfoDesktop', () => {
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find('.label').find('.type').first().text()).toEqual('Type');
-    expect(wrap.find('.cell').find('.type').first().text()).toEqual('Text proposal');
+    expect(wrap.find('.descriptionLabel').first().text()).toEqual('Description');
+    expect(wrap.find('.descriptionDisplay').first().text()).toEqual('Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏');
     expect(wrap.find('.days').first().text()).toEqual('(In 12 days)');
-    expect(wrap.find(ProposalInfoDesktop)).toHaveLength(1);
+    expect(wrap.find(ProposalInfoMobile)).toHaveLength(1);
   });
 });

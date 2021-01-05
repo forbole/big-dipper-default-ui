@@ -4,26 +4,35 @@ export type Data = {
   id: number | string;
   proposer: React.ReactNode;
   title: string;
+  description: string;
   status: {
     current: boolean;
     display: string;
   }
-  duration?: string;
   submittedTime: string;
-  votingStartTime: string;
   depositEndTime: string;
+  votingStartTime: string;
   votingEndTime: string;
+  duration?: string;
+  type: string;
+  deposit: string;
 };
 
 export type Label = {
+  id: string;
   proposer: string;
+  type: string;
+  title: string;
+  description: string;
+  status: string;
+  deposit: string;
   submittedTime: string;
-  votingStartTime: string;
   depositEndTime: string;
+  votingStartTime: string;
   votingEndTime: string;
-}
+};
 
-export interface ProposalListProps {
+export interface ProposalInfoProps {
   className?: string;
   data: Data;
   label: Label;
