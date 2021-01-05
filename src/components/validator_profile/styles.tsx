@@ -25,6 +25,10 @@ export const useGetStyles = (desktopWidth: number) => {
             width: '3.5rem',
             height: '3.5rem',
           },
+          '& .img': {
+            margin: '0',
+            marginBottom: '0.5rem',
+          },
         },
       },
     },

@@ -3,21 +3,9 @@ import classnames from 'classnames';
 import ReactMarkdown from 'react-markdown';
 import { useGetStyles } from './styles';
 import { AvatarDisplay } from '../..';
+import { ValidatorProfileProps } from './types';
 
-const ValidatorProfile = () => {
-  const props = {
-    className: '',
-    imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
-    alt: 'avatar image',
-    name: '2nd only to Certus One in GoS: in3s.com sdfdsfgdfg',
-    status: {
-      display: 'Active',
-      className: 'active',
-    },
-    bio: 'Lorem **ipsum** dolor sit amet, consectetur adipiscing elit. Vivamus dignissim nibh eu ex ultrices, eget vehicula arcu auctor. Ut sed sem molestie eros tempus congue at eu lorem.',
-    desktopWidth: 765,
-  };
-
+const ValidatorProfile = (props: ValidatorProfileProps) => {
   const {
     className,
     imageUrl,
