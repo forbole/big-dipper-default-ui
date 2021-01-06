@@ -32,8 +32,6 @@ describe('ProposalList', () => {
     );
     expect(wrap).not.toBeNull();
     expect(wrap.find('.title').first().text()).toEqual('Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?');
-    // expect(wrap.find('.deposit').first().text()).toEqual('Deposit End Time');
-    // expect(wrap.find('.voting').first().text()).toEqual('Voting End Time');
     expect(wrap.find('.days').first().text()).toEqual('(In 12 days)');
     expect(wrap.find(ProposalList)).toHaveLength(1);
   });

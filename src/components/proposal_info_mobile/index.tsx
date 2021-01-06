@@ -25,7 +25,12 @@ const ProposalInfoDesktop = (props: ProposalInfoProps) => {
         <TableBody>
           <Row
             label={label.id}
-            display={data.id}
+            display={(
+              <div>
+                #
+                {data.id}
+              </div>
+            )}
             isAlignRight
           />
           <Row

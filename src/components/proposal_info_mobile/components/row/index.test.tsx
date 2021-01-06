@@ -13,7 +13,7 @@ describe('Row', () => {
     );
     expect(wrap).not.toBeNull();
     expect(wrap.find('.label').first().text()).toEqual('Type');
-    expect(wrap.find('.display').first().text()).toEqual('Text proposal');
+    expect(wrap.find('.displayContent').first().text()).toEqual('Text proposal');
     expect(wrap.find(Row)).toHaveLength(1);
   });
 });
