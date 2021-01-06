@@ -66,11 +66,12 @@ export const useGetStyles = (prop: boolean) => {
         display: prop ? 'block' : 'none',
         color: '#FD7846',
       },
-      '& .line': {
+      '& hr': {
         height: '1px',
         margin: '0',
         width: '100%',
         background: '#E8E8E8',
+        borderStyle: 'unset',
       },
       '& .MuiGrid-item': {
         padding: '1rem',

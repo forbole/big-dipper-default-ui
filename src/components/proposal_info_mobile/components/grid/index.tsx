@@ -18,7 +18,7 @@ const GridDisplay = (props: GridProps) => {
         #
         {data.id}
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={6} className={classnames('label')}>
         {label.proposer}
       </Grid>
@@ -27,56 +27,56 @@ const GridDisplay = (props: GridProps) => {
           {data.proposer}
         </div>
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={6} className={classnames('label')}>
         {label.type}
       </Grid>
       <Grid item xs={6} className={classnames('displayContent')}>
         {data.type}
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={12} className={classnames('label')}>
         {label.description}
       </Grid>
       <Grid item xs={12} className={classnames('descriptionDisplay')}>
         {data.description}
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={6} className={classnames('label')}>
         {label.deposit}
       </Grid>
       <Grid item xs={6} className={classnames('displayContent')}>
         {data.deposit}
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={6} className={classnames('label', 'statusRow')}>
         {label.status}
       </Grid>
       <Grid item xs={6} className={classnames('displayContent', 'statusRow')}>
         <Status display={data.status.display} />
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={6} className={classnames('label')}>
         {label.submittedTime}
       </Grid>
       <Grid item xs={6} className={classnames('displayContent')}>
         {data.submittedTime}
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={6} className={classnames('label')}>
         {label.depositEndTime}
       </Grid>
       <Grid item xs={6} className={classnames('displayContent')}>
         {data.depositEndTime}
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={6} className={classnames('label')}>
         {label.votingStartTime}
       </Grid>
       <Grid item xs={6} className={classnames('displayContent')}>
         {data.votingStartTime}
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
       <Grid item xs={6} className={classnames('label')}>
         {label.votingEndTime}
       </Grid>
@@ -86,7 +86,7 @@ const GridDisplay = (props: GridProps) => {
           {data.duration}
         </div>
       </Grid>
-      <div className={classnames('line')} />
+      <hr />
     </Grid>
   );
 };
