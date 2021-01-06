@@ -9,7 +9,6 @@ export type Label = {
 }
 
 export interface DetailProps {
-  className?: string;
   label: Label;
   data: Data;
 }

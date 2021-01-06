@@ -1,9 +1,7 @@
-import Row from './row';
 import Button from './button';
-import Status from './status';
+import Grid from './grid';
 
 export {
-  Row,
   Button,
-  Status,
+  Grid,
 };

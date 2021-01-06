@@ -3,46 +3,18 @@ import { makeStyles } from '@material-ui/styles';
 export const useGetStyles = (prop: boolean) => {
   const useStyles = makeStyles({
     root: {
-      background: 'white',
       overflow: 'auto',
-      '& .cell': {
-        borderBottom: 'none',
-        fontSize: '1rem',
-      },
       '& .displayContent': {
-        paddingRight: '0',
+        textAlign: 'right',
+        color: '#000000',
       },
       '& .label': {
         color: '#414141',
-        verticalAlign: 'top',
-        paddingLeft: '0',
-      },
-      '& .descriptionLabel': {
-        display: 'flex',
-      },
-      '& .descriptionDisplay': {
-        display: 'flex',
-        paddingTop: '0',
-        paddingLeft: '0',
-        color: '#000000',
-      },
-      '& .detail': {
-        verticalAlign: 'top',
-      },
-      '& .singleRow': {
-        borderBottom: '1px solid #E8E8E8',
       },
       '& .proposer': {
         marginRight: '0',
         marginLeft: 'auto',
         width: 'fit-content',
-      },
-      '& .proposal': {
-        padding: '1.5rem 0 0 0',
-        color: '#414141',
-        display: 'flex',
-        flexDirection: 'row',
-        fontSize: '1rem',
       },
       '& .statusRow': {
         display: prop ? 'none' : 'tabel-cell',
@@ -50,8 +22,8 @@ export const useGetStyles = (prop: boolean) => {
       '& .button': {
         display: prop ? 'block' : 'none',
         width: '100%',
-        marginTop: '1rem',
-        height: '40px',
+        marginTop: '2rem',
+        height: '2.5rem',
         color: '#FFFFFF',
         fontSize: '1rem',
         borderRadius: '6px',
@@ -93,6 +65,19 @@ export const useGetStyles = (prop: boolean) => {
       '& .days': {
         display: prop ? 'block' : 'none',
         color: '#FD7846',
+      },
+      '& .line': {
+        height: '1px',
+        margin: '0',
+        width: '100%',
+        background: '#E8E8E8',
+      },
+      '& .MuiGrid-item': {
+        padding: '1rem',
+        '&.descriptionDisplay': {
+          paddingTop: '0',
+          color: '#000000',
+        },
       },
     },
   });

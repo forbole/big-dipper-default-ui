@@ -10,10 +10,10 @@ import { DetailProps } from './types';
 
 const Detail = (props: DetailProps) => {
   const {
-    className, data, label,
+    data, label,
   } = props;
   return (
-    <Table className={classnames(className)}>
+    <Table className={classnames('detail')}>
       <TableBody>
         <TableRow>
           <TableCell className={classnames('label', 'type')}>

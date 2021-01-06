@@ -24,12 +24,10 @@ const ProposalInfoDesktop = (props: ProposalInfoProps) => {
           votingEndTime: label.votingEndTime,
           depositEndTime: label.depositEndTime,
         }}
-        className={classnames(classes.root)}
       />
       <Detail
         data={data}
         label={label}
-        className={classnames(classes.root)}
       />
     </div>
   );

@@ -40,7 +40,6 @@ describe('ProposalInfoMobile', () => {
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find('.descriptionLabel').first().text()).toEqual('Description');
     expect(wrap.find('.descriptionDisplay').first().text()).toEqual('Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏');
     expect(wrap.find('.days').first().text()).toEqual('(In 12 days)');
     expect(wrap.find(ProposalInfoMobile)).toHaveLength(1);

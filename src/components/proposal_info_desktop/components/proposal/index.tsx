@@ -13,11 +13,11 @@ import {
 
 const ProposalList = (props: ProposalListProps) => {
   const {
-    data, className, label,
+    data, label,
   } = props;
 
   return (
-    <div className={classnames(className)}>
+    <div className={classnames('proposal')}>
       <Table className={classnames('table')}>
         <TableBody>
           <TableRow
