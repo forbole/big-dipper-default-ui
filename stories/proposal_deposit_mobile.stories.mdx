@@ -23,36 +23,19 @@ import { depositData } from './utils/proposal_deposit';
 
 ```
 <ProposalDepositMobile
-  data={{
-    id: '01',
-    proposer: <Proposer />,
-    title: 'Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?',
-    description: 'Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏',
-    submittedTime: '12 Dec 2019, 16:22:11 UTC',
-    depositEndTime: '26 Dec 2019, 16:22:11 UTC',
-    votingStartTime: '26 Dec 2019, 16:22:11 UTC',
-    votingEndTime: '10 Jan 2020, 16:22:11 UTC',
-    status: {
-      current: true,
-      display: 'Vote',
-    },
-    duration: '(In 12 days)',
-    type: 'Text proposal',
-    deposit: '520 ATOM',
-  }}
-  label={{
-    id: 'Proposal ID',
-    proposer: 'Proposer',
-    type: 'Type',
-    title: 'Title',
-    description: 'Description',
-    deposit: 'Deposit',
-    status: 'Status',
-    submittedTime: 'Submitted Time',
-    depositEndTime: 'Deposit End Time',
-    votingStartTime: 'Voting Start Time',
-    votingEndTime: 'Voting End Time',
-  }}
+  title='Deposits (109.9 ATOM)'
+  data={[
+    {
+      depositor:
+        <AvatarDisplay
+          imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+          alt="avatar image"
+          title="Forbole"
+         />,
+      amount: '10.8 ATOM',
+      time: '09 Jan 2020, 10:00:19',
+    }
+  ]}
 />
 ```
 
@@ -68,6 +51,17 @@ import { depositData } from './utils/proposal_deposit';
   </tr>
   </thead>
   <tbody>
+  <tr>
+    <td>title</td>
+    <td>true</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>title displayed</td>
+    <td>-</td>
+  </tr>
     <tr>
       <td>data</td>
       <td>true</td>
@@ -75,51 +69,14 @@ import { depositData } from './utils/proposal_deposit';
 
 ```
 {
-  id: '01',
-  proposer: <Proposer />,
-  title: 'Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?',
-  description: 'Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏',
-  submittedTime: '12 Dec 2019, 16:22:11 UTC',
-  depositEndTime: '26 Dec 2019, 16:22:11 UTC',
-  votingStartTime: '26 Dec 2019, 16:22:11 UTC',
-  votingEndTime: '10 Jan 2020, 16:22:11 UTC',
-  status: {
-    current: true,
-    display: 'Vote',
-  },
-  duration: '(In 12 days)',
-  type: 'Text proposal',
-  deposit: '520 ATOM',
+  depositor: React.ReactNode,
+  amount: string,
+  time: string,
 };
 ```
 
   </td>
-    <td>Data Displayed</td>
-    <td>-</td>
-  </tr>
-    <tr>
-      <td>label</td>
-      <td>true</td>
-      <td>
-
-```
-{
-  id: 'Proposal ID',
-  proposer: 'Proposer',
-  type: 'Type',
-  title: 'Title',
-  description: 'Description',
-  deposit: 'Deposit',
-  status: 'Status',
-  submittedTime: 'Submitted Time',
-  depositEndTime: 'Deposit End Time',
-  votingStartTime: 'Voting Start Time',
-  votingEndTime: 'Voting End Time',
-};
-```
-
-  </td>
-    <td>Label Displayed</td>
+    <td>data displayed</td>
     <td>-</td>
   </tr>
   <tr>
