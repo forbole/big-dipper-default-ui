@@ -13,6 +13,7 @@ const AvatarDisplay = (props: AvatarDisplayProps) => {
     alt,
     title,
     className,
+    avatar,
     height = '1.5rem',
     width = '1.5rem',
   } = props;
@@ -21,7 +22,14 @@ const AvatarDisplay = (props: AvatarDisplayProps) => {
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'avatarDisplay')}>
-      <Avatar imageUrl={imageUrl} alt={alt} width={width} height={height} className={classnames('img')} />
+      {!!imageUrl && (
+        <Avatar imageUrl={imageUrl} alt={alt} width={width} height={height} className={classnames('img')} />
+      )}
+      {!!avatar && (
+        <span className={classnames('img')}>
+          {avatar}
+        </span>
+      )}
       <div className={classnames('display')}>{title}</div>
     </div>
   );
