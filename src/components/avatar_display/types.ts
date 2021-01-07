@@ -1,5 +1,8 @@
+import React from 'react';
+
 export interface AvatarDisplayProps {
-  imageUrl: string;
+  imageUrl?: string;
+  avatar?: React.ReactNode;
   title: string;
   alt?: string;
   className?: string;
