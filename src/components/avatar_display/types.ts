@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface AvatarDisplayProps {
+export interface AvatarDisplayBase {
   imageUrl?: string;
   avatar?: React.ReactNode;
   title: string;
@@ -9,3 +9,13 @@ export interface AvatarDisplayProps {
   width?: string | number;
   height?: string | number;
 }
+
+export interface AvatarDisplayImage extends AvatarDisplayBase {
+  imageUrl: string;
+}
+
+export interface AvatarDisplayComponents extends AvatarDisplayBase {
+  avatar: React.ReactNode;
+}
+
+export type AvatarDisplayProps = AvatarDisplayImage | AvatarDisplayComponents;
