@@ -26,12 +26,13 @@ import ValidatorBlocks from './components/validator_blocks';
 import TablePaginationActions from './components/table_pagination_actions';
 import ProposalDepositDesktop from './components/proposal_deposit_desktop';
 import ProposalDepositMobile from './components/proposal_deposit_mobile';
-import ProposalInfoDesktop from './components/proposal_info_desktop';
-import ProposalInfoMobile from './components/proposal_info_mobile';
+import ProposalInfoDesktop from './components/proposal_deposit_desktop';
+import ProposalInfoMobile from './components/proposal_deposit_mobile';
 import UserStakingMobile from './components/user_staking_mobile';
 import TablePaginated from './components/table_paginated';
 import TableDefault from './components/table_default';
 import ValidatorProfile from './components/validator_profile';
+import ProposalResultDesktop from './components/proposal_result_desktop'
 
 export {
   DataBlock,
@@ -68,4 +69,5 @@ export {
   TablePaginated,
   TableDefault,
   ValidatorProfile,
+  ProposalResultDesktop,
 };
