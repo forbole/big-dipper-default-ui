@@ -32,8 +32,8 @@ const Stabilities = (prop: Props) => {
   };
 
   const BondedPercentage: number = Math.round(((data.detail[0].value ? data.detail[0].value : 0)
-  / ((data.detail[0].value ? data.detail[0].value : 0)
-  + (data.detail[1].value ? data.detail[1].value : 0))) * 1000) / 10;
+    / ((data.detail[0].value ? data.detail[0].value : 0)
+      + (data.detail[1].value ? data.detail[1].value : 0))) * 1000) / 10;
 
   const UnbondedPercentage: number = Math.round((100 - BondedPercentage) * 10) / 10;
 
@@ -70,10 +70,7 @@ const Stabilities = (prop: Props) => {
           </div>
           <div className={classnames('boxMedium')}>
             <div className={classes.boxSmall}>
-              <div
-                className={classnames('bonded')}
-              />
-              <div className={classes.boxSuperSmall}>
+              <div className={classnames('boxSmallTop')}>
                 <div className={classnames('itemTitle')}>
                   {data.detail[0].title}
                   {' '}
@@ -90,18 +87,13 @@ const Stabilities = (prop: Props) => {
               </div>
             </div>
             <div className={classes.boxSmall}>
-              <div
-                className={classnames('unbonded')}
-              />
-              <div className={classes.boxSuperSmall}>
+              <div className={classnames('boxSmallBottom')}>
                 <div className={classnames('itemTitle')}>
-                  <div className={classnames('marginTopPercentage')}>
-                    {data.detail[1].title}
-                    {' '}
-                    (
-                    {UnbondedPercentage}
-                    %)
-                  </div>
+                  {data.detail[1].title}
+                  {' '}
+                  (
+                  {UnbondedPercentage}
+                  %)
                 </div>
                 <div className={classnames('amount')}>
                   {data.detail[1].display}
