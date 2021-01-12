@@ -30,6 +30,7 @@ import UserStakingMobile from './components/user_staking_mobile';
 import TablePaginated from './components/table_paginated';
 import TableDefault from './components/table_default';
 import ValidatorProfile from './components/validator_profile';
+import LatestActivities from './components/latest_activities';
 
 export {
   DataBlock,
@@ -64,4 +65,5 @@ export {
   TablePaginated,
   TableDefault,
   ValidatorProfile,
+  LatestActivities,
 };
