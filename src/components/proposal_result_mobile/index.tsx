@@ -1,4 +1,3 @@
-
 import React from 'react';
 import classnames from 'classnames';
 import { ProposalResultProps } from './types';
@@ -8,12 +7,12 @@ import {
   Chart,
 } from './components';
 
-const ProposalResultDesktop = (props: ProposalResultProps) => {
+const ProposalResultMobile = (props: ProposalResultProps) => {
   const {
     chart, className, tableDefaultProps, tabProps,
   } = props;
 
-  const { classes } = useGetStyles(chart.colors);
+  const { classes } = useGetStyles(props);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'proposalInfoDesktop')}>
       <Chart
@@ -35,4 +34,4 @@ const ProposalResultDesktop = (props: ProposalResultProps) => {
   );
 };
 
-export default ProposalResultDesktop;
+export default ProposalResultMobile;

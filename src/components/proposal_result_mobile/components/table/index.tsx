@@ -7,11 +7,12 @@ import {
   Typography,
   Box,
 } from '@material-ui/core';
-import TablePaginated from '../../../table_paginated';
 import {
   TableProps,
   TabPanelProps,
 } from './types';
+import { useTableDefaultHook } from './hooks ';
+import { PaginatedContainer } from './components';
 
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
@@ -41,6 +42,8 @@ function a11yProps(index: any) {
 }
 
 const ProposalTable = (props: TableProps) => {
+
+
   const {
     tableDefaultProps, className, classNameTab, classNameIndicator, tabProps,
   } = props;
@@ -49,7 +52,6 @@ const ProposalTable = (props: TableProps) => {
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
-
 
   const allData = tableDefaultProps.data.filter((x) => x.answer.rawValue !== 'absence');
   const mapData: any = [];
@@ -89,45 +91,52 @@ const ProposalTable = (props: TableProps) => {
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
-          <TablePaginated
-            columns={tableDefaultProps.columns}
+          <PaginatedContainer
             data={allData}
-            initialActiveSort={tableDefaultProps.initialActiveSort}
+            overrideLabel={tableDefaultProps.overrideLabel}
           />
+          {/* {allData.map((row: any, i) => {
+            return (
+              <Container
+                key={i}
+                validator={row.validator.display}
+                votingPower={row.votingPower.display}
+                answer={row.answer.display}
+                votingPowerPercentage={row.votingPowerPercentage.display}
+                votingPowerOverride={row.votingPowerOverride.display}
+              />
+            );
+          })} */}
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <TablePaginated
-            columns={tableDefaultProps.columns}
+          <PaginatedContainer
             data={mapData.yes}
-            initialActiveSort={tableDefaultProps.initialActiveSort}
+            overrideLabel={tableDefaultProps.overrideLabel}
           />
+
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <TablePaginated
-            columns={tableDefaultProps.columns}
+          <PaginatedContainer
             data={mapData.no}
-            initialActiveSort={tableDefaultProps.initialActiveSort}
+            overrideLabel={tableDefaultProps.overrideLabel}
           />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          <TablePaginated
-            columns={tableDefaultProps.columns}
+          <PaginatedContainer
             data={mapData.veto}
-            initialActiveSort={tableDefaultProps.initialActiveSort}
+            overrideLabel={tableDefaultProps.overrideLabel}
           />
         </TabPanel>
         <TabPanel value={value} index={4}>
-          <TablePaginated
-            columns={tableDefaultProps.columns}
+          <PaginatedContainer
             data={mapData.abstain}
-            initialActiveSort={tableDefaultProps.initialActiveSort}
+            overrideLabel={tableDefaultProps.overrideLabel}
           />
         </TabPanel>
         <TabPanel value={value} index={5}>
-          <TablePaginated
-            columns={tableDefaultProps.absenceColumns}
+          <PaginatedContainer
             data={mapData.absence}
-            initialActiveSort={tableDefaultProps.initialActiveSort}
+            overrideLabel={tableDefaultProps.overrideLabel}
           />
         </TabPanel>
       </div>

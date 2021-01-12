@@ -4,9 +4,8 @@ import { TableDefaultProps } from './components/table/types';
 export type ChartData = {
   type: string;
   title: string;
-  percentage: string;
   value: number;
-  amount: string;
+  display: string;
 };
 
 export type DataType = {

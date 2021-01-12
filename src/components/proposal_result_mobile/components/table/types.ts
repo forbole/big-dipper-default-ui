@@ -1,12 +1,12 @@
 import React from 'react';
 import { TabProps } from '../../types';
 
-export type Columns = {
-  label: string;
-  display: string | React.ReactNode;
-  align?: string;
-  sort?: boolean;
-}
+// export type Columns = {
+//   label: string;
+//   display: string | React.ReactNode;
+//   align?: string;
+//   sort?: boolean;
+// }
 
 export type Data = {
   [key: string]: {
@@ -16,13 +16,20 @@ export type Data = {
   }
 }
 
+// export interface ContainerProps {
+//   validator: React.ReactNode;
+//   votingPower: string;
+//   votingPowerPercentage: string;
+//   votingPowerOverride: string;
+//   answer: string;
+// }
+
 export interface TableDefaultProps {
   className?: string;
-  columns: Columns[];
-  absenceColumns: Columns[];
   data: Data[];
-  onRowClick?: (data: Data) => void;
-  initialActiveSort?: string;
+  overrideLabel: string;
+  // onRowClick?: (data: Data) => void;
+  // initialActiveSort?: string;
   pagination?: {
     rowsPerPage: number | undefined;
   };
@@ -34,6 +41,9 @@ export interface TableProps {
   tabProps: TabProps;
   classNameTab: string;
   classNameIndicator: string;
+  pagination?: {
+    rowsPerPage: number | undefined;
+  };
 }
 
 export interface TabPanelProps {
