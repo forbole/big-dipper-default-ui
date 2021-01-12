@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import {
   CheckCircle, Cancel,
 } from '@material-ui/icons';
-import { Avatar } from '../..';
+import { Avatar } from '../../../src';
 import LatestActivitiesMobile from '.';
 
 const spies = {
