@@ -11,6 +11,7 @@ import {
   TableProps,
   TabPanelProps,
 } from './types';
+import TablePaginated from '../../../table_paginated';
 import { useTableDefaultHook } from './hooks ';
 import { PaginatedContainer } from './components';
 
@@ -64,6 +65,15 @@ const ProposalTable = (props: TableProps) => {
     }
   });
 
+    const {
+      handleChangePage,
+      handleChangeRowsPerPage,
+      state,
+  } = useTableDefaultHook({
+    rowsPerPageCount: tableDefaultProps.pagination?.rowsPerPage,
+    data: tableDefaultProps.data,
+  });
+
   return (
     <div className={classnames(className, 'table', 'proposalDepositDesktop')}>
       <div className={className}>
@@ -91,22 +101,15 @@ const ProposalTable = (props: TableProps) => {
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
+          {/* <TablePaginated
+            columns={tableDefaultProps.columns}
+            data={allData}
+            initialActiveSort={tableDefaultProps.initialActiveSort} */}
+          {/* /> */}
           <PaginatedContainer
             data={allData}
             overrideLabel={tableDefaultProps.overrideLabel}
           />
-          {/* {allData.map((row: any, i) => {
-            return (
-              <Container
-                key={i}
-                validator={row.validator.display}
-                votingPower={row.votingPower.display}
-                answer={row.answer.display}
-                votingPowerPercentage={row.votingPowerPercentage.display}
-                votingPowerOverride={row.votingPowerOverride.display}
-              />
-            );
-          })} */}
         </TabPanel>
         <TabPanel value={value} index={1}>
           <PaginatedContainer

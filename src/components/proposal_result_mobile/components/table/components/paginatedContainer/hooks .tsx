@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import {
-  useTablePaginatedHookProps, Data,
+  useTableDefaultHookProps,
 } from './types';
+import { Data } from '../../types';
 
-export const useTableDefaultHook = (options: useTablePaginatedHookProps) => {
+export const useTableDefaultHook = (options: useTableDefaultHookProps) => {
   const {
     rowsPerPageCount = 10,
-    // onRowClick,
-    // initialActiveSort,
+    onRowClick,
+    initialActiveSort,
     data,
   } = options;
   const [state, setState] = useState<any>({
     data,
     page: 0,
     rowsPerPage: rowsPerPageCount,
-    // activeSort: initialActiveSort,
+    activeSort: initialActiveSort,
     sortDirection: 'asc',
   });
 
@@ -38,11 +39,11 @@ export const useTableDefaultHook = (options: useTablePaginatedHookProps) => {
     });
   };
 
-  // const handleRowClick = (selectedData: Data) => {
-  //   if (onRowClick) {
-  //     onRowClick(selectedData);
-  //   }
-  // };
+  const handleRowClick = (selectedData: Data) => {
+    if (onRowClick) {
+      onRowClick(selectedData);
+    }
+  };
 
   const handleSort = (key:string) => () => {
     const {
@@ -79,7 +80,7 @@ export const useTableDefaultHook = (options: useTablePaginatedHookProps) => {
     handleChangePage,
     handleChangeRowsPerPage,
     state,
-    // handleSort,
-    // handleRowClick,
+    handleSort,
+    handleRowClick,
   };
 };
