@@ -5,44 +5,18 @@ import {
   Cancel,
 } from '@material-ui/icons';
 import { useGetStyles } from './styles';
+import { useLatestActivitiesHook } from './hooks';
+import { LatestActivitiesProps } from './types';
 
-const LatestActivities = () => {
+const LatestActivities = (props: LatestActivitiesProps) => {
   const { classes } = useGetStyles();
-  const props = {
-    className: '',
-    transactions: [
-      {
-        hash: {
-          value: 123456,
-          display: '#123adfds...456',
-        },
-        timestamp: '10 Dec 2019 18:12',
-        success: true,
-        messages: [
-          <div>one message</div>,
-          <div>two message</div>,
-        ],
-      },
-      {
-        hash: {
-          value: 123456,
-          display: '#123adfds...456',
-        },
-        timestamp: '10 Dec 2019 18:12',
-        success: false,
-        messages: [
-          <div>one message</div>,
-          <div>two message</div>,
-        ],
-      },
-    ],
-    onClick: (hash:any) => console.log(hash),
-  };
-
   const {
     className,
     transactions,
+    onClick,
   } = props;
+
+  const { handleOnClick } = useLatestActivitiesHook(onClick);
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'activities-list')}>
@@ -52,6 +26,8 @@ const LatestActivities = () => {
             <div
               className={classnames('single-transaction__wrapper')}
               key={`${transaction.hash}-${index}`}
+              onClick={() => handleOnClick(transaction.hash.value)}
+              role="button"
             >
               <div className={classnames('single-transaction__header')}>
                 <div>{transaction.hash.display}</div>
