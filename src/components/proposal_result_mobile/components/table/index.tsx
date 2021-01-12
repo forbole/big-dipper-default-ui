@@ -11,8 +11,6 @@ import {
   TableProps,
   TabPanelProps,
 } from './types';
-import TablePaginated from '../../../table_paginated';
-import { useTableDefaultHook } from './hooks ';
 import { PaginatedContainer } from './components';
 
 function TabPanel(props: TabPanelProps) {
@@ -43,8 +41,6 @@ function a11yProps(index: any) {
 }
 
 const ProposalTable = (props: TableProps) => {
-
-
   const {
     tableDefaultProps, className, classNameTab, classNameIndicator, tabProps,
   } = props;
@@ -63,15 +59,6 @@ const ProposalTable = (props: TableProps) => {
     } else {
       mapData[x.answer.rawValue] = [x];
     }
-  });
-
-    const {
-      handleChangePage,
-      handleChangeRowsPerPage,
-      state,
-  } = useTableDefaultHook({
-    rowsPerPageCount: tableDefaultProps.pagination?.rowsPerPage,
-    data: tableDefaultProps.data,
   });
 
   return (

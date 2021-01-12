@@ -1,15 +1,10 @@
-export type Data = {
-  type: string;
-  title: string;
-  percentage: string;
-  value: number;
-};
+import { ChartData } from '../../types';
 
 export interface ChartProps {
   className?: string;
   title: string;
   amount: string;
   subTitle: string;
-  data: Data[];
+  data: ChartData[];
   colors: string[];
 }

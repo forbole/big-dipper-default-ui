@@ -1,34 +1,27 @@
 import React from 'react';
 import classnames from 'classnames';
-// import { Pagination } from '@material-ui/core';
+import { TablePagination } from '@material-ui/core';
 import { PaginatedContainerProps } from './types';
-import { useTableDefaultHook } from './hooks ';
+import { useTablePaginationHook } from './hooks ';
 import { Container } from './components';
+import { TablePaginationActions } from '../../../../../..';
 
 const PaginatedContainer = (props: PaginatedContainerProps) => {
   const {
-    className,
     data,
     overrideLabel,
   } = props;
 
-  // const {
-  //   handleChangePage,
-  //   handleChangeRowsPerPage,
-  //   handleRowClick,
-  //   handleSort,
-  //   state,
-  // } = useTableDefaultHook({
-  //   rowsPerPageCount: pagination?.rowsPerPage,
-  //   onRowClick,
-  //   initialActiveSort,
-  //   data,
-  // });
+  const {
+    handleChangePage,
+    handleChangeRowsPerPage,
+    page,
+    rowsPerPage,
+  } = useTablePaginationHook();
 
   return (
     <div className={classnames('mainContainer')}>
-      <Pagination count={10} />
-      {data.map((row: any, i) => {
+      {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row: any, i) => {
         return (
           <Container
             data={row}
@@ -36,6 +29,19 @@ const PaginatedContainer = (props: PaginatedContainerProps) => {
           />
         );
       })}
+      <TablePagination
+        className="validator-staking__pagination"
+        rowsPerPageOptions={[]}
+        labelRowsPerPage=""
+        colSpan={6}
+        component="div"
+        count={data.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+        ActionsComponent={(subProps: any) => <TablePaginationActions {...subProps} />}
+      />
     </div>
   );
 };

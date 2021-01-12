@@ -1,42 +1,10 @@
-import React from 'react';
 import { TableDefaultProps } from './components/table/types';
 
 export type ChartData = {
   type: string;
   title: string;
+  percentage: string;
   value: number;
-  display: string;
-};
-
-export type DataType = {
-  display: string;
-  rawValue: string | number;
-};
-
-export type Votor = {
-  display: React.ReactNode;
-  rawValue: string;
-};
-
-export interface TableData {
-  voter: React.ReactNode;
-  votingPower: DataType;
-  votingPowerPercentage: DataType;
-  votingPowerOverride: DataType;
-  answer: DataType;
-}
-
-export type Label = {
-  voter: string;
-  votingPower: string;
-  votingPowerPercentage: string;
-  votingPowerOverride: string;
-  answer: string;
-};
-
-export type Table = {
-  label: Label;
-  data: TableData[];
 };
 
 export type Chart = {
