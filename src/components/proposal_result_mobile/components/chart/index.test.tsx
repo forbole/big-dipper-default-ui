@@ -18,6 +18,16 @@ describe('Chart', () => {
           value: 2000,
           percentage: '43.78%',
         },
+        {
+          title: 'Yes',
+          value: 2000,
+          percentage: '43.78%',
+        },
+        {
+          title: 'No',
+          value: 2000,
+          percentage: '43.78%',
+        },
       ],
       amount: '(~81M of ~186M ATOM)',
       subTitle: 'Voted (43.78%)',

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {
+  useState,
+  ChangeEvent,
+} from 'react';
 import classnames from 'classnames';
 import {
   AppBar,
@@ -50,11 +53,9 @@ const ProposalTable = (props: TableProps) => {
     tableDefaultProps, className, classNameTab, classNameIndicator, tabProps,
   } = props;
 
-  const [value, setValue] = React.useState(0);
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+  const [value, setValue] = useState(0);
+  const handleChange = (_event: ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
-    const a = event;
-    console.log(a);
   };
 
   const allData = tableDefaultProps.data.filter((x) => x.answer.rawValue !== 'absence');
