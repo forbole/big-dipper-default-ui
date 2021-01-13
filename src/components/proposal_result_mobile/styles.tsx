@@ -69,16 +69,11 @@ export const useGetStyles = (props: any) => {
       '& .absence': {
         color: '#1D86FF',
       },
-      // '& .answer': {
-      //   paddingRight: '2.5rem',
-      // },
     },
     chart: {
-      // display: 'flex',
       '& .chartBox': {
         width: '7.5rem',
         height: '7.5rem',
-        // margin: '3.75rem',
       },
       '& p': {
         margin: '0',

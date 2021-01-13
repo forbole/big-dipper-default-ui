@@ -5,42 +5,27 @@ import Chart from '.';
 describe('Chart', () => {
   it('Works with base props', () => {
     expect(Chart).toBeTruthy();
-    // const args = {
-    //   title: '81,674,736.604642 ATOM',
-    //   data: [
-    //     {
-    //       title: 'Yes',
-    //       value: 2000,
-    //       percentage: '43.78%',
-    //     },
-    //     {
-    //       title: 'No',
-    //       value: 2000,
-    //       percentage: '43.78%',
-    //     },
-    //   ],
-    //   amount: '(~81M of ~186M ATOM)',
-    //   subTitle: 'Voted (43.78%)',
-    //   colors: ['#28C989', '#1C86FC', '#FD248C', '#FD7522'],
-    // };
+    const args = {
+      title: '81,674,736.604642 ATOM',
+      data: [
+        {
+          title: 'Yes',
+          value: 2000,
+          percentage: '43.78%',
+        },
+        {
+          title: 'No',
+          value: 2000,
+          percentage: '43.78%',
+        },
+      ],
+      amount: '(~81M of ~186M ATOM)',
+      subTitle: 'Voted (43.78%)',
+      colors: ['#28C989', '#1C86FC', '#FD248C', '#FD7522'],
+    };
     const wrap = mount(
       <Chart
-        title="81,674,736.604642 ATOM"
-        data={[
-          {
-            title: 'Yes',
-            value: 2000,
-            percentage: '43.78%',
-          },
-          {
-            title: 'No',
-            value: 2000,
-            percentage: '43.78%',
-          },
-        ]}
-        amount="(~81M of ~186M ATOM)"
-        subTitle="Voted (43.78%)"
-        colors={['#28C989', '#1C86FC', '#FD248C', '#FD7522']}
+        {...args}
       />,
     );
     expect(wrap).not.toBeNull();
