@@ -1,0 +1,98 @@
+import {
+  Meta, Story, Canvas,
+} from '@storybook/addon-docs/blocks';
+import LatestActivities from '.';
+
+export const transactions = Array(5).fill({
+        hash: {
+          value: 123456,
+          display: '#123adfds...456',
+        },
+        timestamp: '10 Dec 2019 18:12',
+        success: true,
+        messages: [
+          <div>one message</div>,
+          <div>two message</div>,
+        ]
+      })
+
+<Meta title="LatestActivities" component={LatestActivities} />
+
+# ValidatorProfile
+---
+
+## Default
+<Canvas>
+  <Story name="Default">
+    <LatestActivities
+      transactions={transactions}
+      onClick={(hash) => {console.log(hash, 'selected hash')}}
+    />
+  </Story>
+</Canvas>
+
+```
+hello
+```
+
+## Props
+<table>
+<thead>
+  <tr>
+    <th>Property</th>
+    <th>Required</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td>transactions</td>
+    <td>true</td>
+    <td>
+
+```
+{
+  hash: {
+    value: number | string;
+    display: string;
+  };
+  timestamp: string;
+  success: boolean;
+  messages: React.ReactNode[];
+}
+```
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>onClick</td>
+    <td>-</td>
+    <td>
+
+`(hash:string | value) => void`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>className</td>
+    <td>-</td>
+    <td>
+
+`string`
+
+  </td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
