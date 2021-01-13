@@ -32,7 +32,7 @@ const LatestActivities = (props: LatestActivitiesProps) => {
               <div className={classnames('single-transaction__header')}>
                 <div>{transaction.hash.display}</div>
                 <div className={classnames('header__right-content')}>
-                  <div>{transaction.timestamp}</div>
+                  <div className={classnames('header__timestamp')}>{transaction.timestamp}</div>
                   {transaction.success
                     ? <CheckCircle className={classnames('header__icon', 'success')} />
                     : <Cancel className={classnames('header__icon', 'fail')} />}
