@@ -11,3 +11,4 @@
 - Add BlockDetails component
 - Add ProposalDeposit component
 - Add ProposalInfo component
+- Add ProposalResult component
