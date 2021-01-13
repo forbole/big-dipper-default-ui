@@ -1,37 +1,62 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ProposalDepositDesktop from '.';
-import AvatarDisplay from '../avatar_display';
+import ProposalTable from '.';
 
-describe('ProposalDepositDesktop', () => {
+describe('ProposalTable', () => {
   it('Works', () => {
-    expect(ProposalDepositDesktop).toBeTruthy();
-    const wrap = mount(
-      <ProposalDepositDesktop
-        title="Deposits (109.9 ATOM)"
-        data={[
+    expect(ProposalTable).toBeTruthy();
+    const args = {
+      tableDefaultProps: {
+        overrideLabel: 'Override',
+        data: [
           {
-            depositor: <AvatarDisplay
-              imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-              alt="avatar image"
-              title="Forbole"
-            />,
-            amount: '10.8 ATOM',
-            time: '09 Jan 2020, 10:00:19',
+            validator: {
+              className: 'validator',
+              rawValue: 'forbole',
+              display: <div>forbole</div>,
+            },
+            votingPower: {
+              className: 'votingPower',
+              rawValue: 4602020.799998,
+              display: '4,602,020.799998 ATOM',
+            },
+            votingPowerPercentage: {
+              className: 'votingPowerPercentage',
+              rawValue: 77,
+              display: '0.77%',
+            },
+            votingPowerOverride: {
+              className: 'votingPowerOverride',
+              rawValue: 1.9,
+              display: '1.9%',
+            },
+            answer: {
+              className: 'abstain',
+              rawValue: 'abstain',
+              display: 'Abstain',
+            },
           },
-        ]}
-        labels={{
-          depositor: 'Depositor',
-          amount: 'Amount',
-          time: 'Time [UTC]',
-        }}
+        ],
+      },
+      tabProps: {
+        all: 'All votes (60)',
+        yes: 'yes (15)',
+        no: 'no (43)',
+        veto: 'No with veto (0)',
+        abstain: 'abstain (2)',
+        absence: 'absence (40/100)',
+      },
+      classNameTab: '',
+      classNameIndicator: '',
+    };
+    const wrap = mount(
+      <ProposalTable
+        {...args}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find('h1').first().text()).toEqual('Deposits (109.9 ATOM)');
-    expect(wrap.find('.label').find('.depositor').first().text()).toEqual('Depositor');
-    expect(wrap.find('.label').find('.amount').first().text()).toEqual('Amount');
-    expect(wrap.find('.label').find('.time').first().text()).toEqual('Time [UTC]');
-    expect(wrap.find(ProposalDepositDesktop)).toHaveLength(1);
+    expect(wrap.find(ProposalTable)).toHaveLength(1);
+    expect(wrap.find('.votingPowerPercentage').first().text()).toEqual('0.77%');
+    expect(wrap.find('.overrideLabel').first().text()).toEqual('Override');
   });
 });

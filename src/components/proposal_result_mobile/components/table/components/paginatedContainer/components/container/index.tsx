@@ -11,15 +11,14 @@ const Container = (props: ContainerProps) => {
 
   const { classes } = useGetStyles(data);
 
-
   return (
     <div className={classnames(classes.root, 'mainContainer')}>
       <div className={classnames('line')} />
       <div className={classnames('container')}>
-        <div className={classnames('depositor')}>
+        <div className={classnames('validator')}>
           {data.validator.display}
         </div>
-        <div className={classnames('amount')}>
+        <div className={classnames(data.answer.className)}>
           {data.answer.display}
         </div>
       </div>
@@ -34,7 +33,6 @@ const Container = (props: ContainerProps) => {
           <div className={classnames('overrideLabel')}>
             {overrideLabel}
           </div>
-
           {data.votingPowerOverride.display}
         </div>
       </div>

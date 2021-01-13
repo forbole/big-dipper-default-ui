@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import {
   PieChart, Pie, Cell, ResponsiveContainer,
 } from 'recharts';
+import { DataDiagram } from './components';
 import { ChartProps } from './types';
 
 const Chart = (prop: ChartProps) => {
@@ -53,62 +54,24 @@ const Chart = (prop: ChartProps) => {
         </h1>
         <div className={classnames('dataContent')}>
           <div className={classnames('dataColumn')}>
-            <div className={classnames('yes', 'dataType')}>
-              <div>
-                <p className={classnames('dataName')}>
-                  {data[0].title}
-                  <span className={classnames('percentage')}>
-                    (
-                    {data[0].percentage}
-                    )
-                  </span>
-                </p>
-                <p className={classnames('dataDisplay')}>{data[0].amount}</p>
-              </div>
-            </div>
-
-            <div className={classnames('veto', 'dataType')}>
-              <div>
-                <p className={classnames('dataName')}>
-                  {data[3].title}
-                  <span className={classnames('percentage')}>
-                    (
-                    {data[3].percentage}
-                    )
-                  </span>
-                </p>
-                <p className={classnames('dataDisplay')}>{data[3].amount}</p>
-              </div>
-            </div>
+            <DataDiagram
+              className="yes"
+              data={data[0]}
+            />
+            <DataDiagram
+              className="veto"
+              data={data[3]}
+            />
           </div>
           <div className={classnames('dataColumn')}>
-            <div className={classnames('no', 'dataType')}>
-              <div>
-                <p className={classnames('dataName')}>
-                  {data[2].title}
-                  <span className={classnames('percentage')}>
-                    (
-                    {data[2].percentage}
-                    )
-                  </span>
-                </p>
-                <p className={classnames('dataDisplay')}>{data[2].amount}</p>
-              </div>
-            </div>
-
-            <div className={classnames('abstain', 'dataType')}>
-              <div>
-                <p className={classnames('dataName')}>
-                  {data[1].title}
-                  <span className={classnames('percentage')}>
-                    (
-                    {data[1].percentage}
-                    )
-                  </span>
-                </p>
-                <p className={classnames('dataDisplay')}>{data[1].amount}</p>
-              </div>
-            </div>
+            <DataDiagram
+              className="no"
+              data={data[2]}
+            />
+            <DataDiagram
+              className="abstain"
+              data={data[1]}
+            />
           </div>
         </div>
       </div>

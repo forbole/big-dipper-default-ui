@@ -4,6 +4,7 @@ import {
   PieChart, Pie, Cell, ResponsiveContainer,
 } from 'recharts';
 import { ChartProps } from './types';
+import { DataDiagram } from './components';
 
 const Chart = (prop: ChartProps) => {
   const {
@@ -52,30 +53,22 @@ const Chart = (prop: ChartProps) => {
           </ResponsiveContainer>
         </div>
         <div className={classnames('dataContent')}>
-          <div className={classnames('yes', 'dataType')}>
-            <div className={classnames('dataRow')}>
-              <p className={classnames('dataName')}>{data[0].title}</p>
-              <p className={classnames('dataPercentage')}>{data[0].percentage}</p>
-            </div>
-          </div>
-          <div className={classnames('no', 'dataType')}>
-            <div className={classnames('dataRow')}>
-              <p className={classnames('dataName')}>{data[2].title}</p>
-              <p className={classnames('dataPercentage')}>{data[2].percentage}</p>
-            </div>
-          </div>
-          <div className={classnames('veto', 'dataType')}>
-            <div className={classnames('dataRow')}>
-              <p className={classnames('dataName')}>{data[3].title}</p>
-              <p className={classnames('dataPercentage')}>{data[3].percentage}</p>
-            </div>
-          </div>
-          <div className={classnames('abstain', 'dataType')}>
-            <div className={classnames('dataRow')}>
-              <p className={classnames('dataName')}>{data[1].title}</p>
-              <p className={classnames('dataPercentage')}>{data[1].percentage}</p>
-            </div>
-          </div>
+          <DataDiagram
+            className="yes"
+            data={data[0]}
+          />
+          <DataDiagram
+            className="no"
+            data={data[2]}
+          />
+          <DataDiagram
+            className="veto"
+            data={data[3]}
+          />
+          <DataDiagram
+            className="abstain"
+            data={data[1]}
+          />
         </div>
       </div>
     </div>

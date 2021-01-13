@@ -24,6 +24,7 @@ const PaginatedContainer = (props: PaginatedContainerProps) => {
       {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row: any, i) => {
         return (
           <Container
+            key={i}
             data={row}
             overrideLabel={overrideLabel}
           />

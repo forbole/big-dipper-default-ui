@@ -1,4 +1,4 @@
-import { Data } from '../../types';
+import { Data } from '../../../../../table_paginated/types';
 
 export interface PaginatedContainerProps {
   data: Data[];

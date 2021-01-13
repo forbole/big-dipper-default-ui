@@ -1,4 +1,3 @@
-
 import React from 'react';
 import classnames from 'classnames';
 import { ProposalResultProps } from './types';
@@ -15,7 +14,7 @@ const ProposalResultDesktop = (props: ProposalResultProps) => {
 
   const { classes } = useGetStyles(chart.colors);
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'proposalInfoDesktop')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'proposalResultDesktop')}>
       <Chart
         data={chart.data}
         title={chart.title}

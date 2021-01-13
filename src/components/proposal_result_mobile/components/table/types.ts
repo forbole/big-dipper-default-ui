@@ -1,35 +1,11 @@
 import React from 'react';
 import { TabProps } from '../../types';
-
-// export type Columns = {
-//   label: string;
-//   display: string | React.ReactNode;
-//   align?: string;
-//   sort?: boolean;
-// }
-
-export type Data = {
-  [key: string]: {
-    className?: string;
-    rawValue: string | number;
-    display: string | React.ReactNode | number;
-  }
-}
-
-// export interface ContainerProps {
-//   validator: React.ReactNode;
-//   votingPower: string;
-//   votingPowerPercentage: string;
-//   votingPowerOverride: string;
-//   answer: string;
-// }
+import { Data } from '../../../table_paginated/types';
 
 export interface TableDefaultProps {
   className?: string;
   data: Data[];
   overrideLabel: string;
-  // onRowClick?: (data: Data) => void;
-  // initialActiveSort?: string;
   pagination?: {
     rowsPerPage: number | undefined;
   };

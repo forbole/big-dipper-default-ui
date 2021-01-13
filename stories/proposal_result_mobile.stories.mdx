@@ -23,32 +23,79 @@ import {
 </Canvas>
 
 ```
-<ProposalResultMobile
-  data={{
-    id: '01',
-    proposer: <Proposer />,
-    title: 'Are Validators Charging 0% Commission Harmful to the Success of the Cosmos Hub?',
-    description: 'Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏Lunie Mobile now available in app stores near you! 📲 iOS - bit.ly 📲 Android - bit.ly ❣️This proposal was sent from the Lunie iOS app 😏',
-    submittedTime: '12 Dec 2019, 16:22:11 UTC',
-    depositEndTime: '26 Dec 2019, 16:22:11 UTC',
-    votingStartTime: '26 Dec 2019, 16:22:11 UTC',
-    votingEndTime: '10 Jan 2020, 16:22:11 UTC',
-    status: {
-      current: true,
-      display: 'Vote',
-    },
-    duration: '(In 12 days)',
-    type: 'Text proposal',
-  }}
-  label={{
-    proposer: 'Proposer',
-    type: 'Type',
-    description: 'Description',
-    submittedTime: 'Submitted Time',
-    depositEndTime: 'Deposit End Time',
-    votingStartTime: 'Voting Start Time',
-    votingEndTime: 'Voting End Time',
-  }}
+<ProposalResultDesktop
+  chart: {
+    subTitle: 'Voted (43.78%)',
+    title: '81,674,736.604642 ATOM',
+    amount: '(~81M of ~186M ATOM)',
+    colors: ['#28C989', '#1C86FC', '#FD248C', '#FD7522'],
+    data: [
+      {
+        title: 'Yes',
+        percentage: '30.66%',
+        value: 2504158159222,
+      },
+      {
+        title: 'Abstain',
+        percentage: '0.05%',
+        value: 3504158159222,
+      },
+      {
+        title: 'No',
+        percentage: '69.28%',
+        value: 2504158159222,
+      },
+      {
+        title: 'No with Veto',
+        percentage: '0.00%',
+        value: 58159222000,
+      },
+    ],
+  },
+tableDefaultProps: {
+    overrideLabel: 'Override',
+    data: [
+      {
+        validator: {
+          className: 'validator',
+          rawValue: 'forbole',
+          display: <ProposerData />,
+        },
+        votingPower: {
+          className: 'votingPower',
+          rawValue: 4602020.799998,
+          display: '4,602,020.799998 ATOM',
+        },
+        votingPowerPercentage: {
+          className: 'votingPowerPercentage',
+          rawValue: 77,
+          display: '0.77%',
+        },
+        votingPowerOverride: {
+          className: 'votingPowerOverride',
+          rawValue: 1.9,
+          display: '1.9%',
+        },
+        answer: {
+          className: classnames('answer', 'yes'),
+          rawValue: 'yes',
+          display: 'Yes',
+        },
+      },
+      ...
+    ],
+    pagination?: {
+      rowsPerPage: number | undefined;
+    };
+  },
+  tabProps: {
+    all: string;
+    yes: string;
+    no: string;
+    veto: string;
+    abstain: string;
+    absence: string;
+  },
 />
 ```
 
@@ -65,26 +112,29 @@ import {
   </thead>
   <tbody>
     <tr>
-      <td>data</td>
+      <td>tableDefaultProps</td>
       <td>true</td>
       <td>
 
 ```
 {
-  id: string,
-  proposer: React.ReactNode,
-  title: string,
-  description: string,
-  submittedTime: string,
-  depositEndTime: string,
-  votingStartTime: string,
-  votingEndTime: string,
-  status: {
-    current: boolean,
-    display: string,
-  },
-  duration?: string,
-  type: string,
+  className?: string;
+  columns: {
+    label: string;
+    display: string | React.ReactNode;
+    align?: string;
+    sort?: boolean
+  }[],
+  data: {
+    [key: string]: {
+      className?: string;
+      rawValue: string | number;
+      display: string | React.ReactNode | number;
+    }
+  }[];
+  pagination?: {
+    rowsPerPage: number | undefined;
+  };
 };
 ```
 
@@ -93,24 +143,40 @@ import {
     <td>-</td>
   </tr>
     <tr>
-      <td>label</td>
+      <td>chart</td>
       <td>true</td>
       <td>
 
 ```
 {
-  proposer: string,
-  type: string,
-  description: string,
-  submittedTime: string,
-  depositEndTime: string,
-  votingStartTime: string,
-  votingEndTime: string,
+  title: string;
+  percentage: string;
+  value: number;
+}[];
+```
+
+  </td>
+    <td>data of the chart displayed</td>
+    <td>-</td>
+  </tr>
+    <tr>
+      <td>tabProps</td>
+      <td>true</td>
+      <td>
+
+```
+{
+  all: string;
+  yes: string;
+  no: string;
+  veto: string;
+  abstain: string;
+  absence: string;
 };
 ```
 
   </td>
-    <td>label displayed</td>
+    <td>data of the tab displayed</td>
     <td>-</td>
   </tr>
   <tr>

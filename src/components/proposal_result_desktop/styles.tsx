@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
-export const useGetStyles = (prop: any) => {
+export const useGetStyles = (props: any) => {
   const useStyles = makeStyles({
     root: {
       overflow: 'auto',
@@ -29,6 +29,36 @@ export const useGetStyles = (prop: any) => {
       '& .MuiTableCell-root': {
         borderBottom: 'none',
         fontSize: '1rem',
+      },
+      '& .validator': {
+        paddingLeft: '2.5rem',
+      },
+      '& .table__row': {
+        paddingRight: '2.5rem',
+      },
+      '& .yes': {
+        color: '#1EC490',
+      },
+      '& .no': {
+        color: '#FD248C',
+      },
+      '& .veto': {
+        color: '#FD7522',
+      },
+      '& .abstain': {
+        color: '#1D86FF',
+      },
+      '& .absence': {
+        color: '#FD3B4C',
+      },
+      '& .answer': {
+        paddingRight: '2.5rem',
+      },
+      '& .label__validator': {
+        paddingLeft: '1.5rem',
+      },
+      '& .label__answer': {
+        paddingRight: '1.5rem',
       },
     },
     chart: {
@@ -75,22 +105,22 @@ export const useGetStyles = (prop: any) => {
         flex: 1,
         '&.yes': {
           '&:before': {
-            background: prop[0],
+            background: props[0],
           },
         },
         '&.abstain': {
           '&:before': {
-            background: prop[3],
+            background: props[3],
           },
         },
         '&.veto': {
           '&:before': {
-            background: prop[2],
+            background: props[2],
           },
         },
         '&.no': {
           '&:before': {
-            background: prop[1],
+            background: props[1],
           },
         },
         '&:before': {

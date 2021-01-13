@@ -1,54 +1,52 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Stabilities from '.';
+import Chart from '.';
 
-describe('Stabilities', () => {
+describe('Chart', () => {
   it('Works with base props', () => {
-    expect(Stabilities).toBeTruthy();
-    const args = {
-      title: 'Stabilities',
-      coin: 'ATOM',
-      price: {
-        title: 'Price',
-        display: '$2.756',
-      },
-      inflation: {
-        title: 'Inflation',
-        display: '7.01%',
-      },
-      marketCap: {
-        title: 'Market Cap',
-        display: '$515,551,345.99',
-      },
-      communityPool: {
-        title: 'Community Pool',
-        display: '370,000.74',
-      },
-      data: {
-        total: {
-          value: 191235.473,
-          display: '0.19 m',
-        },
-        detail:
-        [{
-          title: 'Bonded', value: 100000, display: '100,000',
-        },
-        {
-          title: 'UnBonded', value: 91235.473, display: '91,235.473',
-        },
-        ],
-      },
-      colors: ['#FF7846', '#FFD800'],
-    };
+    expect(Chart).toBeTruthy();
+    // const args = {
+    //   title: '81,674,736.604642 ATOM',
+    //   data: [
+    //     {
+    //       title: 'Yes',
+    //       value: 2000,
+    //       percentage: '43.78%',
+    //     },
+    //     {
+    //       title: 'No',
+    //       value: 2000,
+    //       percentage: '43.78%',
+    //     },
+    //   ],
+    //   amount: '(~81M of ~186M ATOM)',
+    //   subTitle: 'Voted (43.78%)',
+    //   colors: ['#28C989', '#1C86FC', '#FD248C', '#FD7522'],
+    // };
     const wrap = mount(
-      <Stabilities
-        {...args}
+      <Chart
+        title="81,674,736.604642 ATOM"
+        data={[
+          {
+            title: 'Yes',
+            value: 2000,
+            percentage: '43.78%',
+          },
+          {
+            title: 'No',
+            value: 2000,
+            percentage: '43.78%',
+          },
+        ]}
+        amount="(~81M of ~186M ATOM)"
+        subTitle="Voted (43.78%)"
+        colors={['#28C989', '#1C86FC', '#FD248C', '#FD7522']}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find(Stabilities)).toHaveLength(1);
-    expect(wrap.find('.marginBottom')).toHaveLength(2);
-    expect(wrap.find('h1').first().text()).toBe('Stabilities');
-    expect(wrap.find('div').last().text()).toBe('370,000.74ATOM');
+    expect(wrap.find(Chart)).toHaveLength(1);
+    expect(wrap.find('h1').first().text()).toBe('Voted (43.78%)');
+    expect(wrap.find('h2').last().text()).toBe('81,674,736.604642 ATOM');
+    expect(wrap.find('.amount').last().text()).toBe('(~81M of ~186M ATOM)');
   });
 });

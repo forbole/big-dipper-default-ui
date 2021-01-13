@@ -14,7 +14,7 @@ const ProposalResultMobile = (props: ProposalResultProps) => {
 
   const { classes } = useGetStyles(props);
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'proposalInfoDesktop')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'proposalResultMobile')}>
       <Chart
         data={chart.data}
         title={chart.title}

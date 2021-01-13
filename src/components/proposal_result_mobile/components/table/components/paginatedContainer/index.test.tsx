@@ -1,27 +1,50 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Container from '.';
-import AvatarDisplay from '../../../avatar_display';
+import PaginatedContainer from '.';
 
-describe('Container', () => {
+describe('PaginatedContainer', () => {
   it('Works', () => {
-    expect(Container).toBeTruthy();
+    expect(PaginatedContainer).toBeTruthy();
+    const args = {
+      overrideLabel: 'Override',
+      data: [
+        {
+          validator: {
+            className: 'validator',
+            rawValue: 'forbole',
+            display: <div>forbole</div>,
+          },
+          votingPower: {
+            className: 'votingPower',
+            rawValue: 4602020.799998,
+            display: '4,602,020.799998 ATOM',
+          },
+          votingPowerPercentage: {
+            className: 'votingPowerPercentage',
+            rawValue: 77,
+            display: '0.77%',
+          },
+          votingPowerOverride: {
+            className: 'votingPowerOverride',
+            rawValue: 1.9,
+            display: '1.9%',
+          },
+          answer: {
+            className: 'abstain',
+            rawValue: 'abstain',
+            display: 'Abstain',
+          },
+        },
+      ],
+    };
     const wrap = mount(
-      <Container
-        amount="10.8 ATOM"
-        time="09 Jan 2020, 10:00:19"
-        depositor={(
-          <AvatarDisplay
-            imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-            alt="avatar image"
-            title="Forbole"
-          />
-        )}
+      <PaginatedContainer
+        {...args}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find('.amount').first().text()).toEqual('10.8 ATOM');
-    expect(wrap.find('.time').first().text()).toEqual('09 Jan 2020, 10:00:19');
-    expect(wrap).toHaveLength(1);
+    expect(wrap.find(PaginatedContainer)).toHaveLength(1);
+    expect(wrap.find('.votingPowerPercentage').first().text()).toEqual('0.77%');
+    expect(wrap.find('.overrideLabel').first().text()).toEqual('Override');
   });
 });

@@ -1,10 +1,9 @@
 import { TableDefaultProps } from './components/table/types';
 
 export type ChartData = {
-  type: string;
   title: string;
-  percentage: string;
   value: number;
+  percentage: string;
 };
 
 export type Chart = {

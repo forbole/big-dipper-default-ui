@@ -14,7 +14,12 @@ import {
 } from './types';
 
 function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+  const {
+    children,
+    value,
+    index,
+    ...other
+  } = props;
 
   return (
     <div
@@ -46,11 +51,12 @@ const ProposalTable = (props: TableProps) => {
   } = props;
 
   const [value, setValue] = React.useState(0);
+
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
+    const a = event;
+    console.log(a);
   };
-
-
   const allData = tableDefaultProps.data.filter((x) => x.answer.rawValue !== 'absence');
   const mapData: any = [];
 
@@ -78,7 +84,6 @@ const ProposalTable = (props: TableProps) => {
               indicator: classNameIndicator,
             }}
             textColor="primary"
-            aria-label="full width tabs example"
           >
             <Tab label={tabProps.all} {...a11yProps(0)} />
             <Tab label={tabProps.yes} {...a11yProps(1)} />
