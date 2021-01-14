@@ -19,12 +19,12 @@ describe('Chart', () => {
           percentage: '43.78%',
         },
         {
-          title: 'Yes',
+          title: 'Veto',
           value: 2000,
           percentage: '43.78%',
         },
         {
-          title: 'No',
+          title: 'Abstain',
           value: 2000,
           percentage: '43.78%',
         },
