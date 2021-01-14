@@ -30,6 +30,8 @@ import UserStakingMobile from './components/user_staking_mobile';
 import TablePaginated from './components/table_paginated';
 import TableDefault from './components/table_default';
 import ValidatorProfile from './components/validator_profile';
+import ProposalResultDesktop from './components/proposal_result_desktop';
+import ProposalResultMobile from './components/proposal_result_mobile';
 import LatestActivities from './components/latest_activities';
 
 export {
@@ -65,5 +67,7 @@ export {
   TablePaginated,
   TableDefault,
   ValidatorProfile,
+  ProposalResultDesktop,
+  ProposalResultMobile,
   LatestActivities,
 };
