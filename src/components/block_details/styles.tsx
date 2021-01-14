@@ -76,6 +76,9 @@ export const useGetStyles = () => {
         paddingTop: '1rem',
         textAlign: 'center',
       },
+      '& .hash': {
+        wordBreak: 'break-all',
+      },
     },
     desktop: {
       '& .title': {

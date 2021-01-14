@@ -40,7 +40,7 @@ const BlockDetails = (props: BlockDetailsProps) => {
       <Table className={classnames('table')}>
         <TableBody>
           <Row display={<h1>{title}</h1>} className="title" />
-          <Row display={hash.display} value={hash.display} className="hash" />
+          <Row display={hash.display} value={hash.value} className="hash" />
           <Row display={time.display} value={time.value} className="time" />
           <Row display={noTransactions.display} value={noTransactions.value} className="noTransactions" />
           <Row display={proposer.display} value={proposer.value} className="proposer" />
