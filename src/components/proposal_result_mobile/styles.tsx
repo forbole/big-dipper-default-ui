@@ -54,21 +54,6 @@ export const useGetStyles = (props: any) => {
       '& .votingPowerOverride': {
         color: '#777777',
       },
-      '& .yes': {
-        color: '#1EC490',
-      },
-      '& .no': {
-        color: '#FD248C',
-      },
-      '& .veto': {
-        color: '#FD7522',
-      },
-      '& .abstain': {
-        color: '#1D86FF',
-      },
-      '& .absence': {
-        color: '#1D86FF',
-      },
     },
     chart: {
       '& .chartBox': {

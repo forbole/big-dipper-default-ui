@@ -36,21 +36,6 @@ export const useGetStyles = (props: any) => {
       '& .table__row': {
         paddingRight: '2.5rem',
       },
-      '& .yes': {
-        color: '#1EC490',
-      },
-      '& .no': {
-        color: '#FD248C',
-      },
-      '& .veto': {
-        color: '#FD7522',
-      },
-      '& .abstain': {
-        color: '#1D86FF',
-      },
-      '& .absence': {
-        color: '#FD3B4C',
-      },
       '& .answer': {
         paddingRight: '2.5rem',
       },
