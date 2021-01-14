@@ -18,8 +18,8 @@ import {
   <Story name="Default">
     <BlockDetails
     title='Block # 2,768,644'
-    txHash={{
-    display: 'Tx Hash',
+    hash={{
+    display: 'Hash',
     value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
     }}
     time={{
@@ -56,8 +56,8 @@ import {
 ```
 <BlockDetails
   title='Block # 2,768,644'
-  txHash={{
-    display: 'Tx Hash',
+  hash={{
+    display: 'Hash',
     value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
   }}
   time={{
@@ -260,8 +260,8 @@ import {
   <Story name="Desktop">
     <BlockDetails
       title='Block # 2,768,644'
-      txHash={{
-        display: 'Tx Hash',
+      hash={{
+        display: 'Hash',
         value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
       }}
       time={{
@@ -291,15 +291,16 @@ import {
         },
         data:signatureData,
       }}
-      desktop={true} />
+      desktop={true}
+    />
   </Story>
 </Canvas>
 
 ```
 <BlockDetails
   title='Block # 2,768,644'
-  txHash={{
-    display: 'Tx Hash',
+  hash={{
+    display: 'Hash',
     value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
   }}
   time={{
@@ -322,36 +323,12 @@ import {
     display: 'Signatures',
     value: '100 signatures',
     labels: {
-      validator: 'Validator',
-      votingPower: 'Voting Power',
-      votingPowerPercentage: 'Voting Power (Percentage)',
-      signStatus: 'Sign Status',
+        validator: 'Validator',
+        votingPower: 'Voting Power',
+        votingPowerPercentage: 'Voting Power (Percentage)',
+        signStatus: 'Sign Status',
     },
-    data:{[
-      {
-        validator: {
-          rawValue: 'Forbole',
-          display: <AvatarDisplay
-            imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-            alt="avatar image"
-            title="Forbole"
-           />,
-       },
-        votingPower: {
-          rawValue: 3880293.53653856,
-          display: '3,880,293.53653856 ATOM',
-        },
-        votingPowerPercentage: {
-          rawValue: 7.02,
-          display: '7.02%',
-        },
-        signStatus: {
-          rawValue: 0,
-          display: 'Down',
-        },
-      },
-    ]},
-  }}
+    data:signatureData,
   }}
   desktop={true}
 />
