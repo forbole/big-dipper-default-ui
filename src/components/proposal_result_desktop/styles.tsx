@@ -60,6 +60,14 @@ export const useGetStyles = (props: any) => {
       '& .label__answer': {
         paddingRight: '1.5rem',
       },
+      '& .votingPowerOverride': {
+        display: 'flex',
+        alignItems: 'center',
+        '& .question-icon': {
+          marginLeft: '0.3rem',
+          color: '#777777',
+        },
+      },
     },
     chart: {
       display: 'flex',
