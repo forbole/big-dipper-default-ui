@@ -99,9 +99,6 @@ export const useGetStyles = (props: any) => {
         marginTop: '1.5rem',
         marginBottom: '2rem',
       },
-      '& .dataName': {
-        // color: '##777777',
-      },
       '& .dataPercentage': {
         flex: 1,
         textAlign: 'end',
