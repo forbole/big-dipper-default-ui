@@ -4,6 +4,11 @@ export const useGetStyles = () => {
   const useStyles = makeStyles({
     root: {
       boxSizing: 'border-box',
+      '& .single-transaction__wrapper': {
+        '&:hover': {
+          cursor: 'pointer',
+        },
+      },
       '& .single-transaction__header': {
         display: 'flex',
         background: '#F8F8F8',
