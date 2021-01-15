@@ -32,7 +32,8 @@ const BlockDetails = (props: BlockDetailsProps) => {
     handleClickClose,
   } = useBlockDetailsHook();
 
-  const { classes } = useGetStyles();
+  const displaySignatures = signatures.data.length > 0;
+  const { classes } = useGetStyles(displaySignatures);
   const responsiveClass = desktop ? classes.desktop : classes.mobile;
 
   return (
@@ -46,18 +47,20 @@ const BlockDetails = (props: BlockDetailsProps) => {
           <Row display={proposer.display} value={proposer.value} className="proposer" />
           <Row display={signedVotingPower.display} value={signedVotingPower.value} className="signedVotingPower" />
           <Row
-            handleClickOpen={handleClickOpen}
+            handleClickOpen={displaySignatures ? handleClickOpen : undefined}
             display={signatures.display}
             value={(
               <span
                 className={classnames('signatureValue')}
               >
                 {signatures.value}
+                {!!displaySignatures && (
                 <span
                   className={classnames('signatureContent')}
                 >
                   <KeyboardArrowRight className={classnames('arrowRight')} />
                 </span>
+                )}
               </span>
             )}
             className="signatures"
