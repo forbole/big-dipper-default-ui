@@ -4,7 +4,7 @@ export interface Props {
   title: string;
   height: Detail;
   proposer: Proposer;
-  votingPower: Data;
+  votingPower: VotingPower;
   colors: [string, string];
   className?: string;
   round: Detail;
@@ -21,7 +21,8 @@ export type Proposer = {
   display: React.ReactNode;
 }
 
-type Data = {
+type VotingPower = {
   title: string;
   value: number;
+  display: string;
 }

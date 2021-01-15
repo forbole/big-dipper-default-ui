@@ -19,6 +19,7 @@ describe('Consensus', () => {
       votingPower: {
         title: 'Voting Power',
         value: 0.85,
+        display: '85 %',
       },
       colors: ['#FD3B4C', '#E8E8E8'],
       round: {

@@ -33,7 +33,7 @@ const Consensus = (prop: Props) => {
   }: any) => {
     return (
       <text className={classnames(classes.root)} fill="black" textAnchor="middle">
-        <tspan className={classnames('amountInChart')} y={cy + 3} x={cx}>85 %</tspan>
+        <tspan className={classnames('amountInChart')} y={cy + 3} x={cx}>{votingPower.display}</tspan>
         <tspan className={classnames('inChart')} x={cx} y={cy + 26}>{`${round.title} ${round.display}`}</tspan>
         <tspan className={classnames('inChart')} x={cx} y={cy + 39}>{`${step.title} ${step.display}`}</tspan>
       </text>
