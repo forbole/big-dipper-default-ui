@@ -17,7 +17,7 @@ const BlockDetails = (props: BlockDetailsProps) => {
   const {
     desktop,
     title,
-    txHash,
+    hash,
     time,
     noTransactions,
     proposer,
@@ -32,7 +32,8 @@ const BlockDetails = (props: BlockDetailsProps) => {
     handleClickClose,
   } = useBlockDetailsHook();
 
-  const { classes } = useGetStyles();
+  const displaySignatures = signatures.data.length > 0;
+  const { classes } = useGetStyles(displaySignatures);
   const responsiveClass = desktop ? classes.desktop : classes.mobile;
 
   return (
@@ -40,24 +41,26 @@ const BlockDetails = (props: BlockDetailsProps) => {
       <Table className={classnames('table')}>
         <TableBody>
           <Row display={<h1>{title}</h1>} className="title" />
-          <Row display={txHash.display} value={txHash.display} className="txHash" />
+          <Row display={hash.display} value={hash.value} className="hash" />
           <Row display={time.display} value={time.value} className="time" />
           <Row display={noTransactions.display} value={noTransactions.value} className="noTransactions" />
           <Row display={proposer.display} value={proposer.value} className="proposer" />
           <Row display={signedVotingPower.display} value={signedVotingPower.value} className="signedVotingPower" />
           <Row
-            handleClickOpen={handleClickOpen}
+            handleClickOpen={displaySignatures ? handleClickOpen : undefined}
             display={signatures.display}
             value={(
               <span
                 className={classnames('signatureValue')}
               >
                 {signatures.value}
+                {!!displaySignatures && (
                 <span
                   className={classnames('signatureContent')}
                 >
                   <KeyboardArrowRight className={classnames('arrowRight')} />
                 </span>
+                )}
               </span>
             )}
             className="signatures"

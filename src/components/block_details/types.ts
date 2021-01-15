@@ -32,7 +32,7 @@ export interface BlockDetailsProps {
   className?: string;
   desktop: boolean;
   title: string;
-  txHash: {
+  hash: {
     display: string;
     value: string;
   };

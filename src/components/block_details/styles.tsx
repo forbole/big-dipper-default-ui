@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
-export const useGetStyles = () => {
+export const useGetStyles = (displaySignatures: boolean) => {
   const useStyles = makeStyles({
     root: {
       background: 'white',
@@ -40,7 +40,7 @@ export const useGetStyles = () => {
         display: 'flex',
       },
       '& .signatures': {
-        cursor: 'pointer',
+        cursor: displaySignatures ? 'pointer' : 'default',
       },
       '&.dialog': {
         backgroundColor: 'transparent',
@@ -75,6 +75,9 @@ export const useGetStyles = () => {
       '& .dialogTitle': {
         paddingTop: '1rem',
         textAlign: 'center',
+      },
+      '& .hash': {
+        wordBreak: 'break-all',
       },
     },
     desktop: {

@@ -12,7 +12,7 @@ describe('BlockDetails', () => {
     const wrap = mount(
       <BlockDetails
         title="Block # 2,768,644"
-        txHash={{
+        hash={{
           display: 'Tx Hash',
           value: '73FCAFE9BAF19BB405086CFFA1C8FEC510486AFAC5CBD48A2F57A3C79ABA1255',
         }}
