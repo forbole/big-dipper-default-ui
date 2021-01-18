@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
-export const useGetStyles = () => {
+export const useGetStyles = (props: any) => {
   const useStyles = makeStyles({
     root: {
       overflow: 'auto',
@@ -19,6 +19,25 @@ export const useGetStyles = () => {
     },
     address: {
       display: 'flex',
+      '& .rewardAddress': {
+        marginTop: '1rem',
+        display: 'flex',
+        alignItems: 'center',
+        '& .question-icon': {
+          marginLeft: '0.3rem',
+          color: '#777777',
+        },
+      },
+      '& .addressDisplay': {
+        display: 'flex',
+        // alignItems: 'center',
+        '& .copy-icon': {
+          marginLeft: '0.3rem',
+          color: '#777777',
+          width: '1rem',
+          height: '1rem',
+        },
+      },
       '& .mainContent': {
         display: 'block',
       },
@@ -31,7 +50,7 @@ export const useGetStyles = () => {
         fontWeight: 400,
       },
       '& p': {
-        margin: '0',
+        margin: '0.2rem 0 0 0',
         fontSize: '0.875rem',
         color: '#777777',
       },
@@ -76,7 +95,7 @@ export const useGetStyles = () => {
         width: '100%',
         background: '#E8E8E8',
       },
-      '& .answer,& .votingPowerOverride': {
+      '& .amount': {
         flex: 1,
         justifyContent: 'flex-end',
         display: 'flex',
@@ -85,11 +104,10 @@ export const useGetStyles = () => {
         marginLeft: '0.5rem',
         color: '#777777',
       },
-      '& .votingPowerOverride': {
-        color: '#777777',
-      },
+
     },
     chart: {
+      marginBottom: '2rem',
       '& .chartBox': {
         width: '7.5rem',
         height: '7.5rem',
@@ -143,8 +161,7 @@ export const useGetStyles = () => {
         fontSize: '1.25rem',
         color: '#000000',
       },
-      '& .dataContent' : {
-        marginLeft: '1rem',
+      '& .dataContent': {
         flex: 1,
       },
       '& .dataRow': {
@@ -153,35 +170,40 @@ export const useGetStyles = () => {
       '& .dataType': {
         marginTop: '0.625rem',
         position: 'relative',
-        paddingLeft: '2rem',
+        paddingLeft: '1.5rem',
         fontSize: '0.875rem',
         minWidth: '0',
         flex: 1,
-        '&.yes': {
+        '&.available': {
           '&:before': {
-            // background: props.chart.colors[0],
+            background: props.chart.colors[0],
           },
         },
-        '&.abstain': {
+        '&.delegate': {
           '&:before': {
-            // background: props.chart.colors[3],
+            background: props.chart.colors[1],
           },
         },
-        '&.veto': {
+        '&.unbonding': {
           '&:before': {
-            // background: props.chart.colors[2],
+            background: props.chart.colors[2],
           },
         },
-        '&.no': {
+        '&.reward': {
           '&:before': {
-            // background: props.chart.colors[1],
+            background: props.chart.colors[3],
+          },
+        },
+        '&.commision': {
+          '&:before': {
+            background: props.chart.colors[4],
           },
         },
         '&:before': {
           content: '""',
           marginTop: '0.5rem',
           width: '1rem',
-          height: '10%',
+          height: '20%',
           left: '0',
           top: '0',
           bottom: '0',

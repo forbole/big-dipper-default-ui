@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
+import { FileCopyOutlined, Info } from '@material-ui/icons';
+import { InfoDialogProps } from '../../src/components/info_dialog/types';
 import {
   AvatarDisplay,
   InfoPopover,
+  InfoDialog,
 } from '../../src';
 
 const ProposerData = () => {
@@ -15,6 +18,38 @@ const ProposerData = () => {
   );
 };
 
+export interface CopyIconProp {
+  address: string,
+}
+
+const CopyIcon = (prop: CopyIconProp) => {
+  const [copySuccess, setCopySuccess] = useState('');
+  const copyToClipBoard = async (copyMe : string) => {
+    try {
+      await navigator.clipboard.writeText(copyMe);
+      setCopySuccess('Copied!');
+      setTimeout(() => setCopySuccess(''), 1500);
+    } catch (err) {
+      setCopySuccess('Failed to copy!');
+    }
+  };
+  return (
+    <div>
+      <FileCopyOutlined className={classnames('copy-icon')} onClick={() => copyToClipBoard(prop.address)} />
+      {copySuccess}
+    </div>
+  );
+};
+
+
+const InfoPop = () => {
+  return (
+    <InfoPopover
+      detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu tristique lorem, id commodo lectus. In faucibus sem eu tellus gravida, id blandit ex tincidunt. Nam tincidunt dolor eros, eget porttitor metus co"
+    />
+  );
+};
+
 export const delegate = {
   validator: {
     className: 'validator',
@@ -23,8 +58,8 @@ export const delegate = {
   },
   amount: {
     className: 'delegatedAmount',
-    rawValue: 4602020.799998,
-    display: '4,602,020.799998 ATOM',
+    rawValue: 4602020,
+    display: '4,602,020 ATOM',
   },
   amountRatio: {
     className: 'votingPowerPercentage',
@@ -61,13 +96,13 @@ export const redelegate = {
   },
   height: {
     className: 'height',
-    rawValue: 2503609,
-    display: '2,503,609',
+    rawValue: 1503609,
+    display: '1,503,609',
   },
   amount: {
     className: 'delegatedAmount',
-    rawValue: 4602020.799998,
-    display: '4,602,020.799998 ATOM',
+    rawValue: 1602020.799998,
+    display: '1,602,020.799998 ATOM',
   },
   remainAmount: {
     className: 'remainAmount',
@@ -94,8 +129,8 @@ export const unbonded = {
   },
   amount: {
     className: 'amount',
-    rawValue: 4602020.799998,
-    display: '4,602,020.799998 ATOM',
+    rawValue: 7202020.799998,
+    display: '7,202,020.799998 ATOM',
   },
   remainAmount: {
     className: 'remainAmount',
@@ -116,11 +151,30 @@ export const dummyData: any = {
     alt: '',
     address: {
       title: 'Address',
-      address: 'cosmos14kn0k…swhp',
+      address: (
+        <div className="addressDisplay">
+          cosmos14kn0k…swhp
+          <CopyIcon address="cosmos14kn0k…swhp" />
+        </div>
+      ),
     },
     rewardAddress: {
-      title: 'Address',
-      address: 'cosmos14kn0k…swhp',
+      title: (
+        <div className="rewardAddress">
+          Reward Address
+          <InfoPop />
+          <InfoDialog
+            title="scan your addressd"
+            open
+          />
+        </div>
+      ),
+      address: (
+        <div className="addressDisplay">
+          cosmos14kn0k…swhp
+          <CopyIcon address="cosmos14kn0k…swhp" />
+        </div>
+      ),
     },
   },
   chart: {
@@ -167,10 +221,43 @@ export const dummyData: any = {
     unbondings: 'Unbondings',
   },
   tableDefaultProps: {
-    data: [
-      {
+    delegatedData: [
+      delegate,
+      delegate,
+      delegate,
+      delegate,
+      delegate,
+      delegate,
+      delegate,
+      delegate,
+      delegate,
+    ],
+    reDelegatedData: [
+      redelegate,
+      redelegate,
+      redelegate,
+      redelegate,
+      redelegate,
+      redelegate,
+      redelegate,
+      redelegate,
+      redelegate,
+      redelegate,
+    ],
+    unbondingData: [
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
+      unbonded,
 
-      },
     ],
   },
 };

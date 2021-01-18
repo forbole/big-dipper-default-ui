@@ -18,7 +18,14 @@ const Address = (props: AddressProps) => {
         </div>
         <div className={classnames('container')}>
           <h4>{address.rewardAddress.title}</h4>
-          <p>{address.rewardAddress.address}</p>
+          <p>
+            {address.rewardAddress.address}
+          </p>
+          {/* <button
+            onClick={() =>  navigator.clipboard.writeText(this.statel)}
+           >
+          Copy
+          </button> */}
         </div>
       </div>
     </div>

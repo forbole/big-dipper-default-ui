@@ -7,10 +7,7 @@ import { Container } from './components';
 import { TablePaginationActions } from '../../../../../..';
 
 const PaginatedContainer = (props: PaginatedContainerProps) => {
-  const {
-    data,
-    overrideLabel,
-  } = props;
+  const { data } = props;
 
   const {
     handleChangePage,
@@ -24,9 +21,9 @@ const PaginatedContainer = (props: PaginatedContainerProps) => {
       {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row: any, i) => {
         return (
           <Container
+            className
             key={i}
             data={row}
-            overrideLabel={overrideLabel}
           />
         );
       })}

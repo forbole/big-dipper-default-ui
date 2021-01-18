@@ -52,23 +52,23 @@ const Chart = (prop: ChartProps) => {
       </div>
       <div className={classnames('dataContent')}>
         <DataDiagram
-          className="yes"
+          className="available"
           data={chart.data[0]}
         />
         <DataDiagram
-          className="no"
+          className="delegate"
           data={chart.data[1]}
         />
         <DataDiagram
-          className="veto"
+          className="unbonding"
           data={chart.data[2]}
         />
         <DataDiagram
-          className="abstain"
+          className="reward"
           data={chart.data[3]}
         />
         <DataDiagram
-          className="veto"
+          className="commision"
           data={chart.data[4]}
         />
       </div>

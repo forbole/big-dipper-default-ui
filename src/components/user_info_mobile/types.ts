@@ -20,12 +20,9 @@ export type Chart = {
 }
 
 export interface TabProps {
-  all: string;
-  yes: string;
-  no: string;
-  veto: string;
-  abstain: string;
-  absence: string;
+  delegations: string;
+  redelegations: string;
+  unbondings: string;
 }
 
 export type Address = {
@@ -33,7 +30,7 @@ export type Address = {
   address: string | React.ReactNode;
 };
 
-export interface UserInfoProps {
+export interface UserInfoMobileProps {
   className?: string;
   title: string;
   address: {
@@ -43,6 +40,6 @@ export interface UserInfoProps {
     rewardAddress: Address;
   }
   chart: Chart;
-  tabProps?: TabProps;
-  tableDefaultProps?: TableDefaultProps;
+  tabProps: TabProps;
+  tableDefaultProps: TableDefaultProps;
 }

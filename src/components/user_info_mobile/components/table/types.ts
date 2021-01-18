@@ -4,8 +4,9 @@ import { Data } from '../../../table_paginated/types';
 
 export interface TableDefaultProps {
   className?: string;
-  data: Data[];
-  overrideLabel: string;
+  delegatedData: Data[];
+  reDelegatedData: Data[];
+  unbondingData: Data[];
   pagination?: {
     rowsPerPage: number | undefined;
   };
