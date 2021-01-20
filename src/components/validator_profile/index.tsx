@@ -23,7 +23,7 @@ const ValidatorProfile = (props: ValidatorProfileProps) => {
   } = props;
 
   const { classes } = useGetStyles(desktopWidth);
-  console.log(typeof image, 'image type');
+
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'validator-profile')}>
       <div className={classnames('validator-profile__header')}>
@@ -32,38 +32,37 @@ const ValidatorProfile = (props: ValidatorProfileProps) => {
         >
           {status.display}
         </div>
-        {typeof image === 'string' ? (
-          <AvatarDisplay
-            width="2.5rem"
-            height="2.5rem"
-            imageUrl={image}
-            alt={alt}
-            title={name}
-          />
-        ) : (
-          image
-        )}
+        <AvatarDisplay
+          width="2.5rem"
+          height="2.5rem"
+          imageUrl={typeof image === 'string' ? image : undefined}
+          avatar={typeof image !== 'string' ? image : undefined}
+          alt={alt}
+          title={name}
+        />
       </div>
       <div className={classnames('validator-profile__content')}>
         <div className={classnames('content__bio')}>
           {bio}
         </div>
-        <div className={classnames('content__link', 'keybase')}>
-          <VpnKeyOutlined />
-          {keyBase.url ? (
-            <div className={classnames('keybase__display')}>
-              <a href={keyBase.url} target="_blank" rel="noreferrer">
+        {keyBase.display && (
+          <div className={classnames('content__link', 'keybase')}>
+            <VpnKeyOutlined />
+            {keyBase.url ? (
+              <div className={classnames('keybase__display')}>
+                <a href={keyBase.url} target="_blank" rel="noreferrer">
+                  {keyBase.display}
+                </a>
+                {!!keyBase.verified && <CheckCircle />}
+              </div>
+            ) : (
+              <div className={classnames('keybase__display')}>
                 {keyBase.display}
-              </a>
-              {!!keyBase.verified && <CheckCircle />}
-            </div>
-          ) : (
-            <div className={classnames('keybase__display')}>
-              {keyBase.display}
-              {!!keyBase.verified && <CheckCircle />}
-            </div>
-          )}
-        </div>
+                {!!keyBase.verified && <CheckCircle />}
+              </div>
+            )}
+          </div>
+        )}
         {!!website && (
         <div className={classnames('content__link', 'website')}>
           <HomeOutlined />
