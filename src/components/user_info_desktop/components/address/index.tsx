@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 import { AddressProps } from './types';
-import InfoDialog from '../../../info_dialog';
 
 const Address = (props: AddressProps) => {
   const {
@@ -11,11 +10,13 @@ const Address = (props: AddressProps) => {
 
   return (
     <div className={classnames(className, 'mainContainer')}>
-      <img src={address.img} alt={address.alt} className={classnames('image')} />
       <div className={classnames('mainContent')}>
-        <div className={classnames('container')}>
-          <h4>{address.address.title}</h4>
-          <p>{address.address.address}</p>
+        <div className={classnames('container', 'imgContainer')}>
+          <img src={address.img} alt={address.alt} className={classnames('image')} />
+          <div>
+            <h4>{address.address.title}</h4>
+            <p>{address.address.address}</p>
+          </div>
         </div>
         <div className={classnames('container')}>
           <h4>{address.rewardAddress.title}</h4>

@@ -2,9 +2,12 @@ import React from 'react';
 
 export interface InfoDialogProps {
   className?: string;
-  handleClose?: () => void;
-  open: boolean;
   title: string;
+  qrCode?: React.ReactNode | string;
+  socialMedia?: React.ReactNode | string;
+  buttonDisplay: string;
+  address: string;
+  // handleClose: () => void;
 }
 
 export interface DialogTitleProps {

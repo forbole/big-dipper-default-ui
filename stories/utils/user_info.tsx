@@ -1,12 +1,135 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import { FileCopyOutlined, Info } from '@material-ui/icons';
-import { InfoDialogProps } from '../../src/components/info_dialog/types';
+import {
+  FileCopyOutlined,
+  Facebook,
+  Twitter,
+  Telegram,
+  WhatsApp,
+  Email,
+  ArrowDropDown,
+} from '@material-ui/icons';
+import {
+  AreaChart,
+  Area,
+} from 'recharts';
 import {
   AvatarDisplay,
   InfoPopover,
   InfoDialog,
 } from '../../src';
+
+const data = [
+  {
+    name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+  },
+  {
+    name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+  },
+  {
+    name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+  },
+  {
+    name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+  },
+  {
+    name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+  },
+  {
+    name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+  },
+  {
+    name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+  },
+];
+
+export const Last7Days = () => {
+  return (
+    <AreaChart
+      width={100}
+      height={30}
+      data={data}
+      margin={{
+        top: 5, right: 0, left: 0, bottom: 5,
+      }}
+    >
+      <defs>
+        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#ffffff" stopOpacity={0.6} />
+          <stop offset="95%" stopColor="#ffffff" stopOpacity={0.0} />
+        </linearGradient>
+      </defs>
+      <Area
+        type="monotone"
+        dataKey="uv"
+        fill="url(#colorUv)"
+      />
+    </AreaChart>
+  );
+};
+
+export const DataBlockCustom = () => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        width: '50rem',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          marginRight: '0.5rem',
+          position: 'relative',
+        }}
+      >
+        <div
+          style={{
+            alignSelf: 'flex-end',
+            display: 'flex',
+          }}
+        >
+          <ArrowDropDown
+            style={{
+              width: '1rem',
+              height: '1rem',
+              color: '#FD3B4C',
+            }}
+          />
+          <p
+            style={{
+              margin: '0',
+              fontSize: '14px',
+
+            }}
+          >
+            2.86% (24h)
+          </p>
+        </div>
+      </div>
+      <AreaChart
+        width={100}
+        height={30}
+        data={data}
+        margin={{
+          top: 5, right: 0, left: 0, bottom: 5,
+        }}
+      >
+        <defs>
+          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#ffffff" stopOpacity={0.6} />
+            <stop offset="95%" stopColor="#ffffff" stopOpacity={0.0} />
+          </linearGradient>
+        </defs>
+        <Area
+          type="monotone"
+          dataKey="uv"
+          fill="url(#colorUv)"
+        />
+      </AreaChart>
+    </div>
+  );
+};
 
 const ProposerData = () => {
   return (
@@ -24,7 +147,7 @@ export interface CopyIconProp {
 
 const CopyIcon = (prop: CopyIconProp) => {
   const [copySuccess, setCopySuccess] = useState('');
-  const copyToClipBoard = async (copyMe : string) => {
+  const copyToClipBoard = async (copyMe: string) => {
     try {
       await navigator.clipboard.writeText(copyMe);
       setCopySuccess('Copied!');
@@ -41,11 +164,64 @@ const CopyIcon = (prop: CopyIconProp) => {
   );
 };
 
-
 const InfoPop = () => {
   return (
     <InfoPopover
       detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu tristique lorem, id commodo lectus. In faucibus sem eu tellus gravida, id blandit ex tincidunt. Nam tincidunt dolor eros, eget porttitor metus co"
+    />
+  );
+};
+
+export interface DialogProp {
+  address: string,
+}
+const Dialog = (prop: DialogProp) => {
+  return (
+    <InfoDialog
+      title="scan for address"
+      buttonDisplay="Copy Address"
+      address={prop.address}
+      socialMedia={(
+        <div>
+          Share to ...
+          <div
+            style={{
+              marginTop: '1rem',
+            }}
+          >
+            <Facebook
+              style={{
+                height: '2rem',
+                width: '2rem',
+              }}
+            />
+            <Twitter
+              style={{
+                height: '2rem',
+                width: '2rem',
+              }}
+            />
+            <Telegram
+              style={{
+                height: '2rem',
+                width: '2rem',
+              }}
+            />
+            <WhatsApp
+              style={{
+                height: '2rem',
+                width: '2rem',
+              }}
+            />
+            <Email
+              style={{
+                height: '2rem',
+                width: '2rem',
+              }}
+            />
+          </div>
+        </div>
+      )}
     />
   );
 };
@@ -84,7 +260,7 @@ export const delegate = {
   last7Days: {
     className: 'last7Days',
     rawValue: 1,
-    display: <ProposerData />,
+    display: <Last7Days />,
   },
 };
 
@@ -155,6 +331,9 @@ export const dummyData: any = {
         <div className="addressDisplay">
           cosmos14kn0k…swhp
           <CopyIcon address="cosmos14kn0k…swhp" />
+          <Dialog
+            address="cosmos14kn0k…swhp"
+          />
         </div>
       ),
     },
@@ -163,10 +342,6 @@ export const dummyData: any = {
         <div className="rewardAddress">
           Reward Address
           <InfoPop />
-          <InfoDialog
-            title="scan your addressd"
-            open
-          />
         </div>
       ),
       address: (
@@ -214,6 +389,7 @@ export const dummyData: any = {
         display: '1,324.91 ATOM',
       },
     ],
+    customComponent: <DataBlockCustom />,
   },
   tabProps: {
     delegations: 'Delegations',
@@ -221,6 +397,109 @@ export const dummyData: any = {
     unbondings: 'Unbondings',
   },
   tableDefaultProps: {
+    delegatdColumns: [
+      {
+        label: 'validator',
+        display: 'Validator',
+        sort: true,
+      },
+      {
+        label: 'amount',
+        display: 'Delegated Amount',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'ratio',
+        display: 'Amt. Ratio',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'reward',
+        display: 'Reward',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'commission',
+        display: 'Commission',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'VPRatios',
+        display: 'VR Ratio',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'last7Days',
+        display: 'Last 7 days',
+        align: 'right',
+        sort: true,
+      },
+    ],
+    redelegatedColumns: [
+      {
+        label: 'validator',
+        display: 'Validator',
+        sort: true,
+      },
+      {
+        label: 'height',
+        display: 'Height',
+        sort: true,
+      },
+      {
+        label: 'amount',
+        display: 'redelegated Amount',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'remainAmount',
+        display: 'Remain Amount',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'expectedDelivery',
+        display: 'Expected Delivery',
+        align: 'right',
+        sort: true,
+      },
+    ],
+    unbondingColumns: [
+      {
+        label: 'validator',
+        display: 'Validator',
+        sort: true,
+      },
+      {
+        label: 'height',
+        display: 'Height',
+        sort: true,
+      },
+      {
+        label: 'amount',
+        display: 'Unbonded Amount',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'remainAmount',
+        display: 'Remain Amount',
+        align: 'right',
+        sort: true,
+      },
+      {
+        label: 'expectedDelivery',
+        display: 'Expected Delivery',
+        align: 'right',
+        sort: true,
+      },
+    ],
     delegatedData: [
       delegate,
       delegate,
@@ -232,7 +511,7 @@ export const dummyData: any = {
       delegate,
       delegate,
     ],
-    reDelegatedData: [
+    redelegatedData: [
       redelegate,
       redelegate,
       redelegate,

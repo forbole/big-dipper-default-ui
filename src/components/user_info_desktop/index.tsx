@@ -8,7 +8,7 @@ import {
   Address,
 } from './components';
 
-const UserInfotMobile = (props: UserInfoMobileProps) => {
+const UserInfoDesktop = (props: UserInfoMobileProps) => {
   const {
     title, className, address, chart, tableDefaultProps, tabProps,
   } = props;
@@ -34,4 +34,4 @@ const UserInfotMobile = (props: UserInfoMobileProps) => {
   );
 };
 
-export default UserInfotMobile;
+export default UserInfoDesktop;

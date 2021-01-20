@@ -34,6 +34,7 @@ import ProposalResultDesktop from './components/proposal_result_desktop';
 import ProposalResultMobile from './components/proposal_result_mobile';
 import LatestActivities from './components/latest_activities';
 import UserInfoMobile from './components/user_info_mobile';
+import UserInfoDesktop from './components/user_info_desktop';
 import InfoDialog from './components/info_dialog';
 
 export {
@@ -73,5 +74,6 @@ export {
   ProposalResultMobile,
   LatestActivities,
   UserInfoMobile,
+  UserInfoDesktop,
   InfoDialog,
 };

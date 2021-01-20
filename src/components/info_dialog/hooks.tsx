@@ -1,22 +1,19 @@
 import { useState } from 'react';
 
-export const useInfoPopoverHook = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
+export const useInfoDialogHook = () => {
+  const [open, setOpen] = useState(false);
 
-  const handlePopoverOpen = (event: any) => {
-    setAnchorEl(event.currentTarget);
+  const handleClickOpen = () => {
+    setOpen(true);
   };
 
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
+  const handleClose = () => {
+    setOpen(false);
   };
-
-  const open = Boolean(anchorEl);
 
   return {
-    handlePopoverOpen,
-    handlePopoverClose,
-    anchorEl,
     open,
+    handleClickOpen,
+    handleClose,
   };
 };
