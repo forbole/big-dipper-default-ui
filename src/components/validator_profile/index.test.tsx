@@ -8,7 +8,7 @@ describe('ValidatorProfile', () => {
     expect(ValidatorProfile).toBeTruthy();
     const wrap = mount(
       <ValidatorProfile
-        imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+        image="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
         alt="Forbole Icon"
         name="Forbole"
         bio="Lorem **ipsum** dolor sit amet, consectetur adipiscing elit. Vivamus dignissim nibh eu ex ultrices, eget vehicula arcu auctor. Ut sed sem molestie eros tempus congue at eu lorem."

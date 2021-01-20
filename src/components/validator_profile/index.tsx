@@ -12,7 +12,7 @@ import { ValidatorProfileProps } from './types';
 const ValidatorProfile = (props: ValidatorProfileProps) => {
   const {
     className,
-    imageUrl,
+    image,
     alt,
     name,
     status,
@@ -23,7 +23,7 @@ const ValidatorProfile = (props: ValidatorProfileProps) => {
   } = props;
 
   const { classes } = useGetStyles(desktopWidth);
-
+  console.log(typeof image, 'image type');
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'validator-profile')}>
       <div className={classnames('validator-profile__header')}>
@@ -32,13 +32,17 @@ const ValidatorProfile = (props: ValidatorProfileProps) => {
         >
           {status.display}
         </div>
-        <AvatarDisplay
-          width="2.5rem"
-          height="2.5rem"
-          imageUrl={imageUrl}
-          alt={alt}
-          title={name}
-        />
+        {typeof image === 'string' ? (
+          <AvatarDisplay
+            width="2.5rem"
+            height="2.5rem"
+            imageUrl={image}
+            alt={alt}
+            title={name}
+          />
+        ) : (
+          image
+        )}
       </div>
       <div className={classnames('validator-profile__content')}>
         <div className={classnames('content__bio')}>

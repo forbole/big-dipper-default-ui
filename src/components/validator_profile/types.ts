@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface ValidatorProfileProps {
   className?: string;
-  imageUrl: string;
+  image: string | React.ReactNode;
   alt: string;
   name: string;
   status: {
