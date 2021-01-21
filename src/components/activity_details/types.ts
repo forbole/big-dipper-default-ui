@@ -10,7 +10,6 @@ export interface ActivityDetailsProps {
 export type Data = {
   time: string;
   success: boolean;
-  content: React.ReactNode;
   hash: string;
   height: React.ReactNode;
   fee: string;

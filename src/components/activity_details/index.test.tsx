@@ -18,7 +18,6 @@ describe('ActivityDetails', () => {
         data={{
           time: '1 hour',
           success: true,
-          content: <div>custom content</div>,
           hash: '12344566',
           height: <div>height</div>,
           fee: '123 uatm',
@@ -49,7 +48,6 @@ describe('ActivityDetails', () => {
         data={{
           time: '1 hour',
           success: true,
-          content: <div>custom content</div>,
           hash: '12344566',
           height: <div>height</div>,
           fee: '123 uatm',

@@ -27,9 +27,6 @@ const ActivityDetails = (props: ActivityDetailsProps) => {
         'activity-details',
       )}
     >
-      <div className={classnames('activity-details__message')}>
-        {data.content}
-      </div>
       <div>
         {formattedData.map((x) => {
           return (
