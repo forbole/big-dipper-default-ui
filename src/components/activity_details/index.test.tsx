@@ -8,6 +8,7 @@ describe('ActivityDetails', () => {
     const wrap = mount(
       <ActivityDetails
         labels={{
+          time: 'time',
           hash: 'hash',
           height: 'height',
           fee: 'fee',

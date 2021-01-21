@@ -32,7 +32,7 @@ const ActivityDetails = (props: ActivityDetailsProps) => {
           return (
             <div
               key={x.label}
-              className={classnames('activity-details__content-wrapper')}
+              className={classnames('activity-details__content-wrapper', x.key)}
             >
               <p className={classnames('content-wrapper__label')}>{x.label}</p>
               <div className={classnames('content-wrapper__value')}>{x.value}</div>

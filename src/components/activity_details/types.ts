@@ -24,4 +24,5 @@ export type Labels = {
   gas: string;
   status: string;
   memo: string;
+  time: string;
 }
