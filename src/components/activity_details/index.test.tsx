@@ -39,6 +39,7 @@ describe('ActivityDetails', () => {
       <ActivityDetails
         desktop
         labels={{
+          time: 'time',
           hash: 'hash',
           height: 'height',
           fee: 'fee',
