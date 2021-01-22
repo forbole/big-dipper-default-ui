@@ -13,6 +13,9 @@ export const useGetStyles = () => {
         marginBottom: '1rem',
       },
       '& .activity-details__content-wrapper': {
+        '&:first-child': {
+          borderTop: 'none',
+        },
         borderTop: '1px solid #E8E8E8',
         padding: '1rem 0',
         '& .success': {
