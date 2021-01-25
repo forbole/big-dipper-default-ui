@@ -24,6 +24,7 @@ export const useGetStyles = () => {
         textAlign: 'center',
         fontSize: '1rem',
         fontWeight: 300,
+        minWidth: '20rem',
       },
       '& .button': {
         // width: '95%',

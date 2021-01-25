@@ -21,7 +21,6 @@ const PaginatedContainer = (props: PaginatedContainerProps) => {
       {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row: any, i) => {
         return (
           <Container
-            className
             key={i}
             data={row}
           />

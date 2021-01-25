@@ -10,22 +10,35 @@ import {
 
 const UserInfotMobile = (props: UserInfoMobileProps) => {
   const {
-    title, className, address, chart, tableDefaultProps, tabProps,
+    title,
+    className,
+    classNameTable,
+    classNameAddress,
+    classNameChart,
+    addressContent,
+    chart,
+    tableDefaultProps,
+    tabProps,
+    copyCallback,
   } = props;
 
   const { classes } = useGetStyles(props);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'userInfoMobile')}>
       <h1>{title}</h1>
-      <Address className={classes.address} address={address} />
+      <Address
+        className={classnames(classes.address, classNameAddress, 'userInfoAddress')}
+        addressContent={addressContent}
+        copyCallback={copyCallback}
+      />
       <hr />
       <Chart
         chart={chart}
-        className={classes.chart}
+        className={classnames(classes.chart, classNameChart, 'userInfoChart')}
       />
       <Table
         tableDefaultProps={tableDefaultProps}
-        className={classes.table}
+        className={classnames(classes.table, classNameTable, 'userInfoTable')}
         classNameTab={classnames('tab')}
         classNameIndicator={classnames('indicator')}
         tabProps={tabProps}

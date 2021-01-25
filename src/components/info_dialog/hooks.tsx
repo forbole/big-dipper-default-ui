@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useInfoDialogHook = () => {
+export const useInfoDialogHook = ({ copyCallback }: any) => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -11,9 +11,16 @@ export const useInfoDialogHook = () => {
     setOpen(false);
   };
 
+  const handleCopyClick = (value: string) => {
+    if (copyCallback) {
+      copyCallback(value);
+    }
+  };
+
   return {
     open,
     handleClickOpen,
     handleClose,
+    handleCopyClick,
   };
 };

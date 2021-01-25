@@ -1,148 +1,121 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ProposalResultMobile from '.';
+import UserInfoMobile from '.';
 
-describe('ProposalResultMobile', () => {
+describe('UserInfoMobile', () => {
   it('Works', () => {
-    expect(ProposalResultMobile).toBeTruthy();
+    expect(UserInfoMobile).toBeTruthy();
     const args = {
+      title: 'Account Details',
+      addressContent: {
+        img: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+        alt: '',
+        address: {
+          title: 'Address',
+          display: 'cosmos14kn0k…swhp',
+          rawValue: 'cosmos14kn0k…swhp',
+        },
+        rewardAddress: {
+          title: 'Reward Address',
+          display: 'cosmos14kn0k…swhp',
+          rawValue: 'cosmos14kn0k…swhp',
+        },
+      },
       chart: {
-        subTitle: 'Voted (43.78%)',
-        title: '81,674,736.604642 ATOM',
-        amount: '(~81M of ~186M ATOM)',
-        colors: ['#28C989', '#1C86FC', '#FD248C', '#FD7522'],
+        total: {
+          title: 'Total ATOM',
+          subTitle: '$3.22/ATOM',
+        },
+        totalDollar: {
+          title: '6,574,315.38',
+          subTitle: '$21,169,295.52',
+        },
+        colors: ['#FD248C', '#1D86FF', '#FFA716', '#1EC490', '#9D2DFF'],
         data: [
           {
-            title: 'Yes',
-            percentage: '30.66%',
-            value: 2504158159222,
-            amount: '25,041,581,559222',
+            title: 'Available',
+            value: 111189.15,
+            display: '111,189.15 ATOM',
           },
           {
-            title: 'Abstain',
-            percentage: '0.05%',
-            value: 3504158159222,
-            amount: '3,504,158,159,222',
+            title: 'Delegate',
+            value: 458003.25,
+            display: '6,458,003.25 ATOM',
           },
           {
-            title: 'No',
-            percentage: '69.28%',
-            value: 2504158159222,
-            amount: '2,504,158,159,222',
+            title: 'Unbonding',
+            value: 156.00,
+            display: '156.00 ATOM',
           },
           {
-            title: 'No with Veto',
-            percentage: '0.00%',
-            value: 58159222000,
-            amount: '58,159,222,000',
+            title: 'Reward',
+            value: 5122.96,
+            display: '5,122.96 ATOM',
+          },
+          {
+            title: 'Commission',
+            value: 1324.91,
+            display: '1,324.91 ATOM',
           },
         ],
+        customComponent: <div>I am a diagram</div>,
+      },
+      tabProps: {
+        delegations: 'Delegations',
+        redelegations: 'redelegations',
+        unbondings: 'Unbondings',
       },
       tableDefaultProps: {
-        overrideLabel: 'Override',
-        data: [
+        delegatedData: [
           {
             validator: {
               className: 'validator',
               rawValue: 'forbole',
               display: <div>forbole</div>,
             },
-            votingPower: {
-              className: 'votingPower',
-              rawValue: 4602020.799998,
-              display: '4,602,020.799998 ATOM',
-            },
-            votingPowerPercentage: {
-              className: 'votingPowerPercentage',
-              rawValue: 77,
-              display: '0.77%',
-            },
-            votingPowerOverride: {
-              className: 'votingPowerOverride',
-              rawValue: 1.9,
-              display: '1.9%',
-            },
-            answer: {
-              className: 'yes',
-              rawValue: 'yes',
-              display: 'Yes',
+            amount: {
+              className: 'amount',
+              rawValue: 4602020,
+              display: '4,602,020 ATOM',
             },
           },
         ],
-        columns: [
+        redelegatedData: [
           {
-            label: 'validator',
-            display: 'Voter',
-            sort: true,
-          },
-          {
-            label: 'votingPower',
-            display: 'Voting Power',
-            align: 'right',
-            sort: true,
-          },
-          {
-            label: 'votingPowerPercentage',
-            display: 'Voting Power %',
-            align: 'right',
-            sort: true,
-          },
-          {
-            label: 'votingPowerOverride',
-            display: 'Voting Power Override',
-            align: 'right',
-            sort: true,
-          },
-          {
-            label: 'answer',
-            display: 'Answer',
-            align: 'right',
-            sort: true,
+            validator: {
+              className: 'validator',
+              rawValue: 'forbole',
+              display: <div>forbole</div>,
+            },
+            amount: {
+              className: 'delegatedAmount',
+              rawValue: 1602020.799998,
+              display: '1,602,020.799998 ATOM',
+            },
           },
         ],
-        absenceColumns: [
+        unbondingData: [
           {
-            label: 'validator',
-            display: 'Validator',
-            sort: true,
-          },
-          {
-            label: 'votingPower',
-            display: 'Voting Power',
-            align: 'right',
-            sort: true,
-          },
-          {
-            label: 'votingPowerPercentage',
-            display: 'Voting Power %',
-            align: 'right',
-            sort: true,
-          },
-          {
-            label: 'answer',
-            display: 'Status',
-            align: 'right',
-            sort: true,
+            validator: {
+              className: 'validator',
+              rawValue: 'forbole',
+              display: <div>forbole</div>,
+            },
+            amount: {
+              className: 'amount',
+              rawValue: 7202020.799998,
+              display: '7,202,020.799998 ATOM',
+            },
           },
         ],
-        initialActiveSort: 'validator',
       },
-      tabProps: {
-        all: 'All votes (60)',
-        yes: 'yes (15)',
-        no: 'no (43)',
-        veto: 'No with veto (0)',
-        abstain: 'abstain (2)',
-        absence: 'absence (40/100)',
-      },
-
     };
     const wrap = mount(
-      <ProposalResultMobile
+      <UserInfoMobile
         {...args}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find(ProposalResultMobile)).toHaveLength(1);
+    expect(wrap.find(UserInfoMobile)).toHaveLength(1);
   });
 });

@@ -1,62 +1,71 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ProposalTable from '.';
+import Table from '.';
 
-describe('ProposalTable', () => {
+describe('Table', () => {
   it('Works', () => {
-    expect(ProposalTable).toBeTruthy();
+    expect(Table).toBeTruthy();
     const args = {
       tableDefaultProps: {
-        overrideLabel: 'Override',
-        data: [
+        delegatedData: [
           {
             validator: {
               className: 'validator',
               rawValue: 'forbole',
               display: <div>forbole</div>,
             },
-            votingPower: {
-              className: 'votingPower',
-              rawValue: 4602020.799998,
-              display: '4,602,020.799998 ATOM',
+            amount: {
+              className: 'amount',
+              rawValue: 4602020,
+              display: '4,602,020 ATOM',
             },
-            votingPowerPercentage: {
-              className: 'votingPowerPercentage',
-              rawValue: 77,
-              display: '0.77%',
+          },
+
+        ],
+        redelegatedData: [
+          {
+            validator: {
+              className: 'validator',
+              rawValue: 'forbole',
+              display: <div>forbole</div>,
             },
-            votingPowerOverride: {
-              className: 'votingPowerOverride',
-              rawValue: 1.9,
-              display: '1.9%',
+            amount: {
+              className: 'amount',
+              rawValue: 4602020,
+              display: '4,602,020 ATOM',
             },
-            answer: {
-              className: 'abstain',
-              rawValue: 'abstain',
-              display: 'Abstain',
+          },
+
+        ],
+        unbondingData: [
+          {
+            validator: {
+              className: 'validator',
+              rawValue: 'forbole',
+              display: <div>forbole</div>,
+            },
+            amount: {
+              className: 'amount',
+              rawValue: 4602020,
+              display: '4,602,020 ATOM',
             },
           },
         ],
       },
       tabProps: {
-        all: 'All votes (60)',
-        yes: 'yes (15)',
-        no: 'no (43)',
-        veto: 'No with veto (0)',
-        abstain: 'abstain (2)',
-        absence: 'absence (40/100)',
+        delegations: 'Delegations',
+        redelegations: 'redelegations',
+        unbondings: 'Unbondings',
       },
       classNameTab: '',
       classNameIndicator: '',
     };
     const wrap = mount(
-      <ProposalTable
+      <Table
         {...args}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find(ProposalTable)).toHaveLength(1);
-    expect(wrap.find('.votingPowerPercentage').first().text()).toEqual('0.77%');
-    expect(wrap.find('.overrideLabel').first().text()).toEqual('Override');
+    expect(wrap.find(Table)).toHaveLength(1);
   });
 });

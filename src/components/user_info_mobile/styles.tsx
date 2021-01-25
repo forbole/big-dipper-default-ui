@@ -19,23 +19,19 @@ export const useGetStyles = (props: any) => {
     },
     address: {
       display: 'flex',
-      '& .rewardAddress': {
-        marginTop: '1rem',
-        display: 'flex',
-        alignItems: 'center',
-        '& .question-icon': {
-          marginLeft: '0.3rem',
-          color: '#777777',
-        },
-      },
       '& .addressDisplay': {
         display: 'flex',
-        // alignItems: 'center',
         '& .copy-icon': {
           marginLeft: '0.3rem',
           color: '#777777',
           width: '1rem',
           height: '1rem',
+        },
+      },
+      '& .rewardAddress': {
+        '& .question-icon': {
+          marginLeft: '0.3rem',
+          color: '#777777',
         },
       },
       '& .mainContent': {
@@ -57,6 +53,8 @@ export const useGetStyles = (props: any) => {
       '& .image': {
         height: '3.75rem',
         width: '3.75rem',
+        borderRadius: '50%',
+        marginRight: '0.5rem',
       },
     },
     table: {

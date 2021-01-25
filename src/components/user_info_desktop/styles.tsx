@@ -20,7 +20,6 @@ export const useGetStyles = (props: any) => {
     address: {
       display: 'flex',
       '& .rewardAddress': {
-        // marginTop: '1rem',
         display: 'flex',
         alignItems: 'center',
         '& .question-icon': {
@@ -61,6 +60,8 @@ export const useGetStyles = (props: any) => {
       '& .image': {
         height: '3.75rem',
         width: '3.75rem',
+        borderRadius: '50%',
+        marginRight: '0.5rem',
       },
     },
     table: {
@@ -116,9 +117,7 @@ export const useGetStyles = (props: any) => {
       },
       '& .total': {
         flex: 1,
-        // flexY: 1,
         textAlign: 'right',
-        // marginTop: '0.5rem',
       },
       '& .totalAmount': {
         height: '50%',
@@ -177,7 +176,7 @@ export const useGetStyles = (props: any) => {
       '& .custom-component-container': {
         position: 'relative',
       },
-      '& .dataPercentage': {
+      '& .dataAmount': {
         flex: 1,
         textAlign: 'end',
       },

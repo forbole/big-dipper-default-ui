@@ -5,7 +5,7 @@ import { Data } from '../../../table_paginated/types';
 export interface TableDefaultProps {
   className?: string;
   delegatedData: Data[];
-  reDelegatedData: Data[];
+  redelegatedData: Data[];
   unbondingData: Data[];
   pagination?: {
     rowsPerPage: number | undefined;

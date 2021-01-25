@@ -1,62 +1,29 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ProposalTable from '.';
+import Address from '.';
 
-describe('ProposalTable', () => {
+describe('Address', () => {
   it('Works', () => {
-    expect(ProposalTable).toBeTruthy();
-    const args = {
-      tableDefaultProps: {
-        overrideLabel: 'Override',
-        data: [
-          {
-            validator: {
-              className: 'validator',
-              rawValue: 'forbole',
-              display: <div>forbole</div>,
-            },
-            votingPower: {
-              className: 'votingPower',
-              rawValue: 4602020.799998,
-              display: '4,602,020.799998 ATOM',
-            },
-            votingPowerPercentage: {
-              className: 'votingPowerPercentage',
-              rawValue: 77,
-              display: '0.77%',
-            },
-            votingPowerOverride: {
-              className: 'votingPowerOverride',
-              rawValue: 1.9,
-              display: '1.9%',
-            },
-            answer: {
-              className: 'abstain',
-              rawValue: 'abstain',
-              display: 'Abstain',
-            },
-          },
-        ],
-      },
-      tabProps: {
-        all: 'All votes (60)',
-        yes: 'yes (15)',
-        no: 'no (43)',
-        veto: 'No with veto (0)',
-        abstain: 'abstain (2)',
-        absence: 'absence (40/100)',
-      },
-      classNameTab: '',
-      classNameIndicator: '',
-    };
+    expect(Address).toBeTruthy();
     const wrap = mount(
-      <ProposalTable
-        {...args}
+      <Address
+        addressContent={{
+          address: {
+            title: 'Address',
+            display: 'cosmos14kn0k…swhp',
+            rawValue: 'cosmos14kn0k…swhp',
+          },
+          rewardAddress: {
+            title: '',
+            display: 'cosmos14kn0k…swhp',
+            rawValue: 'cosmos14kn0k…swhp',
+          },
+        }}
       />,
     );
     expect(wrap).not.toBeNull();
-    expect(wrap.find(ProposalTable)).toHaveLength(1);
-    expect(wrap.find('.votingPowerPercentage').first().text()).toEqual('0.77%');
-    expect(wrap.find('.overrideLabel').first().text()).toEqual('Override');
+    expect(wrap.find(Address)).toHaveLength(1);
+    expect(wrap.find('h4').first().text()).toEqual('Address');
+    expect(wrap.find('.addressDisplay').first().text()).toEqual('cosmos14kn0k…swhp');
   });
 });

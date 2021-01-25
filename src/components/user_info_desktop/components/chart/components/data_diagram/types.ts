@@ -1,6 +1,6 @@
 import { ChartData } from '../../../../types';
 
-export interface ChartProps {
+export interface DataDiagramProps {
   className?: string;
   data: ChartData;
 }

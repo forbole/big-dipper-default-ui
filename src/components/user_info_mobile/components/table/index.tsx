@@ -87,7 +87,7 @@ const Table = (props: TableProps) => {
         </TabPanel>
         <TabPanel value={value} index={1}>
           <PaginatedContainer
-            data={tableDefaultProps.reDelegatedData}
+            data={tableDefaultProps.redelegatedData}
           />
         </TabPanel>
         <TabPanel value={value} index={2}>

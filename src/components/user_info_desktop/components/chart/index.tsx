@@ -61,16 +61,6 @@ const Chart = (prop: ChartProps) => {
             data={chart.data[4]}
           />
         </div>
-        {/* <div className={classnames('total')}>
-          <div className={classnames('totalAmount')}>
-            <h3>{chart.total.title}</h3>
-            <h4>{chart.total.subTitle}</h4>
-          </div>
-          <div className={classnames('totalDollar')}>
-            <h1>{chart.totalDollar.title}</h1>
-            <h2>{chart.totalDollar.subTitle}</h2>
-          </div>
-        </div> */}
       </div>
       <div className={classnames('contentRight')}>
         <div className={classnames('custom-component-container')}>

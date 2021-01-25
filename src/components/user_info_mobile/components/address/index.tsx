@@ -1,26 +1,55 @@
 import React from 'react';
 import classnames from 'classnames';
+import { FileCopyOutlined } from '@material-ui/icons';
 import { AddressProps } from './types';
-import InfoDialog from '../../../info_dialog';
+import { useAddressHook } from './hooks';
 
 const Address = (props: AddressProps) => {
   const {
     className,
-    address,
+    addressContent,
+    copyCallback,
   } = props;
+
+  const { handleCopyClick } = useAddressHook({
+    copyCallback,
+  });
 
   return (
     <div className={classnames(className, 'mainContainer')}>
-      <img src={address.img} alt={address.alt} className={classnames('image')} />
+      <img src={addressContent.img} alt={addressContent.alt} className={classnames('image')} />
       <div className={classnames('mainContent')}>
         <div className={classnames('container')}>
-          <h4>{address.address.title}</h4>
-          <p>{address.address.address}</p>
+          <h4>{addressContent.address.title}</h4>
+          <p className={classnames('addressDisplay')}>
+            {addressContent.address.display}
+            <span
+              onClick={() => handleCopyClick(addressContent.address.rawValue)}
+              role="button"
+              className="icon__wrapper"
+            >
+              <FileCopyOutlined
+                fontSize="small"
+                className="copy-icon icon"
+              />
+            </span>
+            {addressContent.address.dialog}
+          </p>
         </div>
         <div className={classnames('container')}>
-          <h4>{address.rewardAddress.title}</h4>
-          <p>
-            {address.rewardAddress.address}
+          <h4>{addressContent.rewardAddress.title}</h4>
+          <p className={classnames('addressDisplay')}>
+            {addressContent.rewardAddress.display}
+            <span
+              onClick={() => handleCopyClick(addressContent.rewardAddress.display)}
+              role="button"
+              className="icon__wrapper"
+            >
+              <FileCopyOutlined
+                fontSize="small"
+                className="copy-icon icon"
+              />
+            </span>
           </p>
         </div>
       </div>

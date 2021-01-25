@@ -56,18 +56,23 @@ export interface TabProps {
 
 export type Address = {
   title: string | React.ReactNode;
-  address: string | React.ReactNode;
+  display: string;
+  rawValue: string;
+  dialog?: React.ReactNode;
 };
 
-export interface UserInfoMobileProps {
+export interface UserInfoDesktopProps {
   className?: string;
-  title: string;
-  address: {
+  classNameChart?: string;
+  classNameAddress?: string;
+  classNameTable?: string;
+  addressContent: {
     img?: string;
     alt?: string;
     address: Address;
     rewardAddress: Address;
   }
+  copyCallback?: (value: string) => void;
   chart: Chart;
   tabProps: TabProps;
   tableDefaultProps: TableDefaultProps;

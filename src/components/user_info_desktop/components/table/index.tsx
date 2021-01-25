@@ -45,17 +45,15 @@ function a11yProps(index: any) {
   };
 }
 
-const ProposalTable = (props: TableProps) => {
+const Table = (props: TableProps) => {
   const {
     tableDefaultProps, className, classNameTab, classNameIndicator, tabProps,
   } = props;
 
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+  const handleChange = (_event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
-    const a = event;
-    console.log(a);
   };
 
   return (
@@ -106,4 +104,4 @@ const ProposalTable = (props: TableProps) => {
   );
 };
 
-export default ProposalTable;
+export default Table;

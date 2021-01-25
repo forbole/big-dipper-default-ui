@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { UserInfoMobileProps } from './types';
+import { UserInfoDesktopProps } from './types';
 import { useGetStyles } from './styles';
 import {
   Table,
@@ -8,24 +8,35 @@ import {
   Address,
 } from './components';
 
-const UserInfoDesktop = (props: UserInfoMobileProps) => {
+const UserInfoDesktop = (props: UserInfoDesktopProps) => {
   const {
-    title, className, address, chart, tableDefaultProps, tabProps,
+    className,
+    classNameChart,
+    classNameAddress,
+    classNameTable,
+    addressContent,
+    chart,
+    tableDefaultProps,
+    tabProps,
+    copyCallback,
   } = props;
 
   const { classes } = useGetStyles(props);
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'userInfoMobile')}>
-      <h1>{title}</h1>
-      <Address className={classes.address} address={address} />
+    <div className={classnames(classes.root, className, 'big-dipper', 'userInfoDesktop')}>
+      <Address
+        className={classnames(classes.address, classNameAddress, 'userInfoAddress')}
+        addressContent={addressContent}
+        copyCallback={copyCallback}
+      />
       <hr />
       <Chart
         chart={chart}
-        className={classes.chart}
+        className={classnames(classes.chart, classNameChart, 'userInfoChart')}
       />
       <Table
         tableDefaultProps={tableDefaultProps}
-        className={classes.table}
+        className={classnames(classes.table, classNameTable, 'userInfoTable')}
         classNameTab={classnames('tab')}
         classNameIndicator={classnames('indicator')}
         tabProps={tabProps}

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Dialog,
   Typography,
   IconButton,
-  Button,
 } from '@material-ui/core';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import { Share, Apps, } from '@material-ui/icons/';
+import {
+  Share,
+  Apps,
+} from '@material-ui/icons/';
 import classnames from 'classnames';
 import { Close } from '@material-ui/icons';
 import { useGetStyles } from './styles';
@@ -24,27 +26,19 @@ const InfoDialog = (props: InfoDialogProps) => {
     socialMedia,
     buttonDisplay,
     address,
+    copyCallback,
   } = props;
 
   const {
     handleClose,
     handleClickOpen,
     open,
-  } = useInfoDialogHook();
+    handleCopyClick,
+  } = useInfoDialogHook({
+    copyCallback,
+  });
 
   const { classes } = useGetStyles();
-
-  const [copySuccess, setCopySuccess] = useState(buttonDisplay);
-  const copyToClipBoard = async (copyMe: string) => {
-    try {
-      await navigator.clipboard.writeText(copyMe);
-      setCopySuccess('Copied!');
-      setTimeout(() => setCopySuccess(buttonDisplay), 1500);
-    } catch (err) {
-      setCopySuccess('Failed to copy!');
-      setTimeout(() => setCopySuccess(buttonDisplay), 1500);
-    }
-  };
 
   const DialogTitle = (titleProps: DialogTitleProps) => {
     const {
@@ -77,7 +71,7 @@ const InfoDialog = (props: InfoDialogProps) => {
       className={classes.root}
     >
       <Share fontSize="small" className="share-icon icon" onClick={handleClickOpen} />
-      <Dialog maxWidth="lg" fullWidth className={classnames(classes.root, className, 'dialog')} onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+      <Dialog maxWidth="lg" className={classnames(classes.root, className, 'dialog')} onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle onClose={handleClose}>
           {title}
         </DialogTitle>
@@ -87,8 +81,8 @@ const InfoDialog = (props: InfoDialogProps) => {
         <div className={classnames('socialMedia')}>
           {socialMedia}
         </div>
-        <button type="button" className={classnames('button')} onClick={() => copyToClipBoard(address)}>
-          {copySuccess}
+        <button type="button" className={classnames('button')} onClick={() => handleCopyClick(address.rawValue)}>
+          {buttonDisplay}
         </button>
       </Dialog>
     </span>

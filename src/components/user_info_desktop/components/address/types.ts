@@ -2,12 +2,15 @@ import React from 'react';
 
 export type Address = {
   title: string | React.ReactNode;
-  address: string | React.ReactNode;
+  display: string;
+  rawValue: string;
+  dialog?: React.ReactNode;
 };
 
 export interface AddressProps {
   className?: string,
-  address: {
+  copyCallback?: (value: string) => void;
+  addressContent: {
     img?: string;
     alt?: string;
     address: Address;

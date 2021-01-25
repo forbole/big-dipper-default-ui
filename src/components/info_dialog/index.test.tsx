@@ -1,25 +1,26 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import {
-  Popover, Paper,
-} from '@material-ui/core';
-import { HelpOutline } from '@material-ui/icons';
-import InfoPopover from '.';
+import InfoDialog from '.';
 
-describe('InfoPopover', () => {
+describe('InfoDialog', () => {
   it('Works', () => {
-    expect(InfoPopover).toBeTruthy();
+    expect(InfoDialog).toBeTruthy();
     const wrap = mount(
-      <InfoPopover
-        detail="hello world"
+      <InfoDialog
+        title="scan for address"
+        buttonDisplay="Copy Address"
+        address={{
+          display: 'cosmos14kn0k…swhp',
+          rawValue: 'cosmos14kn0k…swhp',
+        }}
+        socialMedia={(
+          <div>
+            Share to ...
+          </div>
+        )}
       />,
     );
     expect(wrap).not.toBeNull();
-
-    expect(wrap.find(HelpOutline)).toHaveLength(1);
-    expect(wrap.find(Popover)).toHaveLength(1);
-    expect(wrap.find(Paper)).toHaveLength(0);
-    wrap.find('span').first().simulate('mouseenter');
-    expect(wrap.find(Paper).length).toBeGreaterThan(0);
+    expect(wrap.find(InfoDialog)).toHaveLength(1);
   });
 });

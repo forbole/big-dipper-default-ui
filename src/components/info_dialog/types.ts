@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 export interface InfoDialogProps {
   className?: string;
   title: string;
-  qrCode?: React.ReactNode | string;
-  socialMedia?: React.ReactNode | string;
+  qrCode?: ReactElement | string;
+  socialMedia?: React.ReactNode | ReactElement;
   buttonDisplay: string;
-  address: string;
-  // handleClose: () => void;
+  address: {
+    display:string,
+    rawValue: string,
+  };
+  copyCallback?: (value: string) => void;
 }
 
 export interface DialogTitleProps {

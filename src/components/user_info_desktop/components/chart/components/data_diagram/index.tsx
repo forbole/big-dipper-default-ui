@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import { ChartProps } from './types';
+import { DataDiagramProps } from './types';
 
-const DataDiagram = (prop: ChartProps) => {
+const DataDiagram = (prop: DataDiagramProps) => {
   const {
     className,
     data,
@@ -13,7 +13,7 @@ const DataDiagram = (prop: ChartProps) => {
     <div className={classnames(className, 'dataType')}>
       <div className={classnames('dataRow')}>
         <p className={classnames('dataName')}>{data.title}</p>
-        <p className={classnames('dataPercentage')}>{data.display}</p>
+        <p className={classnames('dataAmount')}>{data.display}</p>
       </div>
     </div>
   );
