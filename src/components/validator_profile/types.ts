@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface ValidatorProfileProps {
   className?: string;
-  imageUrl: string;
+  image: string | React.ReactNode;
   alt: string;
   name: string;
   status: {
@@ -12,7 +12,7 @@ export interface ValidatorProfileProps {
   bio: string | React.ReactNode;
   desktopWidth?: number;
   keyBase: {
-    display: string;
+    display?: string;
     verified?: boolean;
     url?: string,
   }

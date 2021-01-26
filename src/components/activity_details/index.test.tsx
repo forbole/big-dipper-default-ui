@@ -8,6 +8,7 @@ describe('ActivityDetails', () => {
     const wrap = mount(
       <ActivityDetails
         labels={{
+          time: 'time',
           hash: 'hash',
           height: 'height',
           fee: 'fee',
@@ -18,7 +19,6 @@ describe('ActivityDetails', () => {
         data={{
           time: '1 hour',
           success: true,
-          content: <div>custom content</div>,
           hash: '12344566',
           height: <div>height</div>,
           fee: '123 uatm',
@@ -39,6 +39,7 @@ describe('ActivityDetails', () => {
       <ActivityDetails
         desktop
         labels={{
+          time: 'time',
           hash: 'hash',
           height: 'height',
           fee: 'fee',
@@ -49,7 +50,6 @@ describe('ActivityDetails', () => {
         data={{
           time: '1 hour',
           success: true,
-          content: <div>custom content</div>,
           hash: '12344566',
           height: <div>height</div>,
           fee: '123 uatm',

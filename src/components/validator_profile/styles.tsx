@@ -24,6 +24,7 @@ export const useGetStyles = (desktopWidth?: number) => {
         gridTemplateColumns: '40px auto',
         alignItems: 'center',
         marginBottom: '0.5rem',
+        wordBreak: 'break-all',
       },
       '& .keybase__display': {
         display: 'flex',
