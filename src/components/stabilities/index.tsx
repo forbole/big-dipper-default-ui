@@ -50,7 +50,6 @@ const Stabilities = (prop: Props) => {
     UnbondedPercentage = Math.round((100 - BondedPercentage) * 10) / 10;
   }
 
-
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'stabilities')}>
       <div className={classnames(classes.container, 'container')}>
