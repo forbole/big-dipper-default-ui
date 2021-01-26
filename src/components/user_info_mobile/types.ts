@@ -1,5 +1,15 @@
 import React from 'react';
-import { TableDefaultProps } from './components/table/types';
+import { Data } from '../table_paginated/types';
+
+export interface TableDefaultProps {
+  className?: string;
+  delegatedData: Data[];
+  redelegatedData: Data[];
+  unbondingData: Data[];
+  pagination?: {
+    rowsPerPage: number | undefined;
+  };
+}
 
 export type ChartData = {
   title: string;

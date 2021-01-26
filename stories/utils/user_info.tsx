@@ -307,11 +307,7 @@ export const dummyData: any = {
     alt: '',
     address: {
       title: 'Address',
-      display: (
-        <div className="addressDisplay">
-          cosmos14kn0k…swhp
-        </div>
-      ),
+      display: 'cosmos14kn0k…swhp',
       rawValue: 'cosmos14kn0k…swhp',
       dialog: (
         <Dialog
@@ -326,11 +322,7 @@ export const dummyData: any = {
           <InfoPop />
         </div>
       ),
-      display: (
-        <div className="addressDisplay">
-          cosmos14kn0k…swhp
-        </div>
-      ),
+      display: 'cosmos14kn0k…swhp',
       rawValue: 'cosmos14kn0k…swhp',
     },
   },

@@ -27,7 +27,6 @@ export const useGetStyles = () => {
         minWidth: '20rem',
       },
       '& .button': {
-        // width: '95%',
         margin: '1rem',
         height: '2.5rem',
         color: '#FFFFFF',
