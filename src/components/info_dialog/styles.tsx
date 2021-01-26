@@ -11,7 +11,6 @@ export const useGetStyles = () => {
       },
       '& .dialog': {
         padding: '5rem',
-
       },
       '& .closeIcon': {
         position: 'absolute',

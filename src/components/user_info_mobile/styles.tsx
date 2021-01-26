@@ -102,7 +102,6 @@ export const useGetStyles = (props: any) => {
         marginLeft: '0.5rem',
         color: '#777777',
       },
-
     },
     chart: {
       marginBottom: '2rem',
