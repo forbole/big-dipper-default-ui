@@ -82,7 +82,6 @@ const Stabilities = (prop: Props) => {
                   data={data.detail}
                   startAngle={70}
                   endAngle={-290}
-                  // isAnimationActive={false}
                   innerRadius="85%"
                   outerRadius="100%"
                   dataKey="value"
