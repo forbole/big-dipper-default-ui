@@ -79,6 +79,10 @@ export const useGetStyles = (displaySignatures: boolean) => {
       '& .hash': {
         wordBreak: 'break-all',
       },
+      '& a': {
+        textDecoration: 'none',
+        color: 'inherit',
+      },
     },
     desktop: {
       '& .title': {
