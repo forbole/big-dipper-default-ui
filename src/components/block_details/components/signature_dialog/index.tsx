@@ -105,9 +105,9 @@ const SignatureDialog = (props: DialogProps) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {state.data.map((x: Data) => {
+          {state.data.map((x: Data, i: number) => {
             return (
-              <TableRow className={classnames('tableRow')}>
+              <TableRow className={classnames('tableRow')} key={`${x.validator.rawValue}-${i}`}>
                 <TableCell className={classnames('display', 'validator')}>
                   {x.validator.display}
                 </TableCell>
