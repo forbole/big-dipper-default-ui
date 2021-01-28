@@ -18,7 +18,13 @@ const Stabilities = (prop: Props) => {
     data,
     className,
     colors,
+    colorBackground,
   } = prop;
+
+  const colorBackgroundChart = colorBackground ? [colorBackground] : ['#E8E8E8'];
+  const dataBackground = [{
+    value: 1,
+  }];
 
   const renderCustomizedLabel = ({
     cx, cy,
@@ -30,12 +36,19 @@ const Stabilities = (prop: Props) => {
       </text>
     );
   };
+  let BondedPercentage: number = 0;
 
-  const BondedPercentage: number = Math.round(((data.detail[0].value ? data.detail[0].value : 0)
-    / ((data.detail[0].value ? data.detail[0].value : 0)
-      + (data.detail[1].value ? data.detail[1].value : 0))) * 1000) / 10;
+  let UnbondedPercentage: number = 0;
 
-  const UnbondedPercentage: number = Math.round((100 - BondedPercentage) * 10) / 10;
+  if (data.detail[0].value !== 0) {
+    BondedPercentage = Math.round(((data.detail[0].value ? data.detail[0].value : 0)
+      / ((data.detail[0].value ? data.detail[0].value : 0)
+        + (data.detail[1].value ? data.detail[1].value : 0))) * 1000) / 10;
+  }
+
+  if (data.detail[1].value !== 0) {
+    UnbondedPercentage = Math.round((100 - BondedPercentage) * 10) / 10;
+  }
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'stabilities')}>
@@ -48,10 +61,26 @@ const Stabilities = (prop: Props) => {
             <ResponsiveContainer height="100%">
               <PieChart>
                 <Pie
+                  data={dataBackground}
+                  startAngle={70}
+                  endAngle={-290}
+                  innerRadius="85%"
+                  outerRadius="100%"
+                  dataKey="value"
+                  labelLine={false}
+                  stroke="none"
+                  label={renderCustomizedLabel}
+                >
+                  {
+                    dataBackground.map((_x: any, index: any) => (
+                      <Cell className={classnames('pie')} key={_x.value} fill={colorBackgroundChart[index % colorBackgroundChart.length]} />
+                    ))
+                  }
+                </Pie>
+                <Pie
                   data={data.detail}
                   startAngle={70}
                   endAngle={-290}
-                  isAnimationActive={false}
                   innerRadius="85%"
                   outerRadius="100%"
                   dataKey="value"
