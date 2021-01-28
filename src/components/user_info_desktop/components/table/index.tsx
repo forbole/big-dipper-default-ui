@@ -4,7 +4,6 @@ import {
   AppBar,
   Tabs,
   Tab,
-  Typography,
   Box,
 } from '@material-ui/core';
 import TablePaginated from '../../../table_paginated';
@@ -31,7 +30,7 @@ function TabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <span>{children}</span>
         </Box>
       )}
     </div>
