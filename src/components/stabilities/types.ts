@@ -44,4 +44,5 @@ export interface Props {
   data: Data;
   className?: string;
   colors: string[];
+  colorBackground?: string;
 }
