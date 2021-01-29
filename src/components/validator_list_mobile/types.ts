@@ -29,7 +29,7 @@ export type Data = {
     visual?: React.ReactNode;
   };
   moniker: {
+    avatar: React.ReactNode;
     display: string;
-    imageUrl: string;
   },
 }

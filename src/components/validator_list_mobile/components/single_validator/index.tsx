@@ -18,7 +18,7 @@ const SingleValidator = (props: SingleValidatorProps) => {
       onClick={handleOnClick}
       role="button"
     >
-      <Avatar imageUrl={data.moniker.imageUrl} alt={data.moniker.display} width={40} height={40} />
+      {data.moniker.avatar}
       <div className={classnames('single-validator-mobile__content', 'content')}>
         <div className={classnames('content__top-container', 'flex-content', 'top-container')}>
           <p>{data.moniker.display}</p>
