@@ -23,7 +23,7 @@ export interface Labels {
 
 export interface Data {
   operatorAddress: string;
-  status: {
+  status?: {
     rawValue: string;
     className: string;
     display: string;
@@ -46,7 +46,7 @@ export interface Data {
     rawValue: number;
     display: string;
   }
-  condition: {
+  condition?: {
     className: string;
     rawValue: string;
   }

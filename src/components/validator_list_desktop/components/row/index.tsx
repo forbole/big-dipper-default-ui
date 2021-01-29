@@ -28,11 +28,11 @@ const Row = (props: RowProps) => {
           >
             <div
               className={classnames({
-                [data.status.className]: column.id === 'status',
+                [data?.status?.className || '']: column.id === 'status',
                 status: column.id === 'status',
                 rank: column.id === 'rank',
                 condition: column.id === 'condition',
-                [data.condition.className]: column.id === 'condition',
+                [data?.condition?.className || '']: column.id === 'condition',
               })}
             >
               {value}

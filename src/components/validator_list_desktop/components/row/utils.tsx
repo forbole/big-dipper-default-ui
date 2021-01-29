@@ -18,6 +18,6 @@ export const formatRow = (data: Data, index: number) => {
     self: data.self?.display,
     commission: data.commission?.display,
     condition: '',
-    status: data.status.display,
+    status: data?.status?.display,
   });
 };

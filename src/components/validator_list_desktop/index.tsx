@@ -26,7 +26,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
     data,
     inactive,
   } = props;
-
+  console.log(data, 'the data in ui');
   const {
     state,
     handleSort,
@@ -75,7 +75,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
             return (
               <Row
                 onClick={onRowClick}
-                key={row.operatorAddress}
+                key={`${row.operatorAddress}-${i}`}
                 data={row}
                 columns={columns}
                 index={i}
