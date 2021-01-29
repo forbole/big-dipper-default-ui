@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import SingleValidator from '.';
-import { Avatar } from '../../../..';
 
 describe('SingleValidator', () => {
   it('Works active', () => {
@@ -10,7 +9,7 @@ describe('SingleValidator', () => {
       <SingleValidator
         data={{
           moniker: {
-            imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+            avatar: <div>hello</div>,
             display: 'Forbole',
           },
           operatorAddress: '312',
@@ -39,7 +38,6 @@ describe('SingleValidator', () => {
 
     expect(wrap.find('.bottom-container__commission')).toHaveLength(1);
     expect(wrap.find('.bottom-container__status')).toHaveLength(0);
-    expect(wrap.find(Avatar)).toHaveLength(1);
   });
 
   it('Works inactive', () => {
@@ -48,7 +46,7 @@ describe('SingleValidator', () => {
       <SingleValidator
         data={{
           moniker: {
-            imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+            avatar: <div>hello</div>,
             display: 'Forbole',
           },
           operatorAddress: '312',
