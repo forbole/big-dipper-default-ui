@@ -13,6 +13,7 @@ export const useGetStyles = () => {
       },
       '& .single__label': {
         textAlign: 'left',
+        marginRight: '1rem',
       },
       '& .single__value': {
         textAlign: 'right',
