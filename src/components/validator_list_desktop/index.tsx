@@ -26,7 +26,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
     data,
     inactive,
   } = props;
-  console.log(data, 'the data in ui');
+
   const {
     state,
     handleSort,
