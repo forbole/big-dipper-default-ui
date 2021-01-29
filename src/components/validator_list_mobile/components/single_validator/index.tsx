@@ -2,7 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 import { SingleValidatorProps } from './types';
 import { useGetStyles } from './styles';
-import { Avatar } from '../../../..';
 import { useSingleValidatorHook } from './hooks';
 
 const SingleValidator = (props: SingleValidatorProps) => {
