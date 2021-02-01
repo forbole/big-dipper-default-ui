@@ -1,10 +1,10 @@
 {
   "name": "big-dipper-default-ui",
   "version": "1.0.0",
-  "description": "Component library for big dipper default interface",
-  "author": "ryuash",
+  "description": "Big dipper component library",
+  "author": "forbole",
   "license": "MIT",
-  "repository": "ryuash/big-dipper-default-ui",
+  "repository": "forbole/big-dipper-default-ui",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
