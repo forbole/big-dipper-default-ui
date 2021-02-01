@@ -78,7 +78,7 @@ const ValidatorListDesktop = (props: ValidatorListDesktopProps) => {
                 key={`${row.operatorAddress}-${i}`}
                 data={row}
                 columns={columns}
-                index={i}
+                index={i + 1}
               />
             );
           })}
