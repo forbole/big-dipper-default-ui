@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { DataBlockCustom } from './data_block';
-import { AvatarDisplay } from '../../src';
+import React from 'react';
+import {
+  AvatarDisplay, Avatar,
+} from '../../src';
 
 export const labelsList = {
   commission: 'Commission',
@@ -23,12 +24,19 @@ export const getInactiveDummy = (device: string) => {
       title="Forbole"
     />
   );
+
+  const avatar = (
+    <Avatar
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+    />
+  );
   return (
     [
       {
         moniker: {
           rawValue: 'Forbole',
-          imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+          avatar,
           display,
         },
         operatorAddress: '31afsdff2',
@@ -50,7 +58,7 @@ export const getInactiveDummy = (device: string) => {
       {
         moniker: {
           rawValue: 'Forbole',
-          imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+          avatar,
           display,
         },
         operatorAddress: '311342',
@@ -81,12 +89,19 @@ export const getActiveDummy = (device: string) => {
       title="Forbole"
     />
   );
+
+  const avatar = (
+    <Avatar
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      alt="avatar image"
+    />
+  );
   return (
     [
       {
         moniker: {
           rawValue: 'Forbole',
-          imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+          avatar,
           display,
         },
         operatorAddress: '3s12',
@@ -117,7 +132,7 @@ export const getActiveDummy = (device: string) => {
       {
         moniker: {
           rawValue: 'Forbole1',
-          imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+          avatar,
           display,
         },
         operatorAddress: '312',
@@ -148,7 +163,7 @@ export const getActiveDummy = (device: string) => {
       {
         moniker: {
           rawValue: 'Forbole2',
-          imageUrl: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
+          avatar,
           display,
         },
         operatorAddress: '31loo2',

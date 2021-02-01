@@ -16,11 +16,11 @@ const ValidatorListMobile = (props: ValidatorListMobileProps) => {
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'validator-list-mobile')}>
-      {data.map((x) => {
+      {data.map((x, i) => {
         return (
           <SingleValidator
             data={x}
-            key={x.operatorAddress}
+            key={`${x.operatorAddress}-${i}`}
             labels={labels}
             onClick={onClick}
           />

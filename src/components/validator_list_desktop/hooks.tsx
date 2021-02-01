@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import {
+  useState,
+  useEffect,
+} from 'react';
 import { Data } from './types';
 
 export const useTableHook = (data:any[], handleClick?: any, active = 'moniker') => {
@@ -7,6 +10,15 @@ export const useTableHook = (data:any[], handleClick?: any, active = 'moniker') 
     activeSort: active,
     sortDirection: 'asc',
   });
+
+  useEffect(() => {
+    if (state.data.length !== data.length) {
+      setState((prevState: any) => ({
+        ...prevState,
+        data,
+      }));
+    }
+  }, [data]);
 
   const handleSort = (key:string) => () => {
     const {
