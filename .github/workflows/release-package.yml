@@ -1,14 +1,24 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  pull_request:
+  push:
+    tags:
+      - v*
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Prepare tags
+        id: prep
+        run: |
+          TAGS=edge
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            TAGS=${GITHUB_REF#refs/tags/}
+          fi
+          echo ::set-output name=tags::${TAGS}
       - uses: actions/setup-node@v1
         with:
           node-version: 10
@@ -18,3 +28,5 @@ jobs:
         with:
           access: public
           token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ steps.prep.outputs.tags }}
+          dryRun: ${{ github.event_name == 'pull_request' }}
