@@ -17,6 +17,7 @@ jobs:
           TAGS=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             TAGS=${GITHUB_REF#refs/tags/}
+          fi
           echo ::set-output name=tags::${TAGS}
       - uses: actions/setup-node@v1
         with:
