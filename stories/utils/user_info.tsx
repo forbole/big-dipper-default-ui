@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import classnames from 'classnames';
 import {
-  FileCopyOutlined,
   Facebook,
   Twitter,
   Telegram,
@@ -17,6 +15,7 @@ import {
   AvatarDisplay,
   InfoPopover,
   InfoDialog,
+  Avatar,
 } from '../../src';
 
 const data = [
@@ -303,8 +302,11 @@ export const unbonded = {
 export const dummyData: any = {
   title: 'Account Details',
   addressContent: {
-    img: 'https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg',
-    alt: '',
+    image: (<Avatar
+      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
+      width="100%"
+      height="100%"
+    />),
     address: {
       title: 'Address',
       display: 'cosmos14kn0k…swhp',

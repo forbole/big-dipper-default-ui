@@ -11,8 +11,7 @@ export interface AddressProps {
   className?: string,
   copyCallback?: (value: string) => void;
   addressContent: {
-    img?: string;
-    alt?: string;
+    image?: React.ReactNode;
     address: Address;
     rewardAddress: Address;
   }

@@ -58,9 +58,8 @@ export const useGetStyles = (props: any) => {
         color: '#777777',
       },
       '& .image': {
-        height: '3.75rem',
-        width: '3.75rem',
-        borderRadius: '50%',
+        height: '2.5rem',
+        width: '2.5rem',
         marginRight: '0.5rem',
       },
     },

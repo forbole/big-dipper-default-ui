@@ -49,10 +49,9 @@ export interface UserInfoMobileProps {
   classNameChart?: string;
   title: string;
   addressContent: {
-    img?: string;
-    alt?: string;
     address: Address;
     rewardAddress: Address;
+    image?: React.ReactNode;
   }
   copyCallback?: (value: string) => void;
   chart: Chart;
