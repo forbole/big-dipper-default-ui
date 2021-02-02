@@ -28,5 +28,5 @@ jobs:
         with:
           access: public
           token: ${{ secrets.NPM_TOKEN }}
-          tag: ${{ steps.prep.outputs.tags }}
+          version: ${{ steps.prep.outputs.tags }}
           dryRun: ${{ github.event_name == 'pull_request' }}
