@@ -31,7 +31,7 @@ export type Chart = {
   totalDollar: Total
   data: ChartData[];
   colors: string[];
-  customComponent?: ReactElement;
+  basecolor?: string;
 }
 
 export type Address = {
@@ -42,6 +42,7 @@ export type Address = {
 };
 
 export interface UserInfoDesktopProps {
+  title: string;
   className?: string;
   classNameChart?: string;
   classNameAddress?: string;

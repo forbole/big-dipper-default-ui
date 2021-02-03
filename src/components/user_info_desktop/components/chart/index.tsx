@@ -12,30 +12,60 @@ const Chart = (prop: ChartProps) => {
     className,
   } = prop;
 
+  const baseData = [{
+    value: 100,
+  }];
+
+  let empty = true;
+
+  chart.data.forEach((x) => {
+    if (x.value) {
+      empty = true;
+    }
+  });
+
   return (
     <div className={classnames(className, 'chart')}>
       <div className={classnames('contentLeft')}>
         <div className={classnames('chartBox', 'box')}>
           <ResponsiveContainer height="100%">
             <PieChart>
-              <Pie
-                data={chart.data}
-                startAngle={30}
-                endAngle={-330}
-                isAnimationActive={false}
-                innerRadius="85%"
-                outerRadius="100%"
-                dataKey="value"
-                labelLine={false}
-                stroke="none"
-                paddingAngle={3}
-              >
-                {
+              {empty ? (
+                <Pie
+                  data={baseData}
+                  startAngle={30}
+                  endAngle={-330}
+                  isAnimationActive={false}
+                  innerRadius="85%"
+                  outerRadius="100%"
+                  dataKey="value"
+                  labelLine={false}
+                  stroke="none"
+                >
+                  <Cell
+                    fill={chart.basecolor ?? 'rgba(248, 248, 248, 1)'}
+                  />
+                </Pie>
+              ) : (
+                <Pie
+                  data={chart.data}
+                  startAngle={30}
+                  endAngle={-330}
+                  isAnimationActive={false}
+                  innerRadius="85%"
+                  outerRadius="100%"
+                  dataKey="value"
+                  labelLine={false}
+                  stroke="none"
+                  paddingAngle={3}
+                >
+                  {
                   chart.data.map((_x: any, index: any) => (
                     <Cell className={classnames(`pie-${index}`)} key={_x.value} fill={chart.colors[index % chart.colors.length]} />
                   ))
                 }
-              </Pie>
+                </Pie>
+              )}
             </PieChart>
           </ResponsiveContainer>
         </div>
@@ -63,13 +93,6 @@ const Chart = (prop: ChartProps) => {
         </div>
       </div>
       <div className={classnames('contentRight')}>
-        <div className={classnames('custom-component-container')}>
-          {!!chart.customComponent && (
-          <div className={classnames('custom-component')}>
-            {chart.customComponent}
-          </div>
-          )}
-        </div>
         <div className={classnames('total')}>
           <div className={classnames('totalAmount')}>
             <h3>{chart.total.title}</h3>

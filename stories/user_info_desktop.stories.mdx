@@ -17,49 +17,80 @@ import {
 <Canvas>
   <Story name="Default">
     <UserInfoDesktop
-      {...dummyData}
-    />
+        title="Account Details"
+        addressContent={{
+          image: <div>image</div>,
+          address: {
+            title: 'Address',
+            display: 'cosmos14kn0k…swhp',
+            rawValue: 'cosmos14kn0k…swhp',
+          },
+          rewardAddress: {
+            title: 'Reward Address',
+            display: 'cosmos14kn0k…swhp',
+            rawValue: 'cosmos14kn0k…swhp',
+          },
+        }}
+        chart={{
+          total: {
+            title: 'Total ATOM',
+            subTitle: '$3.22/ATOM',
+          },
+          totalDollar: {
+            title: '6,574,315.38',
+            subTitle: '$21,169,295.52',
+          },
+          colors: ['#FD248C', '#1D86FF', '#FFA716', '#1EC490', '#9D2DFF'],
+          data: [
+            {
+              title: 'Available',
+              value: 0,
+              display: '111,189.15 ATOM',
+            },
+            {
+              title: 'Delegate',
+              value: 0,
+              display: '6,458,003.25 ATOM',
+            },
+            {
+              title: 'Unbonding',
+              value: 0,
+              display: '156.00 ATOM',
+            },
+            {
+              title: 'Reward',
+              value: 0,
+              display: '5,122.96 ATOM',
+            },
+            {
+              title: 'Commission',
+              value: 0,
+              display: '1,324.91 ATOM',
+            },
+          ],
+          customComponent: <div>I am a diagram</div>,
+        }}
+      />
   </Story>
 </Canvas>
 
 ```
 <UserInfoDesktop
-  addressContent: {
-    image: (<Avatar
-      imageUrl="https://s3.amazonaws.com/keybase_processed_uploads/f5b0771af36b2e3d6a196a29751e1f05_360_360.jpeg"
-      width="100%"
-      height="100%"
-    />),
+  title="Account Details"
+  addressContent={{
+    image: <div>image</div>,
     address: {
       title: 'Address',
-      display: (
-        <div className="addressDisplay">
-          cosmos14kn0k…swhp
-        </div>
-      ),
+      display: 'cosmos14kn0k…swhp',
       rawValue: 'cosmos14kn0k…swhp',
-      dialog: (
-        <Dialog
-          address="cosmos14kn0k…swhp"
-        />
-      ),
     },
     rewardAddress: {
-      title: (
-        <div className="rewardAddress">
-          Reward Address
-          <InfoPop />
-        </div>
-      ),
-      display: (
-        <div className="addressDisplay">
-          cosmos14kn0k…swhp
-        </div>
-      ),
+      title: 'Reward Address',
+      display: 'cosmos14kn0k…swhp',
       rawValue: 'cosmos14kn0k…swhp',
     },
-  },
-  chart: {
+  }}
+  chart={{
     total: {
       title: 'Total ATOM',
       subTitle: '$3.22/ATOM',
@@ -96,8 +127,8 @@ import {
         display: '1,324.91 ATOM',
       },
     ],
-    customComponent: <DataBlockCustom />,
-  }
+    customComponent: <div>I am a diagram</div>,
+  }}
 />
 ```
 
