@@ -29,6 +29,7 @@ export type Address = {
 export interface UserInfoMobileProps {
   className?: string;
   title: string;
+  desktop?: string | number;
   addressContent: {
     address: Address;
     rewardAddress: Address;

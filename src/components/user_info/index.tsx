@@ -19,7 +19,7 @@ const UserInfotMobile = (props: UserInfoMobileProps) => {
   const { classes } = useGetStyles(props);
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'userInfo')}>
-      <h1>{title}</h1>
+      <h1 className="userInfo__title">{title}</h1>
       <Address
         className={classnames(classes.address, 'userInfoAddress')}
         addressContent={addressContent}

@@ -62,6 +62,7 @@ const Chart = (prop: ChartProps) => {
             </PieChart>
           </ResponsiveContainer>
         </div>
+        {/* // mobile */}
         <div className={classnames('total')}>
           <div className={classnames('totalAmount')}>
             <h3>{chart.total.title}</h3>
@@ -94,6 +95,17 @@ const Chart = (prop: ChartProps) => {
           className="commision"
           data={chart.data[4]}
         />
+      </div>
+      {/* desktop */}
+      <div className={classnames('total__desktop')}>
+        <div className={classnames('totalAmount')}>
+          <h3>{chart.total.title}</h3>
+          <h4>{chart.total.subTitle}</h4>
+        </div>
+        <div className={classnames('totalDollar')}>
+          <h1>{chart.totalDollar.title}</h1>
+          <h2>{chart.totalDollar.subTitle}</h2>
+        </div>
       </div>
     </div>
   );

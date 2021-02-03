@@ -1,10 +1,11 @@
 import { makeStyles } from '@material-ui/styles';
+import { getMinMediaQuery } from '../../utils';
+import { UserInfoMobileProps } from './types';
 
-export const useGetStyles = (props: any) => {
+export const useGetStyles = (props: UserInfoMobileProps) => {
   const useStyles = makeStyles({
     root: {
-      overflow: 'auto',
-      '& h1': {
+      '& .userInfo__title': {
         margin: '0 0 1rem 0',
         fontSize: '1.375rem',
         fontWeight: 400,
@@ -15,6 +16,11 @@ export const useGetStyles = (props: any) => {
         width: '100%',
         background: '#E8E8E8',
         borderStyle: 'unset',
+      },
+      [getMinMediaQuery(props?.desktop || '')]: {
+        '& .userInfo__title': {
+          display: 'none',
+        },
       },
     },
     address: {
@@ -35,10 +41,10 @@ export const useGetStyles = (props: any) => {
         },
       },
       '& .mainContent': {
-        display: 'block',
+        flex: 1,
       },
       '& .container': {
-        margin: '0.5rem 0 0.5rem 0.2rem',
+        margin: '0.5rem 0',
       },
       '& h4': {
         margin: '0',
@@ -55,55 +61,16 @@ export const useGetStyles = (props: any) => {
         width: '3.75rem',
         marginRight: '0.5rem',
       },
-    },
-    table: {
-      '& .tab': {
-        boxShadow: 'none',
-        color: ' #777777',
-        backgroundColor: 'rgba(0,0,0,0)',
-        '& .MuiTab-root': {
-          padding: '0',
-          minWidth: '8rem',
-          color: '#777777',
+      [getMinMediaQuery(props?.desktop || '')]: {
+        '& .mainContent': {
+          display: 'flex',
         },
-        '& .indicator': {
-          backgroundColor: '#FD3B4C',
+        '& .container': {
+          width: '50%',
         },
-        '& .MuiAppBar-colorDefault': {
-          backgroundColor: 'rgba(0,0,0,0)',
-        },
-        '& .MuiTab-textColorPrimary.Mui-selected': {
-          color: '#FD3B4C',
-        },
-      },
-      '& .MuiBox-root': {
-        padding: '0',
-      },
-      '& .container': {
-        display: 'flex',
-        marginBottom: '0.5rem',
-      },
-      '& .mainContainer': {
-        marginTop: '0.625rem',
-      },
-      '& .line': {
-        height: '1px',
-        margin: '1rem 0 1rem 0',
-        width: '100%',
-        background: '#E8E8E8',
-      },
-      '& .amount': {
-        flex: 1,
-        justifyContent: 'flex-end',
-        display: 'flex',
-      },
-      '& .votingPowerPercentage': {
-        marginLeft: '0.5rem',
-        color: '#777777',
       },
     },
     chart: {
-      marginBottom: '2rem',
       '& .chartBox': {
         width: '7.5rem',
         height: '7.5rem',
@@ -207,6 +174,33 @@ export const useGetStyles = (props: any) => {
           display: 'block',
           position: 'absolute',
           borderRadius: '15px',
+        },
+      },
+      '& .total__desktop': {
+        display: 'none',
+      },
+      [getMinMediaQuery(props?.desktop || '')]: {
+        '&.userInfoChart': {
+          display: 'flex',
+          margin: '2rem 0',
+        },
+        '& .total': {
+          display: 'none',
+        },
+        '& .total__desktop': {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          justifyContent: 'flex-end',
+          flex: 1,
+        },
+        '& .mainContent': {
+          marginBottom: 0,
+        },
+        '& .dataContent': {
+          flex: 'none',
+          width: '33%',
+          marginLeft: '2rem',
         },
       },
     },
