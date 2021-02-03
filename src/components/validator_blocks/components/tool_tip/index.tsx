@@ -14,10 +14,9 @@ const ToolTip = (props:ToolTipProps) => {
     labels,
     className,
   } = props;
-
   const { classes } = useGetStyles();
 
-  if (active) {
+  if (payload && active) {
     const { payload: data } = payload?.[0];
     const formattedData = getData(labels, data);
     return (
