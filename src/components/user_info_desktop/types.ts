@@ -15,20 +15,6 @@ export type Columns = {
   sort?: boolean;
 }
 
-export interface TableDefaultProps {
-  className?: string;
-  delegatdColumns: Columns[];
-  redelegatedColumns: Columns[];
-  unbondingColumns: Columns[];
-  delegatedData: Data[];
-  redelegatedData: Data[];
-  unbondingData: Data[];
-  initialActiveSort?: string;
-  pagination?: {
-    rowsPerPage: number | undefined;
-  };
-}
-
 export type ChartData = {
   title: string;
   value: number;
@@ -48,12 +34,6 @@ export type Chart = {
   customComponent?: ReactElement;
 }
 
-export interface TabProps {
-  delegations: string;
-  redelegations: string;
-  unbondings: string;
-}
-
 export type Address = {
   title: string | React.ReactNode;
   display: string;
@@ -65,7 +45,6 @@ export interface UserInfoDesktopProps {
   className?: string;
   classNameChart?: string;
   classNameAddress?: string;
-  classNameTable?: string;
   addressContent: {
     image?: React.ReactNode;
     address: Address;
@@ -73,6 +52,4 @@ export interface UserInfoDesktopProps {
   }
   copyCallback?: (value: string) => void;
   chart: Chart;
-  tabProps: TabProps;
-  tableDefaultProps: TableDefaultProps;
 }

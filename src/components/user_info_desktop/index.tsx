@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import { UserInfoDesktopProps } from './types';
 import { useGetStyles } from './styles';
 import {
-  Table,
   Chart,
   Address,
 } from './components';
@@ -13,11 +12,8 @@ const UserInfoDesktop = (props: UserInfoDesktopProps) => {
     className,
     classNameChart,
     classNameAddress,
-    classNameTable,
     addressContent,
     chart,
-    tableDefaultProps,
-    tabProps,
     copyCallback,
   } = props;
 
@@ -33,13 +29,6 @@ const UserInfoDesktop = (props: UserInfoDesktopProps) => {
       <Chart
         chart={chart}
         className={classnames(classes.chart, classNameChart, 'userInfoChart')}
-      />
-      <Table
-        tableDefaultProps={tableDefaultProps}
-        className={classnames(classes.table, classNameTable, 'userInfoTable')}
-        classNameTab={classnames('tab')}
-        classNameIndicator={classnames('indicator')}
-        tabProps={tabProps}
       />
     </div>
   );
