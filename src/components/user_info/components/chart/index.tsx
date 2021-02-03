@@ -27,8 +27,6 @@ const Chart = (prop: ChartProps) => {
               {isNotEmpty ? (
                 <Pie
                   data={chart.data}
-                  startAngle={30}
-                  endAngle={-330}
                   isAnimationActive={false}
                   innerRadius="85%"
                   outerRadius="100%"
@@ -46,8 +44,6 @@ const Chart = (prop: ChartProps) => {
               ) : (
                 <Pie
                   data={baseData}
-                  startAngle={30}
-                  endAngle={-330}
                   isAnimationActive={false}
                   innerRadius="85%"
                   outerRadius="100%"

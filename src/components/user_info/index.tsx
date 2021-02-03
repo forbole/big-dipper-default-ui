@@ -9,7 +9,6 @@ import {
 
 const UserInfo = (props: UserInfoProps) => {
   const {
-    title,
     className,
     addressContent,
     chart,
@@ -20,7 +19,6 @@ const UserInfo = (props: UserInfoProps) => {
 
   return (
     <div className={classnames(classes.root, className, 'big-dipper', 'userInfo')}>
-      <h1 className="userInfo__title">{title}</h1>
       <Address
         className={classnames(classes.address, 'userInfoAddress')}
         addressContent={addressContent}

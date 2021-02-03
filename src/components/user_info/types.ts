@@ -28,7 +28,6 @@ export type Address = {
 
 export interface UserInfoProps {
   className?: string;
-  title: string;
   desktop?: string | number;
   addressContent: {
     address: Address;

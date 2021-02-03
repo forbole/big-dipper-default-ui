@@ -7,7 +7,6 @@ describe('UserInfoMobile', () => {
     expect(UserInfoMobile).toBeTruthy();
     const wrap = mount(
       <UserInfoMobile
-        title="Account Details"
         addressContent={{
           image: <div>image</div>,
           address: {
