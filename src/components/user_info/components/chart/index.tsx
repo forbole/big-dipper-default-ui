@@ -33,7 +33,6 @@ const Chart = (prop: ChartProps) => {
                   dataKey="value"
                   labelLine={false}
                   stroke="none"
-                  paddingAngle={3}
                 >
                   {
                   chart.data.map((_x: any, index: any) => (
