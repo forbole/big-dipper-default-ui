@@ -53,7 +53,6 @@ export const useGetStyles = (props: any) => {
       '& .image': {
         height: '3.75rem',
         width: '3.75rem',
-        borderRadius: '50%',
         marginRight: '0.5rem',
       },
     },

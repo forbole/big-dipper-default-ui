@@ -67,8 +67,7 @@ export interface UserInfoDesktopProps {
   classNameAddress?: string;
   classNameTable?: string;
   addressContent: {
-    img?: string;
-    alt?: string;
+    image?: React.ReactNode;
     address: Address;
     rewardAddress: Address;
   }

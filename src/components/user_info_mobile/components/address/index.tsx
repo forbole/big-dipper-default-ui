@@ -17,7 +17,9 @@ const Address = (props: AddressProps) => {
 
   return (
     <div className={classnames(className, 'mainContainer')}>
-      <img src={addressContent.img} alt={addressContent.alt} className={classnames('image')} />
+      <div className={classnames(className, 'image')}>
+        {addressContent.image}
+      </div>
       <div className={classnames('mainContent')}>
         <div className={classnames('container')}>
           <h4>{addressContent.address.title}</h4>
