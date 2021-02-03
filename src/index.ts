@@ -33,8 +33,7 @@ import ValidatorProfile from './components/validator_profile';
 import ProposalResultDesktop from './components/proposal_result_desktop';
 import ProposalResultMobile from './components/proposal_result_mobile';
 import LatestActivities from './components/latest_activities';
-import UserInfoMobile from './components/user_info_mobile';
-import UserInfoDesktop from './components/user_info_desktop';
+import UserInfo from './components/user_info';
 import InfoDialog from './components/info_dialog';
 
 export {
@@ -73,7 +72,6 @@ export {
   ProposalResultDesktop,
   ProposalResultMobile,
   LatestActivities,
-  UserInfoMobile,
-  UserInfoDesktop,
+  UserInfo,
   InfoDialog,
 };

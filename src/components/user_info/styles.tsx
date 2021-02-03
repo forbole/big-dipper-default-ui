@@ -1,10 +1,11 @@
 import { makeStyles } from '@material-ui/styles';
+import { getMinMediaQuery } from '../../utils';
+import { UserInfoProps } from './types';
 
-export const useGetStyles = (props: any) => {
+export const useGetStyles = (props: UserInfoProps) => {
   const useStyles = makeStyles({
     root: {
-      overflow: 'auto',
-      '& h1': {
+      '& .userInfo__title': {
         margin: '0 0 1rem 0',
         fontSize: '1.375rem',
         fontWeight: 400,
@@ -16,17 +17,14 @@ export const useGetStyles = (props: any) => {
         background: '#E8E8E8',
         borderStyle: 'unset',
       },
+      [getMinMediaQuery(props?.desktop || '')]: {
+        '& .userInfo__title': {
+          display: 'none',
+        },
+      },
     },
     address: {
       display: 'flex',
-      '& .rewardAddress': {
-        display: 'flex',
-        alignItems: 'center',
-        '& .question-icon': {
-          marginLeft: '0.3rem',
-          color: '#777777',
-        },
-      },
       '& .addressDisplay': {
         display: 'flex',
         '& .copy-icon': {
@@ -36,16 +34,17 @@ export const useGetStyles = (props: any) => {
           height: '1rem',
         },
       },
+      '& .rewardAddress': {
+        '& .question-icon': {
+          marginLeft: '0.3rem',
+          color: '#777777',
+        },
+      },
       '& .mainContent': {
-        display: 'flex',
         flex: 1,
       },
       '& .container': {
-        margin: '0.5rem 0 0.5rem 0',
-        width: '50%',
-      },
-      '& .imgContainer': {
-        display: 'flex',
+        margin: '0.5rem 0',
       },
       '& h4': {
         margin: '0',
@@ -58,54 +57,21 @@ export const useGetStyles = (props: any) => {
         color: '#777777',
       },
       '& .image': {
-        height: '2.5rem',
-        width: '2.5rem',
+        height: '3.75rem',
+        width: '3.75rem',
         marginRight: '0.5rem',
       },
-    },
-    table: {
-      '& .tab': {
-        boxShadow: 'none',
-        color: ' #777777',
-        backgroundColor: 'rgba(0,0,0,0)',
-        '& .MuiTab-root': {
-          padding: '0',
+      [getMinMediaQuery(props?.desktop || '')]: {
+        '& .mainContent': {
+          display: 'flex',
         },
-        '& .indicator': {
-          backgroundColor: '#FD3B4C',
+        '& .container': {
+          width: '50%',
         },
-        '& .MuiAppBar-colorDefault': {
-          backgroundColor: 'rgba(0,0,0,0)',
-        },
-        '& .MuiTab-textColorPrimary.Mui-selected': {
-          color: '#FD3B4C',
-        },
-      },
-      '& .MuiBox-root': {
-        padding: '0',
-      },
-      '& .MuiTableCell-root': {
-        borderBottom: 'none',
-        fontSize: '1rem',
-      },
-      '& .validator': {
-        paddingLeft: '2.5rem',
-      },
-      '& .table__row, & .last7Days, & .expectedDelivery': {
-        paddingRight: '2.5rem',
-      },
-      '& .label__validator': {
-        paddingLeft: '1.5rem',
-      },
-      '& .label__last7Days, & .label__expectedDelivery': {
-        paddingRight: '1.5rem',
       },
     },
     chart: {
-      display: 'flex',
-      marginBottom: '2rem',
       '& .chartBox': {
-        marginTop: '0.5rem',
         width: '7.5rem',
         height: '7.5rem',
       },
@@ -117,19 +83,11 @@ export const useGetStyles = (props: any) => {
       '& .total': {
         flex: 1,
         textAlign: 'right',
-      },
-      '& .totalAmount': {
-        height: '50%',
-      },
-      '& .totalDollar': {
-        textAlign: 'bottom',
-        height: '50%',
-        position: 'relative',
+        marginTop: '0.5rem',
       },
       '& h1': {
         fontSize: '1.375rem',
-        margin: '0',
-        paddingTop: '0.5rem',
+        margin: '0.7rem 0 0 0',
         fontWeight: '400',
       },
       '& h2': {
@@ -137,9 +95,6 @@ export const useGetStyles = (props: any) => {
         margin: '0',
         fontWeight: '400',
         color: '#777777',
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
       },
       '& h3': {
         fontSize: '1rem',
@@ -156,26 +111,12 @@ export const useGetStyles = (props: any) => {
         fontSize: '1rem',
         color: '#414141',
       },
-      '& .contentLeft': {
+      '& .mainContent': {
         display: 'flex',
         marginTop: '1.5rem',
         marginBottom: '2rem',
-        width: '50%',
       },
-      '& .contentRight': {
-        display: 'flex',
-        marginTop: '1.5rem',
-        marginBottom: '2rem',
-        width: '50%',
-      },
-      '& .custom-component': {
-        position: 'absolute',
-        bottom: '0',
-      },
-      '& .custom-component-container': {
-        position: 'relative',
-      },
-      '& .dataAmount': {
+      '& .dataPercentage': {
         flex: 1,
         textAlign: 'end',
       },
@@ -185,20 +126,18 @@ export const useGetStyles = (props: any) => {
       },
       '& .dataContent': {
         flex: 1,
-        margin: '0 1rem 0 1rem',
       },
       '& .dataRow': {
         display: 'flex',
       },
       '& .dataType': {
-        marginTop: '0.5rem',
+        marginTop: '0.625rem',
         position: 'relative',
         paddingLeft: '1.5rem',
         fontSize: '0.875rem',
         minWidth: '0',
         flex: 1,
         '&.available': {
-          marginTop: '0',
           '&:before': {
             background: props.chart.colors[0],
           },
@@ -235,6 +174,34 @@ export const useGetStyles = (props: any) => {
           display: 'block',
           position: 'absolute',
           borderRadius: '15px',
+        },
+      },
+      '& .total__desktop': {
+        display: 'none',
+      },
+      [getMinMediaQuery(props?.desktop || '')]: {
+        '&.userInfoChart': {
+          display: 'flex',
+          margin: '2rem 0',
+        },
+        '& .total': {
+          display: 'none',
+        },
+        '& .total__desktop': {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          justifyContent: 'flex-end',
+          flex: 1,
+          textAlign: 'right',
+        },
+        '& .mainContent': {
+          marginBottom: 0,
+        },
+        '& .dataContent': {
+          flex: 'none',
+          width: '33%',
+          marginLeft: '2rem',
         },
       },
     },

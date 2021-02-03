@@ -1,15 +1,4 @@
 import React from 'react';
-import { Data } from '../table_paginated/types';
-
-export interface TableDefaultProps {
-  className?: string;
-  delegatedData: Data[];
-  redelegatedData: Data[];
-  unbondingData: Data[];
-  pagination?: {
-    rowsPerPage: number | undefined;
-  };
-}
 
 export type ChartData = {
   title: string;
@@ -27,12 +16,7 @@ export type Chart = {
   totalDollar: Total
   data: ChartData[];
   colors: string[];
-}
-
-export interface TabProps {
-  delegations: string;
-  redelegations: string;
-  unbondings: string;
+  baseColor?: string;
 }
 
 export type Address = {
@@ -42,12 +26,9 @@ export type Address = {
   dialog?: React.ReactNode;
 };
 
-export interface UserInfoMobileProps {
+export interface UserInfoProps {
   className?: string;
-  classNameTable?: string;
-  classNameAddress?: string;
-  classNameChart?: string;
-  title: string;
+  desktop?: string | number;
   addressContent: {
     address: Address;
     rewardAddress: Address;
@@ -55,6 +36,4 @@ export interface UserInfoMobileProps {
   }
   copyCallback?: (value: string) => void;
   chart: Chart;
-  tabProps: TabProps;
-  tableDefaultProps: TableDefaultProps;
 }
