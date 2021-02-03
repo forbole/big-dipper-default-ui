@@ -12,30 +12,53 @@ const Chart = (prop: ChartProps) => {
     className,
   } = prop;
 
+  const baseData = [{
+    value: 100,
+  }];
+
+  const isNotEmpty = chart.data.some((x) => x.value);
+
   return (
     <div className={classnames(className, 'chart')}>
       <div className={classnames('mainContent')}>
         <div className={classnames('chartBox', 'box')}>
           <ResponsiveContainer height="100%">
             <PieChart>
-              <Pie
-                data={chart.data}
-                startAngle={30}
-                endAngle={-330}
-                isAnimationActive={false}
-                innerRadius="85%"
-                outerRadius="100%"
-                dataKey="value"
-                labelLine={false}
-                stroke="none"
-                paddingAngle={3}
-              >
-                {
+              {isNotEmpty ? (
+                <Pie
+                  data={chart.data}
+                  startAngle={30}
+                  endAngle={-330}
+                  isAnimationActive={false}
+                  innerRadius="85%"
+                  outerRadius="100%"
+                  dataKey="value"
+                  labelLine={false}
+                  stroke="none"
+                  paddingAngle={3}
+                >
+                  {
                   chart.data.map((_x: any, index: any) => (
                     <Cell className={classnames(`pie-${index}`)} key={_x.value} fill={chart.colors[index % chart.colors.length]} />
                   ))
                 }
-              </Pie>
+                </Pie>
+              ) : (
+                <Pie
+                  data={baseData}
+                  startAngle={30}
+                  endAngle={-330}
+                  isAnimationActive={false}
+                  innerRadius="85%"
+                  outerRadius="100%"
+                  dataKey="value"
+                  labelLine={false}
+                  stroke="none"
+                >
+                  <Cell className={classnames('pie-empty')} fill={chart.baseColor ?? 'rgba(248, 248, 248, 1)'} />
+                </Pie>
+              )}
+
             </PieChart>
           </ResponsiveContainer>
         </div>

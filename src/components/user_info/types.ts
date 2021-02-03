@@ -16,6 +16,7 @@ export type Chart = {
   totalDollar: Total
   data: ChartData[];
   colors: string[];
+  baseColor?: string;
 }
 
 export type Address = {
@@ -27,8 +28,6 @@ export type Address = {
 
 export interface UserInfoMobileProps {
   className?: string;
-  classNameAddress?: string;
-  classNameChart?: string;
   title: string;
   addressContent: {
     address: Address;

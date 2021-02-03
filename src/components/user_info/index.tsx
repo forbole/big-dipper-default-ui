@@ -11,8 +11,6 @@ const UserInfotMobile = (props: UserInfoMobileProps) => {
   const {
     title,
     className,
-    classNameAddress,
-    classNameChart,
     addressContent,
     chart,
     copyCallback,
@@ -20,17 +18,17 @@ const UserInfotMobile = (props: UserInfoMobileProps) => {
 
   const { classes } = useGetStyles(props);
   return (
-    <div className={classnames(classes.root, className, 'big-dipper', 'userInfoMobile')}>
+    <div className={classnames(classes.root, className, 'big-dipper', 'userInfo')}>
       <h1>{title}</h1>
       <Address
-        className={classnames(classes.address, classNameAddress, 'userInfoAddress')}
+        className={classnames(classes.address, 'userInfoAddress')}
         addressContent={addressContent}
         copyCallback={copyCallback}
       />
       <hr />
       <Chart
         chart={chart}
-        className={classnames(classes.chart, classNameChart, 'userInfoChart')}
+        className={classnames(classes.chart, 'userInfoChart')}
       />
     </div>
   );
