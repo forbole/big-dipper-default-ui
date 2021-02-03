@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import { UserInfoMobileProps } from './types';
 import { useGetStyles } from './styles';
 import {
-  Table,
   Chart,
   Address,
 } from './components';
@@ -12,13 +11,10 @@ const UserInfotMobile = (props: UserInfoMobileProps) => {
   const {
     title,
     className,
-    classNameTable,
     classNameAddress,
     classNameChart,
     addressContent,
     chart,
-    tableDefaultProps,
-    tabProps,
     copyCallback,
   } = props;
 
@@ -35,13 +31,6 @@ const UserInfotMobile = (props: UserInfoMobileProps) => {
       <Chart
         chart={chart}
         className={classnames(classes.chart, classNameChart, 'userInfoChart')}
-      />
-      <Table
-        tableDefaultProps={tableDefaultProps}
-        className={classnames(classes.table, classNameTable, 'userInfoTable')}
-        classNameTab={classnames('tab')}
-        classNameIndicator={classnames('indicator')}
-        tabProps={tabProps}
       />
     </div>
   );

@@ -59,7 +59,7 @@ import {
       ),
       rawValue: 'cosmos14kn0k…swhp',
     },
-  },
+  }
   chart: {
     total: {
       title: 'Total ATOM',
@@ -97,59 +97,7 @@ import {
         display: '1,324.91 ATOM',
       },
     ],
-  },
-  tabProps: {
-    delegations: 'Delegations',
-    redelegations: 'redelegations',
-    unbondings: 'Unbondings',
-  },
-  tableDefaultProps: {
-    delegatedData: [
-      {
-        validator: {
-          className: 'validator',
-          rawValue: 'forbole',
-          display: <ProposerData />,
-        },
-        amount: {
-          className: 'amount',
-          rawValue: 4602020,
-          display: '4,602,020 ATOM',
-        },
-      },
-      ...
-    ],
-    redelegatedData: [
-      {
-        validator: {
-          className: 'validator',
-          rawValue: 'forbole',
-          display: <ProposerData />,
-        },
-        amount: {
-          className: 'delegatedAmount',
-          rawValue: 1602020.799998,
-          display: '1,602,020.799998 ATOM',
-        },
-      },
-      ...
-    ],
-    unbondingData: [
-      {
-        validator: {
-          className: 'validator',
-          rawValue: 'forbole',
-          display: <ProposerData />,
-        },
-        amount: {
-          className: 'amount',
-          rawValue: 7202020.799998,
-          display: '7,202,020.799998 ATOM',
-        },
-      },
-      ....
-    ],
-  },
+  }
 />
 ```
 
@@ -207,17 +155,6 @@ import {
 
   </td>
     <td>styles of the address component</td>
-    <td>-</td>
-  </tr>
-    <tr>
-      <td>classNameTable</td>
-      <td>-</td>
-      <td>
-
-`string`
-
-  </td>
-    <td>styles of the table component</td>
     <td>-</td>
   </tr>
     <tr>
@@ -289,62 +226,6 @@ import {
 
   </td>
     <td>data of the chart displayed</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>tabProps</td>
-    <td>-</td>
-    <td>
-
-```
-{
-    delegations: string,
-    redelegations: string,
-    unbondings: string,
-};
-```
-
-  </td>
-    <td>tabs of the table</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>tableDefaultProps</td>
-    <td>true</td>
-    <td>
-
-```
-{
-  className?: string;
-  delegatedData: {
-    [key: string]: {
-      className?: string;
-      rawValue: string | number;
-      display: string | React.ReactNode | number;
-    }
-  }[];
-  redelegatedData: {
-    [key: string]: {
-      className?: string;
-      rawValue: string | number;
-      display: string | React.ReactNode | number;
-    }
-  }[];
-  unbondingData: {
-    [key: string]: {
-      className?: string;
-      rawValue: string | number;
-      display: string | React.ReactNode | number;
-    }
-  }[];
-  pagination?: {
-    rowsPerPage: number | undefined;
-  };
-};
-```
-
-  </td>
-    <td>table data displayed</td>
     <td>-</td>
   </tr>
   </tbody>
