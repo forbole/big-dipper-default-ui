@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/styles';
 import { getMinMediaQuery } from '../../utils';
-import { UserInfoMobileProps } from './types';
+import { UserInfoProps } from './types';
 
-export const useGetStyles = (props: UserInfoMobileProps) => {
+export const useGetStyles = (props: UserInfoProps) => {
   const useStyles = makeStyles({
     root: {
       '& .userInfo__title': {
@@ -193,6 +193,7 @@ export const useGetStyles = (props: UserInfoMobileProps) => {
           alignItems: 'flex-end',
           justifyContent: 'flex-end',
           flex: 1,
+          textAlign: 'right',
         },
         '& .mainContent': {
           marginBottom: 0,

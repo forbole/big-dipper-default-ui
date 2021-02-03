@@ -26,7 +26,7 @@ export type Address = {
   dialog?: React.ReactNode;
 };
 
-export interface UserInfoMobileProps {
+export interface UserInfoProps {
   className?: string;
   title: string;
   desktop?: string | number;
