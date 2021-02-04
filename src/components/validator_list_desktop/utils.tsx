@@ -18,6 +18,7 @@ export const getActiveColumns = (labels: Labels) => {
       id: 'votingPower',
       label: labels.votingPower,
       sort: true,
+      align: 'right',
     },
     {
       id: 'self',
