@@ -17,7 +17,7 @@ const CustomToolTip = (props:CustomToolTipProps) => {
 
   const { classes } = useGetStyles();
 
-  if (active) {
+  if (payload && active) {
     let { value } = payload?.[0];
     if (formatter) {
       value = formatter(value);
