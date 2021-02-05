@@ -6,8 +6,6 @@ import TablePreviewWrapper from './components/table_preview_wrapper';
 import LatestBlocksDesktop from './components/latest_blocks_desktop';
 import Avatar from './components/avatar';
 import AvatarDisplay from './components/avatar_display';
-import SelectTabs from './components/select_tabs';
-import OnlineVotingPower from './components/online_voting_power';
 import ResponsiveRecharts from './components/responsive_recharts';
 import CustomToolTip from './components/custom_tool_tip';
 import ValidatorListMobile from './components/validator_list_mobile';
@@ -45,8 +43,6 @@ export {
   TablePreviewWrapper,
   Avatar,
   AvatarDisplay,
-  SelectTabs,
-  OnlineVotingPower,
   ResponsiveRecharts,
   CustomToolTip,
   ValidatorListMobile,
