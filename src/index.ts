@@ -7,7 +7,6 @@ import LatestBlocksDesktop from './components/latest_blocks_desktop';
 import Avatar from './components/avatar';
 import AvatarDisplay from './components/avatar_display';
 import ResponsiveRecharts from './components/responsive_recharts';
-import CustomToolTip from './components/custom_tool_tip';
 import ValidatorListMobile from './components/validator_list_mobile';
 import ValidatorListDesktop from './components/validator_list_desktop';
 import ProposalList from './components/proposal_list';
@@ -44,7 +43,6 @@ export {
   Avatar,
   AvatarDisplay,
   ResponsiveRecharts,
-  CustomToolTip,
   ValidatorListMobile,
   ValidatorListDesktop,
   ProposalList,
