@@ -20,7 +20,8 @@ import {
       proposer={dummyProposer}
       votingPower={{
         title: 'Voting Power',
-        value: 0.85
+        value: 0.85,
+        display: '85 %',
       }}
       colors={['#FD3B4C', '#E8E8E8']}
       round={{
@@ -48,7 +49,8 @@ import {
   }}
   votingPower={{
     title: 'Voting Power',
-    value: 0.85
+    value: 0.85,
+    display: '85 %'
   }}
   colors={['#FD3B4C', '#E8E8E8']}
   round={{
@@ -127,6 +129,7 @@ import {
 {
   title: string;
   value: number;
+  display: string;
 }
 ```
 
